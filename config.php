@@ -5,11 +5,11 @@
 
     /*  Database Config */
 
-        $db_host = 'localhost';                     // DB Hostame
+        $db_host = 'your_database_host';            // DB Hostame
         $db_port = '3306';                          // DB Port (Default: 3306)
-        $db_username = 'surfcommunity_user_01';     // DB Username
-        $db_password = 'DCL3Z3wktJU0W97p';          // DB Password
-        $db_database = 'surfcommunity01';           // DB Database
+        $db_username = 'your_database_username';    // DB Username
+        $db_password = 'your_database_password';    // DB Password
+        $db_database = 'your_database_name';        // DB Database
 
     /* End of  Database Config */
 
