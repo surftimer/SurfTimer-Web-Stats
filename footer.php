@@ -7,7 +7,7 @@
         <div class="col-12 col-lg-6 text-center">
           Copyright &copy; 2020 - Surftimer-Web-Stats
           <br class="my-0">
-          <small>Coded & Designed with ❤ by <a class="text-dark" href="https://steamcommunity.com/id/kristianpofficial/" taget="_blank">Kristián Partl</a>.</small>
+          <small>Coded & Designed with ❤ by <a class="text-dark" href="https://github.com/KristianP26/" taget="_blank">Kristián Partl</a>.</small>
         </div>
         <div class="col-12 col-lg-6 text-center">
           All times are in <a class="text-dark" href="https://time.is/en/<?php echo $settings_timezone;?>" target="_blank"><?php echo $settings_timezone;?></a>.

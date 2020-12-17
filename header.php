@@ -52,6 +52,29 @@
 				});
 			} );
 		<?php endif; ?>
+		<?php if($page_name =='Maps'): ?>
+			$(document).ready(function() {
+				$('#maps').DataTable({
+					"lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
+					responsive: true,
+					"processing": true,
+					"columnDefs": [
+						{ "className": "text-left pl-3", "targets": [ 0 ] },
+						{ "className": "text-center", "targets": [ 1 ] },
+						{ "className": "text-center", "targets": [ 2 ] }
+					],
+					"data": [
+						<?php foreach($maps as $map): ?>
+							[
+								'<?php echo $map['mapname']; ?>',
+								'<?php echo $map['tier']; ?>',
+								'<?php echo number_format($map['maxvelocity']); ?>'
+							],
+						<?php endforeach; ?>
+					]
+				});
+			} );
+		<?php endif; ?>
 	</script>
 
 </head>
