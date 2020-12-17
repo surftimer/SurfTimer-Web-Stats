@@ -16,6 +16,7 @@ Surftimer-Web-Stats works on latest Release of [Surftimer-Official](https://gith
 * Web Server
 * PHP7+
 * A MySQL Database with [Surftimer-Official](https://github.com/surftimer/Surftimer-Official) data (MySQL 5.7, MySQL 8+, MariaDB supported)
+* Maps must have selected tier
 
 **Installation:**
 * Download the latest version from the release page [here](https://github.com/KristianP26/Surftimer-Web-Stats/releases)
