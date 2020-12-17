@@ -36,8 +36,8 @@
 
     
     /* Other Settings */
-        
-        $settings_timezone = 'UTC+1';  // Timezone of your data (Use format from this site https://time.is/en/time_zones)
+        $settings_top_players_count = '250';    // Default: 250 - I don't recommend using a big number because higher the number you use, the longer it takes to load.
+        $settings_timezone          = 'UTC+1';  // Timezone of your data (Use format from this site https://time.is/en/time_zones)
     
     /* End of Other Settings */
     

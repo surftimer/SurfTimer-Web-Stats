@@ -14,7 +14,7 @@
                 <div class="col-12">  
                     <div class="card shadow-sm my-2">
                         <div class="card-header">
-                            SurfStats's TOP 250 Players
+                            SurfStats's TOP <?php echo $settings_top_players_count;?> Players
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
