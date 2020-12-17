@@ -21,7 +21,7 @@
                     <a class="nav-link <?php echo nav_active('Top Players'); ?>" href="top-players.php"><i class="fas fa-users"></i> Top Players</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php echo nav_active('Maps'); ?>" href="top-players.php"><i class="fas fa-map"></i> Maps</a>
+                    <a class="nav-link <?php echo nav_active('Maps'); ?>" href="maps.php"><i class="fas fa-map"></i> Maps</a>
                 </li>
             </ul>
             <?php if($settings_custom_link_name!=''): ?>
