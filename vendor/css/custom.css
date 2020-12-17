@@ -1,0 +1,105 @@
+.container {
+  max-width: 1350px;
+}
+.navbar-brand {
+  font-size: 1.4rem;
+}
+body,
+html {
+  height: 100%;
+}
+#page-content {
+  flex: 1 0 auto;
+}
+#sticky-footer {
+  flex-shrink: none;
+}
+body {
+  background: #f0f0f0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.page-link {
+  color: #414448;
+}
+.page-item.active .page-link {
+  color: #fff;
+  background-color: #212529;
+  border-color: #6C757D;
+}
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.95rem;
+  overflow-y: hidden;
+}
+.nav-scroller .nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-underline .nav-link {
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  font-size: 0.9rem;
+  color: #ffff;
+}
+.nav-underline .nav-link:hover {
+  color: #adadad;
+}
+.nav-underline .active {
+  font-weight: 500;
+  color: #343a40;
+}
+
+.bg-black-kp{
+  background-color: #1e2123;
+}
+
+.bg-twitch{
+  background-color: #9147FF;
+}
+
+.bg-twitch:hover{
+  background-color: #812dff;
+}
+
+.bg-instagram{
+  background-color: #C13584;
+}
+
+.bg-instagram:hover{
+  background-color: #b80d6e;
+}
+
+.bg-twitter{
+  background-color: #1A91DA;
+}
+
+.bg-twitter:hover{
+  background-color: #007bc7;
+}
+
+.bg-stripped-color{
+  background-color: #F2F2F2;
+}
