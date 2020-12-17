@@ -79,7 +79,7 @@
                 </div>
             </div>
 
-            <div class="col-6"> <!-- TOP players -->
+            <div class="col-md-6 col-12"> <!-- TOP players -->
                 <div class="my-3">
                     <div class="card shadow-sm">
                         <div class="card-header">
@@ -117,7 +117,7 @@
                 </div>
             </div>
 
-            <div class="col-6"> <!-- TOP WR holders -->
+            <div class="col-md-6 col-12"> <!-- TOP WR holders -->
                 <div class="my-3">
                     <div class="card shadow-sm">
                         <div class="card-header">
@@ -151,7 +151,7 @@
                 </div>
             </div>
             
-            <div class="col-6"> <!-- TOP bonus WR holders -->
+            <div class="col-md-6 col-12"> <!-- TOP bonus WR holders -->
                 <div class="my-3">
                     <div class="card shadow-sm">
                         <div class="card-header">
@@ -185,7 +185,7 @@
                 </div>
             </div>
 
-            <div class="col-6"> <!-- TOP Stage WR holders -->
+            <div class="col-md-6 col-12"> <!-- TOP Stage WR holders -->
                 <div class="my-3">
                     <div class="card shadow-sm">
                         <div class="card-header">
