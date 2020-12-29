@@ -12,7 +12,7 @@
         <div class="col-12 col-lg-6 text-center">
           All times are in <a class="text-<?php if($darkMode) echo "light"; else echo "dark"; ?>" href="https://time.is/en/<?php echo $settings_timezone;?>" target="_blank"><?php echo $settings_timezone;?></a>.
           <br class="my-0">
-          <small class=""><a class="text-<?php if($darkMode) echo "light"; else echo "dark"; ?>" href="https://github.com/KristianP26/Surftimer-Web-Stats" title="Kristián Partl Github" target="_blank">Surftimer-Web-Stats</a> v1.11</small>
+          <small class=""><a class="text-<?php if($darkMode) echo "light"; else echo "dark"; ?>" href="https://github.com/KristianP26/Surftimer-Web-Stats" title="Kristián Partl Github" target="_blank">Surftimer-Web-Stats</a> v1.12</small>
         </div>
       </div>
     </div>
