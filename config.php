@@ -13,16 +13,17 @@
 
     /* End of  Database Config */
 
+
     /* 
-        Logo or title
+        Design Settings 
         If you want use title than logo must remain empty
         Logo must be located in 'images' folder
     */
-
+        $darkMode = '1';
         $settings_navbar_logo   = "logo.svg";
         $settings_navbar_title  = "";
 
-    /* End of Logo Settings */
+    /* End of Design Settings */
 
     /*
         Custom Link
