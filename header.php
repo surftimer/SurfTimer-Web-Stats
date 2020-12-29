@@ -13,11 +13,21 @@
 	<link rel="icon" href="./images/favicon.svg" type="image">
 
 	<!-- Bootstrap core CSS -->
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<?php
+		if ($darkMode)
+		{
+			echo "<link href=\"vendor/css/bootstrap.dark.min.css\" rel=\"stylesheet\">";
+			echo "<link href=\"vendor/css/custom.dark.min.css\" rel=\"stylesheet\">";
+		}
+		else
+		{
+			echo "<link href=\"vendor/bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">";
+			echo "<link href=\"vendor/css/custom.min.css\" rel=\"stylesheet\">";
+		}
+	?>
 
 	<!-- Custom core CSS -->
 	<link href="vendor/fontawesome/css/all.min.css" rel="stylesheet"> 
-	<link href="vendor/css/custom.min.css" rel="stylesheet">
 	<link href="vendor/css/datatables.min.css" rel="stylesheet">
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
