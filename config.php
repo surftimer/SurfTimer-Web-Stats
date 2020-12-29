@@ -19,7 +19,7 @@
         If you want use title than logo must remain empty
         Logo must be located in 'images' folder
     */
-        $darkMode = '1'; // Default 0
+        $darkMode = '0'; // Default 0
         $settings_navbar_logo   = "logo.svg";
         $settings_navbar_title  = "";
 
