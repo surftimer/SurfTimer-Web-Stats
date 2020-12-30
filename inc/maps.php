@@ -66,7 +66,7 @@ if(isset($mapname)):
 
             if($sql_map_normal_completions_count!==0):
                 
-                $sql_map_completions = "SELECT * FROM `ck_playertimes` WHERE mapname='$map_name' AND style='0'";
+                $sql_map_completions = "SELECT ck_playertimes.steamid.*, ck_playerrank.name as realname FROM `ck_playertimes` LEFT JOIN `ck_playerrank` ON ck_playertimes.steamid=ck_playerrank.steamid WHERE mapname='$map_name' AND style='0'";
                 $results_map_completions = mysqli_query($db_conn, $sql_map_completions);
                 $map_completions = array();
                 

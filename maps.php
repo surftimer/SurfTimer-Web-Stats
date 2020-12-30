@@ -125,7 +125,7 @@
 
                                         <div class="tab-content my-2" id="bonuses-content">       
                                             <?php $map_bonuses_completions_number = 0; foreach($map_bonuses_completions as $map_bonuses_completion):   ?>
-                                                <div class="tab-pane fade show <?php if(++$map_bonuses_completions_number=='1') echo 'active'; ?>" id="bonuses-content-<?php echo $map_bonuses_completions_number; ?>" role="tabpanel">
+                                                <div class="tab-pane fade <?php if(++$map_bonuses_completions_number=='1') echo 'show active'; ?>" id="bonuses-content-<?php echo $map_bonuses_completions_number; ?>" role="tabpanel">
                                                     <div class="table-responsive">
                                                         <table class="table table-hover border shadow-sm py-0 my-0" id="bonuses-completions-<?php echo $map_bonuses_completions_number; ?>">
                                                             <thead>

@@ -69,7 +69,7 @@
 							?>
 							[
 								'<?php echo ++$map_completion_row; ?>.',
-								'<?php echo $map_completion['name']; ?>',
+								'<?php echo $map_completion['realname']; ?>',
 								'<?php echo $map_completion_runtime_timeformat; ?>'
 							],
 						<?php endforeach; ?>
