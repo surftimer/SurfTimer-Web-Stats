@@ -66,7 +66,7 @@ if(isset($mapname)):
 
             if($sql_map_normal_completions_count!==0):
                 
-                $sql_map_completions = "SELECT ck_playertimes.steamid.*, ck_playerrank.name as realname FROM `ck_playertimes` LEFT JOIN `ck_playerrank` ON ck_playertimes.steamid=ck_playerrank.steamid WHERE mapname='$map_name' AND style='0'";
+                $sql_map_completions = "SELECT ck_playertimes.*, ck_playerrank.name as realname FROM `ck_playertimes` LEFT JOIN `ck_playerrank` ON ck_playerrank.steamid=ck_playertimes.steamid AND ck_playerrank.style=ck_playertimes.steamid WHERE mapname='$map_name' AND ck_playertimes.style='0'";
                 $results_map_completions = mysqli_query($db_conn, $sql_map_completions);
                 $map_completions = array();
                 
@@ -95,7 +95,7 @@ if(isset($mapname)):
                     $stage_top_time_runtime_microtime = substr($stage_top_time_runtime, strpos($stage_top_time_runtime, ".") + 1);    
                     $stage_top_time_runtime_timeformat = gmdate("i:s", $row_stage_top_time['runtimepro']).'<span class="text-secondary">.'.$stage_top_time_runtime_microtime.'</span>';
                     
-                    $map_top_stages[] = array($map_top_stages_while, $row_stage_top_time['name'], $stage_top_time_runtime_timeformat, $row_map_total_stage_completions['stage_completions']);
+                    $map_top_stages[] = array($map_top_stages_while, $row_stage_top_time['goodname'], $stage_top_time_runtime_timeformat, $row_map_total_stage_completions['stage_completions']);
                 
                 endwhile;
 
