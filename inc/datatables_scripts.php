@@ -49,7 +49,7 @@
 			} );
 		<?php endif; ?>
 
-		<?php if((isset($mapname))&&($page_name =='Maps')): ?>
+		<?php if(($page_name =='Maps')&&(isset($mapname))): ?>
 			$(document).ready(function() {
 				$('#map-completions').DataTable({
 					"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
@@ -65,7 +65,7 @@
 							<?php
 								$map_completion_runtime = $map_completion['runtimepro'];
 								$map_completion_runtime_microtime = substr($map_completion_runtime, strpos($map_completion_runtime, ".") + 1);    
-								$map_completion_runtime_timeformat = gmdate("i:s", $row_stage_top_time['runtimepro']).'<span class="text-secondary">.'.$map_completion_runtime_microtime.'</span>';
+								$map_completion_runtime_timeformat = gmdate("i:s", $map_completion['runtimepro']).'<span class="text-secondary">.'.$map_completion_runtime_microtime.'</span>';
 							?>
 							[
 								'<?php echo ++$map_completion_row; ?>.',
@@ -95,7 +95,7 @@
 								<?php
 									$map_bonuses_completion_r_runtime = $map_bonuses_completion_r['runtime'];
 									$map_bonuses_completion_r_runtime_microtime = substr($map_bonuses_completion_r_runtime, strpos($map_bonuses_completion_r_runtime, ".") + 1);    
-									$map_bonuses_completion_r_runtime_timeformat = gmdate("i:s", $row_stage_top_time['runtimepro']).'<span class="text-secondary">.'.$map_bonuses_completion_r_runtime_microtime.'</span>';
+									$map_bonuses_completion_r_runtime_timeformat = gmdate("i:s", $map_bonuses_completion_r['runtime']).'<span class="text-secondary">.'.$map_bonuses_completion_r_runtime_microtime.'</span>';
 								?>
 								[
 									'<?php echo ++$map_bonuses_completion_r_row; ?>.',
