@@ -24,7 +24,8 @@
 				});
 			} );
 		<?php endif; ?>
-		<?php if($page_name =='Maps'): ?>
+
+		<?php if((!isset($mapname))&&($page_name =='Maps')): ?>
 			$(document).ready(function() {
 				$('#maps').DataTable({
 					"lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
@@ -38,7 +39,7 @@
 					"data": [
 						<?php foreach($maps as $map): ?>
 							[
-								'<?php echo $map['mapname']; ?>',
+								'<?php echo $map['mapname']; ?> <a href="maps.php?map=<?php echo $map['mapname']; ?>" class="text-muted"><i class="fas fa-link"></i></a>',
 								'<?php echo $map['tier']; ?>',
 								'<?php echo number_format($map['maxvelocity']); ?>'
 							],
@@ -47,4 +48,66 @@
 				});
 			} );
 		<?php endif; ?>
+
+		<?php if((isset($mapname))&&($page_name =='Maps')): ?>
+			$(document).ready(function() {
+				$('#map-completions').DataTable({
+					"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+					responsive: true,
+					"processing": true,
+					"columnDefs": [
+						{ "className": "text-center", "targets": [ 0 ] },
+						{ "className": "text-left", "targets": [ 1 ] },
+						{ "className": "text-center", "targets": [ 2 ] }
+					],
+					"data": [
+						<?php $map_completion_row = 0; foreach($map_completions as $map_completion): ?>
+							<?php
+								$map_completion_runtime = $map_completion['runtimepro'];
+								$map_completion_runtime_microtime = substr($map_completion_runtime, strpos($map_completion_runtime, ".") + 1);    
+								$map_completion_runtime_timeformat = gmdate("i:s", $row_stage_top_time['runtimepro']).'<span class="text-secondary">.'.$map_completion_runtime_microtime.'</span>';
+							?>
+							[
+								'<?php echo ++$map_completion_row; ?>.',
+								'<?php echo $map_completion['name']; ?>',
+								'<?php echo $map_completion_runtime_timeformat; ?>'
+							],
+						<?php endforeach; ?>
+					]
+				});
+			} );
+		<?php endif; ?>
+
+		<?php if(($page_name =='Maps')&&((isset($mapname))&&($map_bonuses>0))): ?>
+			<?php $map_bonuses_completions_number = 0; foreach($map_bonuses_completions as $map_bonuses_completion): ?>
+				$(document).ready(function() {
+					$('#bonuses-completions-<?php echo ++$map_bonuses_completions_number; ?>').DataTable({
+						responsive: true,
+						"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+						"processing": true,
+						"columnDefs": [
+							{ "className": "text-center", "targets": [ 0 ] },
+							{ "className": "text-left", "targets": [ 1 ] },
+							{ "className": "text-center", "targets": [ 2 ] }
+						],
+						"data": [
+							<?php $map_bonuses_completion_r_row = 0; foreach($map_bonuses_completion as $map_bonuses_completion_r): ?>
+								<?php
+									$map_bonuses_completion_r_runtime = $map_bonuses_completion_r['runtime'];
+									$map_bonuses_completion_r_runtime_microtime = substr($map_bonuses_completion_r_runtime, strpos($map_bonuses_completion_r_runtime, ".") + 1);    
+									$map_bonuses_completion_r_runtime_timeformat = gmdate("i:s", $row_stage_top_time['runtimepro']).'<span class="text-secondary">.'.$map_bonuses_completion_r_runtime_microtime.'</span>';
+								?>
+								[
+									'<?php echo ++$map_bonuses_completion_r_row; ?>.',
+									'<?php echo $map_bonuses_completion_r['name']; ?>',
+									'<?php echo $map_bonuses_completion_r_runtime_timeformat; ?>'
+								],
+							<?php endforeach; ?>
+						]
+					});
+				} );
+			<?php endforeach; ?>
+		<?php endif; ?>
+		
+		
 	</script>
