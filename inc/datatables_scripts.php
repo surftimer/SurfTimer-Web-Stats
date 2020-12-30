@@ -99,7 +99,7 @@
 								?>
 								[
 									'<?php echo ++$map_bonuses_completion_r_row; ?>.',
-									'<?php echo $map_bonuses_completion_r['name']; ?>',
+									'<?php echo $map_bonuses_completion_r['goodname']; ?>',
 									'<?php echo $map_bonuses_completion_r_runtime_timeformat; ?>'
 								],
 							<?php endforeach; ?>
