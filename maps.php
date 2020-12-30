@@ -109,20 +109,23 @@
                                     
                                     <?php if($map_bonuses>'0'): ?>
                                         <hr>
+                                        <h5 class="text-center">Normal Style Bonuses Completions</h5>
                                         
                                         <nav>
-                                            <div class="nav nav-tabs nav-fill mb-3" id="bonuses-tabs" role="tablist">
-                                                <?php $map_bonuses_completions_number = 0; while(++$map_bonuses_completions_number <= $map_bonuses): ?>
-                                                    <a class="nav-item nav-link pb-3 <?php if($map_bonuses_completions_number=='1') echo 'active'; ?>" href="#bonuses-content-<?php echo $map_bonuses_completions_number; ?>" id="bonuses-content-<?php echo $map_bonuses_completions_number; ?>-tab" data-toggle="tab" role="tab" aria-controls="bonuses-content-<?php echo $map_bonuses_completions_number; ?>" aria-selected="true">
+                                            <div class="nav nav-tabs nav-fill my-3" id="bonuses-tabs" role="tablist">
+                                                <?php $map_bonuses_completions_number = 0; foreach($map_bonuses_completions_counts as $map_bonuses_completions_count): ?>
+                                                    <a class="nav-item nav-link pb-3 <?php if(++$map_bonuses_completions_number=='1') echo 'active'; ?>" href="#bonuses-content-<?php echo $map_bonuses_completions_number; ?>" id="bonuses-content-<?php echo $map_bonuses_completions_number; ?>-tab" data-toggle="tab" role="tab" aria-controls="bonuses-content-<?php echo $map_bonuses_completions_number; ?>" aria-selected="true">
                                                         <b class="text-muted">Bonus <?php echo $map_bonuses_completions_number; ?></b>
+                                                        <br>
+                                                        <span class="text-dark"><?php echo number_format($map_bonuses_completions_count); ?>
                                                     </a>
-                                                <?php endwhile; ?>
+                                                <?php endforeach; ?>                                            
                                             </div>
                                         </nav>
 
                                         <div class="tab-content my-2" id="bonuses-content">       
                                             <?php $map_bonuses_completions_number = 0; foreach($map_bonuses_completions as $map_bonuses_completion):   ?>
-                                                <div class="tab-pane fade show <?php if($map_bonuses_completions_number=='1') echo 'active'; ?>" id="bonuses-content-<?php echo $map_bonuses_completions_number; ?>" role="tabpanel">
+                                                <div class="tab-pane fade show <?php if(++$map_bonuses_completions_number=='1') echo 'active'; ?>" id="bonuses-content-<?php echo $map_bonuses_completions_number; ?>" role="tabpanel">
                                                     <div class="table-responsive">
                                                         <table class="table table-hover border shadow-sm py-0 my-0" id="bonuses-completions-<?php echo $map_bonuses_completions_number; ?>">
                                                             <thead>
