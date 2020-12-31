@@ -53,13 +53,13 @@
 			$(document).ready(function() {
 				$('#map-completions').DataTable({
 					"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
-					responsive: true,
 					"processing": true,
 					"columnDefs": [
 						{ "className": "text-center", "targets": [ 0 ] },
 						{ "className": "text-left", "targets": [ 1 ] },
 						{ "className": "text-center", "targets": [ 2 ] }
 					],
+					responsive: true,
 					"data": [
 						<?php $map_completion_row = 0; foreach($map_completions as $map_completion): ?>
 							<?php
@@ -82,7 +82,6 @@
 			<?php $map_bonuses_completions_number = 0; foreach($map_bonuses_completions as $map_bonuses_completion): ?>
 				$(document).ready(function() {
 					$('#bonuses-completions-<?php echo ++$map_bonuses_completions_number; ?>').DataTable({
-						responsive: true,
 						"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
 						"processing": true,
 						"columnDefs": [
@@ -90,6 +89,7 @@
 							{ "className": "text-left", "targets": [ 1 ] },
 							{ "className": "text-center", "targets": [ 2 ] }
 						],
+						responsive: true,
 						"data": [
 							<?php $map_bonuses_completion_r_row = 0; foreach($map_bonuses_completion as $map_bonuses_completion_r): ?>
 								<?php

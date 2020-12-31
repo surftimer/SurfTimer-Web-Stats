@@ -117,25 +117,22 @@
                                                     <a class="nav-item nav-link pb-3 <?php if(++$map_bonuses_completions_number=='1') echo 'active'; ?>" href="#bonuses-content-<?php echo $map_bonuses_completions_number; ?>" id="bonuses-content-<?php echo $map_bonuses_completions_number; ?>-tab" data-toggle="tab" role="tab" aria-controls="bonuses-content-<?php echo $map_bonuses_completions_number; ?>" aria-selected="true">
                                                         <b class="text-muted">Bonus <?php echo $map_bonuses_completions_number; ?></b>
                                                         <br>
-                                                        <span class="text-dark"><?php echo number_format($map_bonuses_completions_count); ?>
+                                                        <span class="text-body"><?php echo number_format($map_bonuses_completions_count); ?></span>
                                                     </a>
                                                 <?php endforeach; ?>                                            
                                             </div>
                                         </nav>
 
-                                        <div class="tab-content my-2" id="bonuses-content">       
-                                            <?php $map_bonuses_completions_number = 0; foreach($map_bonuses_completions as $map_bonuses_completion):   ?>
-                                                <div class="tab-pane fade <?php if(++$map_bonuses_completions_number=='1') echo 'show active'; ?>" id="bonuses-content-<?php echo $map_bonuses_completions_number; ?>" role="tabpanel">
+                                        <div class="tab-content my-2" id="bonuses-tabsContent">       
+                                            <?php $map_bonuses_completions_number = 0; foreach($map_bonuses_completions as $map_bonuses_completion): ++$map_bonuses_completions_number; ?>
+                                                <div class="tab-pane fade<?php if($map_bonuses_completions_number=='1') echo ' show active'; ?>" id='bonuses-content-<?php echo $map_bonuses_completions_number; ?>' role="tabpanel" aria-labelledby="bonuses-content-<?php echo $map_bonuses_completions_number; ?>-tab">
                                                     <div class="table-responsive">
-                                                        <table class="table table-hover border shadow-sm py-0 my-0" id="bonuses-completions-<?php echo $map_bonuses_completions_number; ?>">
+                                                        <table class="table table-hover border table-sm shadow-sm py-0 my-0" id="bonuses-completions-<?php echo $map_bonuses_completions_number; ?>">
                                                             <thead>
                                                                 <th class="text-center">#</th>
                                                                 <th class="text-left">Username</th>
                                                                 <th class="text-center">Time</th>
                                                             </thead>
-                                                            <tbody class="table-sm">
-                                                            
-                                                            </tbody>
                                                         </table>
                                                     </div>
                                                 </div>
