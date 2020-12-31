@@ -71,13 +71,10 @@
                                         <div class="table-responsive">
                                             <table class="table table-sm table-hover border shadow-sm py-0 my-0" id="map-completions">
                                                 <thead>
-                                                    <th class="text-left">#</th>
-                                                    <th class="text-center">Username</th>
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-left">Username</th>
                                                     <th class="text-center">Time</th>
                                                 </thead>
-                                                <tbody class="">
-                                                
-                                                </tbody>
                                             </table>
                                         </div>
                                     <?php endif; ?>

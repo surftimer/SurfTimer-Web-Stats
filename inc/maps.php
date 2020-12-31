@@ -66,7 +66,7 @@ if(isset($mapname)):
 
             if($sql_map_normal_completions_count!==0):
                 
-                $sql_map_completions = "SELECT ck_playertimes.*, ck_playerrank.name as realname FROM `ck_playertimes` LEFT JOIN `ck_playerrank` ON ck_playerrank.steamid=ck_playertimes.steamid AND ck_playerrank.style=ck_playertimes.steamid WHERE mapname='$map_name' AND ck_playertimes.style='0'";
+                $sql_map_completions = "SELECT ck_playertimes.*, ck_playerrank.name as goodname FROM `ck_playertimes` LEFT JOIN `ck_playerrank` ON ck_playerrank.steamid=ck_playertimes.steamid AND ck_playerrank.style=ck_playertimes.steamid WHERE mapname='$map_name' AND ck_playertimes.style='0'";
                 $results_map_completions = mysqli_query($db_conn, $sql_map_completions);
                 $map_completions = array();
                 
@@ -91,11 +91,21 @@ if(isset($mapname)):
                     $result_stage_top_time = mysqli_query($db_conn, $sql_stage_top_time);
                     $row_stage_top_time = $result_stage_top_time->fetch_assoc();
 
-                    $stage_top_time_runtime = $row_stage_top_time['runtimepro'];
-                    $stage_top_time_runtime_microtime = substr($stage_top_time_runtime, strpos($stage_top_time_runtime, ".") + 1);    
-                    $stage_top_time_runtime_timeformat = gmdate("i:s", $row_stage_top_time['runtimepro']).'<span class="text-secondary">.'.$stage_top_time_runtime_microtime.'</span>';
-                    
-                    $map_top_stages[] = array($map_top_stages_while, $row_stage_top_time['goodname'], $stage_top_time_runtime_timeformat, $row_map_total_stage_completions['stage_completions']);
+                    if(isset($row_stage_top_time['goodname']))
+                        $stage_top_time_username = $row_stage_top_time['goodname'];
+                    elseif(isset($row_stage_top_time['name']))
+                        $stage_top_time_username = $row_stage_top_time['name'];
+                    else
+                        $stage_top_time_username = '<small class="text-muted">N/A</small>';
+
+                    if(isset($row_stage_top_time['runtimepro'])):
+                        $stage_top_time_runtime_microtime = substr($row_stage_top_time['runtimepro'], strpos($row_stage_top_time['runtimepro'], ".") + 1);    
+                        $stage_top_time_runtime_timeformat = gmdate("i:s", $row_stage_top_time['runtimepro']).'<span class="text-secondary">.'.$stage_top_time_runtime_microtime.'</span>';
+                    else:
+                        $stage_top_time_runtime_timeformat = '<small class="text-muted">N/A</small>';
+                    endif;
+
+                    $map_top_stages[] = array($map_top_stages_while, $stage_top_time_username, $stage_top_time_runtime_timeformat, $row_map_total_stage_completions['stage_completions']);
                 
                 endwhile;
 
