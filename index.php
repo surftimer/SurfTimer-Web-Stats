@@ -62,12 +62,12 @@
                                         <?php
                                             $runtime_r10rs_data = $r10r['runtime'];    
                                             $runtime_r10rs_microtime = substr($runtime_r10rs_data, strpos($runtime_r10rs_data, ".") + 1);    
-                                            $runtime_r10rs_timeFormat = gmdate("H:i:s", $runtime_r10rs_data).'<span class="text-secondary">.'.$runtime_r10rs_microtime.'</span>';
+                                            $runtime_r10rs_timeFormat = gmdate("H:i:s", $runtime_r10rs_data).'<span class="text-muted">.'.$runtime_r10rs_microtime.'</span>';
                                             $dateFormat_r10rs = date('d/m/Y  H:i', strtotime($r10r['date']));
                                         ?>
                                         <tr>
                                             <td class="px-3"><?php echo $r10r['normal_name']; ?> <a href="https://steamcommunity.com/profiles/<?php echo $r10r['steamid64']; ?>" target="_blank" title="<?php echo $r10r['normal_name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></td>
-                                            <td class="text-center"><?php echo $r10r['map']; ?></td>
+                                            <td class="text-center"><?php echo $r10r['map']; ?> <a href="maps.php?map=<?php echo $r10r['map']; ?>" class="text-muted"><i class="fas fa-link"></i></a></td>
                                             <td class="text-center"><?php echo $runtime_r10rs_timeFormat; ?></td>
                                             <td class="text-center"><?php echo $dateFormat_r10rs; ?></td>
                                         </tr>

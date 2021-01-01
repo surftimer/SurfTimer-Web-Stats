@@ -74,13 +74,18 @@
 								else
 									$map_completion_username = '<small class="text-muted">N/A</small>';
 
+								if(isset($map_completion['steamid64']))
+									$map_completion_steamprofile = ' <a href="https://steamcommunity.com/profiles/'.$map_completion['steamid64'].'" target="_blank" title="'.$map_completion_username.' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>';
+								else
+									$map_completion_steamprofile = '';
+
 								$map_completion_runtime = $map_completion['runtimepro'];
 								$map_completion_runtime_microtime = substr($map_completion_runtime, strpos($map_completion_runtime, ".") + 1);    
-								$map_completion_runtime_timeformat = gmdate("i:s", $map_completion['runtimepro']).'<span class="text-secondary">.'.$map_completion_runtime_microtime.'</span>';
+								$map_completion_runtime_timeformat = gmdate("i:s", $map_completion['runtimepro']).'<span class="text-muted">.'.$map_completion_runtime_microtime.'</span>';
 							?>
 							[
 								'<?php echo ++$map_completion_row; ?>.',
-								'<?php echo $map_completion_username; ?>',
+								'<?php echo $map_completion_username.$map_completion_steamprofile; ?>',
 								'<?php echo $map_completion_runtime_timeformat; ?>'
 							],
 						<?php endforeach; ?>
@@ -111,13 +116,18 @@
 									else
 										$map_bonuses_completion_r_username = '<small class="text-muted">N/A</small>';
 
+									if(isset($map_bonuses_completion_r['steamid64']))
+										$map_bonuses_completion_r_steamprofile = ' <a href="https://steamcommunity.com/profiles/'.$map_bonuses_completion_r['steamid64'].'" target="_blank" title="'.$map_bonuses_completion_r_username.' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>';
+									else
+										$map_bonuses_completion_r_steamprofile = '';
+
 									$map_bonuses_completion_r_runtime = $map_bonuses_completion_r['runtime'];
 									$map_bonuses_completion_r_runtime_microtime = substr($map_bonuses_completion_r_runtime, strpos($map_bonuses_completion_r_runtime, ".") + 1);    
-									$map_bonuses_completion_r_runtime_timeformat = gmdate("i:s", $map_bonuses_completion_r['runtime']).'<span class="text-secondary">.'.$map_bonuses_completion_r_runtime_microtime.'</span>';
+									$map_bonuses_completion_r_runtime_timeformat = gmdate("i:s", $map_bonuses_completion_r['runtime']).'<span class="text-muted">.'.$map_bonuses_completion_r_runtime_microtime.'</span>';
 								?>
 								[
 									'<?php echo ++$map_bonuses_completion_r_row; ?>.',
-									'<?php echo $map_bonuses_completion_r_username; ?>',
+									'<?php echo $map_bonuses_completion_r_username.$map_bonuses_completion_r_steamprofile; ?>',
 									'<?php echo $map_bonuses_completion_r_runtime_timeformat; ?>'
 								],
 							<?php endforeach; ?>

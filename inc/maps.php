@@ -66,7 +66,7 @@ if(isset($mapname)):
 
             if($sql_map_normal_completions_count!==0):
                 
-                $sql_map_completions = "SELECT ck_playertimes.*, ck_playerrank.name as goodname FROM `ck_playertimes` LEFT JOIN `ck_playerrank` ON ck_playerrank.steamid=ck_playertimes.steamid AND ck_playerrank.style=ck_playertimes.steamid WHERE mapname='$map_name' AND ck_playertimes.style='0'";
+                $sql_map_completions = "SELECT ck_playertimes.*, ck_playerrank.name as goodname, ck_playerrank.steamid64 FROM `ck_playertimes` LEFT JOIN `ck_playerrank` ON ck_playerrank.steamid=ck_playertimes.steamid AND ck_playerrank.style=ck_playertimes.steamid WHERE mapname='$map_name' AND ck_playertimes.style='0'";
                 $results_map_completions = mysqli_query($db_conn, $sql_map_completions);
                 $map_completions = array();
                 
@@ -87,7 +87,7 @@ if(isset($mapname)):
                     $result_map_total_stage_completions = mysqli_query($db_conn, $sql_map_total_stage_completions);
                     $row_map_total_stage_completions = $result_map_total_stage_completions->fetch_assoc();
 
-                    $sql_stage_top_time = "SELECT ck_wrcps.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.country_flag, ck_playerrank.steamid64 FROM `ck_wrcps` LEFT JOIN ck_playerrank ON ck_playerrank.steamid=ck_wrcps.steamid AND ck_playerrank.style=ck_wrcps.style WHERE mapname='$map_name' AND stage='$map_top_stages_while' AND ck_wrcps.style='0' ORDER BY `ck_wrcps`.`runtimepro`  ASC LIMIT 1";
+                    $sql_stage_top_time = "SELECT ck_wrcps.*, ck_playerrank.name as goodname, ck_playerrank.steamid64 FROM `ck_wrcps` LEFT JOIN ck_playerrank ON ck_playerrank.steamid=ck_wrcps.steamid AND ck_playerrank.style=ck_wrcps.style WHERE mapname='$map_name' AND stage='$map_top_stages_while' AND ck_wrcps.style='0' ORDER BY `ck_wrcps`.`runtimepro`  ASC LIMIT 1";
                     $result_stage_top_time = mysqli_query($db_conn, $sql_stage_top_time);
                     $row_stage_top_time = $result_stage_top_time->fetch_assoc();
 
@@ -97,15 +97,20 @@ if(isset($mapname)):
                         $stage_top_time_username = $row_stage_top_time['name'];
                     else
                         $stage_top_time_username = '<small class="text-muted">N/A</small>';
+                    
+                    if(isset($row_stage_top_time['steamid64']))
+                        $stage_top_time_steamprofile = ' <a href="https://steamcommunity.com/profiles/'.$row_stage_top_time['steamid64'].'" target="_blank" title="'.$stage_top_time_username.' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>';
+                    else
+                        $stage_top_time_steamprofile = '';
 
                     if(isset($row_stage_top_time['runtimepro'])):
                         $stage_top_time_runtime_microtime = substr($row_stage_top_time['runtimepro'], strpos($row_stage_top_time['runtimepro'], ".") + 1);    
-                        $stage_top_time_runtime_timeformat = gmdate("i:s", $row_stage_top_time['runtimepro']).'<span class="text-secondary">.'.$stage_top_time_runtime_microtime.'</span>';
+                        $stage_top_time_runtime_timeformat = gmdate("i:s", $row_stage_top_time['runtimepro']).'<span class="text-muted">.'.$stage_top_time_runtime_microtime.'</span>';
                     else:
                         $stage_top_time_runtime_timeformat = '<small class="text-muted">N/A</small>';
                     endif;
 
-                    $map_top_stages[] = array($map_top_stages_while, $stage_top_time_username, $stage_top_time_runtime_timeformat, $row_map_total_stage_completions['stage_completions']);
+                    $map_top_stages[] = array($map_top_stages_while, $stage_top_time_username.$stage_top_time_steamprofile, $stage_top_time_runtime_timeformat, $row_map_total_stage_completions['stage_completions']);
                 
                 endwhile;
 
@@ -131,7 +136,7 @@ if(isset($mapname)):
 
                 while(++$map_bunuses_completions_while <= $map_bonuses):
 
-                    $sql_map_bonuses_completions = "SELECT ck_bonus.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.country_flag, ck_playerrank.steamid64 FROM `ck_bonus` LEFT JOIN ck_playerrank ON ck_playerrank.steamid=ck_bonus.steamid AND ck_playerrank.style=ck_bonus.style WHERE mapname='$map_name' AND zonegroup='$map_bunuses_completions_while' AND ck_bonus.style='0' ORDER BY `ck_bonus`.`runtime` ASC";
+                    $sql_map_bonuses_completions = "SELECT ck_bonus.*, ck_playerrank.name as goodname, ck_playerrank.steamid64 FROM `ck_bonus` LEFT JOIN ck_playerrank ON ck_playerrank.steamid=ck_bonus.steamid AND ck_playerrank.style=ck_bonus.style WHERE mapname='$map_name' AND zonegroup='$map_bunuses_completions_while' AND ck_bonus.style='0' ORDER BY `ck_bonus`.`runtime` ASC";
                     $result_map_bonuses_completions = mysqli_query($db_conn, $sql_map_bonuses_completions);
 
                     $map_bonuses_completions_rows = array();
