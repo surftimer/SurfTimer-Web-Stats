@@ -70,9 +70,9 @@ if(isset($mapname)):
                 $results_map_completions = mysqli_query($db_conn, $sql_map_completions);
                 $map_completions = array();
                 
-                while($row_map_completions = mysqli_fetch_assoc($results_map_completions)){
+                while($row_map_completions = mysqli_fetch_assoc($results_map_completions))
                     $map_completions[] = $row_map_completions;
-                }
+
 
             endif;
 
@@ -165,9 +165,8 @@ else:
     $results_maps = mysqli_query($db_conn, $sql_maps);
     $maps = array();
     if(mysqli_num_rows($results_maps) > 0){
-        while($row_maps = mysqli_fetch_assoc($results_maps)){
+        while($row_maps = mysqli_fetch_assoc($results_maps))
             $maps[] = $row_maps;
-        }
     };
 
 endif;

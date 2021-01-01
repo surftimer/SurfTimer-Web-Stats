@@ -5,7 +5,7 @@
       </div>
       <div class="row">
         <div class="col-12 col-lg-6 text-center">
-          Copyright &copy; 2020 - Surftimer-Web-Stats
+          Copyright &copy; 2021 - Surftimer-Web-Stats
           <br class="my-0">
           <small>Coded & Designed with ❤ by <a class="text-<?php if($darkMode) echo "light"; else echo "dark"; ?>" href="https://github.com/KristianP26/" taget="_blank">Kristián Partl</a>.</small>
         </div>
