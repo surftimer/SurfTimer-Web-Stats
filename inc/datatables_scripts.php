@@ -105,33 +105,7 @@
 							{ "className": "text-left", "targets": [ 1 ] },
 							{ "className": "text-center", "targets": [ 2 ] }
 						],
-						responsive: true,
-						"data": [
-							<?php $map_bonuses_completion_r_row = 0; foreach($map_bonuses_completion as $map_bonuses_completion_r): ?>
-								<?php
-									if(isset($map_bonuses_completion_r['goodname']))
-										$map_bonuses_completion_r_username = $map_bonuses_completion_r['goodname'];
-									elseif(isset($map_completion['name']))
-										$map_bonuses_completion_r_username = $map_bonuses_completion_r['name'];
-									else
-										$map_bonuses_completion_r_username = '<small class="text-muted">N/A</small>';
-
-									if(isset($map_bonuses_completion_r['steamid64']))
-										$map_bonuses_completion_r_steamprofile = ' <a href="https://steamcommunity.com/profiles/'.$map_bonuses_completion_r['steamid64'].'" target="_blank" title="'.$map_bonuses_completion_r_username.' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>';
-									else
-										$map_bonuses_completion_r_steamprofile = '';
-
-									$map_bonuses_completion_r_runtime = $map_bonuses_completion_r['runtime'];
-									$map_bonuses_completion_r_runtime_microtime = substr($map_bonuses_completion_r_runtime, strpos($map_bonuses_completion_r_runtime, ".") + 1);    
-									$map_bonuses_completion_r_runtime_timeformat = gmdate("i:s", $map_bonuses_completion_r['runtime']).'<span class="text-muted">.'.$map_bonuses_completion_r_runtime_microtime.'</span>';
-								?>
-								[
-									'<?php echo ++$map_bonuses_completion_r_row; ?>.',
-									'<?php echo $map_bonuses_completion_r_username.$map_bonuses_completion_r_steamprofile; ?>',
-									'<?php echo $map_bonuses_completion_r_runtime_timeformat; ?>'
-								],
-							<?php endforeach; ?>
-						]
+						responsive: true
 					});
 				} );
 			<?php endforeach; ?>

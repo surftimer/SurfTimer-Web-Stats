@@ -93,7 +93,7 @@
                                                 <tbody class="">
                                                     <?php foreach($map_top_stages as $map_top_stage): ?>
                                                         <tr>
-                                                            <td class="text-center">Stage: <?php echo $map_top_stage['0']; ?></td>
+                                                            <td class="text-center">Stage: <strong><?php echo $map_top_stage['0']; ?></strong></td>
                                                             <td class="text-left"><?php echo $map_top_stage['1']; ?></td>
                                                             <td class="text-center"><?php echo $map_top_stage['2']; ?></td>
                                                             <td class="text-center">Completions (N): <?php echo $map_top_stage['3']; ?></td>
@@ -130,6 +130,15 @@
                                                                 <th class="text-left">Username</th>
                                                                 <th class="text-center">Time</th>
                                                             </thead>
+                                                            <tbody>
+                                                                <?php $map_bonuses_completion_r_row = 0; foreach($map_bonuses_completion as $map_bonuses_completion_r): ?>
+                                                                    <tr>
+                                                                        <td><?php echo ++$map_bonuses_completion_r_row; ?>.</td>
+                                                                        <td><?php echo $map_bonuses_completion_r[0]; ?></td>
+                                                                        <td><?php echo$map_bonuses_completion_r[1]; ?></td>
+                                                                    </tr>
+                                                                <?php endforeach; ?>
+                                                            </tbody>
                                                         </table>
                                                     </div>
                                                 </div>

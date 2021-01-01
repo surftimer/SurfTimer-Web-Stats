@@ -141,11 +141,30 @@ if(isset($mapname)):
 
                     $map_bonuses_completions_rows = array();
 
-                    if(mysqli_num_rows($result_map_bonuses_completions) > 0){
-                        while($row_map_bonuses_completions = mysqli_fetch_assoc($result_map_bonuses_completions)){
-                            $map_bonuses_completions_rows[] = $row_map_bonuses_completions;
-                        }
-                    };
+                    if(mysqli_num_rows($result_map_bonuses_completions) > 0):
+                        while($row_map_bonuses_completions = mysqli_fetch_assoc($result_map_bonuses_completions)):
+
+                            if(isset($row_map_bonuses_completions['goodname']))
+                                $map_bonuses_completions_username = $row_map_bonuses_completions['goodname'];
+                            elseif(isset($row_map_bonuses_completions['name']))
+                                $map_bonuses_completions_username = $row_map_bonuses_completions['name'];
+                            else
+                                $map_bonuses_completions_username = '<small class="text-muted">N/A</small>';
+
+                            if(isset($row_map_bonuses_completions['steamid64']))
+                                $map_bonuses_completions_steamprofile = ' <a href="https://steamcommunity.com/profiles/'.$row_map_bonuses_completions['steamid64'].'" target="_blank" title="'.$map_bonuses_completions_username.' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>';
+                            else
+                                $map_bonuses_completions_steamprofile = '';
+
+                            $map_bonuses_completions_runtime = $row_map_bonuses_completions['runtime'];
+                            $map_bonuses_completions_runtime_microtime = substr($map_bonuses_completions_runtime, strpos($map_bonuses_completions_runtime, ".") + 1);    
+                            $map_bonuses_completions_runtime_timeformat = gmdate("i:s", $row_map_bonuses_completions['runtime']).'<span class="text-muted">.'.$map_bonuses_completions_runtime_microtime.'</span>';
+
+
+                            $map_bonuses_completions_rows[] = array($map_bonuses_completions_username.$map_bonuses_completions_steamprofile, $map_bonuses_completions_runtime_timeformat);
+
+                        endwhile;
+                    endif;
 
                     $map_bonuses_completions[] = $map_bonuses_completions_rows;
 
