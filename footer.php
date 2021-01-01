@@ -21,4 +21,9 @@
 
 </body>
 
+<!--
+		Surftimer-Web-Stats
+		https://github.com/KristianP26/Surftimer-Web-Stats
+-->
+
 </html>

@@ -31,14 +31,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-.page-link {
-  color: #414448;
-}
-.page-item.active .page-link {
-  color: #fff;
-  background-color: #212529;
-  border-color: #6C757D;
-}
+
 .nav-scroller {
   position: relative;
   z-index: 2;
