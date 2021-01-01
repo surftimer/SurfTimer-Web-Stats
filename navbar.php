@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-<?php if($darkMode) echo "dark"; else echo "light"; ?> bg-<?php if($darkMode) echo "dark"; else echo "light"; ?> py-3 shadow">
+<nav class="navbar navbar-expand-lg <?php if($settings_dark_mode) echo "navbar-dark bg-dark"; else echo "navbar-light bg-light"; ?> py-3 shadow">
     <div class="container">
         <a class="navbar-brand" href="index.php">
             <?php 

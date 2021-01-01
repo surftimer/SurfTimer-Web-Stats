@@ -20,9 +20,9 @@
         Logo must be located in 'images' folder
     */
     
-        $darkMode = 0; // Default 0
+        $settings_dark_mode = '0'; // Default 0 - Leave 1 to enable darkmode.
         $settings_navbar_logo   = "logo.svg";
-        $settings_navbar_title  = "";
+        $settings_navbar_title  = "Surf Stats";
 
     /* End of Design Settings */
 

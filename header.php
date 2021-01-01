@@ -14,7 +14,7 @@
 
 	<!-- Bootstrap core CSS -->
 	<?php
-		if ($darkMode)
+		if ($settings_dark_mode)
 		{
 			echo "<link href=\"vendor/css/bootstrap.dark.min.css\" rel=\"stylesheet\">";
 			echo "<link href=\"vendor/css/custom.dark.min.css\" rel=\"stylesheet\">";
