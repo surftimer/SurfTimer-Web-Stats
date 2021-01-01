@@ -82,7 +82,7 @@
                                     <?php if($map_stages>'1'): ?>
                                         <hr>
                                         <h5 class="text-center">Stage TOP completions Normal style</h5>
-                                        <div class="table-responsive mt-3">
+                                        <div class="table-responsive shadow-sm mt-3">
                                             <table class="table table-sm table-hover border shadow-sm py-0 my-0">
                                                 <thead>
                                                     <th class="text-center">Stages</th>

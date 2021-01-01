@@ -23,6 +23,11 @@
                 <li class="nav-item">
                     <a class="nav-link <?php echo nav_active('Maps'); ?>" href="maps.php"><i class="fas fa-map"></i> Maps</a>
                 </li>
+                <?php if($settings_most_active_enable): ?>
+                    <li class="nav-item">
+                        <a class="nav-link <?php echo nav_active('Most Active');?>" href="most-active.php"><i class="fas fa-user-clock"></i> Most Active</a>
+                    </li>
+                <?php endif; ?>
             </ul>
             <?php if($settings_custom_link_name!=''): ?>
                 <a class="btn btn-secondary my-2 my-sm-0 shadow-sm" role="button" href="<?php echo $settings_custom_link_adress;?>"><?php echo $settings_custom_link_name;?></a>

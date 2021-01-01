@@ -29,6 +29,45 @@
 			} );
 		<?php endif; ?>
 
+		<?php if($settings_most_active_enable&&($page_name =='Most Active')): ?>
+			$(document).ready(function() {
+				$('#most-active').DataTable({
+					"lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
+					responsive: true,
+					"processing": true,
+					"columnDefs": [
+						{ "className": "text-center", "targets": [ 0 ] },
+						{ "className": "text-left", "targets": [ 1 ] },
+						{ "className": "text-center", "targets": [ 2 ] },
+						{ "className": "text-center", "targets": [ 3 ] },
+						{ "className": "text-center", "targets": [ 4 ] },
+						{ "className": "text-center", "targets": [ 5 ] }
+					],
+					"data": [
+						<?php $most_active_row = 0; foreach($most_actives as $most_active): ?>
+							<?php
+								$most_active_lastseen = new DateTime();
+								$most_active_lastseen->setTimestamp($most_active['lastseen']);
+								$most_active_lastseen = $most_active_lastseen->format('d/m/Y (H:i)');
+
+								$most_active_joined = new DateTime();
+								$most_active_joined->setTimestamp($most_active['joined']);
+								$most_active_joined = $most_active_joined->format('d/m/Y (H:i)');
+							?>
+							[
+								'<?php echo ++$most_active_row; ?>.',
+								'<?php echo $most_active["name"]; ?> <a href="https://steamcommunity.com/profiles/<?php echo $most_active['steamid64']; ?>" target="_blank" title="<?php echo $most_active['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>',
+								'<?php echo  number_format(($most_active["totaltime"]/60)/60, 1); ?>',
+								'<?php echo number_format($most_active["connections"]); ?>',
+								'<?php echo $most_active_lastseen; ?>',
+								'<?php echo $most_active_joined; ?>'
+							],
+						<?php endforeach; ?>
+					]
+				});
+			} );
+		<?php endif; ?>
+
 		<?php if((!isset($mapname))&&($page_name =='Maps')): ?>
 			$(document).ready(function() {
 				$('#maps').DataTable({
