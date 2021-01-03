@@ -7,6 +7,7 @@ Surftimer-Web-Stats is Web with statistics for [Surftimer-Official](https://gith
 Show all statistics on one place on the website and create best surf web statistics extension.
 
  * [Demo](https://surfcommunity.eu/websites/Surftimer-Web-Stats/)
+ * [Demo DarkMode](https://surfcommunity.eu/websites/Surftimer-Web-Stats-Dark/)
 
 ## Installation and Requirements
 
