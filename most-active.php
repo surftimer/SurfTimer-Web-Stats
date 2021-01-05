@@ -16,18 +16,18 @@
                 <div class="col-12">  
                     <div class="card shadow-sm my-2">
                         <div class="card-header">
-                            SurfStats's Most Active Players <small class="text-muted">| Showing players with more than two hours of playtime.</small>
+                            SurfStats's <?php echo MOST_ACTIVE;?> <small class="text-muted">| <?php echo MOST_ACTIVE_DESCRIPTION;?></small>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-hover border shadow-sm py-0 my-0" id="most-active">
                                     <thead>
                                         <th class="text-center">#</th>
-                                        <th class="text-left">Username</th>
-                                        <th class="text-center">Hours Played</th>
-                                        <th class="text-center">Connections</th>
-                                        <th class="text-center">Last Seen</th>
-                                        <th class="text-center">Joined</th>
+                                        <th class="text-left"><?php echo USERNAME;?></th>
+                                        <th class="text-center"><?php echo HOURS_PLAYED;?></th>
+                                        <th class="text-center"><?php echo CONNECTIONS;?></th>
+                                        <th class="text-center"><?php echo LAST_SEEN;?></th>
+                                        <th class="text-center"><?php echo JOINED;?></th>
                                     </thead>
                                     <tbody class="table-sm">
 
@@ -43,7 +43,7 @@
 
 <?php else: ?>
 
-    <h4 class="text-center my-5">Most Active module is disabled.<br><small>For activation please contact administrator.</small></h4>
+    <h4 class="text-center my-5"><?php echo MOST_ACTIVE_DISABLED;?><br><small><?php echo MOST_ACTIVE_ACTIVATE;?></small></h4>
 
 <?php endif; ?>
     

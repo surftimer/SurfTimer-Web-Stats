@@ -99,7 +99,7 @@ if(isset($mapname)):
                         $stage_top_time_username = '<small class="text-muted">N/A</small>';
                     
                     if(isset($row_stage_top_time['steamid64']))
-                        $stage_top_time_steamprofile = ' <a href="https://steamcommunity.com/profiles/'.$row_stage_top_time['steamid64'].'" target="_blank" title="'.$stage_top_time_username.' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>';
+                        $stage_top_time_steamprofile = ' <a href="https://steamcommunity.com/profiles/'.$row_stage_top_time['steamid64'].'" target="_blank" title="'.$stage_top_time_username.' - '.STEAM_PROFILE.'" class="text-muted"><i class="fab fa-steam"></i></a>';
                     else
                         $stage_top_time_steamprofile = '';
 
@@ -152,7 +152,7 @@ if(isset($mapname)):
                                 $map_bonuses_completions_username = '<small class="text-muted">N/A</small>';
 
                             if(isset($row_map_bonuses_completions['steamid64']))
-                                $map_bonuses_completions_steamprofile = ' <a href="https://steamcommunity.com/profiles/'.$row_map_bonuses_completions['steamid64'].'" target="_blank" title="'.$map_bonuses_completions_username.' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>';
+                                $map_bonuses_completions_steamprofile = ' <a href="https://steamcommunity.com/profiles/'.$row_map_bonuses_completions['steamid64'].'" target="_blank" title="'.$map_bonuses_completions_username.' - '.STEAM_PROFILE.'" class="text-muted"><i class="fab fa-steam"></i></a>';
                             else
                                 $map_bonuses_completions_steamprofile = '';
 

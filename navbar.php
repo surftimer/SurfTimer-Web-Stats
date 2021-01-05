@@ -15,17 +15,17 @@
         <div class="collapse navbar-collapse" id="MainNavBar">
             <ul class="navbar-nav ml-auto mr-2">
                 <li class="nav-item">
-                    <a class="nav-link <?php echo nav_active('Home'); ?>" href="index.php"><i class="fas fa-tachometer-alt"></i> Dashboard <span class="sr-only">(current)</span></a>
+                    <a class="nav-link <?php echo nav_active('Dashboard'); ?>" href="index.php"><i class="fas fa-tachometer-alt"></i> <?php echo DASHBOARD;?> <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php echo nav_active('Top Players'); ?>" href="top-players.php"><i class="fas fa-users"></i> Top Players</a>
+                    <a class="nav-link <?php echo nav_active('Top Players'); ?>" href="top-players.php"><i class="fas fa-users"></i> <?php echo TOP_PLAYERS;?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php echo nav_active('Maps'); ?>" href="maps.php"><i class="fas fa-map"></i> Maps</a>
+                    <a class="nav-link <?php echo nav_active('Maps'); ?>" href="maps.php"><i class="fas fa-map"></i> <?php echo MAPS;?></a>
                 </li>
                 <?php if($settings_most_active_enable): ?>
                     <li class="nav-item">
-                        <a class="nav-link <?php echo nav_active('Most Active');?>" href="most-active.php"><i class="fas fa-user-clock"></i> Most Active</a>
+                        <a class="nav-link <?php echo nav_active('Most Active');?>" href="most-active.php"><i class="fas fa-user-clock"></i> <?php echo MOST_ACTIVE;?></a>
                     </li>
                 <?php endif; ?>
             </ul>

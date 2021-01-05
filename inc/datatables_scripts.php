@@ -17,7 +17,7 @@
 						<?php $top_player_row = 0; foreach($top_players as $top_player): ?>
 							[
 								'<?php echo ++$top_player_row; ?>.',
-								'<?php echo $top_player["name"]; ?> <a href="https://steamcommunity.com/profiles/<?php echo $top_player['steamid64']; ?>" target="_blank" title="<?php echo $top_player['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>',
+								'<?php echo $top_player["name"]; ?> <a href="https://steamcommunity.com/profiles/<?php echo $top_player['steamid64']; ?>" target="_blank" title="<?php echo $top_player['name']; ?> - <?php echo STEAM_PROFILE;?>" class="text-muted"><i class="fab fa-steam"></i></a>',
 								'<?php echo number_format($top_player["points"]); ?>',
 								'<?php echo number_format($top_player["finishedmapspro"]); ?>',
 								'<?php echo number_format($top_player["finishedbonuses"]); ?>',
@@ -56,7 +56,7 @@
 							?>
 							[
 								'<?php echo ++$most_active_row; ?>.',
-								'<?php echo $most_active["name"]; ?> <a href="https://steamcommunity.com/profiles/<?php echo $most_active['steamid64']; ?>" target="_blank" title="<?php echo $most_active['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>',
+								'<?php echo $most_active["name"]; ?> <a href="https://steamcommunity.com/profiles/<?php echo $most_active['steamid64']; ?>" target="_blank" title="<?php echo $most_active['name']; ?> - <?php echo STEAM_PROFILE;?>" class="text-muted"><i class="fab fa-steam"></i></a>',
 								'<?php echo  number_format(($most_active["totaltime"]/60)/60, 1); ?>',
 								'<?php echo number_format($most_active["connections"]); ?>',
 								'<?php echo $most_active_lastseen; ?>',
@@ -114,7 +114,7 @@
 									$map_completion_username = '<small class="text-muted">N/A</small>';
 
 								if(isset($map_completion['steamid64']))
-									$map_completion_steamprofile = ' <a href="https://steamcommunity.com/profiles/'.$map_completion['steamid64'].'" target="_blank" title="'.$map_completion_username.' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>';
+									$map_completion_steamprofile = ' <a href="https://steamcommunity.com/profiles/'.$map_completion['steamid64'].'" target="_blank" title="'.$map_completion_username.' - '.STEAM_PROFILE.'" class="text-muted"><i class="fab fa-steam"></i></a>';
 								else
 									$map_completion_steamprofile = '';
 
