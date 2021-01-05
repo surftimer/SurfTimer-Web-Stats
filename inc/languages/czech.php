@@ -1,6 +1,6 @@
 <?php
 /*
-    Czech language for Surftimer-Web-Stats v1.15.Beta
+    Czech language for Surftimer-Web-Stats v1.15
 */
 
 define('DASHBOARD', 'Dashboard');           // Dashboard

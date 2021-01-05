@@ -1,6 +1,7 @@
 <?php
 /*
-    Polish language for Surftimer-Web-Stats v1.15.Beta
+    Polish language for Surftimer-Web-Stats v1.15
+    By qawery-just-sad
 */
 
 define('DASHBOARD', 'Panel Główny');           // Dashboard

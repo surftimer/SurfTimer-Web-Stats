@@ -13,7 +13,13 @@
         </button>
 
         <div class="collapse navbar-collapse" id="MainNavBar">
-            <ul class="navbar-nav ml-auto mr-2">
+            <ul class="navbar-nav ml-auto">
+                <?php if($settings_custom_link_name!=''): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $settings_custom_link_adress;?>"><?php echo $settings_custom_link_name;?></a>
+                    </li>
+                <?php endif; ?>
+
                 <li class="nav-item">
                     <a class="nav-link <?php echo nav_active('Dashboard'); ?>" href="index.php"><i class="fas fa-tachometer-alt"></i> <?php echo DASHBOARD;?> <span class="sr-only">(current)</span></a>
                 </li>
@@ -29,9 +35,22 @@
                     </li>
                 <?php endif; ?>
             </ul>
-            <?php if($settings_custom_link_name!=''): ?>
-                <a class="btn btn-secondary my-2 my-sm-0 shadow-sm" role="button" href="<?php echo $settings_custom_link_adress;?>"><?php echo $settings_custom_link_name;?></a>
-            <?php endif; ?>
+            
+            <?php if($settings_language_enable): ?>
+                <div class="dropdown ml-2">
+                    <button class="btn btn-outline-dark dropdown-toggle" type="button" id="language-picker" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="./images/flags/<?php echo $_SESSION['language'];?>.svg" width="18,5" class="border align-middle"> <?php echo $_SESSION['language'];?>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="language-picker">
+                        <!-- Order Alphabetic Please -->
+                        <a class="dropdown-item <?php echo language('Czech'); ?>" href="?language=Czech"><img src="./images/flags/czech.svg" width="20" class="border align-middle"> Czech</a>
+                        <a class="dropdown-item <?php echo language('English'); ?>" href="?language=English"><img src="./images/flags/english.svg" width="20" class="border align-middle"> English</a>
+                        <a class="dropdown-item <?php echo language('German'); ?>" href="?language=German"><img src="./images/flags/german.svg" width="20" class="border align-middle"> German</a>
+                        <a class="dropdown-item <?php echo language('Polish'); ?>" href="?language=Polish"><img src="./images/flags/polish.svg" width="20" class="border align-middle"> Polish</a>
+                        <a class="dropdown-item <?php echo language('Slovak'); ?>" href="?language=Slovak"><img src="./images/flags/slovak.svg" width="20" class="border align-middle"> Slovak</a>
+                    </div>
+                </div>
+            <?php endif;?>
         </div>
     </div> 
 </nav>
