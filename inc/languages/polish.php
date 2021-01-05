@@ -3,7 +3,7 @@
     Polish language for Surftimer-Web-Stats v1.15.Beta
 */
 
-define('DASHBOARD', 'Główny Panel');           // Dashboard
+define('DASHBOARD', 'Panel Główny');           // Dashboard
 define('TOP_PLAYERS', 'Najlepsi Gracze');       // Top Players
 define('MAPS', 'Mapy');                     // Maps
 define('MOST_ACTIVE', 'Najbardziej Aktywni');       // Most Active
