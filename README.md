@@ -2,6 +2,13 @@
 
 Surftimer-Web-Stats is Web with statistics for [Surftimer-Official](https://github.com/surftimer/Surftimer-Official).
 
+**Features:**
+* Dashboard with TOP players and recent Records
+* Top Players & Most Active Section
+* Maps Section (Copletions list, Bonus Completions list, Stages info)
+* Dark Mode
+* Languages (English, Czech, Polish, Slovak)
+
 ## Project Goals
 
 Show all statistics on one place on the website and create best surf web statistics extension.
