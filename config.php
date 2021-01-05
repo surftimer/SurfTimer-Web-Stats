@@ -39,7 +39,7 @@
     
     /* Other Settings */
 
-        $settings_language              = 'english';    // english, slovak, czech, polish
+        $settings_language              = 'english';    // english, slovak, czech, polish, german
         $settings_most_active_enable    = '1';          // Most Active Module - Default: 1 - To disable change to 0.
         $settings_top_players_count     = '250';        // Default: 250 - I don't recommend using a big number because higher the number you use, the longer it takes to load.
         $settings_timezone              = 'UTC+1';      // Timezone of your data (Use format from this site https://time.is/en/time_zones)
