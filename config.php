@@ -39,7 +39,7 @@
     
     /* Other Settings */
 
-        $settings_language_default      = 'English';    // English, Slovak, Czech, Polish, German
+        $settings_language_default      = 'English';    // Czech, English, German, Polish, Slovak, Turkish
         $settings_language_enable       = '1';          // Default 1 - To disable language selector change to 0.
         $settings_most_active_enable    = '1';          // Most Active Module - Default: 1 - To disable change to 0.
         $settings_top_players_count     = '250';        // Default: 250 - I don't recommend using a big number because higher the number you use, the longer it takes to load.

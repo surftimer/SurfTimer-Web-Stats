@@ -43,11 +43,12 @@
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="language-picker">
                         <!-- Order Alphabetic Please -->
-                        <a class="dropdown-item <?php echo language('Czech'); ?>" href="?language=Czech"><img src="./images/flags/czech.svg" width="20" class="border align-middle"> Czech</a>
-                        <a class="dropdown-item <?php echo language('English'); ?>" href="?language=English"><img src="./images/flags/english.svg" width="20" class="border align-middle"> English</a>
-                        <a class="dropdown-item <?php echo language('German'); ?>" href="?language=German"><img src="./images/flags/german.svg" width="20" class="border align-middle"> German</a>
-                        <a class="dropdown-item <?php echo language('Polish'); ?>" href="?language=Polish"><img src="./images/flags/polish.svg" width="20" class="border align-middle"> Polish</a>
-                        <a class="dropdown-item <?php echo language('Slovak'); ?>" href="?language=Slovak"><img src="./images/flags/slovak.svg" width="20" class="border align-middle"> Slovak</a>
+                        <a class="dropdown-item <?php echo language('Czech'); ?>" href="?language=Czech"><img src="./images/flags/Czech.svg" width="20" class="border align-middle"> Czech</a>
+                        <a class="dropdown-item <?php echo language('English'); ?>" href="?language=English"><img src="./images/flags/English.svg" width="20" class="border align-middle"> English</a>
+                        <a class="dropdown-item <?php echo language('German'); ?>" href="?language=German"><img src="./images/flags/German.svg" width="20" class="border align-middle"> German</a>
+                        <a class="dropdown-item <?php echo language('Polish'); ?>" href="?language=Polish"><img src="./images/flags/Polish.svg" width="20" class="border align-middle"> Polish</a>
+                        <a class="dropdown-item <?php echo language('Slovak'); ?>" href="?language=Slovak"><img src="./images/flags/Slovak.svg" width="20" class="border align-middle"> Slovak</a>
+                        <a class="dropdown-item <?php echo language('Turkish'); ?>" href="?language=Turkish"><img src="./images/flags/Turkish.svg" width="20" class="border align-middle"> Turkish</a>
                     </div>
                 </div>
             <?php endif;?>
