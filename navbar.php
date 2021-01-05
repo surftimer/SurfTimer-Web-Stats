@@ -38,7 +38,7 @@
             
             <?php if($settings_language_enable): ?>
                 <div class="dropdown ml-2">
-                    <button class="btn btn-outline-dark dropdown-toggle" type="button" id="language-picker" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-outline-<?php if($settings_dark_mode) echo "light"; else echo 'dark';?> dropdown-toggle" type="button" id="language-picker" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="./images/flags/<?php echo $_SESSION['language'];?>.svg" width="18,5" class="border align-middle"> <?php echo $_SESSION['language'];?>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="language-picker">
