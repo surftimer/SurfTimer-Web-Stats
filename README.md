@@ -6,7 +6,6 @@
  ![GitHub repo size](https://img.shields.io/github/repo-size/kristianp26/surftimer-web-stats?label=size&style=flat-square)
  ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/kristianp26/surftimer-web-stats?label=last-stable-release&style=flat-square)
  ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/kristianp26/surftimer-web-stats?include_prereleases&label=last-release&style=flat-square)
- ![GitHub](https://img.shields.io/github/license/kristianp26/surftimer-web-stats?style=flat-square)
 
 Surftimer-Web-Stats is Web with statistics for [Surftimer-Official](https://github.com/surftimer/Surftimer-Official).
 
