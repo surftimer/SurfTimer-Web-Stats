@@ -9,6 +9,7 @@ define('MAPS', 'Mapy');                     // Maps
 define('MOST_ACTIVE', 'Najaktívnejši Hrači');       // Most Active
 define('TOTAL_PLAYERS', 'Celkový počet Hráčov');   // Total Players
 define('TOTAL_MAPS', 'Celkový počet Máp');         // Total Maps
+define('TOTAL_BONUSES', 'Celkový počet Bonusov');  // Total Bonuses
 define('TOTAL_COPT', 'Celkový počet hráčskych časov');   // Total count of Players Times
 define('ANY_STYlE', 'akýkoľvek štýl');           // any style
 define('NORMAL_STYLE', 'normalný štýl');     // normal style

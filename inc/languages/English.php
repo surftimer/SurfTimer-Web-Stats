@@ -9,6 +9,7 @@ define('MAPS', 'Maps');                     // Maps
 define('MOST_ACTIVE', 'Most Active');       // Most Active
 define('TOTAL_PLAYERS', 'Total Players');   // Total Players
 define('TOTAL_MAPS', 'Total Maps');         // Total Maps
+define('TOTAL_BONUSES', 'Total Bonuses');      // Total Bonuses
 define('TOTAL_COPT', 'Total count of Players Times');   // Total count of Players Times
 define('ANY_STYlE', 'any style');           // any style
 define('NORMAL_STYLE', 'normal style');     // normal style

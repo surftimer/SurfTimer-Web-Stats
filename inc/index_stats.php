@@ -12,6 +12,11 @@ $result_total_maps = mysqli_query($db_conn, $sql_total_maps);
 $row_total_maps = $result_total_maps->fetch_assoc();
 $total_maps = $row_total_maps['count'];
 
+$sql_total_bonuses = "SELECT COUNT(DISTINCT a.mapname,zonegroup) as count FROM ck_zones a RIGHT JOIN ck_maptier b ON a.mapname = b.mapname WHERE a.zonegroup > 0;";
+$result_total_bonuses = mysqli_query($db_conn, $sql_total_bonuses);
+$row_total_bonuses = $result_total_bonuses->fetch_assoc();
+$total_bonuses = $row_total_bonuses['count'];
+
 // Select Total count of player times
 $sql_count_player_times = "SELECT COUNT(*) as count FROM `ck_playertimes` WHERE style='0'";
 $result_count_player_times = mysqli_query($db_conn, $sql_count_player_times);

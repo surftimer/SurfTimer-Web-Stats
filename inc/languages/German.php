@@ -10,6 +10,7 @@ define('MAPS', 'Karten');                     // Maps
 define('MOST_ACTIVE', 'Am Aktivsten');       // Most Active
 define('TOTAL_PLAYERS', 'Spieler insgesamt');   // Total Players
 define('TOTAL_MAPS', 'Karten insgesamt');         // Total Maps
+define('TOTAL_BONUSES', 'Bonusse insgesamt');      // Total Bonuses
 define('TOTAL_COPT', 'Spielzeit aller Spieler');   // Total count of Players Times
 define('ANY_STYlE', 'alle Stile');           // any style
 define('NORMAL_STYLE', 'normal Stil');     // normal style

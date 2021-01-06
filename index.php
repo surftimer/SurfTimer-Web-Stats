@@ -31,6 +31,14 @@
                 </div>
                 <div class="col-md col-12">
                     <div class="card card-body text-center shadow-sm my-2">
+                        <i class="fas fa-bold fa-2x"></i>
+                        <span class="text-muted my-1"><?php echo TOTAL_BONUSES;?></span>
+                        <hr>
+                        <?php echo number_format($total_bonuses); ?>
+                    </div>
+                </div>
+                <div class="col-md col-12">
+                    <div class="card card-body text-center shadow-sm my-2">
                         <i class="fas fa-user-clock fa-2x"></i>
                         <span class="text-muted my-1"><?php echo TOTAL_COPT;?></span>
                         <hr>

@@ -9,6 +9,7 @@ define('MAPS', 'Haritalar');                     // Maps
 define('MOST_ACTIVE', 'En Aktif');       // Most Active
 define('TOTAL_PLAYERS', 'Toplam Oyuncu');   // Total Players
 define('TOTAL_MAPS', 'Toplam Haritalar');         // Total Maps
+define('TOTAL_BONUSES', 'Toplam Bonuslar');      // Total Bonuses
 define('TOTAL_COPT', 'Toplam Oyuncu Sayısı');   // Total count of Players Times
 define('ANY_STYlE', 'herhangi bir stil');           // any style
 define('NORMAL_STYLE', 'normal stil');     // normal style
