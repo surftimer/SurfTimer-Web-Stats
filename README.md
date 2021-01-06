@@ -1,4 +1,5 @@
 ﻿# Surftimer-Web-Stats
+ ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/kristianp26/Surftimer-Web-Stats?color=blue&style=flat-square)
 
 Surftimer-Web-Stats is Web with statistics for [Surftimer-Official](https://github.com/surftimer/Surftimer-Official).
 
