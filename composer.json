@@ -1,0 +1,25 @@
+{
+	"name": "KristianP26/Surftimer-Web-Stats",
+	"description": "Surftimer-Web-Stats is Web with surftimer statistics.",
+	"homepage": "https://github.com/KristianP26/Surftimer-Web-Stats/",
+	"license": "Apache-2.0",
+  "authors":
+	[
+		{
+			"name": "Kristián Partl",
+			"email": "partl.kristian@gmail.com"
+		}
+	],
+	"keywords":
+	[
+		"stats",
+		"surftimer",
+		"csgo",
+    "web",
+    "stats"
+	],
+	"require":
+	{
+		"php": ">=^7.0"
+	}
+}
