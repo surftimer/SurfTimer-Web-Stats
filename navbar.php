@@ -43,7 +43,7 @@
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="language-picker">
                         <!-- Order Alphabetic Please -->
-                        <a class="dropdown-item <?php echo language('Bulgarian'); ?>" href="?language=Bulgarian"><img src="./images/flags/Bulgarian.svg" width="20" class="border align-middle"> Czech</a>
+                        <a class="dropdown-item <?php echo language('Bulgarian'); ?>" href="?language=Bulgarian"><img src="./images/flags/Bulgarian.svg" width="20" class="border align-middle"> Bulgarian</a>
                         <a class="dropdown-item <?php echo language('Czech'); ?>" href="?language=Czech"><img src="./images/flags/Czech.svg" width="20" class="border align-middle"> Czech</a>
                         <a class="dropdown-item <?php echo language('English'); ?>" href="?language=English"><img src="./images/flags/English.svg" width="20" class="border align-middle"> English</a>
                         <a class="dropdown-item <?php echo language('German'); ?>" href="?language=German"><img src="./images/flags/German.svg" width="20" class="border align-middle"> German</a>
