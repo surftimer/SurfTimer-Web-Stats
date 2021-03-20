@@ -6,7 +6,9 @@
         if(!isset($_SESSION['language']))
             $_SESSION['language'] = $settings_language_default;
         elseif(isset($_GET['language']) && $_SESSION['language'] != $_GET['language'] && !empty($_GET['language'])){
-            if($_GET['language'] == 'Czech')
+            if($_GET['language'] == 'Bulgarian')
+                $_SESSION['language'] = "Bulgarian";
+            elseif($_GET['language'] == 'Czech')
                 $_SESSION['language'] = "Czech";
             elseif($_GET['language'] == 'English')
                 $_SESSION['language'] = "English";

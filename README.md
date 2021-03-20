@@ -14,7 +14,7 @@ Surftimer-Web-Stats is Web with statistics for [Surftimer-Official](https://gith
 * Top Players & Most Active Section
 * Maps Section (Copletions list, Bonus Completions list, Stages info)
 * Dark Mode
-* Languages (Czech, English, German, Polish, Slovak, Turkish)
+* Languages (Bulgarian, Czech, English, German, Polish, Slovak, Turkish)
 
 ## Project Goals
 
