@@ -62,11 +62,3 @@ function toSteamID_NO_STEAM($id) {
     $y = bcmod($id, '2');
     return '' . $y . ':' . floor($z);
 };
-
-function online_users_peak(){
-    global $db_conn_web;
-    $sql_select = "SELECT MAX(online_users) as max_online_users FROM web_lgsl_total_history"; 
-    $result = $db_conn_web->query($sql_select);
-    $row = $result->fetch_assoc();
-    return $row["max_online_users"];
-};

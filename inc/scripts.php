@@ -19,26 +19,6 @@
             }
         });
     });
-    <?php if($page_name==='Home'||$page_name==='Servers - Dashboard'): ?>
-        <?php if(!isset($lgsl_server_id)) $lgsl_server_id = 0; ?>
-        <?php if(!isset($lgsl_show_all_servers)) $lgsl_show_all_servers = 1; ?>
-
-        $(document).ready(function(){
-            var LgslShowAllServers = '<?php echo $lgsl_show_all_servers; ?>';
-            var LgslServerID = '<?php echo $lgsl_server_id ;?>';
-            $('#server-list').load('serverlist.php', {
-                LgslShowAllServers: LgslShowAllServers,
-                LgslServerID: LgslServerID
-                
-            }),
-            setInterval(function(){
-                $('#server-list').load('serverlist.php',{
-                    LgslShowAllServers: LgslShowAllServers,
-                    LgslServerID: LgslServerID
-                })
-            }, 60000); 
-        })
-    <?php endif; ?>
     <?php if($page_name==='Most Active - Dashboard'): ?>
         $(document).ready(function(){
             $('#most-active-load').load('./inc/pages/dashboard_most_active.php')
