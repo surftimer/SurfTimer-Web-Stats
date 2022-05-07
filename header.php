@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Counter-Strike: Global Offensive Surf Portal">
+        <meta name="keywords" content="SurfCommunity,CSGO,surftimer,Surf,Surf Servers,Surf Community">
+        <meta name="author" content="Kristián Partl">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <?php if($page_name === 'Player Profile - Dashboard'): ?>
+            <title><?php echo $player_id; ?> - Player Profile - Dashboard - Surf Community & Kiepownica</title>
+        <?php else: ?>
+            <title><?php echo $page_name; ?> - Surf Community & Kiepownica</title>
+        <?php endif; ?>
 
-<head>
+        <link rel="icon" href="./images/logo_navbar_1.svg" type="image/gif">
 
-	<!--
-		Surftimer-Web-Stats
-		https://github.com/KristianP26/Surftimer-Web-Stats
-	-->
+        <!-- Bootstrap core CSS -->
+        <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Surf Stats">
-	<meta name="author" content="Kristián Partl">
-	
-	<title><?php echo $page_name; ?> - Surf Stats</title>
+        <!-- Custom core CSS -->
+        <link href="./vendor/fontawesome/css/all.min.css" rel="stylesheet">
+        <link href="./vendor/css/datatables.min.css" rel="stylesheet">
+        <link href="./vendor/css/custom.css" rel="stylesheet">
 
-	<link rel="icon" href="./images/favicon.svg" type="image">
+        <!-- JavaScript Core -->
+        <script src="./vendor/js/jquery-3.5.1.slim.min.js"></script>
+        <script src="./vendor/js/popper.min.js"></script>
+        <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        
+        <!-- Datatables Core -->
+        <script type="text/javascript" src="./vendor/js/datatables.min.js"></script>
+        <?php require_once('./inc/scripts.php'); ?>
 
-	<!-- Bootstrap core CSS -->
-	<?php
-		if ($settings_dark_mode)
-		{
-			echo "<link href=\"vendor/css/bootstrap.dark.min.css\" rel=\"stylesheet\">";
-			echo "<link href=\"vendor/css/custom.dark.min.css\" rel=\"stylesheet\">";
-		}
-		else
-		{
-			echo "<link href=\"vendor/bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">";
-			echo "<link href=\"vendor/css/custom.min.css\" rel=\"stylesheet\">";
-		}
-	?>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVY9JJYS53"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-	<!-- Custom core CSS -->
-	<link href="vendor/fontawesome/css/all.min.css" rel="stylesheet"> 
-	<link href="vendor/css/datatables.min.css" rel="stylesheet">
+            gtag('config', 'G-VVY9JJYS53');
+        </script>
 
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
-	
-	<script type="text/javascript" src="vendor/js/datatables.min.js"></script>
+        <style>
+            body{
+                overflow-y: scroll;
+                background-image: url('./images/surf-images/<?php echo date('N', strtotime(date('l')));?>.jpg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+        </style>
 
-	<?php require_once('./inc/datatables_scripts.php'); ?>
-
-</head>
-
-<body class="d-flex flex-column">
-	<div id="page-content">
+    </head>
+    <body class="d-flex flex-column bg-black-kp">

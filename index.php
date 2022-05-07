@@ -1,237 +1,204 @@
 <?php
-    $page_name = "Dashboard";
-    
-    require_once "config.php";
-    require_once "./inc/includes.php";
+    $page_name = 'Home';
+    $lgsl_show_all_servers = 0;
 
-    require_once "./inc/index_stats.php";
-    require_once "header.php";
-    require_once "navbar.php";
+    require_once('./inc/includes.php');
+
+    require_once('./inc/pages/index_stats_badges.php');
+    require_once('./inc/pages/team.php');
+
+    require_once('header.php');
+    require_once('navbar.php');
 ?>
-
-    <div class="container">
-
-        <div class="mt-5 mb-2"> <!-- Info Badges -->
-            <div class="row">
-                <div class="col-md col-12">
-                    <div class="card card-body text-center shadow-sm my-2">
-                        <i class="fas fa-users fa-2x"></i>
-                        <span class="text-muted my-1"><?php echo TOTAL_PLAYERS;?></span>
-                        <hr>
-                        <?php echo number_format($total_players); ?>
-                    </div>
-                </div>
-                <div class="col-md col-12">
-                    <div class="card card-body text-center shadow-sm my-2">
-                        <i class="fas fa-map fa-2x"></i>
-                        <span class="text-muted my-1"><?php echo TOTAL_MAPS;?></span>
-                        <hr>
-                        <?php echo number_format($total_maps); ?>
-                    </div>
-                </div>
-                <div class="col-md col-12">
-                    <div class="card card-body text-center shadow-sm my-2">
-                        <i class="fas fa-bold fa-2x"></i>
-                        <span class="text-muted my-1"><?php echo TOTAL_BONUSES;?></span>
-                        <hr>
-                        <?php echo number_format($total_bonuses); ?>
-                    </div>
-                </div>
-                <div class="col-md col-12">
-                    <div class="card card-body text-center shadow-sm my-2">
-                        <i class="fas fa-user-clock fa-2x"></i>
-                        <span class="text-muted my-1"><?php echo TOTAL_COPT;?></span>
-                        <hr>
-                        <?php echo number_format($count_player_times); ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12"> <!-- Recent Records -->
-                <div class="mt-4 mb-3">
-                    <div class="card shadow-sm">
-                        <div class="card-header">
-                            <?php echo RECENT_10_RECORDS;?> <small class="text-muted">| <?php echo ANY_STYlE;?></small>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-hover shadow card-body table-sm py-0 my-0">
-                                <thead>
-                                    <tr class="">
-                                        <th class="text-left px-3" scope="col"><?php echo USERNAME;?></th>
-                                        <th class="text-center" scope="col"><?php echo MAP_NAME;?></th>
-                                        <th class="text-center" scope="col"><?php echo TIME;?></th>
-                                        <th class="text-center" scope="col"><?php echo DATE;?></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach($r10rs as $r10r): ?>
-                                        <?php
-                                            $runtime_r10rs_data = $r10r['runtime'];    
-                                            $runtime_r10rs_microtime = substr($runtime_r10rs_data, strpos($runtime_r10rs_data, ".") + 1);    
-                                            $runtime_r10rs_timeFormat = gmdate("H:i:s", $runtime_r10rs_data).'<span class="text-muted">.'.$runtime_r10rs_microtime.'</span>';
-                                            $dateFormat_r10rs = date('d/m/Y  H:i', strtotime($r10r['date']));
-                                        ?>
-                                        <tr>
-                                            <td class="px-3"><?php echo $r10r['normal_name']; ?> <a href="https://steamcommunity.com/profiles/<?php echo $r10r['steamid64']; ?>" target="_blank" title="<?php echo $r10r['normal_name']; ?> - <?php echo STEAM_PROFILE;?>" class="text-muted"><i class="fab fa-steam"></i></a></td>
-                                            <td class="text-center"><?php echo $r10r['map']; ?> <a href="maps.php?map=<?php echo $r10r['map']; ?>" class="text-muted"><i class="fas fa-link"></i></a></td>
-                                            <td class="text-center"><?php echo $runtime_r10rs_timeFormat; ?></td>
-                                            <td class="text-center"><?php echo $dateFormat_r10rs; ?></td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-12"> <!-- TOP players -->
-                <div class="my-3">
-                    <div class="card shadow-sm">
-                        <div class="card-header">
-                            <?php echo TOP10P;?> <small class="text-muted">| <?php echo NORMAL_STYLE;?></small>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-hover shadow card-body table-sm py-0 my-0">
-                                <thead>
-                                    <tr class="">
-                                        <th class="text-center" scope="col">#</th>
-                                        <th class="text-left" scope="col"><?php echo USERNAME;?></th>
-                                        <th class="text-center" scope="col"><?php echo POINTS;?></th>
-                                        <th class="text-center" scope="col"><?php echo MAPS;?></th>
-                                        <th class="text-center" scope="col"><?php echo BONUSES;?></th>
-                                        <th class="text-center" scope="col"><?php echo STAGES;?></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php $t10p_row_number = '0'; foreach($t10ps as $t10p): ?>
-                                        <?php
-                                        ?>
-                                        <tr>
-                                            <td class="text-center"><?php echo ++$t10p_row_number; ?>.</td>
-                                            <td class="text-left"><?php echo $t10p['name']; ?> <a href="https://steamcommunity.com/profiles/<?php echo $t10p['steamid64']; ?>" target="_blank" title="<?php echo $t10p['name']; ?> - <?php echo STEAM_PROFILE;?>" class="text-muted"><i class="fab fa-steam"></i></a></td>
-                                            <td class="text-center"><?php echo number_format($t10p['points']); ?></td>
-                                            <td class="text-center"><?php echo number_format($t10p['finishedmapspro']); ?></td>
-                                            <td class="text-center"><?php echo number_format($t10p['finishedbonuses']); ?></td>
-                                            <td class="text-center"><?php echo number_format($t10p['finishedstages']); ?></td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-12"> <!-- TOP WR holders -->
-                <div class="my-3">
-                    <div class="card shadow-sm">
-                        <div class="card-header">
-                            <?php echo TOP10WRH;?> <small class="text-muted">| <?php echo NORMAL_STYLE;?></small>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-hover shadow card-body table-sm py-0 my-0">
-                                <thead>
-                                    <tr class="">
-                                        <th class="text-center" scope="col">#</th>
-                                        <th class="text-left" scope="col"><?php echo USERNAME;?></th>
-                                        <th class="text-center" scope="col"><?php echo WRS;?></th>
-                                        <th class="text-center" scope="col"><?php echo FINISHED_MAPS;?></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php $t10wrh_row_number = '0'; foreach($t10wrhs as $t10wrh): ?>
-                                        <?php
-                                        ?>
-                                        <tr>
-                                            <td class="text-center"><?php echo ++$t10wrh_row_number; ?>.</td>
-                                            <td class="text-left"><?php echo $t10wrh['name']; ?> <a href="https://steamcommunity.com/profiles/<?php echo $t10wrh['steamid64']; ?>" target="_blank" title="<?php echo $t10wrh['name']; ?> - <?php echo STEAM_PROFILE;?>" class="text-muted"><i class="fab fa-steam"></i></a></td>
-                                            <td class="text-center"><?php echo number_format($t10wrh['wrs']); ?></td>
-                                            <td class="text-center"><?php echo number_format($t10wrh['finishedmapspro']); ?></td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+    
+    <div class="">
+        <div class="col-lg-11 mx-auto pb-1">
+            <div class="jumbotron jumbotron-fluid text-center shadow-sm my-5">
+                <div class="py-4">
+                    <h1 class="display-4">Kiepownica & Surfcommunity<!--<small class="text-info">Beta</small>--></h1>
+                    <p class="lead">
+                        Kiepownica is a gaming community with CS:GO server group for 102.4 tick Surf mode.
+                        <br>
+                        Surfcommunity was established in the first quarter of 2020 and later merged with Kiepownica.
+                    </p>
                 </div>
             </div>
             
-            <div class="col-md-6 col-12"> <!-- TOP bonus WR holders -->
-                <div class="my-3">
-                    <div class="card shadow-sm">
-                        <div class="card-header">
-                            <?php echo TOP10BWRH;?> <small class="text-muted">| <?php echo NORMAL_STYLE;?></small>
+            <section class="my-5 pb-1">
+                <!--
+                <div class="alert alert-warning shadow-sm" role="alert">
+                    <b>Warning:</b> Our Game Servers are currently having technical difficulties, please be patient.
+                </div>
+                -->
+
+                <div class="" id="server-list">
+                    <div class="text-center text-muted py-4">
+                        <div class="spinner-grow text-dark my-2" role="status">
+                            <span class="sr-only">Loading...</span>
                         </div>
-                        <div class="table-responsive">
-                            <table class="table table-hover shadow card-body table-sm py-0 my-0">
-                                <thead>
-                                    <tr class="">
-                                        <th class="text-center" scope="col">#</th>
-                                        <th class="text-left" scope="col"><?php echo USERNAME;?></th>
-                                        <th class="text-center" scope="col"><?php echo WRS;?></th>
-                                        <th class="text-center" scope="col"><?php echo FINISHED_BONUSES;?></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php $t10bwrh_row_number = '0'; foreach($t10bwrhs as $t10bwrh): ?>
-                                        <?php
-                                        ?>
-                                        <tr>
-                                            <td class="text-center"><?php echo ++$t10bwrh_row_number; ?>.</td>
-                                            <td class="text-left"><?php echo $t10bwrh['name']; ?>  <a href="https://steamcommunity.com/profiles/<?php echo $t10bwrh['steamid64']; ?>" target="_blank" title="<?php echo $t10bwrh['name']; ?> - <?php echo STEAM_PROFILE;?>" class="text-muted"><i class="fab fa-steam"></i></a></td>
-                                            <td class="text-center"><?php echo number_format($t10bwrh['wrbs']); ?></td>
-                                            <td class="text-center"><?php echo number_format($t10bwrh['finishedbonuses']); ?></td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
+                        <h5>Loading Game Server List...<br><small>Please Wait...</small></h5>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="text-center my-5">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="my-3">
+                                <i class="fas fa-map fa-3x text-dark"></i>
+                            </div>
+                            <h3><?php echo number_format($total_maps); ?></h3>
+                            <p class="lead mb-0">Total Maps</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="my-3">
+                                <i class="fas fa-users fa-3x text-dark"></i>
+                            </div>
+                            <h3><?php echo number_format($total_players); ?></h3>
+                            <p class="lead mb-0">Total Players</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="mx-auto mb-0 mb-lg-3">
+                            <div class="my-3">
+                                <i class="fas fa-bold fa-3x text-dark"></i>
+                            </div>
+                            <h3><?php echo number_format($total_bonuses); ?></h3>
+                            <p class="lead mb-0">Total Bonuses</p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+        
+            <hr>
 
-            <div class="col-md-6 col-12"> <!-- TOP Stage WR holders -->
-                <div class="my-3">
-                    <div class="card shadow-sm">
-                        <div class="card-header">
-                            <?php echo TOP10SWRH;?> <small class="text-muted">| <?php echo NORMAL_STYLE;?></small>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-hover shadow card-body table-sm py-0 my-0">
-                                <thead>
-                                    <tr class="">
-                                        <th class="text-center" scope="col">#</th>
-                                        <th class="text-left" scope="col"><?php echo USERNAME;?></th>
-                                        <th class="text-center" scope="col"><?php echo WRS;?></th>
-                                        <th class="text-center" scope="col"><?php echo FINISHED_STAGES;?></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php $t10swrh_row_number = '0'; foreach($t10swrhs as $t10swrh): ?>
-                                        <?php
-                                        ?>
-                                        <tr>
-                                            <td class="text-center"><?php echo ++$t10swrh_row_number; ?>.</td>
-                                            <td class="text-left"><?php echo $t10swrh['name']; ?> <a href="https://steamcommunity.com/profiles/<?php echo $t10swrh['steamid64']; ?>" target="_blank" title="<?php echo $t10swrh['name']; ?> - <?php echo STEAM_PROFILE;?>" class="text-muted"><i class="fab fa-steam"></i></a></td>
-                                            <td class="text-center"><?php echo number_format($t10swrh['wrcps']); ?></td>
-                                            <td class="text-center"><?php echo number_format($t10swrh['finishedstages']); ?></td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
+            <section class="text-center my-5">
+                <h3>About Surf Community & Kiepownica</h3>
+                <p class="lead">
+                    <strong>Surf Community</strong> is a Counter-Strike: Global Offensive community server group for <strong>102.4</strong> tick Surf mode.
+                    <br>
+                    The idea of creating a Counter-Strike: Global Offensive surf portal was created by <a href="https://github.com/KristianP26" class="text-dark">Kristián Partl</a> due to poor quality servers in our area.
+                    <br>
+                    Our servers are currently located just in Europe.
+                    We were established in the first quarter of 2020.
+                    <br>
+                    <strong>Surf Community</strong> were merged with <strong>Kiepownica</strong> in first quarter of 2021. Our Game Servers are located in <strong>Poland, Warsaw</strong>.
+                </p>
+            </section>
+
+            <hr>
+
+            <section class="text-center my-5">
+                <h3>Our Team</h3>
+                <div class="table-responsive">
+                    <table class="table table-borderless shadow-sm py-0 my-3">             
+                        <tbody class="table-lg">
+                            <?php foreach($team_users_position_less_20 as $team_user): ?>
+                                <tr class="border">
+                                    <td class="text-center align-middle py-4">
+                                    <img class="bg-transparent border shadow-sm rounded my-0" title="<?php echo $team_user['country'];?>" height="28" src="<?php echo $team_user['country_flag'];?>"/>
+                                    </td>
+                                    <td class='text-left align-middle'>
+                                        <span class="h4">
+                                            <?php echo $team_user['name']; ?>
+                                        </span> 
+                                    </td>
+                                    <td class='text-center align-middle'>
+                                        <?php echo $team_user['roles']; ?>
+                                    </td>
+                                    <td class='text-center align-middle'>
+                                        <div class="btn-group shadow-sm" role="group" aria-label="Social-Buttons">
+                                            <a role="button" href="dashboard-player.php?id=<?php echo $team_user['steamid64']; ?>" class="btn btn-secondary"><i class="fas fa-user-circle fa-lg"></i></a>
+                                            <a role="button" href="https://steamcommunity.com/profiles/<?php echo $team_user['steamid64'];?>/" target="_blank" class="btn btn-dark"><i class="fab fa-steam fa-lg"></i></a>
+                                            <?php if($team_user['youtube_link']!=NULL): ?>
+                                                <a role="button" href="<?php echo $team_user['youtube_link']; ?>" target="_blank" class="btn btn-danger"><i class="fab fa-youtube fa-lg"></i></a>
+                                            <?php endif; ?>
+                                            <?php if($team_user['twitch_link']!=NULL): ?>
+                                                <a role="button" href="<?php echo $team_user['twitch_link']; ?>" target="_blank" class="btn bg-twitch text-white"><i class="fab fa-twitch fa-lg"></i></a>
+                                            <?php endif; ?>
+                                            <?php if($team_user['facebook_link']!=NULL): ?>
+                                                <a role="button" href="<?php echo $team_user['facebook_link']; ?>" target="_blank" class="btn btn-primary"><i class="fab fa-facebook fa-lg"></i></a>
+                                            <?php endif; ?>
+                                            <?php if($team_user['instagram_link']!=NULL): ?>
+                                                <a role="button" href="<?php echo $team_user['instagram_link']; ?>" target="_blank" class="btn bg-instagram text-white"> <i class="fab fa-instagram fa-lg"></i></a>
+                                            <?php endif; ?>
+                                            <?php if($team_user['twitter_link']!=NULL): ?>
+                                                <a role="button" href="<?php echo $team_user['twitter_link']; ?>" target="_blank" class="btn bg-twitter text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                                            <?php endif; ?>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-outline-info shadow-sm btn-block py-3 mt-3 mb-0" data-toggle="modal" data-target="#team-other"><i class="fas fa-users"></i> Show More Team Members</button>
+                
+                <div class="modal fade" id="team-other" tabindex="-1" aria-labelledby="team-otherLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="team-otherLabel">Team Members</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="table-responsive">
+                                    <table class="table table-borderless shadow-sm py-0 my-0">             
+                                        <tbody class="table-lg">
+                                            <?php foreach($team_users_position_above_20 as $team_user): ?>
+                                                <tr class="border">
+                                                    <td class="text-center align-middle py-4">
+                                                    <img class="bg-transparent border shadow-sm rounded my-0" title="<?php echo $team_user['country'];?>" height="22" src="<?php echo $team_user['country_flag'];?>"/>
+                                                    </td>
+                                                    <td class='text-left align-middle'>
+                                                        <span class="h4">
+                                                            <?php echo $team_user['name']; ?>
+                                                        </span> 
+                                                    </td>
+                                                    <td class='text-center align-middle'>
+                                                        <?php echo $team_user['roles']; ?>
+                                                    </td>
+                                                    <td class='text-center align-middle'>
+                                                        <div class="btn-group shadow-sm" role="group" aria-label="Social-Buttons">
+                                                            <a role="button" href="dashboard-player.php?id=<?php echo $team_user['steamid64']; ?>" class="btn btn-sm btn-secondary"><i class="fas fa-user-circle fa-lg"></i></a>
+                                                            <a role="button" href="https://steamcommunity.com/profiles/<?php echo $team_user['steamid64'];?>/" target="_blank" class="btn btn-sm btn-dark"><i class="fab fa-steam fa-lg"></i></a>
+                                                            <?php if($team_user['youtube_link']!=NULL): ?>
+                                                                <a role="button" href="<?php echo $team_user['youtube_link']; ?>" target="_blank" class="btn btn-sm btn-danger"><i class="fab fa-youtube fa-lg"></i></a>
+                                                            <?php endif; ?>
+                                                            <?php if($team_user['twitch_link']!=NULL): ?>
+                                                                <a role="button" href="<?php echo $team_user['twitch_link']; ?>" target="_blank" class="btn btn-sm bg-twitch text-white"><i class="fab fa-twitch fa-lg"></i></a>
+                                                            <?php endif; ?>
+                                                            <?php if($team_user['facebook_link']!=NULL): ?>
+                                                                <a role="button" href="<?php echo $team_user['facebook_link']; ?>" target="_blank" class="btn btn-sm btn-primary"><i class="fab fa-facebook fa-lg"></i></a>
+                                                            <?php endif; ?>
+                                                            <?php if($team_user['instagram_link']!=NULL): ?>
+                                                                <a role="button" href="<?php echo $team_user['instagram_link']; ?>" target="_blank" class="btn btn-sm bg-instagram text-white"> <i class="fab fa-instagram fa-lg"></i></a>
+                                                            <?php endif; ?>
+                                                            <?php if($team_user['twitter_link']!=NULL): ?>
+                                                                <a role="button" href="<?php echo $team_user['twitter_link']; ?>" target="_blank" class="btn btn-sm bg-twitter text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
+            </section>
         </div>
-
     </div>
-
 <?php
-    require_once "footer.php";
-    $db_conn->close();
+    require_once('footer.php');
+    $db_conn_surftimer->close();
+    $db_conn_web->close();
+    
 ?>

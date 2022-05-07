@@ -1,0 +1,55 @@
+<?php
+    require_once('./../config.php');
+    require_once('./../database.php');
+
+    $sql_top_players = "SELECT ck_playerrank.* FROM ck_playerrank WHERE style='0' ORDER BY points DESC LIMIT 1000";
+    $results_top_players = mysqli_query($db_conn_surftimer, $sql_top_players);
+    $top_players = array();
+    if(mysqli_num_rows($results_top_players) > 0){
+        while($row_top_players = mysqli_fetch_assoc($results_top_players))
+            $top_players[] = $row_top_players;
+    };
+?>
+
+<script>
+    $('#top-players').DataTable({
+        "lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
+        responsive: true,
+        "processing": true,
+        "columnDefs": [
+            { "className": "text-center align-middle", "targets": [ 0 ] },
+            { "className": "text-left align-middle", "targets": [ 1 ] },
+            { "className": "text-center align-middle", "targets": [ 2 ] },
+            { "className": "text-center align-middle", "targets": [ 3 ] },
+            { "className": "text-center align-middle", "targets": [ 4 ] },
+            { "className": "text-center align-middle", "targets": [ 5 ] }
+        ],
+        "data": [
+            <?php $top_player_row = 0; foreach($top_players as $top_player): ?>
+                [
+                    '<?php echo ++$top_player_row; ?>.',
+                    '<img class="bg-transparent border shadow-sm" title="<?php echo $top_player['country'];?>" height="16" src="<?php echo $top_player['country_flag'];?>"/> <?php echo $top_player["name"]; ?> <a href="dashboard-player.php?id=<?php echo $top_player['steamid64']; ?>" target="" title="<?php echo $top_player['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $top_player['steamid64']; ?>" target="_blank" title="<?php echo $top_player['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>',
+                    '<?php echo number_format($top_player["points"]); ?>',
+                    '<?php echo number_format($top_player["finishedmapspro"]); ?>',
+                    '<?php echo number_format($top_player["finishedbonuses"]); ?>',
+                    '<?php echo number_format($top_player["finishedstages"]); ?>'
+                ],
+            <?php endforeach; ?>
+        ]
+    });
+</script>
+
+<div class="table-responsive">
+    <table class="table table-hover border shadow-sm py-0 my-2" id="top-players">
+    <thead class="border">
+        <th class="text-center">#</th>
+        <th class="text-left">Username</th>
+        <th class="text-center">Points</th>
+        <th class="text-center">Maps</th>
+        <th class="text-center">Bonuses</th>
+        <th class="text-center">Stages</th>
+    </thead>
+    <tbody class="table-sm">
+        
+    </tbody>
+</table>
