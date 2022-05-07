@@ -2,15 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="Counter-Strike: Global Offensive Surf Portal">
+        <meta name="description" content="Surf Stats">
         <meta name="keywords" content="SurfCommunity,CSGO,surftimer,Surf,Surf Servers,Surf Community">
         <meta name="author" content="Kristián Partl">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <?php if($page_name === 'Player Profile - Dashboard'): ?>
-            <title><?php echo $player_id; ?> - Player Profile - Dashboard - Surf Community & Kiepownica</title>
+            <title><?php echo $player_id; ?> - Player Profile - Dashboard - Surf Stats</title>
         <?php else: ?>
-            <title><?php echo $page_name; ?> - Surf Community & Kiepownica</title>
+            <title><?php echo $page_name; ?> - Surf Stats</title>
         <?php endif; ?>
 
         <link rel="icon" href="./images/logo_navbar_1.svg" type="image/gif">
