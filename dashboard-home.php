@@ -1,6 +1,5 @@
 <?php
     $page_name = 'Home - Dashboard';
-    $lgsl_show_servers = 0;
     
     require_once('./inc/includes.php');
     require_once('./inc/pages/dashboard_home.php');
@@ -95,7 +94,7 @@
                                                     $dateFormat_r10rs = date('Y/m/d  (H:i)', strtotime($r10r['date']));
                                                 ?>
                                                 <tr>
-                                                    <td class="px-3"><img class="bg-transparent border" title="<?php echo $r10r['country'];?>" height="16" src="<?php echo $r10r['country_flag'];?>"/> <?php echo $r10r['normal_name']; ?> <a href="dashboard-player.php?id=<?php echo $r10r['steamid64']; ?>" target="" title="<?php echo $r10r['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $r10r['steamid64']; ?>" target="_blank" title="<?php echo $r10r['normal_name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></td>
+                                                    <td class="px-3"><?php echo $r10r['normal_name']; ?> <a href="dashboard-player.php?id=<?php echo $r10r['steamid64']; ?>" target="" title="<?php echo $r10r['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $r10r['steamid64']; ?>" target="_blank" title="<?php echo $r10r['normal_name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></td>
                                                     <td class="text-center"><a href="dashboard-maps.php?map=<?php echo $r10r['map']; ?>" class="text-muted text-decoration-none"><?php echo $r10r['map']; ?> <i class="fas fa-link"></i></a></td>
                                                     <td class="text-center"><?php echo $runtime_r10rs_timeFormat; ?></td>
                                                     <td class="text-center"><small><?php echo $dateFormat_r10rs; ?></small></td>
@@ -139,7 +138,7 @@
                                                 ?>
                                                 <tr>
                                                     <td class="text-center"><?php echo ++$t10p_row_number; ?>.</td>
-                                                    <td class="text-left"><img class="bg-transparent border shadow-sm" title="<?php echo $t10p['country'];?>" height="16" src="<?php echo $t10p['country_flag'];?>"/> <?php echo $t10p['name']; ?>  <a href="dashboard-player.php?id=<?php echo $t10p['steamid64']; ?>" target="" title="<?php echo $t10p['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $t10p['steamid64']; ?>" target="_blank" title="<?php echo $t10p['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></td>
+                                                    <td class="text-left"><?php echo $t10p['name']; ?>  <a href="dashboard-player.php?id=<?php echo $t10p['steamid64']; ?>" target="" title="<?php echo $t10p['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $t10p['steamid64']; ?>" target="_blank" title="<?php echo $t10p['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></td>
                                                     <td class="text-center"><?php echo number_format($t10p['points']); ?></td>
                                                     <td class="text-center"><?php echo number_format($t10p['finishedmapspro']); ?></td>
                                                     <td class="text-center"><?php echo number_format($t10p['finishedbonuses']); ?></td>
@@ -182,7 +181,7 @@
                                                 ?>
                                                 <tr>
                                                     <td class="text-center"><?php echo ++$t10wrh_row_number; ?>.</td>
-                                                    <td class="text-left"><img class="bg-transparent border shadow-sm" title="<?php echo $t10wrh['country'];?>" height="16" src="<?php echo $t10wrh['country_flag'];?>"/> <?php echo $t10wrh['name']; ?>  <a href="dashboard-player.php?id=<?php echo $t10wrh['steamid64']; ?>" target="" title="<?php echo $t10wrh['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $t10wrh['steamid64']; ?>" target="_blank" title="<?php echo $t10wrh['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></td>
+                                                    <td class="text-left"><?php echo $t10wrh['name']; ?>  <a href="dashboard-player.php?id=<?php echo $t10wrh['steamid64']; ?>" target="" title="<?php echo $t10wrh['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $t10wrh['steamid64']; ?>" target="_blank" title="<?php echo $t10wrh['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></td>
                                                     <td class="text-center"><?php echo number_format($t10wrh['wrs']); ?></td>
                                                     <td class="text-center"><?php echo number_format($t10wrh['finishedmapspro']); ?></td>
                                                 </tr>
@@ -223,7 +222,7 @@
                                                 ?>
                                                 <tr>
                                                     <td class="text-center"><?php echo ++$t10bwrh_row_number; ?>.</td>
-                                                    <td class="text-left"><img class="bg-transparent border shadow-sm" title="<?php echo $t10bwrh['country'];?>" height="16" src="<?php echo $t10bwrh['country_flag'];?>"/> <?php echo $t10bwrh['name']; ?>  <a href="dashboard-player.php?id=<?php echo $t10bwrh['steamid64']; ?>" target="" title="<?php echo $t10bwrh['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $t10bwrh['steamid64']; ?>" target="_blank" title="<?php echo $t10bwrh['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></td>
+                                                    <td class="text-left"><?php echo $t10bwrh['name']; ?>  <a href="dashboard-player.php?id=<?php echo $t10bwrh['steamid64']; ?>" target="" title="<?php echo $t10bwrh['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $t10bwrh['steamid64']; ?>" target="_blank" title="<?php echo $t10bwrh['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></td>
                                                     <td class="text-center"><?php echo number_format($t10bwrh['wrbs']); ?></td>
                                                     <td class="text-center"><?php echo number_format($t10bwrh['finishedbonuses']); ?></td>
                                                 </tr>
@@ -264,7 +263,7 @@
                                                 ?>
                                                 <tr>
                                                     <td class="text-center"><?php echo ++$t10swrh_row_number; ?>.</td>
-                                                    <td class="text-left"><img class="bg-transparent border shadow-sm" title="<?php echo $t10swrh['country'];?>" height="16" src="<?php echo $t10swrh['country_flag'];?>"/> <?php echo $t10swrh['name']; ?>  <a href="dashboard-player.php?id=<?php echo $t10swrh['steamid64']; ?>" target="" title="<?php echo $t10swrh['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $t10swrh['steamid64']; ?>" target="_blank" title="<?php echo $t10swrh['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></td>
+                                                    <td class="text-left"><?php echo $t10swrh['name']; ?>  <a href="dashboard-player.php?id=<?php echo $t10swrh['steamid64']; ?>" target="" title="<?php echo $t10swrh['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $t10swrh['steamid64']; ?>" target="_blank" title="<?php echo $t10swrh['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></td>
                                                     <td class="text-center"><?php echo number_format($t10swrh['wrcps']); ?></td>
                                                     <td class="text-center"><?php echo number_format($t10swrh['finishedstages']); ?></td>
                                                 </tr>
@@ -327,5 +326,4 @@
 <?php
     require_once('footer.php');
     $db_conn_surftimer->close();
-    $db_conn_web->close();
 ?>

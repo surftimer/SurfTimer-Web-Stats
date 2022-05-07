@@ -75,6 +75,7 @@ if(mysqli_num_rows($results_t10swrh) > 0){
 };
 
 // Recently Added Maps
+
 $sql_ram = "SELECT ck_newmaps.date, ck_maptier.* FROM `ck_newmaps` INNER JOIN ck_maptier ON ck_newmaps.mapname = ck_maptier.mapname ORDER BY `date` DESC LIMIT 10";
 $results_ram = mysqli_query($db_conn_surftimer, $sql_ram);
 $rams = array();
@@ -84,19 +85,28 @@ if(mysqli_num_rows($results_ram) > 0){
 
     while($row_ram = mysqli_fetch_assoc($results_ram)):
 
-        $ram_map_type = $row_ram['stages'];
-        if($ram_map_type=='1')
-            $ram_map_type = 'Linear';
-        elseif($ram_map_type > '1')
-            $ram_map_type = 'Staged ('.$ram_map_type.')';
-        else
+        if(isset($row_ram['stages'])):
+            $ram_map_type = $row_ram['stages'];
+            if($ram_map_type=='1')
+                $ram_map_type = 'Linear';
+            elseif($ram_map_type > '1')
+                $ram_map_type = 'Staged ('.$ram_map_type.')';
+            else
+                $ram_map_type = '<span class="text-muted">Null</span>';
+        else:
             $ram_map_type = '<span class="text-muted">Null</span>';
+        endif;
 
-        $ram_map_bonus = $row_ram['bonuses'];
-        if($ram_map_bonus == '0')
-            $ram_map_bonus = 'No Bonus';
-        elseif($ram_map_bonus == NULL)
+        if(isset($row_ram['stages'])):
+            $ram_map_bonus = $row_ram['bonuses'];
+            if($ram_map_bonus == '0'):
+                $ram_map_bonus = 'No Bonus';
+            elseif($ram_map_bonus == NULL):
+                $ram_map_bonus = '<span class="text-muted">Null</span>';
+            endif;
+        else:
             $ram_map_bonus = '<span class="text-muted">Null</span>';
+        endif;
             
         $row_ram_added = date('Y/m/d', strtotime($row_ram['date']));
         $row_ram_added_t = date('d. m. Y', strtotime($row_ram['date']));

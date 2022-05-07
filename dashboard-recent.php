@@ -31,5 +31,4 @@
 <?php
     require_once('footer.php');
     $db_conn_surftimer->close();
-    $db_conn_web->close();
 ?>
