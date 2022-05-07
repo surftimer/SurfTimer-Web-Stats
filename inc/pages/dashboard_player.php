@@ -31,7 +31,6 @@
                 $usr_steamid64      = $row_sup['steamid64'];
                 $usr_name           = $row_sup['name'];
                 $usr_country        = $row_sup['country'];
-                $usr_country_flag   = $row_sup['country_flag'];
                 $usr_joined         = $row_sup['joined'];
                 $usr_last_seen      = $row_sup['lastseen'];
 
