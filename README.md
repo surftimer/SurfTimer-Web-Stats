@@ -1,4 +1,4 @@
-﻿# Surftimer-Web-Stats v.1.x
+﻿# Surftimer-Web-Stats v1.x
  ![GitHub Repo stars](https://img.shields.io/github/stars/kristianp26/surftimer-web-stats?color=ew&style=flat-square)
  ![GitHub forks](https://img.shields.io/github/forks/kristianp26/surftimer-web-stats?style=flat-square)
  ![GitHub contributors](https://img.shields.io/github/contributors/kristianp26/surftimer-web-stats?style=flat-square)
