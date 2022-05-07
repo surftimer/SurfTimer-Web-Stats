@@ -20,9 +20,7 @@
                             <i class="fas fa-tachometer-alt"></i> Dashboard
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow-sm" aria-labelledby="Dashboard-Na v-Dropdown">
-                            <a class="dropdown-item <?php echo nav_active('Home - Dashboard'); ?>" href="dashboard-home.php"><i class="fas fa-home"></i> Home</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#SearchPlayers"><i class="fas fa-search"></i> Search Player</a>
+                            <a class="dropdown-item <?php echo nav_active('Home - Dashboard'); ?>" href="index.php"><i class="fas fa-home"></i> Home</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item <?php echo nav_active('Top Players - Dashboard'); ?>" href="dashboard-players.php"><i class="fas fa-users"></i> Top Players</a>
                             <a class="dropdown-item <?php echo nav_active('Maps - Dashboard'); ?>" href="dashboard-maps.php"><i class="fas fa-map"></i> Maps</a>
@@ -30,6 +28,9 @@
                             <a class="dropdown-item <?php echo nav_active('Recent Records - Dashboard'); ?>" href="dashboard-recent.php"><i class="fas fa-stopwatch"></i> Recent Records</a>
 
                         </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link text-info" href="#" data-toggle="modal" data-target="#SearchPlayers"><i class="fas fa-search"></i> Search Player</a>
                     </li>
                 
                 </ul>
