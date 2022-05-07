@@ -13,7 +13,7 @@
 
             <section class="my-4 pb-1">
 
-                <h5>Surf Community's Dashboard</h5>
+                <h5>Surf Stats's Dashboard</h5>
                 <hr class="my-0">
 
                 <div class="mt-4 mb-4"> <!-- Info Badges -->

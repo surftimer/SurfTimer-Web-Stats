@@ -1,31 +1,6 @@
     <?php
         $nav_active_dropdown_dashboard  = array('Most Active - Dashboard', 'Top Players - Dashboard', 'Recent Records - Dashboard', 'Maps - Dashboard', 'Home - Dashboard', 'Servers - Dashboard');
-        $nav_active_dropdown_other      = array('About', 'Terms of Service', 'Rules',  'Commands', 'Privacy Policy');
     ?>
-    <!--
-    <nav class="navbar navbar-expand-lg container navbar-light shadow-sm bg-secondary py-0">
-        <a class="navbar-brand" href="https://kiepownica.com/"><small><i class="fab fa-kickstarter-k"></i> Kiepownica</small></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#KiepownicaNavBar" aria-controls="KiepownicaNavBar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="KiepownicaNavBar">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="https://kiepownica.pl">kiepownica.pl</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="https://surfcommunity.eu">surfcommunity.eu</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://surfcommunity.eu/dashboard-servers.php"><i class="fas fa-server"></i> Servers</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://surfcommunity.eu/about.php"><i class="fas fa-info-circle"></i> About</a>
-            </li>
-        </div>
-    </nav>
-    -->
 
     <nav class="container navbar navbar-expand-lg navbar-light bg-light py-3 px-5 shadow-sm">
         <div class="container">
@@ -38,7 +13,7 @@
             <div class="collapse navbar-collapse" id="SurfCommunityNavBar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item <?php echo nav_active('Home'); ?>">
-                        <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href=""><i class="fas fa-home"></i> Website <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle <?php if(in_array($page_name, $nav_active_dropdown_dashboard)) echo 'active'; ?>" href="#" id="Dashboard-Nav-Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
