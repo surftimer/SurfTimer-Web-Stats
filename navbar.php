@@ -12,9 +12,11 @@
             </button>
             <div class="collapse navbar-collapse" id="SurfCommunityNavBar">
                 <ul class="navbar-nav ml-auto">
+                    <!--
                     <li class="nav-item <?php echo nav_active('Home'); ?>">
                         <a class="nav-link" href=""><i class="fas fa-home"></i> Website <span class="sr-only">(current)</span></a>
                     </li>
+                    -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle <?php if(in_array($page_name, $nav_active_dropdown_dashboard)) echo 'active'; ?>" href="#" id="Dashboard-Nav-Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-tachometer-alt"></i> Dashboard
