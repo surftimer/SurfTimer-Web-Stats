@@ -17,7 +17,7 @@ Surftimer-Web-Stats is Web with statistics for [Surftimer-Official](https://gith
 * Dark Mode (Comming Soon...)
 * Languages (Comming Soon...)
 * Player Flags (Comming Soon...)
-* And other feathures from v1.x (Comming Soon...)
+* And other features from v1.x (Comming Soon...)
 
 ## Project Goals
 
