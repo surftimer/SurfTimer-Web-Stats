@@ -21,10 +21,9 @@ if((isset($mapname))&&($mapname!=='')):
         
         if(mysqli_num_rows($results_map) > 0):
             
-            if(!isset($row_map['date'])):
-            else:
+            $row_map = mysqli_fetch_assoc($results_map);
 
-                $row_map = mysqli_fetch_assoc($results_map);
+            if(isset($row_map['date'])):
 
                 $map_name = $row_map['mapname'];
                 $map_tier = $row_map['tier'];
@@ -44,6 +43,10 @@ if((isset($mapname))&&($mapname!=='')):
                 else 
                     $map_bonuses = Null;
 
+                if(($row_map['stages']!==$map_stages)||($row_map['bonuses']!==$map_bonuses)):
+                    $sql_map_stages_bonuses_update = "UPDATE `ck_maptier` SET `stages` = '$map_stages', `bonuses` = '$map_bonuses' WHERE `ck_maptier`.`mapname` = '$map_name';";
+                    $query_map_stages_bonuses_update = mysqli_query($db_conn_surftimer, $sql_map_stages_bonuses_update);
+                endif;
 
                 $map_stages_info = $map_stages;
                 if($map_stages_info == '1')
@@ -301,7 +304,7 @@ endif;
 		]
 	    });
     <?php endif; ?>
-    <?php if((isset($mapname))&&($mapname!=='')): ?>
+    <?php if((isset($mapname))&&($mapname!=='')&&(isset($row_map['date']))): ?>
 			
 				$('#map-completions').DataTable({
 					"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
@@ -352,7 +355,7 @@ endif;
 					]
 				});
 		<?php endif; ?>
-        <?php if(((isset($mapname))&&($mapname!==''))&&($map_bonuses>0)): ?>
+        <?php if(((isset($mapname))&&($mapname!==''))&&(isset($row_map['date']))&&($map_bonuses>0)): ?>
 			<?php $map_bonuses_completions_number = 0; foreach($map_bonuses_completions as $map_bonuses_completion): ?>
 					$('#bonuses-completions-<?php echo ++$map_bonuses_completions_number; ?>').DataTable({
 						"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
