@@ -14,7 +14,7 @@ Surftimer-Web-Stats is Web with statistics for [Surftimer-Official](https://gith
 **Features:**
 * Dashboard with TOP players and recent Records
 * Top Players, Recent Records & Most Active Section
-* Maps Section (Copletions list, Bonus Completions list, Stages info)
+* Maps Section (Complete Statistics)
 * Players Profiles (Complete Statistics)
 * Dark Mode (Comming Soon...)
 * Languages (Comming Soon...)
