@@ -12,7 +12,7 @@ if ($db_conn_surftimer->connect_error) {
 };
 
 
-
+// Create not existing database columns
 $sql_mtcheck = "SHOW COLUMNS FROM `ck_maptier` LIKE 'stages'";
 $sql_mtcheck_add = "ALTER TABLE `ck_maptier` ADD `stages` INT NULL DEFAULT NULL AFTER `ranked`, ADD `bonuses` INT NULL DEFAULT NULL AFTER `stages`;";
 
@@ -22,5 +22,33 @@ if(!$exists_mtcheck) {
     $db_conn_surftimer->query($sql_mtcheck_add);
 }
 
-$db_conn_surftimer -> set_charset("utf8mb4");
+$sql_ptcheck = "SHOW COLUMNS FROM `ck_playertimes` LIKE 'date'";
+$sql_ptcheck_add = "ALTER TABLE `ck_playertimes` ADD `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `style`;";
 
+$result_ptcheck = $db_conn_surftimer->query($sql_ptcheck);
+$exists_ptcheck = (mysqli_num_rows($result_ptcheck))?TRUE:FALSE;
+if(!$exists_ptcheck) {
+    $db_conn_surftimer->query($sql_ptcheck_add);
+}
+
+$sql_bonuscheck = "SHOW COLUMNS FROM `ck_bonus` LIKE 'date'";
+$sql_bonuscheck_add = "ALTER TABLE `ck_bonus` ADD `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `style`;";
+
+$result_ptcheck = $db_conn_surftimer->query($sql_bonuscheck);
+$exists_ptcheck = (mysqli_num_rows($result_ptcheck))?TRUE:FALSE;
+if(!$exists_ptcheck) {
+    $db_conn_surftimer->query($sql_bonuscheck_add);
+}
+
+$sql_wrcpcheck = "SHOW COLUMNS FROM `ck_wrcps` LIKE 'date'";
+$sql_wrcpcheck_add = "ALTER TABLE `ck_wrcps` ADD `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `style`;";
+
+$result_ptcheck = $db_conn_surftimer->query($sql_wrcpcheck);
+$exists_ptcheck = (mysqli_num_rows($result_ptcheck))?TRUE:FALSE;
+if(!$exists_ptcheck) {
+    $db_conn_surftimer->query($sql_wrcpcheck_add);
+}
+// End of "Create not existing database columns"
+
+
+$db_conn_surftimer -> set_charset("utf8mb4");
