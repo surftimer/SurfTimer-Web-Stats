@@ -29,7 +29,7 @@
                             <h5>Loading Map: <b><?php echo $mapname; ?></b> Details...<br><small>Please Wait...</small></h5>
                         </div>
                     <?php else: ?>
-                        <h5>Surf Community's Map Collection</h5>
+                        <h5>Surf Stat's Map Collection</h5>
                         <hr class="mt-0 mb-3">                       
                         <div class="text-center text-muted py-4">
                             <div class="spinner-grow text-dark my-2" role="status">

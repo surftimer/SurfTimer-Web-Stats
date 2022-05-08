@@ -15,7 +15,7 @@
 
             <section class="my-4 pb-1">
 
-                <h5>Surf Community's Top 1,000 Players</h5>
+                <h5>Surf Stat's Top 1,000 Players</h5>
                 <hr class="mt-0 mb-3">
                     <div class="" id="top-players-load">
                         <div class="text-center text-muted py-4">

@@ -510,7 +510,7 @@ endif;
         </h5>
     <?php endif; ?>
 <?php else: ?>
-    <h5>Surf Community's Map Collection</h5>
+    <h5>Surf Stat's Map Collection</h5>
     <hr class="mt-0 mb-3">
     <div class="table-responsive">
         <table class="table table-hover border shadow-sm py-0 my-2" id="maps">
