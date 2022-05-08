@@ -14,7 +14,7 @@
 
             <section class="my-4 pb-1">
 
-                <h5>Surf Community's Recent 100 Map Records</h5>
+                <h5>Surf Stat's Recent 100 Map Records</h5>
                 <hr class="mt-0 mb-3">
                     <div class="" id="recent-records-load">
                         <div class="text-center text-muted py-4">

@@ -15,7 +15,7 @@
 
             <section class="my-4 pb-1">
 
-                <h5>Surf Community's Most Active</h5>
+                <h5>Surf Stat's Most Active</h5>
                 <hr class="mt-0 mb-3">
                     <div class="" id="most-active-load">
                         <div class="text-center text-muted py-4">

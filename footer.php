@@ -10,7 +10,7 @@
                             Coded & Designed with ❤ by <a class="text-dark" href="https://github.com/KristianP26/" taget="_blank">Kristián Partl</a>.
                             <br class="py-0">
                             <small>
-                                All times are in <a class="text-dark" href="https://time.is/en/CEST" target="_blank">CEST</a>.
+                                All times are in <a class="text-dark" href="https://time.is/en/<?php echo $mysql_server_timezone; ?>" target="_blank"><?php echo $mysql_server_timezone; ?></a>.
                             </small>
                         </small>
                         <br>
