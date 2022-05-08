@@ -4,7 +4,7 @@
 
     <nav class="container navbar navbar-expand-lg navbar-light bg-light py-3 px-5 shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="">SurfSats</a>
+            <a class="navbar-brand" href="index.php"><img src="./images/logo.svg" height="40"></a>
             <!--<a class="navbar-brand d-none d-md-block" href="https://surfcommunity.eu/"><img src="./images/logo_navbar.svg" height="40"></a>-->
             <!--<a class="navbar-brand d-md-none" href="https://surfcommunity.eu/"><img src="./images/logo_navbar_1.svg" height="40"></a>-->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#SurfCommunityNavBar" aria-controls="SurfCommunityNavBar" aria-expanded="false" aria-label="Toggle navigation">
