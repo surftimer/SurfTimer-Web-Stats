@@ -119,11 +119,11 @@
                 $total_timer_sum = $total_maps+$total_bonuses+$total_stages;
                     
                 $usr_finished_sum = $usr_finishedmaps+$usr_finishedbonuses+$usr_finishedstages;
-                $usr_finished_sum_percentuage = intval(($usr_finished_sum/$total_timer_sum)*100);
+                $usr_finished_sum_percentuage = intval(($usr_finished_sum/max($total_timer_sum, 1))*100);
 
-                $usr_finishedmaps_percentuage = intval(($usr_finishedmaps/$total_bonuses)*100);
-                $usr_finishedbonuses_percentuage = intval(($usr_finishedbonuses/$total_bonuses)*100);
-                $usr_finishedstages_percentuage = intval(($usr_finishedstages/$total_stages )*100);
+                $usr_finishedmaps_percentuage = intval(($usr_finishedmaps/max($total_bonuses, 1))*100);
+                $usr_finishedbonuses_percentuage = intval(($usr_finishedbonuses/max($total_bonuses, 1))*100);
+                $usr_finishedstages_percentuage = intval(($usr_finishedstages/max($total_stages, 1))*100);
                 if($usr_finishedmaps!=0)
                     $usr_top10s_percentuage = intval(($usr_top10s/$usr_finishedmaps)*100);
                 else
@@ -134,12 +134,6 @@
                 $row_sur = $result_select_user_rank->fetch_assoc();
 
                 $usr_position = $row_sur['rank_position'];
-
-                $sql_select_user_in_team = "SELECT COUNT(steamid) as usr_in_team FROM surfcommunity_web.web_admins_list  WHERE steamid = '$usr_steamid'";
-                $result_select_user_in_team = $db_conn_surftimer->query($sql_select_user_in_team);
-                $row_sur = $result_select_user_in_team->fetch_assoc();
-
-                $usr_in_team = $row_sur['usr_in_team'];
 
                 $map_tier_completions = array();
                 $map_tier=1; while($map_tier<=8):
@@ -172,10 +166,10 @@
                     $row_smtfs = $result_select_map_tier_finished_stages->fetch_assoc();
                     $map_tier_finished_stages = $row_smtfs['map_tier_finished_stages'];
 
-                    $map_tier_count_percentuage = intval(($map_tier_finished_maps/$map_tier_count)*100);
-                    $map_tier_bonuses_count_percentuage = intval(($map_tier_finished_bonuses/$map_tier_bonuses_count)*100);
+                    $map_tier_count_percentuage = intval(($map_tier_finished_maps/max($map_tier_count, 1))*100);
+                    $map_tier_bonuses_count_percentuage = intval(($map_tier_finished_bonuses/max($map_tier_bonuses_count, 1))*100);
                     if(isset($row_smts['map_tier_stages_count']))
-                        $map_tier_stages_count_percentuage = intval(($map_tier_finished_stages/$map_tier_stages_count)*100);
+                        $map_tier_stages_count_percentuage = intval(($map_tier_finished_stages/max($map_tier_stages_count, 1))*100);
                     else
                     $map_tier_stages_count_percentuage = 0;
                     $map_tier_completions[] = array($map_tier, $map_tier_finished_maps, $map_tier_count, $map_tier_count_percentuage, $map_tier_finished_bonuses, $map_tier_bonuses_count, $map_tier_bonuses_count_percentuage, $map_tier_finished_stages, $map_tier_stages_count,  $map_tier_stages_count_percentuage);
@@ -343,7 +337,7 @@
     <hr class="mt-0 mb-3">
     <div class="pt-3 pb-2">
         <h3 class="text-center"><?php echo $usr_name; ?></h3>
-        <h4 class="text-center text-muted mb-2"><img class="rounded border bg-transparent shadow-sm mb-1" height="20" src="<?php echo $usr_country_flag; ?>"> <?php echo $usr_country; ?></h4>
+        <h4 class="text-center text-muted mb-2"><!--<img class="rounded border bg-transparent shadow-sm mb-1" height="20" src="<?php // echo $usr_country_flag; ?>">--><?php echo $usr_country; ?></h4>
         <div class="row justify-content-md-center mb-2">
             <div class="col-12 col-md-auto text-center">
                 <span class="mr-1">Last seen:</span> <?php echo $usr_last_seen_edit_d; ?>
@@ -375,11 +369,6 @@
                     echo '<span class="badge shadow-sm badge-secondary">TOP 250</span>';
                 elseif($usr_position<="500")
                     echo '<span class="badge shadow-sm badge-secondary">TOP 500</span>';
-            ?>
-            <?php
-                // Team Badge
-                if($usr_in_team=="1")
-                    echo '<span class="badge shadow-sm badge-dark">SurfCommunity Team</span>';
             ?>
         </div>
 
