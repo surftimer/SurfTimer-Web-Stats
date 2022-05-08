@@ -51,4 +51,9 @@ if(!$exists_ptcheck) {
 // End of "Create not existing database columns"
 
 
+$sql_select_timezone = "SELECT IF(@@session.time_zone = 'SYSTEM', @@system_time_zone, @@session.time_zone) as timezone;";
+$results_select_timezone = mysqli_query($db_conn_surftimer, $sql_select_timezone);
+$row_select_timezone = mysqli_fetch_assoc($results_select_timezone);
+$mysql_server_timezone = $row_select_timezone['timezone'];
+
 $db_conn_surftimer -> set_charset("utf8mb4");
