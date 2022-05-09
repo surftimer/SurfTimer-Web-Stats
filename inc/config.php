@@ -12,3 +12,26 @@
     $db_database = 'your_database_name';        // DB Database
 
 /* End of  Database Config */
+
+/* 
+    Design Settings 
+    If you want use title than logo must remain empty
+    Logo must be located in 'images' folder
+*/
+    
+    $settings_navbar_logo   = "logo.svg";
+    $settings_navbar_title  = "Surf Stats";
+
+/* End of Design Settings */
+
+/*
+    Custom Link
+    If you want disable link you must remain name empty
+*/
+
+    $settings_custom_link_name     = '<i class="fas fa-globe-europe"></i> Website'; // Example: <i class="fab fa-discord"></i> Discord or <i class="fas fa-globe-europe"></i> Website
+    $settings_custom_link_adress   = 'https://github.com/KristianP26/Surftimer-Web-Stats'; // Exmaple: https://github.com/KristianP26/Surftimer-Web-Stats
+    $settings_custom_link_2_name     = '<i class="fab fa-discord"></i> Discord'; // Example: <i class="fab fa-discord"></i> Discord or <i class="fas fa-globe-europe"></i> Website
+    $settings_custom_link_2_adress   = 'https://discord.gg/SXAAKr5kc7'; // Exmaple: https://discord.gg/SXAAKr5kc7
+
+ /* End of Custom Link */
