@@ -20,7 +20,7 @@
             <section class="my-4 pb-1">
                 <div class="" id="maps-load">
                     <?php if((isset($mapname))&&($mapname!=='')): ?>
-                        <h5><a href="dashboard-maps.php" class="text-muted">Surf Stat's Map Collection</a>  / <?php echo $mapname;?></h5>
+                        <h5><a href="dashboard-maps.php" class="text-muted text-decoration-none">Surf Stat's Map Collection</a>  / <?php echo $mapname;?></h5>
                         <hr class="mt-0 mb-3">                       
                         <div class="text-center text-muted py-4">
                             <div class="spinner-grow text-dark my-2" role="status">

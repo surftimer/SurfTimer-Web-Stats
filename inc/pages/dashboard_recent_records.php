@@ -43,14 +43,15 @@
 </script>
 
 <div class="table-responsive">
-    <table class="table table-hover border shadow-sm py-0 my-2" id="recent-records">
-    <thead class="border">
-        <th class="text-left">Username</th>
-        <th class="text-center">Map</th>
-        <th class="text-center">Time</th>
-        <th class="text-center">Date</th>
-    </thead>
-    <tbody class="table-sm">
-        
-    </tbody>
-</table>
+    <table class="table table-hover border shadow-sm py-0 my-2 nowrap" style="width:100%" id="recent-records">
+        <thead class="border">
+            <th class="text-left">Username</th>
+            <th class="text-center">Map</th>
+            <th class="text-center">Time</th>
+            <th class="text-center">Date</th>
+        </thead>
+        <tbody class="table-sm">
+
+        </tbody>
+    </table>
+</div>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+<!-- Coded & Designed with ❤ by Kristián Partl.  --->
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="description" content="Surf Stats">
-        <meta name="keywords" content="SurfCommunity,CSGO,surftimer,Surf,Surf Servers,Surf Community">
+        <meta name="keywords" content="SurfStats,CSGO,surftimer,Surf,Surf Servers">
         <meta name="author" content="Kristián Partl">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -13,35 +14,29 @@
             <title><?php echo $page_name; ?> - Surf Stats</title>
         <?php endif; ?>
 
-        <link rel="icon" href="./images/logo_navbar_1.svg" type="image/gif">
+        <?php 
+            if($settings_favicon!='')
+                echo '<link rel="icon" href="./images/'.$settings_favicon.'" type="image/gif">';
+            else
+                echo '<link rel="icon" href="./images/logo.svg" type="image/gif">';
+        ?>
 
         <!-- Bootstrap core CSS -->
-        <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./vendor/bootstrap/css/<?php if($settings_theme!=='') echo $settings_theme; else echo 'default'; ?>/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom core CSS -->
-        <link href="./vendor/fontawesome/css/all.min.css" rel="stylesheet">
+        <link href="./vendor/fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet">
         <link href="./vendor/css/datatables.min.css" rel="stylesheet">
         <link href="./vendor/css/custom.css" rel="stylesheet">
 
         <!-- JavaScript Core -->
-        <script src="./vendor/js/jquery-3.5.1.slim.min.js"></script>
-        <script src="./vendor/js/popper.min.js"></script>
+        <script src="./vendor/js/popper.js"></script>
+        <script src="./vendor/js/jquery-3.6.0.min.js"></script>
         <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         
         <!-- Datatables Core -->
         <script type="text/javascript" src="./vendor/js/datatables.min.js"></script>
         <?php require_once('./inc/scripts.php'); ?>
-
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVY9JJYS53"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-VVY9JJYS53');
-        </script>
 
         <style>
             body{

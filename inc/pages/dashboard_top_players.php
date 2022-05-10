@@ -40,16 +40,17 @@
 </script>
 
 <div class="table-responsive">
-    <table class="table table-hover border shadow-sm py-0 my-2" id="top-players">
-    <thead class="border">
-        <th class="text-center">#</th>
-        <th class="text-left">Username</th>
-        <th class="text-center">Points</th>
-        <th class="text-center">Maps</th>
-        <th class="text-center">Bonuses</th>
-        <th class="text-center">Stages</th>
-    </thead>
-    <tbody class="table-sm">
-        
-    </tbody>
-</table>
+    <table class="table table-hover border shadow-sm py-0 my-2 nowrap" style="width:100%" id="top-players">
+        <thead class="border">
+            <th class="text-center">#</th>
+            <th class="text-left">Username</th>
+            <th class="text-center">Points</th>
+            <th class="text-center">Maps</th>
+            <th class="text-center">Bonuses</th>
+            <th class="text-center">Stages</th>
+        </thead>
+        <tbody class="table-sm">
+            
+        </tbody>
+    </table>
+</div>

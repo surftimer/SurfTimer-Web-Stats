@@ -374,7 +374,7 @@ endif;
 
 
 <?php if((isset($mapname))&&($mapname!=='')): ?>
-    <h5><a href="dashboard-maps.php" class="text-muted">Surf Stat's Map Collection</a>  / <?php echo $mapname;?></h5>
+    <h5><a href="dashboard-maps.php" class="text-muted text-decoration-none">Surf Stat's Map Collection</a>  / <?php echo $mapname;?></h5>
     <hr class="mt-0 mb-3">
     <?php if(mysqli_num_rows($results_map) > 0): ?>        
         <?php if(isset($row_map['date'])): ?>
@@ -419,7 +419,7 @@ endif;
                 <hr>
                 <h5 class="text-center">Map Completions</h5>
                 <div class="table-responsive">
-                    <table class="table table-sm table-hover table-striped border shadow-sm py-0 my-0" id="map-completions">
+                    <table class="table table-sm table-hover table-striped border shadow-sm py-0 my-0 nowrap" style="width:100%" id="map-completions">
                         <thead>
                             <th class="text-center">#</th>
                             <th class="text-left">Username</th>
@@ -474,7 +474,7 @@ endif;
                         <div class="tab-pane fade<?php if($map_bonuses_completions_number=='1') echo ' show active'; ?>" id='bonuses-content-<?php echo $map_bonuses_completions_number; ?>' role="tabpanel" aria-labelledby="bonuses-content-<?php echo $map_bonuses_completions_number; ?>-tab">
                             <?php if(!empty($map_bonuses_completion)): ?>
                                 <div class="table-responsive">
-                                    <table class="table table-hover table-striped  border table-sm shadow-sm py-0 my-0" id="bonuses-completions-<?php echo $map_bonuses_completions_number; ?>">
+                                    <table class="table table-hover table-striped  border table-sm shadow-sm py-0 my-0 nowrap" style="width:100%" id="bonuses-completions-<?php echo $map_bonuses_completions_number; ?>">
                                         <thead>
                                             <th class="text-center">#</th>
                                             <th class="text-left">Username</th>
@@ -516,7 +516,7 @@ endif;
     <h5>Surf Stat's Map Collection</h5>
     <hr class="mt-0 mb-3">
     <div class="table-responsive">
-        <table class="table table-hover border shadow-sm py-0 my-2" id="maps">
+        <table class="table table-hover border shadow-sm py-0 my-2 nowrap" style="width:100%" id="maps">
             <thead class="border">
                 <th class="text-left">Map Name</th>
                 <th class="text-center">Tier</th>

@@ -103,3 +103,5 @@ html {
   padding-right: 0 !important;
   overflow-y: auto;
  }
+
+.table > :not(:first-child) { border-color: var(--bs-gray-300); }
