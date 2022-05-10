@@ -87,7 +87,7 @@
     </script>
 
     <div class="table-responsive">
-        <table class="table table-hover border shadow-sm py-0 my-2" id="most-active">
+        <table class="table table-hover border shadow-sm py-0 my-2 nowrap" style="width:100%" id="most-active">
             <thead class="border">
                 <th class="text-left pl-3">Username</th>
                 <th class="text-center">Hours</th>

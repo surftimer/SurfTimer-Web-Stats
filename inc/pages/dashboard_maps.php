@@ -374,7 +374,7 @@ endif;
 
 
 <?php if((isset($mapname))&&($mapname!=='')): ?>
-    <h5><a href="dashboard-maps.php" class="text-muted">Surf Stat's Map Collection</a>  / <?php echo $mapname;?></h5>
+    <h5><a href="dashboard-maps.php" class="text-muted text-decoration-none">Surf Stat's Map Collection</a>  / <?php echo $mapname;?></h5>
     <hr class="mt-0 mb-3">
     <?php if(mysqli_num_rows($results_map) > 0): ?>        
         <?php if(isset($row_map['date'])): ?>
@@ -516,7 +516,7 @@ endif;
     <h5>Surf Stat's Map Collection</h5>
     <hr class="mt-0 mb-3">
     <div class="table-responsive">
-        <table class="table table-hover border shadow-sm py-0 my-2" id="maps">
+        <table class="table table-hover border shadow-sm py-0 my-2 nowrap" style="width:100%" id="maps">
             <thead class="border">
                 <th class="text-left">Map Name</th>
                 <th class="text-center">Tier</th>

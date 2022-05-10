@@ -15,11 +15,11 @@
             <!-- If you have 2 sizes of logo for mobile version and normal use this bellow :) -->
             <!--<a class="navbar-brand d-none d-md-block" href="https://surfcommunity.eu/"><img src="./images/logo_navbar.svg" height="40"></a>-->
             <!--<a class="navbar-brand d-md-none" href="https://surfcommunity.eu/"><img src="./images/logo_navbar_1.svg" height="40"></a>-->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#SurfCommunityNavBar" aria-controls="SurfCommunityNavBar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#SurfStatsNavbar" aria-controls="SurfStatsNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="SurfCommunityNavBar">
-                <ul class="navbar-nav ml-auto">
+            <div class="collapse navbar-collapse" id="SurfStatsNavbar">
+                <ul class="navbar-nav ms-auto">
                     <?php if($settings_custom_link_name!=''): ?>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo $settings_custom_link_adress;?>"><?php echo $settings_custom_link_name;?></a>
@@ -44,11 +44,9 @@
 
                         </div>
                     </li>
-
-                    <li class="nav-item active">
-                        <a class="nav-link text-info" href="#" data-bs-toggle="modal" data-bs-target="#SearchPlayers"><i class="fas fa-search"></i> Search Player</a>
+                    <li class="nav-item">
+                        <a class="nav-link active bg-white border rounded py-0 my-2 ms-2" href="#" data-bs-toggle="modal" data-bs-target="#SearchPlayers"><i class="fas fa-search"></i> Search Player</a>
                     </li>
-                
                 </ul>
             </div>
         </div>
@@ -65,9 +63,7 @@
             <div class="modal-content">
                 <div class="modal-header shadow-sm">
                     <h5 class="modal-title" id="SearchPlayersLabel"><i class="fas fa-search"></i> Search Players</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form class="">

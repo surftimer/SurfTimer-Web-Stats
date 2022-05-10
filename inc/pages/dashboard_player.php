@@ -333,7 +333,7 @@
 <?php
     if((!empty($player_id))&&($player_id!=="")&&($player_id!=='Unknown')&&($stmt_status===1)):
 ?>
-    <h5><a href="dashboard-players.php" class="text-muted">Surf Stat's Player Profile</a> / <?php echo $usr_steamid64; ?> <a href="https://steamcommunity.com/profiles/<?php echo $usr_steamid64; ?>" target="_blank" title="<?php echo $usr_name; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></h5>
+    <h5><a href="dashboard-players.php" class="text-muted text-decoration-none">Surf Stat's Player Profile</a> / <?php echo $usr_steamid64; ?> <a href="https://steamcommunity.com/profiles/<?php echo $usr_steamid64; ?>" target="_blank" title="<?php echo $usr_name; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></h5>
     <hr class="mt-0 mb-3">
     <div class="pt-3 pb-2">
         <h3 class="text-center"><?php echo $usr_name; ?></h3>
@@ -352,23 +352,23 @@
             <?php
                 // RANK badges
                 if($usr_position=="1")
-                    echo '<span class="badge shadow-sm badge-success">TOP 1</span>';
+                    echo '<span class="badge shadow-sm bg-success">TOP 1</span>';
                 elseif($usr_position=="2")
-                    echo '<span class="badge shadow-sm badge-danger">TOP 2</span>';
+                    echo '<span class="badge shadow-sm bg-danger">TOP 2</span>';
                 elseif($usr_position=="3")
-                    echo '<span class="badge shadow-sm badge-warning">TOP 3</span>';
+                    echo '<span class="badge shadow-sm bg-warning">TOP 3</span>';
                 elseif($usr_position<="10")
-                    echo '<span class="badge shadow-sm badge-info">TOP 10</span>';
+                    echo '<span class="badge shadow-sm bg-info">TOP 10</span>';
                 elseif($usr_position<="25")
-                    echo '<span class="badge shadow-sm badge-primary">TOP 25</span>';
+                    echo '<span class="badge shadow-sm bg-primary">TOP 25</span>';
                 elseif($usr_position<="50")
-                    echo '<span class="badge shadow-sm badge-secondary">TOP 50</span>';
+                    echo '<span class="badge shadow-sm bg-secondary">TOP 50</span>';
                 elseif($usr_position<="100")
-                    echo '<span class="badge shadow-sm badge-secondary">TOP 100</span>';
+                    echo '<span class="badge shadow-sm bg-secondary">TOP 100</span>';
                 elseif($usr_position<="250")
-                    echo '<span class="badge shadow-sm badge-secondary">TOP 250</span>';
+                    echo '<span class="badge shadow-sm bg-secondary">TOP 250</span>';
                 elseif($usr_position<="500")
-                    echo '<span class="badge shadow-sm badge-secondary">TOP 500</span>';
+                    echo '<span class="badge shadow-sm bg-secondary">TOP 500</span>';
             ?>
         </div>
 
@@ -500,7 +500,7 @@
                 <h5 class="my-0">Player Finished Maps</h5>
             </div>
             <div class="table-responsive">
-                <table class="table table-hover table-striped border shadow-sm py-0 my-2" id="map-wrs-by-player">
+                <table class="table table-hover table-striped border shadow-sm py-0 my-2 nowrap" style="width:100%" id="map-wrs-by-player">
                     <thead class="border">
                         <th class="text-left pl-3">Mapname</th>
                         <th class="text-center">Tier</th>
@@ -520,7 +520,7 @@
                 <h5 class="my-0">Player Finished Bonuses</h5>
             </div>
             <div class="table-responsive">
-                <table class="table table-hover table-striped border shadow-sm py-0 my-2" id="map-wrbs-by-player">
+                <table class="table table-hover table-striped border shadow-sm py-0 my-2 nowrap" style="width:100%" id="map-wrbs-by-player">
                     <thead class="border">
                         <th class="text-left pl-3">Mapname</th>
                         <th class="text-center">Tier</th>
@@ -541,7 +541,7 @@
                 <h5 class="my-0">Player Finished Stages</h5>
             </div>
             <div class="table-responsive">
-                <table class="table table-hover table-striped border shadow-sm py-0 my-2" id="map-wrcps-by-player">
+                <table class="table table-hover table-striped border shadow-sm py-0 my-2 nowrap" style="width:100%" id="map-wrcps-by-player">
                     <thead class="border">
                         <th class="text-left pl-3">Mapname</th>
                         <th class="text-center">Tier</th>

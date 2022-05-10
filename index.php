@@ -68,10 +68,10 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            Recent 10 Map Records
+                                            <span class="align-middle">Recent 10 Map Records</span>
                                         </div>
-                                        <div class="col col-md-6 text-right">
-                                            <a href="dashboard-recent.php" class="badge btn-outline-dark py-1 px-2 shadow-sm border"><i class="fas fa-stopwatch"></i> Show More</a>
+                                        <div class="col col-md-6 text-end">
+                                            <a href="dashboard-recent.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-stopwatch"></i> Show More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -113,10 +113,10 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            Top 10 Players
+                                            <span class="align-middle">Top 10 Players</span>
                                         </div>
-                                        <div class="col col-md-6 text-right">
-                                            <a href="dashboard-players.php" class="badge btn-outline-dark py-1 px-2 shadow-sm border"><i class="fas fa-users"></i> Show More</a>
+                                        <div class="col col-md-6 text-end">
+                                            <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> Show More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -158,10 +158,10 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            Top 10 WR holders
+                                            <span class="align-middle">Top 10 WR holders</span>
                                         </div>
-                                        <div class="col col-md-6 text-right">
-                                            <a href="dashboard-players.php" class="badge btn-outline-dark py-1 px-2 shadow-sm border"><i class="fas fa-users"></i> Show More</a>
+                                        <div class="col col-md-6 text-end">
+                                            <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> Show More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -199,10 +199,10 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            Tol 10 bonus WR Holders
+                                            <span class="align-middle">Tol 10 bonus WR Holders</span>
                                         </div>
-                                        <div class="col col-md-6 text-right">
-                                            <a href="dashboard-players.php" class="badge btn-outline-dark py-1 px-2 shadow-sm border"><i class="fas fa-users"></i> Show More</a>
+                                        <div class="col col-md-6 text-end">
+                                            <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> Show More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -240,10 +240,10 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            Top 10 stage WR holders
+                                            <span class="align-middle">Top 10 stage WR holders</span>
                                         </div>
-                                        <div class="col col-md-6 text-right">
-                                            <a href="dashboard-players.php" class="badge btn-outline-dark py-1 px-2 shadow-sm border"><i class="fas fa-users"></i> Show More</a>
+                                        <div class="col col-md-6 text-end">
+                                            <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> Show More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -281,10 +281,10 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            Recently added maps
+                                            <span class="align-middle">Recently added maps</span>
                                         </div>
-                                        <div class="col col-md-6 text-right">
-                                            <a href="dashboard-maps.php" class="badge btn-outline-dark py-1 px-2 shadow-sm border"><i class="fas fa-map"></i> Show More</a>
+                                        <div class="col col-md-6 text-end">
+                                            <a href="dashboard-maps.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-map"></i> Show More</a>
                                         </div>
                                     </div>
                                 </div>
