@@ -1,5 +1,5 @@
 
-# Surftimer-Web-Stats v2.0
+# Surftimer-Web-Stats v2
 
  ![GitHub Repo stars](https://img.shields.io/github/stars/kristianp26/surftimer-web-stats?color=ew&style=flat-square)
  ![GitHub forks](https://img.shields.io/github/forks/kristianp26/surftimer-web-stats?style=flat-square)
@@ -16,7 +16,7 @@ Surftimer-Web-Stats is Web with statistics for [Surftimer-Official](https://gith
 * Top Players, Recent Records & Most Active Section
 * Maps Section (Complete Statistics)
 * Players Profiles (Complete Statistics)
-* Dark Mode (Comming Soon...)
+* Bootwatch Themes
 * Languages (Comming Soon...)
 * Player Flags (Comming Soon...)
 * And other features from v1.x (Comming Soon...)
@@ -41,3 +41,15 @@ Surftimer-Web-Stats works on latest Release of [Surftimer-Official](https://gith
 * Download the latest version from the release page [here](https://github.com/KristianP26/Surftimer-Web-Stats/releases)
 * Copy unziped files into your web site directory
 * Edit `config.php`
+
+## Credits
+CSS & JS
+* [Bootstrap](https://getbootstrap.com/) (Front-end toolkit)
+* [Bootswatch](https://bootswatch.com/) (Free themes for Bootstrap)
+* [Font Awesome](https://fontawesome.com/) (Icon library and toolkit)
+* [PopperJS](https://popper.js.org/) (TOOLTIP & POPOVERPOSITIONING ENGINE)
+* [jQuery](https://jquery.com/) (JavaScript library)
+* [DataTables](https://datatables.net/) (Plug-in for the jQuery)
+
+Other
+* [PHP SteamID convert functions](https://gist.github.com/rannmann/49c1321b3239e00f442c) (by [rannmann](https://github.com/rannmann))
