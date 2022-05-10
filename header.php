@@ -25,7 +25,7 @@
         <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom core CSS -->
-        <link href="./vendor/fontawesome/css/all.min.css" rel="stylesheet">
+        <link href="./vendor/fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet">
         <link href="./vendor/css/datatables.min.css" rel="stylesheet">
         <link href="./vendor/css/custom.css" rel="stylesheet">
 
