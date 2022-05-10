@@ -419,7 +419,7 @@ endif;
                 <hr>
                 <h5 class="text-center">Map Completions</h5>
                 <div class="table-responsive">
-                    <table class="table table-sm table-hover table-striped border shadow-sm py-0 my-0" id="map-completions">
+                    <table class="table table-sm table-hover table-striped border shadow-sm py-0 my-0 nowrap" style="width:100%" id="map-completions">
                         <thead>
                             <th class="text-center">#</th>
                             <th class="text-left">Username</th>
@@ -474,7 +474,7 @@ endif;
                         <div class="tab-pane fade<?php if($map_bonuses_completions_number=='1') echo ' show active'; ?>" id='bonuses-content-<?php echo $map_bonuses_completions_number; ?>' role="tabpanel" aria-labelledby="bonuses-content-<?php echo $map_bonuses_completions_number; ?>-tab">
                             <?php if(!empty($map_bonuses_completion)): ?>
                                 <div class="table-responsive">
-                                    <table class="table table-hover table-striped  border table-sm shadow-sm py-0 my-0" id="bonuses-completions-<?php echo $map_bonuses_completions_number; ?>">
+                                    <table class="table table-hover table-striped  border table-sm shadow-sm py-0 my-0 nowrap" style="width:100%" id="bonuses-completions-<?php echo $map_bonuses_completions_number; ?>">
                                         <thead>
                                             <th class="text-center">#</th>
                                             <th class="text-left">Username</th>
