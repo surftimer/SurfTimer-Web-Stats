@@ -1,5 +1,5 @@
 
-# Surftimer-Web-Stats v2.0
+# Surftimer-Web-Stats v2
 
  ![GitHub Repo stars](https://img.shields.io/github/stars/kristianp26/surftimer-web-stats?color=ew&style=flat-square)
  ![GitHub forks](https://img.shields.io/github/forks/kristianp26/surftimer-web-stats?style=flat-square)
@@ -41,3 +41,12 @@ Surftimer-Web-Stats works on latest Release of [Surftimer-Official](https://gith
 * Download the latest version from the release page [here](https://github.com/KristianP26/Surftimer-Web-Stats/releases)
 * Copy unziped files into your web site directory
 * Edit `config.php`
+
+## Credits
+CSS & JS
+* [Bootstrap](https://getbootstrap.com/) (Front-end toolkit)
+* [Bootswatch](https://bootswatch.com/) (Free themes for Bootstrap)
+* [Font Awesome](https://fontawesome.com/) (Icon library and toolkit)
+* [PopperJS](https://popper.js.org/) (TOOLTIP & POPOVERPOSITIONING ENGINE)
+* [jQuery](https://jquery.com/) (JavaScript library)
+* [DataTables](https://datatables.net/) (Plug-in for the jQuery)
