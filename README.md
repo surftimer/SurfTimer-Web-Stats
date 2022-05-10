@@ -52,4 +52,4 @@ CSS & JS
 * [DataTables](https://datatables.net/) (Plug-in for the jQuery)
 
 Other
-* [PHP SteamID convert functions](https://gist.github.com/rannmann/49c1321b3239e00f442c) (by [rannmann](https://gist.github.com/rannmann))
+* [PHP SteamID convert functions](https://gist.github.com/rannmann/49c1321b3239e00f442c) (by [rannmann](https://github.com/rannmann))
