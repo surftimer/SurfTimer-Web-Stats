@@ -31,7 +31,7 @@
                         </li>
                     <?php endif; ?>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle <?php if(in_array($page_name, $nav_active_dropdown_dashboard)) echo 'active'; ?>" href="#" id="Dashboard-Nav-Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle <?php if(in_array($page_name, $nav_active_dropdown_dashboard)) echo 'active'; ?>" href="#" id="Dashboard-Nav-Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-tachometer-alt"></i> Dashboard
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow-sm" aria-labelledby="Dashboard-Na v-Dropdown">
@@ -44,8 +44,9 @@
 
                         </div>
                     </li>
+
                     <li class="nav-item active">
-                        <a class="nav-link text-info" href="#" data-toggle="modal" data-target="#SearchPlayers"><i class="fas fa-search"></i> Search Player</a>
+                        <a class="nav-link text-info" href="#" data-bs-toggle="modal" data-bs-target="#SearchPlayers"><i class="fas fa-search"></i> Search Player</a>
                     </li>
                 
                 </ul>
@@ -64,7 +65,7 @@
             <div class="modal-content">
                 <div class="modal-header shadow-sm">
                     <h5 class="modal-title" id="SearchPlayersLabel"><i class="fas fa-search"></i> Search Players</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -75,7 +76,7 @@
                     <div class="" id="players_search_result"></div>
                 </div>
                 <div class="modal-footer shadow-sm py-2">
-                    <button type="button" class="btn btn-outline-secondary shadow-sm" data-dismiss="modal"><i class="far fa-times-circle"></i> Close</button>
+                    <button type="button" class="btn btn-outline-secondary shadow-sm" data-bs-dismiss="modal"><i class="far fa-times-circle"></i> Close</button>
                 </div>
             </div>
         </div>
