@@ -18,7 +18,8 @@
     If you want use title than logo must remain empty
     Logo must be located in 'images' folder
 */
-    
+
+    $settings_favicon       = "logo.svg";
     $settings_navbar_logo   = "logo.svg";
     $settings_navbar_title  = "Surf Stats";
 

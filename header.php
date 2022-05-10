@@ -14,7 +14,12 @@
             <title><?php echo $page_name; ?> - Surf Stats</title>
         <?php endif; ?>
 
-        <link rel="icon" href="./images/logo_navbar_1.svg" type="image/gif">
+        <?php 
+            if($settings_favicon!='')
+                echo '<link rel="icon" href="./images/'.$settings_favicon.'" type="image/gif">';
+            else
+                echo '<link rel="icon" href="./images/logo.svg" type="image/gif">';
+        ?>
 
         <!-- Bootstrap core CSS -->
         <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
