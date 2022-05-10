@@ -22,7 +22,7 @@
         ?>
 
         <!-- Bootstrap core CSS -->
-        <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./vendor/bootstrap/css/<?php if($settings_theme!=='') echo $settings_theme; else echo 'default'; ?>/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom core CSS -->
         <link href="./vendor/fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet">
