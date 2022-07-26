@@ -21,7 +21,7 @@ jobs:
 
       - name: Upload files
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        env:
+        with:
           server: ${{ secrets.SFTP_HOST }}
           port: ${{ secrets.SFTP_PORT }}
           username: ${{ secrets.SFTP_USER }}
