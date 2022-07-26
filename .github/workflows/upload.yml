@@ -20,12 +20,12 @@ jobs:
           sed -i "s/your_database_name/${{ secrets.SQL_DATABASE }}/g" inc/config.php
 
       - name: Upload files
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.SFTP_HOST }}
           port: ${{ secrets.SFTP_PORT }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
-          local_path: ./*
-          remote_path: ${{ secrets.SFTP_DIR }}
-          sftp_only: true
+          protocol: ftp
+          local-dir: ./
+          server-dir: ./
