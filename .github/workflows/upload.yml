@@ -27,5 +27,5 @@ jobs:
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
           local_path: ./*
-          remote_path: '~/'
+          remote_path: ${{ secrets.SFTP_DIR }}
           sftp_only: true
