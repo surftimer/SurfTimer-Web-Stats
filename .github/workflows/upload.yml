@@ -1,1 +1,31 @@
+name: Uploading files
 
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      
+      - name: Replace database config values
+        run: |
+          sed -i "s/your_database_host/${{ secrets.SQL_HOST }}/g" $SCRIPTS_PATH/include/ttt_stock.inc
+          sed -i "s/your_database_username/${{ secrets.SQL_USER }}/g" $SCRIPTS_PATH/include/ttt_stock.inc
+          sed -i "s/your_database_password/${{ secrets.SQL_PASS }}/g" $SCRIPTS_PATH/include/ttt_stock.inc
+          sed -i "s/your_database_name/${{ secrets.SQL_DATABASE }}/g" $SCRIPTS_PATH/include/ttt_stock.inc
+
+      - name: Upload files
+        uses: SamKirkland/FTP-Deploy-Action@2.0.0
+        env:
+          FTP_SERVER: ${{ secrets.SFTP_HOST }}
+          FTP_USERNAME: ${{ secrets.SFTP_USER }}
+          FTP_PASSWORD: ${{ secrets.SFTP_PASS }}
+          LOCAL_DIR: ./
+          METHOD: sftp
+          PORT: ${{ secrets.SFTP_PORT }}
+          ARGS: --no-empty-dirs
