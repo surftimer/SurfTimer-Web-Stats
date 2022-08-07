@@ -2,6 +2,7 @@
 
     require_once('./../config.php');
     require_once('./../database.php');
+    require_once('./../functions.php');
 
     if(isset($_POST['player_id'])) {
         $player_id = $_POST['player_id'];
@@ -31,6 +32,8 @@
                 $usr_steamid64      = $row_sup['steamid64'];
                 $usr_name           = $row_sup['name'];
                 $usr_country        = $row_sup['country'];
+                $usr_countryCode    = $row_sup['countryCode'];
+                $usr_continentCode  = $row_sup['continentCode'];
                 $usr_joined         = $row_sup['joined'];
                 $usr_last_seen      = $row_sup['lastseen'];
 
@@ -337,7 +340,7 @@
     <hr class="mt-0 mb-3">
     <div class="pt-3 pb-2">
         <h3 class="text-center"><?php echo $usr_name; ?></h3>
-        <h4 class="text-center text-muted mb-2"><!--<img class="rounded border bg-transparent shadow-sm mb-1" height="20" src="<?php // echo $usr_country_flag; ?>">--><?php echo $usr_country; ?></h4>
+        <h4 class="text-center text-muted mb-2"><?php echo CountryFlagProfile($usr_countryCode, $usr_continentCode).' '.$usr_country; ?></h4>
         <div class="row justify-content-md-center mb-2">
             <div class="col-12 col-md-auto text-center">
                 <span class="mr-1">Last seen:</span> <?php echo $usr_last_seen_edit_d; ?>

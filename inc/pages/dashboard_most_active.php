@@ -2,6 +2,7 @@
 
     require_once('./../config.php');
     require_once('./../database.php');
+    require_once('./../functions.php');
 
     $sql_most_active = "SELECT ck_playerrank.*, ck_playerrank.timealive+ck_playerrank.timespec as totaltime FROM ck_playerrank WHERE style='0' AND ck_playerrank.timealive+ck_playerrank.timespec>='3600' ORDER BY totaltime DESC";
     $results_most_active = mysqli_query($db_conn_surftimer, $sql_most_active);
@@ -75,7 +76,7 @@
                         
                     ?>
                     [
-                        '<?php echo $most_active["name"]; ?> <a href="dashboard-player.php?id=<?php echo $most_active['steamid64']; ?>" target="" title="<?php echo $most_active['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $most_active['steamid64']; ?>" target="_blank" title="<?php echo $most_active['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>',
+                        '<?php echo CountryFlag($most_active['country'], $most_active['countryCode'], $most_active['continentCode']); ?> <?php echo $most_active["name"]; ?> <a href="dashboard-player.php?id=<?php echo $most_active['steamid64']; ?>" target="" title="<?php echo $most_active['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $most_active['steamid64']; ?>" target="_blank" title="<?php echo $most_active['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>',
                         '<?php echo  number_format(($most_active["totaltime"]/60)/60, 1); ?>',
                         '<?php echo number_format($most_active["connections"]); ?>',
                         '<small><?php echo $most_active_lastseen; ?></small><br><?php echo $most_active_lastseen_date_d; ?>',

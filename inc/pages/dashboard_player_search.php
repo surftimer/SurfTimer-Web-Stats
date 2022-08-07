@@ -1,6 +1,7 @@
 <?php
     require_once('./../config.php');
     require_once('./../database.php');
+    require_once('./../functions.php');
 
 $output = '';
 
@@ -32,6 +33,7 @@ if(isset($_POST["query"])):
             
                 <tr>
                     <td class="text-left pl-3">
+                        '.CountryFlag($row['country'], $row['countryCode'], $row['continentCode']).'
                         '.$row['name'].'
                         <a href="dashboard-player.php?id='.$row['steamid64'].'" target="" title="'.$row['name'].' - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a>
                         <a href="https://steamcommunity.com/profiles/'.$row['steamid64'].'" target="_blank" title="'.$row['name'].' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>

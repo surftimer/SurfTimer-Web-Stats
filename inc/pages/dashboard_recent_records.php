@@ -1,6 +1,7 @@
 <?php
     require_once('./../config.php');
     require_once('./../database.php');
+    require_once('./../functions.php');
 
     $sql_recent_records = "SELECT ck_latestrecords.*, ck_playerrank.name as normal_name, ck_playerrank.* FROM `ck_latestrecords` LEFT JOIN ck_playerrank ON ck_playerrank.steamid=ck_latestrecords.steamid WHERE style='0' ORDER BY `ck_latestrecords`.`date` DESC LIMIT 100";
     $results_recent_records = mysqli_query($db_conn_surftimer, $sql_recent_records);
@@ -32,7 +33,7 @@
                     $dateFormat_recent_record = date('Y/m/d  (H:i)', strtotime($recent_record['date']));
                 ?>
                 [
-                    '<?php echo $recent_record['normal_name']; ?> <a href="dashboard-player.php?id=<?php echo $recent_record['steamid64']; ?>" target="" title="<?php echo $recent_record['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $recent_record['steamid64']; ?>" target="_blank" title="<?php echo $recent_record['normal_name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>',
+                    '<?php echo CountryFlag($recent_record['country'], $recent_record['countryCode'], $recent_record['continentCode']); ?> <?php echo $recent_record['normal_name']; ?> <a href="dashboard-player.php?id=<?php echo $recent_record['steamid64']; ?>" target="" title="<?php echo $recent_record['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $recent_record['steamid64']; ?>" target="_blank" title="<?php echo $recent_record['normal_name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>',
                     '<a href="dashboard-maps.php?map=<?php echo $recent_record['map']; ?>" class="text-muted text-decoration-none"><?php echo $recent_record["map"]; ?> <i class="fas fa-link"></i></a>',
                     '<?php echo $runtime_recent_record_timeFormat; ?>',
                     '<small><?php echo $dateFormat_recent_record; ?></small>'

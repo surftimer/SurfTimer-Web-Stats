@@ -1,6 +1,7 @@
 <?php
     require_once('./../config.php');
     require_once('./../database.php');
+    require_once('./../functions.php');
 
     $sql_top_players = "SELECT ck_playerrank.* FROM ck_playerrank WHERE style='0' ORDER BY points DESC LIMIT 1000";
     $results_top_players = mysqli_query($db_conn_surftimer, $sql_top_players);
@@ -28,7 +29,7 @@
             <?php $top_player_row = 0; foreach($top_players as $top_player): ?>
                 [
                     '<?php echo ++$top_player_row; ?>.',
-                    '<?php echo $top_player["name"]; ?> <a href="dashboard-player.php?id=<?php echo $top_player['steamid64']; ?>" target="" title="<?php echo $top_player['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $top_player['steamid64']; ?>" target="_blank" title="<?php echo $top_player['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>',
+                    '<?php echo CountryFlag($top_player['country'], $top_player['countryCode'], $top_player['continentCode']); ?> <?php echo $top_player["name"]; ?> <a href="dashboard-player.php?id=<?php echo $top_player['steamid64']; ?>" target="" title="<?php echo $top_player['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $top_player['steamid64']; ?>" target="_blank" title="<?php echo $top_player['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>',
                     '<?php echo number_format($top_player["points"]); ?>',
                     '<?php echo number_format($top_player["finishedmapspro"]); ?>',
                     '<?php echo number_format($top_player["finishedbonuses"]); ?>',
