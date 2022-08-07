@@ -18,8 +18,7 @@ Surftimer-Web-Stats is Official Web with statistics for [Surftimer-Official](htt
 * Players Profiles (Complete Statistics)
 * !!Bootwatch Themes (Beta Version)
 * Languages (Comming Soon...)
-* Player Flags (Comming Soon...)
-* And other features from v1.x (Comming Soon...)
+* Player Flags
 
 ## Project Goals
 
