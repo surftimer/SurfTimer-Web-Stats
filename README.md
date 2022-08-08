@@ -118,8 +118,8 @@ safely store your passwords.
 | `CUSTOM_LINK_ADDRESS` | Address of the first link in the navbar | `https://github.com/surftimer/SurfTimer-Web-Stats` |
 | `CUSTOM_LINK_NAME_2` | Name of the second link in the navbar | `<i class="fab fa-discord"></i> Discord` |
 | `CUSTOM_LINK_ADDRESS_2` | Address of the second link in the navbar | `https://discord.surftimer.dev` |
-| `CUSTOM_LINK_NAME_3` | Name of the third link in the navbar | `` |
-| `CUSTOM_LINK_ADDRESS_3` | Address of the third link in the navbar | `` |
+| `CUSTOM_LINK_NAME_3` | Name of the third link in the navbar | None |
+| `CUSTOM_LINK_ADDRESS_3` | Address of the third link in the navbar | None |
 
 ## Credits
 CSS & JS
