@@ -50,7 +50,7 @@
             <th class="text-center">Bonuses</th>
             <th class="text-center">Stages</th>
         </thead>
-        <tbody class="table-sm">
+        <tbody class="">
             
         </tbody>
     </table>

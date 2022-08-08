@@ -51,7 +51,7 @@
             <th class="text-center">Time</th>
             <th class="text-center">Date</th>
         </thead>
-        <tbody class="table-sm">
+        <tbody class="">
 
         </tbody>
     </table>
