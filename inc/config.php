@@ -24,7 +24,7 @@
         default, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, slate, solar, spacelab, superhero, united, vapor, yeti, zephyr
         This is a beta function some of the themes will look like ... :)
     */
-    $settings_theme         = "default"; // Options are upper
+    $settings_theme         = "default";    // Options are upper
     $settings_favicon       = "logo.svg";
     $settings_navbar_logo   = "logo.svg";
     $settings_navbar_title  = "Surf Stats";
@@ -40,5 +40,14 @@
     $settings_custom_link_adress   = 'https://github.com/surftimer/SurfTimer-Web-Stats'; // Exmaple: https://github.com/KristianP26/Surftimer-Web-Stats
     $settings_custom_link_2_name     = '<i class="fab fa-discord"></i> Discord'; // Example: <i class="fab fa-discord"></i> Discord or <i class="fas fa-globe-europe"></i> Website
     $settings_custom_link_2_adress   = 'https://discord.surftimer.dev'; // Exmaple: https://discord.gg/HxhhypNa3Z
+    $settings_custom_link_3_name     = ''; // Example: <i class="fab fa-discord"></i> Discord or <i class="fas fa-globe-europe"></i> Website
+    $settings_custom_link_3_adress   = ''; // Exmaple: https://discord.gg/HxhhypNa3Z
 
  /* End of Custom Link */
+
+ /* 
+    General Settings 
+*/
+    $settings_player_flags  = TRUE; // FALSE or TRUE
+
+/* End of General Settings */

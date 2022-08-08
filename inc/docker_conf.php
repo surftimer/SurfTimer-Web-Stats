@@ -27,3 +27,5 @@
     $settings_custom_link_adress   = $_ENV["CUSTOM_LINK_ADDRESS"] ?? $settings_custom_link_adress;
     $settings_custom_link_2_name     = $_ENV["CUSTOM_LINK_NAME_2"] ?? $settings_custom_link_2_name;
     $settings_custom_link_2_adress   = $_ENV["CUSTOM_LINK_ADDRESS_2"] ?? $settings_custom_link_2_adress;
+    $settings_custom_link_3_name     = $_ENV["CUSTOM_LINK_NAME_3"] ?? $settings_custom_link_3_name;
+    $settings_custom_link_3_adress   = $_ENV["CUSTOM_LINK_ADDRESS_3"] ?? $settings_custom_link_3_adress;

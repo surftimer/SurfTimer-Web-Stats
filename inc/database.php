@@ -50,6 +50,14 @@ if(!$exists_ptcheck) {
 }
 // End of "Create not existing database columns"
 
+if($settings_player_flags){
+    $sql_UsrTableCountryCodeAndContinentCodeCheck = "SHOW COLUMNS FROM `ck_wrcps` LIKE 'countryCode'";
+    $result_UsrTableCountryCodeAndContinentCodeCheck = $db_conn_surftimer->query($sql_UsrTableCountryCodeAndContinentCodeCheck);
+    $exists_UsrTableCountryCodeAndContinentCodeCheck = (mysqli_num_rows($result_UsrTableCountryCodeAndContinentCodeCheck))?TRUE:FALSE;
+    $config_player_flags = $exists_UsrTableCountryCodeAndContinentCodeCheck;
+} else {
+    $config_player_flags = FALSE;
+}
 
 $sql_select_timezone = "SELECT IF(@@session.time_zone = 'SYSTEM', @@system_time_zone, @@session.time_zone) as timezone;";
 $results_select_timezone = mysqli_query($db_conn_surftimer, $sql_select_timezone);
