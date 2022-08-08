@@ -29,7 +29,7 @@
             <?php $top_player_row = 0; foreach($top_players as $top_player): ?>
                 [
                     '<?php echo ++$top_player_row; ?>.',
-                    '<?php echo CountryFlag($top_player['country'], $top_player['countryCode'], $top_player['continentCode']); ?> <?php echo $top_player["name"]; ?> <a href="dashboard-player.php?id=<?php echo $top_player['steamid64']; ?>" target="" title="<?php echo $top_player['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $top_player['steamid64']; ?>" target="_blank" title="<?php echo $top_player['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>',
+                    '<?php if($config_player_flags) echo CountryFlag($top_player['country'], $top_player['countryCode'], $top_player['continentCode']); ?> <?php echo $top_player["name"]; ?> <a href="dashboard-player.php?id=<?php echo $top_player['steamid64']; ?>" target="" title="<?php echo $top_player['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $top_player['steamid64']; ?>" target="_blank" title="<?php echo $top_player['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>',
                     '<?php echo number_format($top_player["points"]); ?>',
                     '<?php echo number_format($top_player["finishedmapspro"]); ?>',
                     '<?php echo number_format($top_player["finishedbonuses"]); ?>',
