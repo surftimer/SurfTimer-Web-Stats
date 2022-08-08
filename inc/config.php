@@ -28,6 +28,7 @@
     $settings_favicon       = "logo.svg";
     $settings_navbar_logo   = "logo.svg";
     $settings_navbar_title  = "Surf Stats";
+    $settings_map_link_icon = TRUE;         // TRUE or FALSE # FALSE will disable link icon after map name
 
 /* End of Design Settings */
 
@@ -48,6 +49,6 @@
  /* 
     General Settings 
 */
-    $settings_player_flags  = TRUE; // FALSE or TRUE
+    $settings_player_flags  = TRUE; // TRUE or FALSE # False will disable players flags
 
 /* End of General Settings */
