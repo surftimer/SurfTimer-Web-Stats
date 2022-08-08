@@ -30,6 +30,11 @@
                             <a class="nav-link" href="<?php echo $settings_custom_link_2_adress;?>"><?php echo $settings_custom_link_2_name;?></a>
                         </li>
                     <?php endif; ?>
+                    <?php if($settings_custom_link_3_name!=''): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo $settings_custom_link_3_adress;?>"><?php echo $settings_custom_link_3_name;?></a>
+                        </li>
+                    <?php endif; ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle <?php if(in_array($page_name, $nav_active_dropdown_dashboard)) echo 'active'; ?>" href="#" id="Dashboard-Nav-Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-tachometer-alt"></i> Dashboard
