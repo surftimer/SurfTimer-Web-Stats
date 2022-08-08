@@ -67,7 +67,7 @@ function CountryFlag($country, $country_flag, $continent_flag) {
     if(!empty($country_flag))
         return '<img class="bg-transparent border" title="'.$country.'" height="16" src="./images/flags/'.$country_flag.'.svg"/>';
     elseif(!empty($continent_flag))
-        return '<img class="bg-transparent border" title="'.$country.'" height="16" src="./images/flags/'.$continent_flag.'.svg"/>';
+        return '<img class="bg-transparent border" title="'.$country.'" height="16" src="./images/flags/continents/'.$continent_flag.'.svg"/>';
     else
         return '<img class="bg-transparent border" title="'.$country.'" height="16" src="./images/flags/unknown.svg"/>';
 }
@@ -76,7 +76,7 @@ function CountryFlagProfile($countryCode, $continentCode) {
     if(!empty($countryCode))
         return '<img class="rounded border bg-transparent shadow-sm mb-1" height="20" src="./images/flags/'.$countryCode.'.svg"/>';
     elseif(!empty($continent_flag))
-        return '<img class="rounded border bg-transparent shadow-sm mb-1" height="20" src="./images/flags/'.$continentCode.'.svg"/>';
+        return '<img class="rounded border bg-transparent shadow-sm mb-1" height="20" src="./images/flags/continents/'.$continentCode.'.svg"/>';
     else
         return '<img class="rounded border bg-transparent shadow-sm mb-1" height="20" src="./images/flags/unknown.svg"/>';
 }
