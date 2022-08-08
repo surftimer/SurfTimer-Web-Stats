@@ -300,7 +300,7 @@ endif;
 				$newmaps_added_d = $newmaps_diff." days ago";
 			?>
 			[
-			    '<a href="dashboard-maps.php?map=<?php echo $map['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $map['mapname']; ?> <i class="fas fa-link"></i></a>',
+			    '<a href="dashboard-maps.php?map=<?php echo $map['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $map['mapname']; ?> <?php if($settings_map_link_icon) echo '<i class="fas fa-link"></i>';?></a>',
 			    '<?php echo $map['tier']; ?>',
 			    '<?php echo $map_stages; ?>',
 			    '<?php echo $map_bonuses; ?>',
