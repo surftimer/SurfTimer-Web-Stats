@@ -40,5 +40,7 @@
     $settings_custom_link_adress   = 'https://github.com/surftimer/SurfTimer-Web-Stats'; // Exmaple: https://github.com/KristianP26/Surftimer-Web-Stats
     $settings_custom_link_2_name     = '<i class="fab fa-discord"></i> Discord'; // Example: <i class="fab fa-discord"></i> Discord or <i class="fas fa-globe-europe"></i> Website
     $settings_custom_link_2_adress   = 'https://discord.surftimer.dev'; // Exmaple: https://discord.gg/HxhhypNa3Z
+    $settings_custom_link_3_name     = ''; // Example: <i class="fab fa-discord"></i> Discord or <i class="fas fa-globe-europe"></i> Website
+    $settings_custom_link_3_adress   = ''; // Exmaple: https://discord.gg/HxhhypNa3Z
 
  /* End of Custom Link */
