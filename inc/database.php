@@ -51,7 +51,7 @@ if(!$exists_ptcheck) {
 // End of "Create not existing database columns"
 
 if($settings_player_flags){
-    $sql_UsrTableCountryCodeAndContinentCodeCheck = "SHOW COLUMNS FROM `ck_wrcps` LIKE 'countryCode'";
+    $sql_UsrTableCountryCodeAndContinentCodeCheck = "SHOW COLUMNS FROM `ck_playerrank` LIKE 'countryCode'";
     $result_UsrTableCountryCodeAndContinentCodeCheck = $db_conn_surftimer->query($sql_UsrTableCountryCodeAndContinentCodeCheck);
     $exists_UsrTableCountryCodeAndContinentCodeCheck = (mysqli_num_rows($result_UsrTableCountryCodeAndContinentCodeCheck))?TRUE:FALSE;
     $config_player_flags = $exists_UsrTableCountryCodeAndContinentCodeCheck;
