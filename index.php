@@ -95,7 +95,7 @@
                                                 ?>
                                                 <tr>
                                                     <td class="px-3"><?php if($config_player_flags) echo CountryFlag($r10r['country'], $r10r['countryCode'], $r10r['continentCode']); ?> <?php echo $r10r['normal_name']; ?> <a href="dashboard-player.php?id=<?php echo $r10r['steamid64']; ?>" target="" title="<?php echo $r10r['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $r10r['steamid64']; ?>" target="_blank" title="<?php echo $r10r['normal_name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></td>
-                                                    <td class="text-center"><a href="dashboard-maps.php?map=<?php echo $r10r['map']; ?>" class="text-muted text-decoration-none"><?php echo $r10r['map']; ?> <i class="fas fa-link"></i></a></td>
+                                                    <td class="text-center"><a href="dashboard-maps.php?map=<?php echo $r10r['map']; ?>" class="text-muted text-decoration-none"><?php echo $r10r['map']; ?><?php if($settings_map_link_icon) echo ' <i class="fas fa-link"></i></a>';?></td>
                                                     <td class="text-center"><?php echo $runtime_r10rs_timeFormat; ?></td>
                                                     <td class="text-center"><small><?php echo $dateFormat_r10rs; ?></small></td>
                                                 </tr>
