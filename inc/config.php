@@ -24,11 +24,12 @@
         default, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, slate, solar, spacelab, superhero, united, vapor, yeti, zephyr
         This is a beta function some of the themes will look like ... :)
     */
-    $settings_theme         = "default";    // Options are upper
-    $settings_favicon       = "logo.svg";
-    $settings_navbar_logo   = "logo.svg";
-    $settings_navbar_title  = "Surf Stats";
-    $settings_map_link_icon = TRUE;         // TRUE or FALSE # FALSE will disable link icon after map name
+    $settings_theme                 = "default";    // Options are upper
+    $settings_favicon               = "logo.svg";
+    $settings_navbar_logo           = "logo.svg";
+    $settings_navbar_title          = "Surf Stats";
+    $settings_player_profile_icon   = FALSE;         // TRUE or FALSE # FALSE will disable player profile icons
+    $settings_map_link_icon         = FALSE;         // TRUE or FALSE # FALSE will disable link icon after map name
 
 /* End of Design Settings */
 

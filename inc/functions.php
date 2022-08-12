@@ -80,3 +80,20 @@ function CountryFlagProfile($countryCode, $continentCode) {
     else
         return '<img class="rounded border bg-transparent shadow-sm mb-1" height="20" src="./images/flags/unknown.svg"/>';
 }
+
+
+
+function PlayerUsernameProfile($player_steamid64, $player_name) {
+    global $settings_player_profile_icon;
+
+    if($player_name=='          ' || $player_name==''){
+        $player_name = '<span class="text-muted">(Unknown)</span>';
+        $player_name_title = '(Unknown)'; 
+    } else 
+        $player_name_title = $player_name;
+        
+    if($settings_player_profile_icon)
+        return $player_name.' <a href="dashboard-player.php?id='.$player_steamid64.'" target="" title="'.$player_name_title.' - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/'.$player_steamid64.'" target="_blank" title="'.$player_name_title.' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>';
+    else
+        return  '<a href="dashboard-player.php?id='.$player_steamid64.'" title="'.$player_name_title.' - Surf Profile" class="text-dark text-decoration-none">'.$player_name.'</a>';
+}

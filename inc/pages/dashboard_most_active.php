@@ -76,7 +76,7 @@
                         
                     ?>
                     [
-                        '<?php if($config_player_flags) echo CountryFlag($most_active['country'], $most_active['countryCode'], $most_active['continentCode']); ?> <?php echo $most_active["name"]; ?> <a href="dashboard-player.php?id=<?php echo $most_active['steamid64']; ?>" target="" title="<?php echo $most_active['name']; ?> - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/<?php echo $most_active['steamid64']; ?>" target="_blank" title="<?php echo $most_active['name']; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>',
+                        '<?php if($config_player_flags) echo CountryFlag($most_active['country'], $most_active['countryCode'], $most_active['continentCode']); ?> <?php echo PlayerUsernameProfile($most_active['steamid64'], $most_active['name']); ?>',
                         '<?php echo  number_format(($most_active["totaltime"]/60)/60, 1); ?>',
                         '<?php echo number_format($most_active["connections"]); ?>',
                         '<small><?php echo $most_active_lastseen; ?></small><br><?php echo $most_active_lastseen_date_d; ?>',
