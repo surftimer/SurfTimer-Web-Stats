@@ -1,6 +1,6 @@
 <?php
 /*
-    English language for Surftimer-Web-Stats v2.06
+    Czech language for Surftimer-Web-Stats v2.06
     Translation by: KristiánP
 */
 
