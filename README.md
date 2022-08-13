@@ -25,6 +25,7 @@ Surftimer-Web-Stats is Official Web with statistics for [Surftimer-Official](htt
 Show all statistics on one place on the website and create best surf web statistics extension.
 
  * [Demo](https://demo.stats.surftimer.dev/)
+ * [Dev Demo](https://dev.stats.surftimer.dev/)
 
 ## Installation and Requirements
 
