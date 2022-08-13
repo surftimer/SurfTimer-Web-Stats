@@ -41,7 +41,7 @@
         <style>
             body{
                 overflow-y: scroll;
-                background-image: url('./images/surf-images/<?php echo date('N', strtotime(date('l')));?>.jpg');
+                background-image: url('./images/<?php echo BackgroundImage(); ?>');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: fixed;

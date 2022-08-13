@@ -97,3 +97,12 @@ function PlayerUsernameProfile($player_steamid64, $player_name) {
     else
         return  '<a href="dashboard-player.php?id='.$player_steamid64.'" title="'.$player_name_title.' - Surf Profile" class="text-dark text-decoration-none">'.$player_name.'</a>';
 }
+
+function BackgroundImage() {
+    global $settings_background_image;
+
+    if($settings_background_image=='')
+        return 'surf-images/'.date('N', strtotime(date('l'))).'.jpg';
+    else 
+        return $settings_background_image;
+}
