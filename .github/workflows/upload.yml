@@ -21,7 +21,7 @@ jobs:
       - name: Set environment variables
         run: |
           if [[ ${{ steps.get_branch_name.outputs.branch }} == *"master"* ]]; then
-            echo "SERVER_DIRECTORY=${{ secrets.PUBLIC_DIRECTORY }}" >> $GITHUB_ENV
+            echo "SERVER_DIRECTORY=./" >> $GITHUB_ENV
           else
             echo "SERVER_DIRECTORY=${{ secrets.DEV_DIRECTORY }}" >> $GITHUB_ENV
           fi
