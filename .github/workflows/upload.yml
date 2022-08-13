@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - develop
 
 jobs:
   workflow:
@@ -11,6 +12,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+
+      - name: Get branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: get_branch_name
+
+      - name: Set environment variables
+        run: |
+          if [[ ${{ steps.get_branch_name.outputs.branch }} == *"master"* ]]; then
+            echo "SERVER_DIRECTORY=${{ secrets.PUBLIC_DIRECTORY }" >> $GITHUB_ENV
+          else
+            echo "SERVER_DIRECTORY=${{ secrets.DEV_DIRECTORY }" >> $GITHUB_ENV
+          fi
       
       - name: Replace database config values
         run: |
@@ -28,4 +42,4 @@ jobs:
           password: ${{ secrets.SFTP_PASS }}
           protocol: ftp
           local-dir: ./
-          server-dir: ./
+          server-dir: ${{ env.SERVER_DIRECTORY }}
