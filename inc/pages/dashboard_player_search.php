@@ -2,6 +2,7 @@
     require_once('./../config.php');
     require_once('./../database.php');
     require_once('./../functions.php');
+    require_once('./../languages/English.php');
 
 $output = '';
 
@@ -16,11 +17,11 @@ if(isset($_POST["query"])):
     <table class="table border mt-3 table-hover table-hover table-sm shadow-sm py-0 my-0">
             <thead class="border-bottom">
             <tr>
-                <th class="text-left pl-3">Username</th>
-                <th class="text-center">Points</th>
-                <th class="text-center">Maps</th>
-                <th class="text-center">Bonuses</th>
-                <th class="text-center">Stages</th>
+                <th class="text-left pl-3">'.TABLE_USERNAME.'</th>
+                <th class="text-center">'.TABLE_POINTS.'</th>
+                <th class="text-center">'.TABLE_MAPS.'</th>
+                <th class="text-center">'.TABLE_BONUSES.'</th>
+                <th class="text-center">'.TABLE_STAGES.'</th>
 
             </tr>
         </thead>
@@ -57,7 +58,7 @@ if(isset($_POST["query"])):
     echo $output;
     else:
     echo '
-        <h5 class="mt-3 pl-3"><i class="fas fa-info-circle"></i> No Results<h3>
+        <h5 class="mt-3 pl-3"><i class="fas fa-info-circle"></i> '.SEARCH_NO_RESULTS.'<h3>
     ';
     endif;
 
