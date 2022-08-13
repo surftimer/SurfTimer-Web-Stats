@@ -130,24 +130,13 @@ if((isset($mapname))&&($mapname!=='')):
                         $result_stage_top_time = mysqli_query($db_conn_surftimer, $sql_stage_top_time);
                         $row_stage_top_time = $result_stage_top_time->fetch_assoc();
 
-                        if(isset($row_stage_top_time['goodname'])):
-                            if($config_player_flags) 
-                                $stage_top_time_flag = CountryFlag($row_stage_top_time['country'], $row_stage_top_time['countryCode'], $row_stage_top_time['continentCode']).' ';
-                            else 
-                                $stage_top_time_flag = '';
-                            $stage_top_time_username = $row_stage_top_time['goodname'];
+                        if((isset($row_stage_top_time['goodname']))&&(isset($row_stage_top_time['steamid64']))):
+                            $stage_top_time_user = CountryFlag($row_stage_top_time['country'], $row_stage_top_time['countryCode'], $row_stage_top_time['continentCode']).' '.PlayerUsernameProfile($row_stage_top_time['steamid64'], $row_stage_top_time['name']);
                         elseif(isset($row_stage_top_time['name'])):
-                            $stage_top_time_flag = '';
-                            $stage_top_time_username = $row_stage_top_time['name'];
+                            $stage_top_time_user = $row_stage_top_time['name'];
                         else:
-                            $stage_top_time_flag = '';
-                            $stage_top_time_username = '<small class="text-muted">N/A</small>';
+                            $stage_top_time_user = '<small class="text-muted">N/A</small>';
                         endif;
-                        
-                        if(isset($row_stage_top_time['steamid64']))
-                            $stage_top_time_steamprofile = ' <a href="dashboard-player.php?id='.$row_stage_top_time['steamid64'].'" target="" title="'.$row_stage_top_time['name'].' - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/'.$row_stage_top_time['steamid64'].'" target="_blank" title="'.$stage_top_time_username.' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>';
-                        else
-                            $stage_top_time_steamprofile = '';
 
                         if(isset($row_stage_top_time['runtimepro'])):
                             $stage_top_time_runtime_microtime = substr($row_stage_top_time['runtimepro'], strpos($row_stage_top_time['runtimepro'], ".") + 1);    
@@ -156,7 +145,7 @@ if((isset($mapname))&&($mapname!=='')):
                             $stage_top_time_runtime_timeformat = '<small class="text-muted">N/A</small>';
                         endif;
 
-                        $map_top_stages[] = array($map_top_stages_while, $stage_top_time_flag.$stage_top_time_username.$stage_top_time_steamprofile, $stage_top_time_runtime_timeformat, $row_map_total_stage_completions['stage_completions']);
+                        $map_top_stages[] = array($map_top_stages_while, $stage_top_time_user, $stage_top_time_runtime_timeformat, $row_map_total_stage_completions['stage_completions']);
                     
                     endwhile;
 
@@ -190,24 +179,13 @@ if((isset($mapname))&&($mapname!=='')):
                         if(mysqli_num_rows($result_map_bonuses_completions) > 0):
                             while($row_map_bonuses_completions = mysqli_fetch_assoc($result_map_bonuses_completions)):
 
-                                if(isset($row_map_bonuses_completions['goodname'])):
-                                    if($config_player_flags) 
-                                        $map_bonuses_completions_userflag = CountryFlag($row_map_bonuses_completions['country'], $row_map_bonuses_completions['countryCode'], $row_map_bonuses_completions['continentCode']).' ';
-                                    else 
-                                        $map_bonuses_completions_userflag = '';
-                                    $map_bonuses_completions_username = $row_map_bonuses_completions['goodname'];
+                                if((isset($row_map_bonuses_completions['goodname']))&&(isset($row_map_bonuses_completions['steamid64']))):
+                                    $map_bonuses_completions_user = CountryFlag($row_map_bonuses_completions['country'], $row_map_bonuses_completions['countryCode'], $row_map_bonuses_completions['continentCode']).' '.PlayerUsernameProfile($row_map_bonuses_completions['steamid64'], $row_map_bonuses_completions['name']);
                                 elseif(isset($row_map_bonuses_completions['name'])):
-                                    $map_bonuses_completions_username = $row_map_bonuses_completions['name'];
-                                    $map_bonuses_completions_userflag = '';
+                                    $map_bonuses_completions_user = $row_map_bonuses_completions['name'];
                                 else:
-                                    $map_bonuses_completions_username = '<small class="text-muted">N/A</small>';
-                                    $map_bonuses_completions_userflag = '';
+                                    $map_bonuses_completions_user = '<small class="text-muted">N/A</small>';
                                 endif;
-
-                                if(isset($row_map_bonuses_completions['steamid64']))
-                                    $map_bonuses_completions_steamprofile = ' <a href="dashboard-player.php?id='.$row_map_bonuses_completions['steamid64'].'" target="" title="'.$row_map_bonuses_completions['name'].' - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/'.$row_map_bonuses_completions['steamid64'].'" target="_blank" title="'.$map_bonuses_completions_username.' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>';
-                                else
-                                    $map_bonuses_completions_steamprofile = '';
 
                                 $map_bonuses_completions_runtime = $row_map_bonuses_completions['runtime'];
                                 $map_bonuses_completions_runtime_microtime = substr($map_bonuses_completions_runtime, strpos($map_bonuses_completions_runtime, ".") + 1);    
@@ -219,7 +197,7 @@ if((isset($mapname))&&($mapname!=='')):
                                 else 
                                     $map_bonuses_completions_date = '<small class="text-muted">N/A</small>';
 
-                                $map_bonuses_completions_rows[] = array($map_bonuses_completions_userflag.$map_bonuses_completions_username.$map_bonuses_completions_steamprofile, $map_bonuses_completions_runtime_timeformat, $map_bonuses_completions_date);
+                                $map_bonuses_completions_rows[] = array($map_bonuses_completions_user, $map_bonuses_completions_runtime_timeformat, $map_bonuses_completions_date);
 
                             endwhile;
                         endif;
@@ -300,7 +278,7 @@ endif;
 				$newmaps_added_d = $newmaps_diff." days ago";
 			?>
 			[
-			    '<a href="dashboard-maps.php?map=<?php echo $map['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $map['mapname']; ?> <i class="fas fa-link"></i></a>',
+			    '<a href="dashboard-maps.php?map=<?php echo $map['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $map['mapname']; ?> <?php if($settings_map_link_icon) echo '<i class="fas fa-link"></i>';?></a>',
 			    '<?php echo $map['tier']; ?>',
 			    '<?php echo $map_stages; ?>',
 			    '<?php echo $map_bonuses; ?>',
@@ -325,25 +303,15 @@ endif;
 					responsive: true,
 					"data": [
 						<?php $map_completion_row = 0; foreach($map_completions as $map_completion): ?>
-							<?php
-								if(isset($map_completion['goodname'])):
-                                    if($config_player_flags) 
-                                        $map_completion_userflag = CountryFlag($map_completion['country'], $map_completion['countryCode'], $map_completion['continentCode']).' ';
-                                    else 
-                                        $map_completion_userflag = '';
-									$map_completion_username = $map_completion['goodname']; 
-								elseif(isset($map_completion['name'])):
-									$map_completion_username = $map_completion['name'];
-                                    $map_completion_userflag = '';
+
+                            <?php 
+                                if((isset($map_completion['goodname']))&&(isset($map_completion['steamid64']))):
+                                    $map_completion_user = CountryFlag($map_completion['country'], $map_completion['countryCode'], $map_completion['continentCode']).' '.PlayerUsernameProfile($map_completion['steamid64'], $map_completion['name']);
+                                elseif(isset($map_completion['name'])):
+                                    $map_completion_user = $map_completion['name'];
                                 else:
-									$map_completion_username = '<small class="text-muted">N/A</small>';
-                                    $map_completion_userflag = '';
+                                    $map_completion_user = '<small class="text-muted">N/A</small>';
                                 endif;
-                                
-								if(isset($map_completion['steamid64']))
-									$map_completion_steamprofile = ' <a href="dashboard-player.php?id='.$map_completion['steamid64'].'" target="" title="'.$map_completion['name'].' - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/'.$map_completion['steamid64'].'" target="_blank" title="'.$map_completion_username.' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>';
-								else
-									$map_completion_steamprofile = '';
 
 								$map_completion_runtime = $map_completion['runtimepro'];
 								$map_completion_runtime_microtime = substr($map_completion_runtime, strpos($map_completion_runtime, ".") + 1);    
@@ -357,7 +325,7 @@ endif;
 							?>
 							[
 								'<?php echo ++$map_completion_row; ?>.',
-								'<?php echo $map_completion_userflag.$map_completion_username.$map_completion_steamprofile; ?>',
+								'<?php echo $map_completion_user; ?>',
 								'<?php echo $map_completion_runtime_timeformat; ?>',
                                 '<?php echo $map_completion_date; ?>'
 							],
@@ -468,20 +436,20 @@ endif;
                 <h5 class="text-center">Bonuses Completions</h5>
                 
                 <nav>
-                    <div class="nav nav-tabs nav-fill my-3" id="bonuses-tabs" role="tablist">
+                    <div class="nav nav-tabs nav-fill my-3" id="nav-tab" role="tablist">
                         <?php $map_bonuses_completions_number = 0; foreach($map_bonuses_completions_counts as $map_bonuses_completions_count): ?>
-                            <a class="nav-item nav-link pb-3 <?php if((++$map_bonuses_completions_number=='1')&&($map_bonuses_completions_count!=='0')) echo 'active'; elseif($map_bonuses_completions_count==='0') echo 'disabled'; ?>" href="#bonuses-content-<?php echo $map_bonuses_completions_number; ?>" id="bonuses-content-<?php echo $map_bonuses_completions_number; ?>-tab" data-toggle="tab" role="tab" aria-controls="bonuses-content-<?php echo $map_bonuses_completions_number; ?>" aria-selected="true">
+                            <button class="nav-link pb-3 <?php if((++$map_bonuses_completions_number=='1')&&($map_bonuses_completions_count!=='0')) echo 'active'; elseif($map_bonuses_completions_count==='0') echo 'disabled'; ?>" id="bonuses-content-<?php echo $map_bonuses_completions_number; ?>-tab" data-bs-toggle="tab" data-bs-target="#bonuses-content-<?php echo $map_bonuses_completions_number; ?>" type="button" role="tab" aria-controls="nav-bonuses-<?php echo $map_bonuses_completions_number; ?>" aria-selected="true">
                                 <b class="text-muted">Bonus <?php echo $map_bonuses_completions_number; ?></b>
                                 <br>
                                 <span class="text-body"><?php echo number_format($map_bonuses_completions_count); ?></span>
-                            </a>
-                        <?php endforeach; ?>                                            
+                            </button>
+                        <?php endforeach; ?>  
                     </div>
                 </nav>
 
                 <div class="tab-content my-2" id="bonuses-tabsContent">       
                     <?php $map_bonuses_completions_number = 0; foreach($map_bonuses_completions as $map_bonuses_completion): ++$map_bonuses_completions_number; ?>
-                        <div class="tab-pane fade<?php if($map_bonuses_completions_number=='1') echo ' show active'; ?>" id='bonuses-content-<?php echo $map_bonuses_completions_number; ?>' role="tabpanel" aria-labelledby="bonuses-content-<?php echo $map_bonuses_completions_number; ?>-tab">
+                        <div class="tab-pane fade<?php if($map_bonuses_completions_number=='1') echo ' show active'; ?>" id='bonuses-content-<?php echo $map_bonuses_completions_number; ?>' role="tabpanel" aria-labelledby="bonuses-content-<?php echo $map_bonuses_completions_number; ?>-tab" tabindex="0">
                             <?php if(!empty($map_bonuses_completion)): ?>
                                 <div class="table-responsive">
                                     <table class="table table-hover table-striped  border table-sm shadow-sm py-0 my-0 nowrap" style="width:100%" id="bonuses-completions-<?php echo $map_bonuses_completions_number; ?>">

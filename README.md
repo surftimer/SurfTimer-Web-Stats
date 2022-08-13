@@ -25,6 +25,7 @@ Surftimer-Web-Stats is Official Web with statistics for [Surftimer-Official](htt
 Show all statistics on one place on the website and create best surf web statistics extension.
 
  * [Demo](https://demo.stats.surftimer.dev/)
+ * [Dev Demo](https://dev.stats.surftimer.dev/)
 
 ## Installation and Requirements
 
@@ -114,12 +115,15 @@ safely store your passwords.
 | `SETTINGS_FAVICON` | Favicon to use for the site icon | `logo.svg` |
 | `NAVBAR_LOGO` | Logo to use for the navbar | `logo.svg` |
 | `NAVBAR_TITLE` | Title of the navbar | `Surf Stats` |
+| `PLAYER_PROFILE_ICON` | Player profile icon | `FALSE` |
+| `MAP_LINK_ICON` | Map link icon | `FALSE` |
 | `CUSTOM_LINK_NAME` | Name of the first link in the navbar | `<i class="fas fa-globe-europe"></i> Website` |
 | `CUSTOM_LINK_ADDRESS` | Address of the first link in the navbar | `https://github.com/surftimer/SurfTimer-Web-Stats` |
 | `CUSTOM_LINK_NAME_2` | Name of the second link in the navbar | `<i class="fab fa-discord"></i> Discord` |
 | `CUSTOM_LINK_ADDRESS_2` | Address of the second link in the navbar | `https://discord.surftimer.dev` |
 | `CUSTOM_LINK_NAME_3` | Name of the third link in the navbar | None |
 | `CUSTOM_LINK_ADDRESS_3` | Address of the third link in the navbar | None |
+| `PLAYER_FLAGS` | Players Flags | `TRUE` |
 
 ## Credits
 CSS & JS
