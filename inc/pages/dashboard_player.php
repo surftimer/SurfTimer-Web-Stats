@@ -246,7 +246,7 @@
                         
                     ?>
                     [
-                        '<a href="dashboard-maps.php?map=<?php echo  $player_wr['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $player_wr["mapname"]; ?> <?php if($settings_map_link_icon) echo '<i class="fas fa-link"></i>';?></a>',
+                        '<?php echo MapPageLink($player_wr["mapname"]); ?>',
                         '<?php echo $player_wr["tier"]; ?>',
                         '<?php echo $player_wr["maprank"]; ?>',
                         '<?php echo $player_wr_runtime_timeformat; ?>',
@@ -283,7 +283,7 @@
                             $player_wrb_date = '<small class="text-muted">N/A</small>';
                     ?>
                     [
-                        '<a href="dashboard-maps.php?map=<?php echo  $player_wrb['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $player_wrb["mapname"]; ?> <?php if($settings_map_link_icon) echo '<i class="fas fa-link"></i>';?></a>',
+                        '<?php echo MapPageLink($player_wrb["mapname"]); ?>',
                         '<?php echo $player_wrb["tier"]; ?>',
                         '<?php echo $player_wrb["zonegroup"]; ?>',
                         '<?php echo $player_wrb["maprank"]; ?>',
@@ -321,7 +321,7 @@
                             $player_wrcp_date = '<small class="text-muted">N/A</small>';
                     ?>
                     [
-                        '<a href="dashboard-maps.php?map=<?php echo  $player_wrcp['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $player_wrcp["mapname"]; ?> <?php if($settings_map_link_icon) echo '<i class="fas fa-link"></i>';?></a>',
+                        '<?php echo MapPageLink($player_wrcp["mapname"]); ?>',
                         '<?php echo $player_wrcp["tier"]; ?>',
                         '<?php echo $player_wrcp["stage"]; ?>',
                         '<?php echo $player_wrcp["maprank"]; ?>',
@@ -513,7 +513,7 @@
                         <th class="text-center">Runtime</th>
                         <th class="text-center">Date</th>
                     </thead>
-                    <tbody class="table-sm">
+                    <tbody class="">
                         
                     </tbody>
                 </table>
@@ -534,7 +534,7 @@
                         <th class="text-center">Runtime</th>
                         <th class="text-center">Date</th>
                     </thead>
-                    <tbody class="table-sm">
+                    <tbody class="">
                         
                     </tbody>
                 </table>
@@ -555,7 +555,7 @@
                         <th class="text-center">Runtime</th>
                         <th class="text-center">Date</th>
                     </thead>
-                    <tbody class="table-sm">
+                    <tbody class="">
                         
                     </tbody>
                 </table>

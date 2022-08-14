@@ -282,9 +282,15 @@ endif;
 				$newmaps_added_d = "Yesterday";
 			    else
 				$newmaps_added_d = $newmaps_diff." days ago";
+
+                if($settings_map_link_icon)
+                    $map_link = $map['mapname'].'<a href="dashboard-maps.php?map='.$map['mapname'].'" title="'.$map['mapname'].' - Map Page" class="link-secondary text-decoration-none"><i class="fas fa-link"></i></a>';
+                else
+                    $map_link = '<a href="dashboard-maps.php?map='.$map['mapname'].'" title="'.$map['mapname'].' - Map Page" class="'.$LinkColor.' text-decoration-none">'.$map['mapname'].'</a>';
+
 			?>
 			[
-			    '<a href="dashboard-maps.php?map=<?php echo $map['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $map['mapname']; ?> <?php if($settings_map_link_icon) echo '<i class="fas fa-link"></i>';?></a>',
+			    '<?php echo $map_link;?>',
 			    '<?php echo $map['tier']; ?>',
 			    '<?php echo $map_stages; ?>',
 			    '<?php echo $map_bonuses; ?>',
