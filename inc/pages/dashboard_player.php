@@ -338,7 +338,7 @@
 <?php
     if((!empty($player_id))&&($player_id!=="")&&($player_id!=='Unknown')&&($stmt_status===1)):
 ?>
-    <h5><a href="dashboard-players.php" class="text-muted text-decoration-none">Surf Stat's Player Profile</a> / <?php echo $usr_steamid64; ?> <a href="https://steamcommunity.com/profiles/<?php echo $usr_steamid64; ?>" target="_blank" title="<?php echo $usr_name; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></h5>
+    <h5><a href="dashboard-players.php" class="text-muted text-decoration-none">Surf Stat's Player Profile</a> / <?php echo $usr_steamid64; ?> <a href="https://steamcommunity.com/profiles/<?php echo $usr_steamid64; ?>" target="_blank" title="<?php echo $usr_name; ?> - Steam Profile" class="link-secondary text-decoration-none"><i class="fab fa-steam"></i></a></h5>
     <hr class="mt-0 mb-3">
     <div class="pt-3 pb-2">
         <h3 class="text-center"><?php echo $usr_name; ?></h3>
