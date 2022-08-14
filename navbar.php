@@ -64,6 +64,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item <?php echo LanguageActive('Czech'); ?>" href="?language=Czech"><img src="./images/flags/cz.svg" width="20" class="border align-middle"> Czech</a></li>
                         <li><a class="dropdown-item <?php echo LanguageActive('English'); ?>" href="?language=English"><img src="./images/flags/gb.svg" width="20" class="border align-middle"> English</a></li>
+                        <li><a class="dropdown-item <?php echo LanguageActive('German'); ?>" href="?language=German"><img src="./images/flags/de.svg" width="20" class="border align-middle"> German</a></li>
                         <li><a class="dropdown-item <?php echo LanguageActive('Slovak'); ?>" href="?language=Slovak"><img src="./images/flags/sk.svg" width="20" class="border align-middle"> Slovak</a></li>
                     </ul>
                 </div>

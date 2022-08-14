@@ -117,6 +117,8 @@ if($settings_language_enable):
             return 'cz';
         elseif($_SESSION['language'] == 'English')
             return 'gb';
+        elseif($_SESSION['language'] == 'German')
+            return 'de';
         elseif($_SESSION['language'] == 'Slovak')
             return 'sk';
     };
