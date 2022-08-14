@@ -106,3 +106,35 @@ function BackgroundImage() {
     else 
         return $settings_background_image;
 }
+
+function MapDownload($map_name)
+    {
+        global $settings_maps_download_url;
+        if($settings_maps_download_url!==''):
+            $url = $settings_maps_download_url.$map_name.'.bsp.bz2';
+        
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $data = curl_exec($ch);
+            $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch); 
+
+            if($httpcode>=200 && $httpcode<300){
+                return ' <a href="'.$url.'" class="link-secondary text-decoration-none" title="Download map: '.$map_name.'"><i class="fa-solid fa-download"></i></a>';
+            } else {
+                $url = $settings_maps_download_url.$map_name.'.bsp';
+
+                $ch = curl_init($url);
+                curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                $data = curl_exec($ch);
+                $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                curl_close($ch);
+                if($httpcode>=200 && $httpcode<300)
+                    return ' <a href="'.$url.'" class="link-secondary text-decoration-none" title="Download map: '.$map_name.'"><i class="fa-solid fa-download"></i></a>';
+            }
+        endif;
+    }
