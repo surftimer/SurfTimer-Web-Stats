@@ -38,6 +38,7 @@
     $settings_player_profile_icon   = TRUE;            // TRUE or FALSE # FALSE will disable player profile icons
     $settings_map_link_icon         = TRUE;            // TRUE or FALSE # FALSE will disable link icon after map name
 
+
 /* End of Design Settings */
 
 /*
