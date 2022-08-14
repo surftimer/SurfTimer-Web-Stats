@@ -53,6 +53,7 @@
  /* 
     General Settings 
 */
-    $settings_player_flags  = TRUE; // TRUE or FALSE # False will disable players flags
+    $settings_maps_download_url     = ''; // To disable remain empty EXAMPLE: http://example.com/maps/
+    $settings_player_flags          = TRUE; // TRUE or FALSE # False will disable players flags
 
 /* End of General Settings */
