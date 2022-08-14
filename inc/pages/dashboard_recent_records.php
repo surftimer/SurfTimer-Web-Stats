@@ -47,10 +47,10 @@
 <div class="table-responsive">
     <table class="table table-hover border shadow-sm py-0 my-2 nowrap" style="width:100%" id="recent-records">
         <thead class="border">
-            <th class="text-left">Username</th>
-            <th class="text-center">Map</th>
-            <th class="text-center">Time</th>
-            <th class="text-center">Date</th>
+            <th class="text-left"><?php echo TABLE_USERNAME;?></th>
+            <th class="text-center"><?php echo TABLE_MAP;?></th>
+            <th class="text-center"><?php echo TABLE_TIME;?></th>
+            <th class="text-center"><?php echo TABLE_DATE;?></th>
         </thead>
         <tbody class="">
 

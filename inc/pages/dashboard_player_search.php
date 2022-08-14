@@ -3,8 +3,6 @@
     require_once('./../languages.php');
     require_once('./../database.php');
     require_once('./../functions.php');
-    require_once('./../languages/English.php');
-
 $output = '';
 
 if(isset($_POST["query"])):

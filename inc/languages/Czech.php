@@ -102,7 +102,7 @@ define('PROFILE_HRS', 'hrs');
 define('PROFILE_TIER', 'Tier');
 define('PROFILE_PLAYER_COMPLETIONS_BY_MAP_TIER', 'Player Completions by Map Tier');
 define('PROFILE_PLAYER_FINISHED_MAPS', 'Player Finished Maps');
-define('PROFILE_PLAYER FINISHED_BONUSES', 'Player Finished Bonuses');
+define('PROFILE_PLAYER_FINISHED_BONUSES', 'Player Finished Bonuses');
 define('PROFILE_PLAYER_FINISHED_STAGES', 'Player Finished Stages');
 
 define('TOP_1000_PLAYERS', 'Top 1,000 Players');

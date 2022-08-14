@@ -18,6 +18,8 @@
 
         require_once "./inc/languages/".$_SESSION['language'].".php";
     
-    else:
+    elseif((!$settings_language_default==='')&&(!$settings_language_enable)):
         require_once "./inc/languages/".$settings_language_default.".php";
+    else:
+        require_once "./inc/languages/English.php";
     endif;
