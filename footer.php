@@ -10,7 +10,7 @@
                                 Coded & Designed with ❤ by <a class="link-dark text-decoration-none" href="https://github.com/KristianP26/" taget="_blank">Kristián Partl</a>.
                                 <br class="py-0">
                                 <small>
-                                    All times are in <a class="link-dark text-decoration-none" href="https://time.is/en/<?php echo $mysql_server_timezone; ?>" target="_blank"><?php echo $mysql_server_timezone; ?></a>.
+                                    <?php echo ALL_TIMES_ARE_IN;?> <a class="link-dark text-decoration-none" href="https://time.is/en/<?php echo $mysql_server_timezone; ?>" target="_blank"><?php echo $mysql_server_timezone; ?></a>.
                                 </small>
                             </small>
                             <br>

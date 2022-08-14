@@ -123,6 +123,31 @@ function BackgroundImage() {
         return $settings_background_image;
 }
 
+if($settings_language_enable):
+    function LanguageActive($language) {
+        if($_SESSION['language'] == $language)
+            return 'active';
+    };
+
+    function LanguageFlag(){
+        if($_SESSION['language'] == 'Czech')
+            return 'cz';
+        elseif($_SESSION['language'] == 'English')
+            return 'gb';
+        elseif($_SESSION['language'] == 'German')
+            return 'de';
+        elseif($_SESSION['language'] == 'Slovak')
+            return 'sk';
+    };
+
+    function LanguageURL($language){
+        if(isset($_GET['map'])||isset($_GET['id']))
+            return $_SERVER['REQUEST_URI'].'&language='.$language;
+        else
+            return '?language='.$language;
+    };
+endif;
+
 function MapDownload($map_name)
     {
         global $settings_maps_download_url;

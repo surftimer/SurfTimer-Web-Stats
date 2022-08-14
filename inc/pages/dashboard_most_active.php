@@ -1,6 +1,7 @@
 <?php
 
     require_once('./../config.php');
+    require_once('./../languages.php');
     require_once('./../database.php');
     require_once('./../functions.php');
 
@@ -15,6 +16,27 @@
 
     <script>
         $('#most-active').DataTable({
+            language: {
+            processing:     '<?php echo DATATABLES_processing; ?>',
+            search:         '<?php echo DATATABLES_search; ?>',
+            lengthMenu:     '<?php echo DATATABLES_lengthMenu; ?>',
+            info:           '<?php echo DATATABLES_info; ?>',
+            infoEmpty:      '<?php echo DATATABLES_infoEmpty; ?>',
+            infoFiltered:   '<?php echo DATATABLES_infoFiltered; ?>',
+            loadingRecords: '<?php echo DATATABLES_loadingRecords; ?>',
+            zeroRecords:    '<?php echo DATATABLES_zeroRecords; ?>',
+            emptyTable:     '<?php echo DATATABLES_emptyTable; ?>',
+            paginate: {
+                first:      '<?php echo DATATABLES_first; ?>',
+                previous:   '<?php echo DATATABLES_previous; ?>',
+                next:       '<?php echo DATATABLES_next; ?>',
+                last:       '<?php echo DATATABLES_last; ?>'
+            },
+            aria: {
+                sortAscending:  '<?php echo DATATABLES_sortAscending; ?>',
+                sortDescending: '<?php echo DATATABLES_sortDescending; ?>'
+            }
+        },
             "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
             responsive: true,
             "processing": true,
@@ -51,11 +73,11 @@
                         $most_active_lastseen_diff = $most_active_lastseen_diff->format("%a");
                         
                         if($most_active_date_today == $most_active_lastseen_date||$most_active_lastseen_diff==0)
-                            $most_active_lastseen_date_d = "Today";
+                            $most_active_lastseen_date_d = TABLE_TODAY;
                         elseif($most_active_lastseen_diff==1)
-                            $most_active_lastseen_date_d = "Yesterday";
+                            $most_active_lastseen_date_d = TABLE_YESTERDAY;
                         else
-                            $most_active_lastseen_date_d = $most_active_lastseen_diff." days ago";
+                            $most_active_lastseen_date_d = $most_active_lastseen_diff." ".TABLE_DAYS_AGO;
                         
                         //////////////////////////////////////////////////////////////////////////
                         
@@ -68,11 +90,11 @@
                         $most_active_joined_diff = $most_active_joined_diff->format("%a");
 
                         if($most_active_date_today == $most_active_joined_date||$most_active_joined_diff==0)
-                            $most_active_joined_date_d = "Today";
+                            $most_active_joined_date_d = TABLE_TODAY;
                         elseif($most_active_joined_diff==1)
-                            $most_active_joined_date_d = "Yesterday";
+                            $most_active_joined_date_d = TABLE_YESTERDAY;
                         else
-                            $most_active_joined_date_d = $most_active_joined_diff." days ago";
+                            $most_active_joined_date_d = $most_active_joined_diff." ".TABLE_DAYS_AGO;
                         
                     ?>
                     [
@@ -90,11 +112,11 @@
     <div class="table-responsive">
         <table class="table table-hover border shadow-sm py-0 my-2 nowrap" style="width:100%" id="most-active">
             <thead class="border">
-                <th class="text-left pl-3">Username</th>
-                <th class="text-center">Hours</th>
-                <th class="text-center">Connections</th>
-                <th class="text-center">Last Seen</th>
-                <th class="text-center">Joined</th>
+                <th class="text-left pl-3"><?php echo TABLE_USERNAME;?></th>
+                <th class="text-center"><?php echo TABLE_HOURS;?></th>
+                <th class="text-center"><?php echo TABLE_CONNECTIONS;?></th>
+                <th class="text-center"><?php echo TABLE_LAST_SEEN;?></th>
+                <th class="text-center"><?php echo TABLE_JOINED;?></th>
             </thead>
             <tbody class="">
 

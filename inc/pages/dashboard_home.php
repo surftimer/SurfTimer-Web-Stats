@@ -88,24 +88,24 @@ if(mysqli_num_rows($results_ram) > 0){
         if(isset($row_ram['stages'])):
             $ram_map_type = $row_ram['stages'];
             if($ram_map_type=='1')
-                $ram_map_type = 'Linear';
+                $ram_map_type = TABLE_LINEAR;
             elseif($ram_map_type > '1')
-                $ram_map_type = 'Staged ('.$ram_map_type.')';
+                $ram_map_type = TABLE_STAGED.' ('.$ram_map_type.')';
             else
-                $ram_map_type = '<span class="text-muted">Null</span>';
+                $ram_map_type = '<span class="text-muted">'.TABLE_NULL.'</span>';
         else:
-            $ram_map_type = '<span class="text-muted">Null</span>';
+            $ram_map_type = '<span class="text-muted">'.TABLE_NULL.'</span>';
         endif;
 
         if(isset($row_ram['stages'])):
             $ram_map_bonus = $row_ram['bonuses'];
             if($ram_map_bonus == '0'):
-                $ram_map_bonus = 'No Bonus';
+                $ram_map_bonus = TABLE_NO_BONUS;
             elseif($ram_map_bonus == NULL):
-                $ram_map_bonus = '<span class="text-muted">Null</span>';
+                $ram_map_bonus = '<span class="text-muted">'.TABLE_NULL.'</span>';
             endif;
         else:
-            $ram_map_bonus = '<span class="text-muted">Null</span>';
+            $ram_map_bonus = '<span class="text-muted">'.TABLE_NULL.'</span>';
         endif;
             
         $row_ram_added = date('Y/m/d', strtotime($row_ram['date']));
@@ -118,11 +118,11 @@ if(mysqli_num_rows($results_ram) > 0){
         $ram_map = MapPageLink($row_ram['mapname']);
     
         if($ram_today == $row_ram_added)
-            $row_ram_added_d = "Today";
+            $row_ram_added_d = TABLE_TODAY;
         elseif($row_ram_diff==1)
-            $row_ram_added_d = "Yesterday";
+            $row_ram_added_d = TABLE_YESTERDAY;
         else
-            $row_ram_added_d = "<b>".$row_ram_diff."</b> days ago";
+            $row_ram_added_d = "<b>".$row_ram_diff."</b> ".TABLE_DAYS_AGO;
             
         $rams[] = array($ram_map, $ram_map_type, $row_ram['tier'], $ram_map_bonus, $row_ram_added_d);
 

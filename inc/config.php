@@ -57,7 +57,10 @@
  /* 
     General Settings 
 */
-    $settings_maps_download_url     = ''; // To disable remain empty EXAMPLE: http://example.com/maps/
-    $settings_player_flags          = TRUE; // TRUE or FALSE # False will disable players flags
+
+    $settings_language_enable       = TRUE;         // Default: TRUE - To disable language selector change to FALSE.
+    $settings_language_default      = "English";    // Czech, English, German, Slovak
+    $settings_player_flags          = TRUE;         // Default: TRUE - To disable player flags change to FALSE
+    $settings_maps_download_url     = '';           // To disable remain empty EXAMPLE: http://example.com/maps/
 
 /* End of General Settings */

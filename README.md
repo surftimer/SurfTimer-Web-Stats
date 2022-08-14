@@ -17,7 +17,7 @@ Surftimer-Web-Stats is Official Web with statistics for [Surftimer-Official](htt
 * Maps Section (Complete Statistics)
 * Players Profiles (Complete Statistics)
 * !!Bootwatch Themes (Beta Version)
-* Languages (Comming Soon...)
+* Languages (Czech, English, German, Slovak)
 * Player Flags (Requires surftimer version: 1.1.2 or above)
 
 ## Project Goals

@@ -13,7 +13,7 @@
 
             <section class="my-4 pb-1">
 
-                <h5>Surf Stats's Dashboard</h5>
+                <h5>Surf Stats's <?php echo NAVBAR_DASHBOARD;?></h5>
                 <hr class="my-0">
 
                 <div class="mt-4 mb-4"> <!-- Info Badges -->
@@ -21,7 +21,7 @@
                         <div class="col-md col-12">
                             <div class="card card-body text-center shadow-sm my-2">
                                 <i class="fas fa-users fa-2x"></i>
-                                <span class="text-muted my-1">Total Players</span>
+                                <span class="text-muted my-1"><?php echo HOME_TOTAL_PLAYERS;?></span>
                                 <hr>
                                 <?php echo number_format($total_players); ?>
                             </div>
@@ -29,7 +29,7 @@
                         <div class="col-md col-12">
                             <div class="card card-body text-center shadow-sm my-2">
                                 <i class="fas fa-map fa-2x"></i>
-                                <span class="text-muted my-1">Total Maps</span>
+                                <span class="text-muted my-1"><?php echo HOME_TOTAL_MAPS;?></span>
                                 <hr>
                                 <?php echo number_format($total_maps); ?>
                             </div>
@@ -37,7 +37,7 @@
                         <div class="col-md col-12">
                             <div class="card card-body text-center shadow-sm my-2">
                                 <i class="fas fa-bold fa-2x"></i>
-                                <span class="text-muted my-1">Total Bonuses</span>
+                                <span class="text-muted my-1"><?php echo HOME_TOTAL_BONUSES;?></span>
                                 <hr>
                                 <?php echo number_format($total_bonuses); ?>
                             </div>
@@ -45,7 +45,7 @@
                         <div class="col-md col-12">
                             <div class="card card-body text-center shadow-sm my-2">
                                 <i class="fas fa-user-clock fa-2x"></i>
-                                <span class="text-muted my-1">Total Completions</span>
+                                <span class="text-muted my-1"><?php echo HOME_TOTAL_COMPLETIONS;?></span>
                                 <hr>
                                 <?php echo number_format($count_player_times); ?>
                             </div>
@@ -53,7 +53,7 @@
                         <div class="col-md col-12">
                             <div class="card card-body text-center shadow-sm my-2">
                                 <i class="fas fa-clock fa-2x"></i>
-                                <span class="text-muted my-1">Hours Played</span>
+                                <span class="text-muted my-1"><?php echo HOME_HOURS_PLAYED;?></span>
                                 <hr>
                                 <?php echo number_format($hours_played); ?>
                             </div>
@@ -68,10 +68,10 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            <span class="align-middle">Recent 10 Map Records</span>
+                                            <span class="align-middle"><?php echo HOME_RECENT;?></span>
                                         </div>
                                         <div class="col col-md-6 text-end">
-                                            <a href="dashboard-recent.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-stopwatch"></i> Show More</a>
+                                            <a href="dashboard-recent.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-stopwatch"></i> <?php echo HOME_BUTTON_SHOW_MORE;?></a>
                                         </div>
                                     </div>
                                 </div>
@@ -79,10 +79,10 @@
                                     <table class="table table-hover shadow-sm card-body table-sm py-0 my-0">
                                         <thead>
                                             <tr class="">
-                                                <th class="text-left px-3" scope="col">Username</th>
-                                                <th class="text-center" scope="col">Map</th>
-                                                <th class="text-center" scope="col">Time</th>
-                                                <th class="text-center" scope="col">Date</th>
+                                                <th class="text-left px-3" scope="col"><?php echo TABLE_USERNAME;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_MAP;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_TIME;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_DATE;?></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -113,10 +113,10 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            <span class="align-middle">Top 10 Players</span>
+                                            <span class="align-middle"><?php echo HOME_TOP_PLAYERS;?></span>
                                         </div>
                                         <div class="col col-md-6 text-end">
-                                            <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> Show More</a>
+                                            <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> <?php echo HOME_BUTTON_SHOW_MORE;?></a>
                                         </div>
                                     </div>
                                 </div>
@@ -125,11 +125,11 @@
                                         <thead>
                                             <tr class="">
                                                 <th class="text-center" scope="col">#</th>
-                                                <th class="text-left" scope="col">Username</th>
-                                                <th class="text-center" scope="col">Points</th>
-                                                <th class="text-center" scope="col">Maps</th>
-                                                <th class="text-center" scope="col">Bonuses</th>
-                                                <th class="text-center" scope="col">Stages</th>
+                                                <th class="text-left" scope="col"><?php echo TABLE_USERNAME;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_POINTS;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_MAPS;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_BONUSES;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_STAGES;?></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -158,10 +158,10 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            <span class="align-middle">Top 10 WR holders</span>
+                                            <span class="align-middle"><?php echo HOME_TOP_WR;?></span>
                                         </div>
                                         <div class="col col-md-6 text-end">
-                                            <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> Show More</a>
+                                            <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> <?php echo HOME_BUTTON_SHOW_MORE;?></a>
                                         </div>
                                     </div>
                                 </div>
@@ -170,9 +170,9 @@
                                         <thead>
                                             <tr class="">
                                                 <th class="text-center" scope="col">#</th>
-                                                <th class="text-left" scope="col">Username</th>
-                                                <th class="text-center" scope="col">WRs</th>
-                                                <th class="text-center" scope="col">Finished Maps</th>
+                                                <th class="text-left" scope="col"><?php echo TABLE_USERNAME;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_WRS;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_FINISHED_MAPS;?></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -199,10 +199,10 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            <span class="align-middle">Tol 10 bonus WR Holders</span>
+                                            <span class="align-middle"><?php echo HOME_TOP_BONUS_WR;?></span>
                                         </div>
                                         <div class="col col-md-6 text-end">
-                                            <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> Show More</a>
+                                            <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> <?php echo HOME_BUTTON_SHOW_MORE;?></a>
                                         </div>
                                     </div>
                                 </div>
@@ -211,9 +211,9 @@
                                         <thead>
                                             <tr class="">
                                                 <th class="text-center" scope="col">#</th>
-                                                <th class="text-left" scope="col">Username</th>
-                                                <th class="text-center" scope="col">WRs</th>
-                                                <th class="text-center" scope="col">Finished Bonuses</th>
+                                                <th class="text-left" scope="col"><?php echo TABLE_USERNAME;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_WRS;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_FINISHED_BONUSES;?></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -240,10 +240,10 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            <span class="align-middle">Top 10 stage WR holders</span>
+                                            <span class="align-middle"><?php echo HOME_TOP_STAGE_WR;?></span>
                                         </div>
                                         <div class="col col-md-6 text-end">
-                                            <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> Show More</a>
+                                            <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> <?php echo HOME_BUTTON_SHOW_MORE;?></a>
                                         </div>
                                     </div>
                                 </div>
@@ -252,9 +252,9 @@
                                         <thead>
                                             <tr class="">
                                                 <th class="text-center" scope="col">#</th>
-                                                <th class="text-left" scope="col">Username</th>
-                                                <th class="text-center" scope="col">WRs</th>
-                                                <th class="text-center" scope="col">Finished Stages</th>
+                                                <th class="text-left" scope="col"><?php echo TABLE_USERNAME;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_WRS;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_FINISHED_STAGES;?></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -281,10 +281,10 @@
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col col-md-6">
-                                            <span class="align-middle">Recently added maps</span>
+                                            <span class="align-middle"><?php echo HOME_RECENT_MAPS;?></span>
                                         </div>
                                         <div class="col col-md-6 text-end">
-                                            <a href="dashboard-maps.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-map"></i> Show More</a>
+                                            <a href="dashboard-maps.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-map"></i> <?php echo HOME_BUTTON_SHOW_MORE;?></a>
                                         </div>
                                     </div>
                                 </div>
@@ -292,11 +292,11 @@
                                     <table class="table table-hover shadow-sm card-body table-sm py-0 my-0">
                                         <thead>
                                             <tr class="">
-                                                <th class="text-left pl-3" scope="col">Map</th>
-                                                <th class="text-center" scope="col">Tier</th>
-                                                <th class="text-center" scope="col">Type</th>
-                                                <th class="text-center" scope="col">Bonus</th>
-                                                <th class="text-center" scope="col">Added</th>
+                                                <th class="text-left pl-3" scope="col"><?php echo TABLE_MAP;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_TIER;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_TIER;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_BONUS;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_ADDED;?></th>
                                             </tr>
                                         </thead>
                                         <tbody>
