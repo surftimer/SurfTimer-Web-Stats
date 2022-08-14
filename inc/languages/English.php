@@ -138,3 +138,4 @@ define('DATATABLES_next', 'Next');
 define('DATATABLES_last', 'Last');
 define('DATATABLES_sortAscending', ': activate to sort column ascending');
 define('DATATABLES_sortDescending', ': activate to sort column descending');
+
