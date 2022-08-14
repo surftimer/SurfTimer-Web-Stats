@@ -1,6 +1,7 @@
 <?php
 
 require_once('./../config.php');
+require_once('./../languages.php');
 require_once('./../database.php');
 require_once('./../functions.php');
 
@@ -51,17 +52,17 @@ if((isset($mapname))&&($mapname!=='')):
 
                 $map_stages_info = $map_stages;
                 if($map_stages_info == '1')
-                    $map_stages_info = 'Linear';
+                    $map_stages_info = TABLE_LINEAR;
                 elseif($map_stages_info > '1')
-                    $map_stages_info = 'Staged ('.$map_stages_info.')';
+                    $map_stages_info = TABLE_STAGED.' ('.$map_stages_info.')';
                 else
-                    $map_stages_info = '<span class="text-muted">Null</span>';
+                    $map_stages_info = '<span class="text-muted">'.TABLE_NULL.'</span>';
                 
                 $map_bonuses_info = $map_bonuses;
                 if($map_bonuses_info == '0')
-                    $map_bonuses_info = 'No Bonus';
+                    $map_bonuses_info = TABLE_NO_BONUS;
                 elseif($map_bonuses_info == NULL)
-                    $map_bonuses_info = '<span class="text-muted">Null</span>';
+                    $map_bonuses_info = '<span class="text-muted">'.TABLE_NULL.'</span>';
                 
                 $date_today = date('Y/m/d H:i');
                 $date_today_day = date('Y/m/d');
@@ -76,11 +77,11 @@ if((isset($mapname))&&($mapname!=='')):
                 $map_dateadded_edit_diff = $map_dateadded_edit_diff->format("%a");
                 
                 if($date_today_day == $map_dateadded_edit_day)
-                    $map_dateadded_edit_d = "Today";
+                    $map_dateadded_edit_d = TABLE_TODAY;
                 elseif($map_dateadded_edit_diff==1)
-                    $map_dateadded_edit_d = "Yesterday";
+                    $map_dateadded_edit_d = TABLE_YESTERDAY;
                 else
-                    $map_dateadded_edit_d = "<b>".$map_dateadded_edit_diff."</b> days ago";
+                    $map_dateadded_edit_d = "<b>".$map_dateadded_edit_diff."</b> ".TABLE_DAYS_AGO;
 
             
                 $sql_map_total_completions_count = "SELECT COUNT(mapname) as count FROM `ck_playertimes` WHERE mapname='$map_name'";
@@ -251,18 +252,18 @@ endif;
 		    <?php foreach($maps as $map): ?>
 			<?php
 			    if($map['stages']===NULL)
-				$map_stages = '<span class="text-muted">Null</span>';
+				$map_stages = '<span class="text-muted">'.TABLE_NULL.'</span>';
 			    elseif($map['stages']==='1')
-				$map_stages = 'Linear';
+				$map_stages = TABLE_LINEAR;
 			    else
-				$map_stages = 'Staged ('.$map['stages'].')';
+				$map_stages = TABLE_STAGED.' ('.$map['stages'].')';
 
 			    if($map['bonuses']===NULL)
-				$map_bonuses = '<span class="text-muted">Null</span>';
+				$map_bonuses = '<span class="text-muted">'.TABLE_NULL.'</span>';
 			    elseif($map['bonuses']!=='0')
 				$map_bonuses = $map['bonuses'];
 			    else
-				$map_bonuses = 'No Bonus';
+				$map_bonuses = TABLE_NO_BONUS;
 
 			    $newmaps_added = date('Y/m/d', strtotime($map['date']));
 			    $newmaps_added_c = date_create($newmaps_added);
@@ -271,11 +272,11 @@ endif;
 			    $newmaps_diff = $newmaps_diff->format("%a");
 
 			    if($maps_date_today == $newmaps_added||$newmaps_diff==0)
-				$newmaps_added_d = "Today";
+				$newmaps_added_d = TABLE_TODAY;
 			    elseif($newmaps_diff==1)
-				$newmaps_added_d = "Yesterday";
+				$newmaps_added_d = TABLE_YESTERDAY;
 			    else
-				$newmaps_added_d = $newmaps_diff." days ago";
+				$newmaps_added_d = $newmaps_diff." ".TABLE_DAYS_AGO;
 			?>
 			[
 			    '<a href="dashboard-maps.php?map=<?php echo $map['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $map['mapname']; ?> <?php if($settings_map_link_icon) echo '<i class="fas fa-link"></i>';?></a>',
@@ -352,7 +353,7 @@ endif;
 
 
 <?php if((isset($mapname))&&($mapname!=='')): ?>
-    <h5><a href="dashboard-maps.php" class="text-muted text-decoration-none">Surf Stat's Map Collection</a>  / <?php echo $mapname;?></h5>
+    <h5><a href="dashboard-maps.php" class="text-muted text-decoration-none">Surf Stat's <?php echo MAP_COLLECTION; ?></a>  / <?php echo $mapname;?></h5>
     <hr class="mt-0 mb-3">
     <?php if(mysqli_num_rows($results_map) > 0): ?>        
         <?php if(isset($row_map['date'])): ?>
@@ -360,71 +361,71 @@ endif;
                 <h3 class="text-center"><?php echo $mapname; ?></h3>
                 <div class="row justify-content-md-center">
                     <div class="col-12 col-md-auto text-center">
-                        Type: <b><?php echo $map_stages_info;?></b>
+                        <?php echo TABLE_TYPE; ?>: <b><?php echo $map_stages_info;?></b>
                     </div>
                     <div class="col-12 col-md-auto text-center">
-                        Tier: <b><?php echo $map_tier;?></b>
+                        <?php echo TABLE_TIER; ?>: <b><?php echo $map_tier;?></b>
                     </div>
                     <div class="col-12 col-md-auto text-center">
-                        Bonus: <b><?php echo $map_bonuses_info;?></b>
+                        <?php echo TABLE_BONUS; ?>: <b><?php echo $map_bonuses_info;?></b>
                     </div>
                 </div>
                 <div class="row justify-content-md-center">
                     <div class="col-12 col-md-auto text-center">
-                        Added: <b><?php echo $map_dateadded_edit;?> <small>(<?php echo $map_dateadded_edit_d;?>)</small></b>
+                        <?php echo TABLE_ADDED; ?>: <b><?php echo $map_dateadded_edit;?> <small>(<?php echo $map_dateadded_edit_d;?>)</small></b>
                     </div>                            
                     <div class="col-12 col-md-auto text-center">
-                        Max Velocity: <b><?php echo number_format($map_maxvelocity); ?></b>
+                        <?php echo MAPS_MAX_VELOCITY; ?>: <b><?php echo number_format($map_maxvelocity); ?></b>
                     </div>
                 </div>
             </div>
-            <h5 class="text-center my-1">Total Completions</h5>
+            <h5 class="text-center my-1"><?php echo MAPS_TOTAL_COMPLETIONS; ?></h5>
             <div class="row justify-content-md-center">
                 <div class="col-12 col-md-auto text-center">
                     <h6 class="text-center text-muted my-1">
-                        Map: <span class="text-body"><?php echo number_format($map_normal_completions_count); ?></span>
+                        <?php echo TABLE_MAP; ?>: <span class="text-body"><?php echo number_format($map_normal_completions_count); ?></span>
                     </h6>
                 </div>
                 <?php if($map_bonuses!=='0'): ?>
                     <div class="col-12 col-md-auto text-center">
                         <h6 class="text-center text-muted my-1">
-                            Bonuses: <span class="text-body"><?php echo number_format($map_normal_bonuses_completions_count); ?></span>
+                            <?php echo TABLE_BONUSES; ?>: <span class="text-body"><?php echo number_format($map_normal_bonuses_completions_count); ?></span>
                         </h6>
                     </div>
                 <?php endif; ?>
             </div>
             <?php if($map_normal_completions_count!=='0'): ?>
                 <hr>
-                <h5 class="text-center">Map Completions</h5>
+                <h5 class="text-center"><?php echo MAPS_MAP_COMPLETIONS; ?></h5>
                 <div class="table-responsive">
                     <table class="table table-sm table-hover table-striped border shadow-sm py-0 my-0 nowrap" style="width:100%" id="map-completions">
                         <thead>
                             <th class="text-center">#</th>
-                            <th class="text-left">Username</th>
-                            <th class="text-center">Time</th>
-                            <th class="text-center">Date</th>
+                            <th class="text-left"><?php echo TABLE_USERNAME; ?></th>
+                            <th class="text-center"><?php echo TABLE_TIME; ?></th>
+                            <th class="text-center"><?php echo TABLE_DATE; ?></th>
                         </thead>
                     </table>
                 </div>
             <?php endif; ?>
             <?php if($map_stages>'1'): ?>
                 <hr>
-                <h5 class="text-center">Stage Completions</h5>
+                <h5 class="text-center"><?php echo MAPS_STAGE_COMPLETIONS; ?></h5>
                 <div class="table-responsive shadow-sm mt-3">
                     <table class="table table-sm table-hover table-striped border shadow-sm py-0 my-0">
                         <thead>
-                            <th class="text-center">Stages</th>
-                            <th class="text-left">Top Player Name</th>
-                            <th class="text-center">Top Time</th>
-                            <th class="text-center">Total Stage Completions</th>
+                            <th class="text-center"><?php echo TABLE_STAGES; ?></th>
+                            <th class="text-left"><?php echo TABLE_TOP_PLAYER_NAME; ?></th>
+                            <th class="text-center"><?php echo TABLE_TOP_TIME; ?></th>
+                            <th class="text-center"><?php echo TABLE_TOTAL_STAGE_COMPLETIONS; ?></th>
                         </thead>
                         <tbody class="">
                             <?php foreach($map_top_stages as $map_top_stage): ?>
                                 <tr>
-                                    <td class="text-center">Stage: <strong><?php echo $map_top_stage['0']; ?></strong></td>
+                                    <td class="text-center"><?php echo TABLE_STAGE; ?>: <strong><?php echo $map_top_stage['0']; ?></strong></td>
                                     <td class="text-left"><?php echo $map_top_stage['1']; ?></td>
                                     <td class="text-center"><?php echo $map_top_stage['2']; ?></td>
-                                    <td class="text-center">Completions: <?php echo $map_top_stage['3']; ?></td>
+                                    <td class="text-center"><?php echo TABLE_COMPLETIONS; ?>: <?php echo $map_top_stage['3']; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -433,13 +434,13 @@ endif;
             <?php endif; ?>
             <?php if($map_bonuses>'0'): ?>
                 <hr>
-                <h5 class="text-center">Bonuses Completions</h5>
+                <h5 class="text-center"><?php echo MAPS_BONUSES_COMPLETIONS; ?></h5>
                 
                 <nav>
                     <div class="nav nav-tabs nav-fill my-3" id="nav-tab" role="tablist">
                         <?php $map_bonuses_completions_number = 0; foreach($map_bonuses_completions_counts as $map_bonuses_completions_count): ?>
                             <button class="nav-link pb-3 <?php if((++$map_bonuses_completions_number=='1')&&($map_bonuses_completions_count!=='0')) echo 'active'; elseif($map_bonuses_completions_count==='0') echo 'disabled'; ?>" id="bonuses-content-<?php echo $map_bonuses_completions_number; ?>-tab" data-bs-toggle="tab" data-bs-target="#bonuses-content-<?php echo $map_bonuses_completions_number; ?>" type="button" role="tab" aria-controls="nav-bonuses-<?php echo $map_bonuses_completions_number; ?>" aria-selected="true">
-                                <b class="text-muted">Bonus <?php echo $map_bonuses_completions_number; ?></b>
+                                <b class="text-muted"><?php echo TABLE_BONUS; ?> <?php echo $map_bonuses_completions_number; ?></b>
                                 <br>
                                 <span class="text-body"><?php echo number_format($map_bonuses_completions_count); ?></span>
                             </button>
@@ -455,9 +456,9 @@ endif;
                                     <table class="table table-hover table-striped  border table-sm shadow-sm py-0 my-0 nowrap" style="width:100%" id="bonuses-completions-<?php echo $map_bonuses_completions_number; ?>">
                                         <thead>
                                             <th class="text-center">#</th>
-                                            <th class="text-left">Username</th>
-                                            <th class="text-center">Time</th>
-                                            <th class="text-center">Date</th>
+                                            <th class="text-left"><?php echo TABLE_USERNAME; ?></th>
+                                            <th class="text-center"><?php echo TABLE_TIME; ?></th>
+                                            <th class="text-center"><?php echo TABLE_DATE; ?></th>
                                         </thead>
                                         <tbody>
                                             <?php $map_bonuses_completion_r_row = 0; foreach($map_bonuses_completion as $map_bonuses_completion_r): ?>
@@ -478,30 +479,30 @@ endif;
             <?php endif; ?>
         <?php else: ?>
             <h5 class="text-center mt-5 mb-0">
-                <i class="fas fa-info-circle"></i> Map: <strong><?php echo $mapname; ?></strong> were not added properly to server please contact server Administrator.
+                <i class="fas fa-info-circle"></i> <?php echo TABLE_MAP; ?>: <strong><?php echo $mapname; ?></strong> <?php echo MAP_NOT_ADDED_PROPERLY; ?>.
                 <br>
-                <a role="button" class="btn btn-outline-secondary px-5 py-1 mt-4" href="dashboard-maps.php"><i class="fas fa-map"></i> Surf Stat's Map Collection </a>
+                <a role="button" class="btn btn-outline-secondary px-5 py-1 mt-4" href="dashboard-maps.php"><i class="fas fa-map"></i> Surf Stat's <?php echo MAP_COLLECTION; ?> </a>
             </h5>
         <?php endif; ?>
     <?php else: ?>
         <h5 class="text-center mt-5 mb-0">
-            <i class="fas fa-info-circle"></i> Map: <strong><?php echo $mapname; ?></strong> were not found in our database.
+            <i class="fas fa-info-circle"></i> <?php echo TABLE_MAP; ?>: <strong><?php echo $mapname; ?></strong> <?php echo NOT_FOUND_IN_DB; ?>.
             <br>
-            <a role="button" class="btn btn-outline-secondary px-5 py-1 mt-4" href="dashboard-maps.php"><i class="fas fa-map"></i> Surf Stat's Map Collection </a>
+            <a role="button" class="btn btn-outline-secondary px-5 py-1 mt-4" href="dashboard-maps.php"><i class="fas fa-map"></i> Surf Stat's <?php echo MAP_COLLECTION; ?> </a>
         </h5>
     <?php endif; ?>
 <?php else: ?>
-    <h5>Surf Stat's Map Collection</h5>
+    <h5>Surf Stat's <?php echo MAP_COLLECTION; ?></h5>
     <hr class="mt-0 mb-3">
     <div class="table-responsive">
         <table class="table table-hover border shadow-sm py-0 my-2 nowrap" style="width:100%" id="maps">
             <thead class="border">
-                <th class="text-left">Map Name</th>
-                <th class="text-center">Tier</th>
-                <th class="text-center">Type</th>
-                <th class="text-center">Bonus</th>
-                <th class="text-center">Completions</th>
-                <th class="text-center">Added</th>
+                <th class="text-left"><?php echo TABLE_MAP_NAME; ?></th>
+                <th class="text-center"><?php echo TABLE_TIER; ?></th>
+                <th class="text-center"><?php echo TABLE_TYPE; ?></th>
+                <th class="text-center"><?php echo TABLE_BONUS; ?></th>
+                <th class="text-center"><?php echo TABLE_COMPLETIONS; ?></th>
+                <th class="text-center"><?php echo TABLE_ADDED; ?></th>
             </thead>
             <tbody class="table-sm">
             </tbody>

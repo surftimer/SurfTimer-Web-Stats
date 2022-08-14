@@ -40,6 +40,7 @@ define('TABLE_POINTS', 'Points');
 define('TABLE_BONUS', 'Bonus');
 define('TABLE_BONUSES', 'Bonuses');
 define('TABLE_NO_BONUS', 'No Bonus');
+define('TABLE_STAGE', 'Stage');
 define('TABLE_STAGES', 'Stages');
 define('TABLE_COMPLETIONS', 'Completions');
 define('TABLE_WRS', 'WRs');
