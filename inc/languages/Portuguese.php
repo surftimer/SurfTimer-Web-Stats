@@ -1,7 +1,7 @@
 <?php
 /*
-    English language for Surftimer-Web-Stats v2.06
-    Translation by: KristiánP
+    Portuguese language for Surftimer-Web-Stats v2.06
+    Translation by: shipy
 */
 
 define('NAVBAR_DASHBOARD', 'Painel');
@@ -23,10 +23,10 @@ define('HOME_TOTAL_BONUSES', 'Total de Bónus');
 define('HOME_TOTAL_COMPLETIONS', 'Total de Finalizações');
 define('HOME_HOURS_PLAYED', 'Horas Jogadas');
 define('HOME_RECENT', 'Últimos 10 Records de Mapas');
-define('HOME_TOP_PLAYERS', 'Top 10 de Jogadores');
-define('HOME_TOP_WR', 'Top 10 de Jogadores com Recordes de Mapas');
-define('HOME_TOP_BONUS_WR', 'Top 10 de Jogadores com Recordes de Bónus');
-define('HOME_TOP_STAGE_WR', 'Top 10 de Jogadores com Recordes de Etapas');
+define('HOME_TOP_PLAYERS', 'Os 10 Melhores Jogadores');
+define('HOME_TOP_WR', 'Os 10 Melhores Jogadores com Recordes de Mapas');
+define('HOME_TOP_BONUS_WR', 'Os 10 Melhores Jogadores com Recordes de Bónus');
+define('HOME_TOP_STAGE_WR', 'Os 10 Melhores Jogadores com Recordes de Etapas');
 define('HOME_RECENT_MAPS', 'Mapas Adicionados Recentemente');
 define('HOME_BUTTON_SHOW_MORE', 'Ver Mais');
 
@@ -64,8 +64,8 @@ define('TABLE_NULL', 'Nulo');
 define('TABLE_TODAY', 'Hoje');
 define('TABLE_YESTERDAY', 'Ontem');
 define('TABLE_DAYS_AGO', 'dias atrás');
-define('TABLE_TOP_PLAYER_NAME', 'Nome do Jogador do Topo');
-define('TABLE_TOP_TIME', 'Tempo do Topo');
+define('TABLE_TOP_PLAYER_NAME', 'Nome do Melhor Jogador');
+define('TABLE_TOP_TIME', 'Melhor Tempo');
 define('TABLE_TOTAL_STAGE_COMPLETIONS', 'Total de finalizções de etapas');
 
 define('MAPS_MAP_COLLECTION', 'Coleção de Mapas');
@@ -86,7 +86,7 @@ define('PROFILE_BONUS_COMPLETIONS', 'Finalizações de Bónus');
 define('PROFILE_STAGES_COMPLETIONS', 'Finalizações de Etapas');
 define('PROFILE_MAP_TOP_10S', 'Mapas Com Top 10');
 define('PROFILE_BONUS_WR_POINTS', 'Pontos dos WR de Bónus');
-define('PROFILE_MAP_TOP_10S_POINTS', 'Pontos dos TOP10 de mapas');
+define('PROFILE_MAP_TOP_10S_POINTS', 'Pontos dos mapas com Top 10');
 define('PROFILE_MAP_POINTS', 'Pontos de Mapas');
 define('PROFILE_TOTAL_POINTS', 'Total de Pontos');
 define('PROFILE_TOTAL_CONNECTIONS', 'Total de Conexões');
@@ -105,7 +105,7 @@ define('PROFILE_PLAYER_FINISHED_MAPS', 'Mapas Finalizados do Jogador');
 define('PROFILE_PLAYER_FINISHED_BONUSES', 'Bónus Finalizados do Jogador');
 define('PROFILE_PLAYER_FINISHED_STAGES', 'Etapas Finalizadas do Jogador');
 
-define('TOP_1000_PLAYERS', 'Topo de 1,000 Jogadores');
+define('TOP_1000_PLAYERS', 'Os Melhores 1,000 Jogadores');
 define('MAP_COLLECTION', 'Coleção de Mapas');
 define('MOST_ACTIVE', 'Mais Ativos');
 define('RECENT_100_MAP_RECORDS', 'Últimos 100 Recordes de Mapas');
@@ -118,7 +118,7 @@ define('LOADING_MAP_COLLECTION', 'A Carregar a Coleção de Mapas');
 define('LOADING_MOST_ACTIVE_LIST', 'A Carregar a Lista dos Mais Ativos');
 define('LOADING_PLAYER_PROFILE', 'A Carregar o Perfil do Jogador');
 define('LOADING_RECENT_MAP_RECORDS_LIST', 'A Carregar a Lista dos Últimos Recordes de Mapas');
-define('LOADING_TOP_PLAYERS_LIST', 'A Carregar a Lista dos Jogadores de Topo');
+define('LOADING_TOP_PLAYERS_LIST', 'A Carregar a Lista dos Melhores Jogadores');
 define('MAP_NOT_ADDED_PROPERLY', 'não foram adicionados corretamente ao servidor, por favor contacta o Administrador do servidor');
 define('NOT_FOUND_IN_DB', 'não foram encontrados na nossa base de dados');
 define('ALL_TIMES_ARE_IN', 'Todas as datas estão em');
