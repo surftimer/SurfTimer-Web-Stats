@@ -57,10 +57,10 @@
                                 <img src="./images/flags/<?php echo LanguageFlag();?>.svg" width="18,5" class="border align-middle"> <?php echo $_SESSION['language'];?>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item <?php echo LanguageActive('Czech'); ?>" href="?language=Czech"><img src="./images/flags/cz.svg" width="20" class="border align-middle"> Czech</a></li>
-                                <li><a class="dropdown-item <?php echo LanguageActive('English'); ?>" href="?language=English"><img src="./images/flags/gb.svg" width="20" class="border align-middle"> English</a></li>
-                                <li><a class="dropdown-item <?php echo LanguageActive('German'); ?>" href="?language=German"><img src="./images/flags/de.svg" width="20" class="border align-middle"> German</a></li>
-                                <li><a class="dropdown-item <?php echo LanguageActive('Slovak'); ?>" href="?language=Slovak"><img src="./images/flags/sk.svg" width="20" class="border align-middle"> Slovak</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Czech'); ?>" href="<?php echo LanguageURL('Czech');?>"><img src="./images/flags/cz.svg" width="20" class="border align-middle"> Czech</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('English'); ?>" href="<?php echo LanguageURL('English');?>"><img src="./images/flags/gb.svg" width="20" class="border align-middle"> English</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('German'); ?>" href="<?php echo LanguageURL('German');?>"><img src="./images/flags/de.svg" width="20" class="border align-middle"> German</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Slovak'); ?>" href="<?php echo LanguageURL('Slovak');?>"><img src="./images/flags/sk.svg" width="20" class="border align-middle"> Slovak</a></li>
                             </ul>
                         </div>
                     <?php endif;?>

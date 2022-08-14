@@ -112,6 +112,7 @@ if($settings_language_enable):
         if($_SESSION['language'] == $language)
             return 'active';
     };
+
     function LanguageFlag(){
         if($_SESSION['language'] == 'Czech')
             return 'cz';
@@ -121,5 +122,12 @@ if($settings_language_enable):
             return 'de';
         elseif($_SESSION['language'] == 'Slovak')
             return 'sk';
+    };
+
+    function LanguageURL($language){
+        if(isset($_GET['map'])||isset($_GET['id']))
+            return $_SERVER['REQUEST_URI'].'&language='.$language;
+        else
+            return '?language='.$language;
     };
 endif;
