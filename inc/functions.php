@@ -81,6 +81,7 @@ function CountryFlagProfile($countryCode, $continentCode) {
         return '<img class="rounded border bg-transparent shadow-sm mb-1" height="20" src="./images/flags/unknown.svg"/>';
 }
 
+
 function LinkColor(){
     global $settings_link_color;
     if($settings_link_color==='')
@@ -93,6 +94,7 @@ $LinkColor = LinkColor();
 
 function PlayerUsernameProfile($player_steamid64, $player_name) {
     global $settings_player_profile_icon, $LinkColor;
+
     if($player_name=='          ' || $player_name==''){
         $player_name = '<span class="text-muted">(Unknown)</span>';
         $player_name_title = '(Unknown)'; 

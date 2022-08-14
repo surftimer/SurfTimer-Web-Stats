@@ -124,6 +124,7 @@ if(mysqli_num_rows($results_ram) > 0){
         else
             $row_ram_added_d = "<b>".$row_ram_diff."</b> ".TABLE_DAYS_AGO;
             
+
         $rams[] = array($ram_map, $ram_map_type, $row_ram['tier'], $ram_map_bonus, $row_ram_added_d);
 
     endwhile;
