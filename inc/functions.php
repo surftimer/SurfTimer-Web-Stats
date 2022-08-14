@@ -106,3 +106,18 @@ function BackgroundImage() {
     else 
         return $settings_background_image;
 }
+
+if($settings_language_enable):
+    function LanguageActive($language) {
+        if($_SESSION['language'] == $language)
+            return 'active';
+    };
+    function LanguageFlag(){
+        if($_SESSION['language'] == 'Czech')
+            return 'cz';
+        elseif($_SESSION['language'] == 'English')
+            return 'gb';
+        elseif($_SESSION['language'] == 'Slovak')
+            return 'sk';
+    };
+endif;
