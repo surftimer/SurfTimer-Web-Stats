@@ -1,4 +1,5 @@
 <?php
+    define('__ROOT__', dirname(dirname(__FILE__)));
 
     if($settings_language_enable):
         session_start();
@@ -16,10 +17,13 @@
                 $_SESSION['language'] = "Slovak";
         }
 
-        require_once "./inc/languages/".$_SESSION['language'].".php";
+        require_once(__ROOT__.'/inc/languages/'.$_SESSION['language'].'.php');
+        $datatables_language = __ROOT__.'/inc/languages/datatables/'.$_SESSION['language'].'.json';
     
     elseif((!$settings_language_default==='')&&(!$settings_language_enable)):
-        require_once "./inc/languages/".$settings_language_default.".php";
+        require_once(__ROOT__.'/inc/languages/'.$settings_language_default.'.php');
+        $datatables_language = __ROOT__.'/inc/languages/datatables/'.$settings_language_default.'.json';
     else:
-        require_once "./inc/languages/English.php";
+        require_once require_once(__ROOT__.'/inc/languages/English.php');
+        $datatables_language = __ROOT__.'/inc/languages/datatables/English.json';
     endif;

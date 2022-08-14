@@ -233,6 +233,27 @@ endif;
 <script>
     <?php if((!isset($mapname))||($mapname==='')): ?>       
 	    $('#maps').DataTable({
+        language: {
+            processing:     '<?php echo DATATABLES_processing; ?>',
+            search:         '<?php echo DATATABLES_search; ?>',
+            lengthMenu:     '<?php echo DATATABLES_lengthMenu; ?>',
+            info:           '<?php echo DATATABLES_info; ?>',
+            infoEmpty:      '<?php echo DATATABLES_infoEmpty; ?>',
+            infoFiltered:   '<?php echo DATATABLES_infoFiltered; ?>',
+            loadingRecords: '<?php echo DATATABLES_loadingRecords; ?>',
+            zeroRecords:    '<?php echo DATATABLES_zeroRecords; ?>',
+            emptyTable:     '<?php echo DATATABLES_emptyTable; ?>',
+            paginate: {
+                first:      '<?php echo DATATABLES_first; ?>',
+                previous:   '<?php echo DATATABLES_previous; ?>',
+                next:       '<?php echo DATATABLES_next; ?>',
+                last:       '<?php echo DATATABLES_last; ?>'
+            },
+            aria: {
+                sortAscending:  '<?php echo DATATABLES_sortAscending; ?>',
+                sortDescending: '<?php echo DATATABLES_sortDescending; ?>'
+            }
+        },
 		"lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
 		responsive: true,
 		"processing": true,
@@ -337,6 +358,27 @@ endif;
         <?php if(((isset($mapname))&&($mapname!==''))&&(isset($row_map['date']))&&($map_bonuses>0)): ?>
 			<?php $map_bonuses_completions_number = 0; foreach($map_bonuses_completions as $map_bonuses_completion): ?>
 					$('#bonuses-completions-<?php echo ++$map_bonuses_completions_number; ?>').DataTable({
+                        language: {
+                            processing:     '<?php echo DATATABLES_processing; ?>',
+                            search:         '<?php echo DATATABLES_search; ?>',
+                            lengthMenu:     '<?php echo DATATABLES_lengthMenu; ?>',
+                            info:           '<?php echo DATATABLES_info; ?>',
+                            infoEmpty:      '<?php echo DATATABLES_infoEmpty; ?>',
+                            infoFiltered:   '<?php echo DATATABLES_infoFiltered; ?>',
+                            loadingRecords: '<?php echo DATATABLES_loadingRecords; ?>',
+                            zeroRecords:    '<?php echo DATATABLES_zeroRecords; ?>',
+                            emptyTable:     '<?php echo DATATABLES_emptyTable; ?>',
+                            paginate: {
+                                first:      '<?php echo DATATABLES_first; ?>',
+                                previous:   '<?php echo DATATABLES_previous; ?>',
+                                next:       '<?php echo DATATABLES_next; ?>',
+                                last:       '<?php echo DATATABLES_last; ?>'
+                            },
+                            aria: {
+                                sortAscending:  '<?php echo DATATABLES_sortAscending; ?>',
+                                sortDescending: '<?php echo DATATABLES_sortDescending; ?>'
+                            }
+                        },
 						"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
 						"processing": true,
 						"columnDefs": [
