@@ -131,7 +131,10 @@ if((isset($mapname))&&($mapname!=='')):
                         $row_stage_top_time = $result_stage_top_time->fetch_assoc();
 
                         if((isset($row_stage_top_time['goodname']))&&(isset($row_stage_top_time['steamid64']))):
-                            $stage_top_time_user = CountryFlag($row_stage_top_time['country'], $row_stage_top_time['countryCode'], $row_stage_top_time['continentCode']).' '.PlayerUsernameProfile($row_stage_top_time['steamid64'], $row_stage_top_time['name']);
+                            if($config_player_flags)
+                                $stage_top_time_user = CountryFlag($row_stage_top_time['country'], $row_stage_top_time['countryCode'], $row_stage_top_time['continentCode']).' '.PlayerUsernameProfile($row_stage_top_time['steamid64'], $row_stage_top_time['name']);
+                            else
+                            $stage_top_time_user = PlayerUsernameProfile($row_stage_top_time['steamid64'], $row_stage_top_time['name']);
                         elseif(isset($row_stage_top_time['name'])):
                             $stage_top_time_user = $row_stage_top_time['name'];
                         else:
@@ -180,7 +183,10 @@ if((isset($mapname))&&($mapname!=='')):
                             while($row_map_bonuses_completions = mysqli_fetch_assoc($result_map_bonuses_completions)):
 
                                 if((isset($row_map_bonuses_completions['goodname']))&&(isset($row_map_bonuses_completions['steamid64']))):
-                                    $map_bonuses_completions_user = CountryFlag($row_map_bonuses_completions['country'], $row_map_bonuses_completions['countryCode'], $row_map_bonuses_completions['continentCode']).' '.PlayerUsernameProfile($row_map_bonuses_completions['steamid64'], $row_map_bonuses_completions['name']);
+                                    if($config_player_flags)
+                                        $map_bonuses_completions_user = CountryFlag($row_map_bonuses_completions['country'], $row_map_bonuses_completions['countryCode'], $row_map_bonuses_completions['continentCode']).' '.PlayerUsernameProfile($row_map_bonuses_completions['steamid64'], $row_map_bonuses_completions['name']);
+                                    else
+                                        $map_bonuses_completions_user = PlayerUsernameProfile($row_map_bonuses_completions['steamid64'], $row_map_bonuses_completions['name']);
                                 elseif(isset($row_map_bonuses_completions['name'])):
                                     $map_bonuses_completions_user = $row_map_bonuses_completions['name'];
                                 else:
@@ -306,7 +312,10 @@ endif;
 
                             <?php 
                                 if((isset($map_completion['goodname']))&&(isset($map_completion['steamid64']))):
-                                    $map_completion_user = CountryFlag($map_completion['country'], $map_completion['countryCode'], $map_completion['continentCode']).' '.PlayerUsernameProfile($map_completion['steamid64'], $map_completion['name']);
+                                    if($config_player_flags)
+                                        $map_completion_user = CountryFlag($map_completion['country'], $map_completion['countryCode'], $map_completion['continentCode']).' '.PlayerUsernameProfile($map_completion['steamid64'], $map_completion['name']);
+                                    else
+                                        $map_completion_user = PlayerUsernameProfile($map_completion['steamid64'], $map_completion['name']);
                                 elseif(isset($map_completion['name'])):
                                     $map_completion_user = $map_completion['name'];
                                 else:
