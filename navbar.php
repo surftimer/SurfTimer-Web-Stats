@@ -51,25 +51,23 @@
 
                         </div>
                     </li>
+                    <?php if($settings_language_enable): ?>
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle active bg-white border rounded py-0 my-2 ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="./images/flags/<?php echo LanguageFlag();?>.svg" width="18,5" class="border align-middle"> <?php echo $_SESSION['language'];?>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item <?php echo LanguageActive('Czech'); ?>" href="?language=Czech"><img src="./images/flags/cz.svg" width="20" class="border align-middle"> Czech</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('English'); ?>" href="?language=English"><img src="./images/flags/gb.svg" width="20" class="border align-middle"> English</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('German'); ?>" href="?language=German"><img src="./images/flags/de.svg" width="20" class="border align-middle"> German</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Slovak'); ?>" href="?language=Slovak"><img src="./images/flags/sk.svg" width="20" class="border align-middle"> Slovak</a></li>
+                            </ul>
+                        </div>
+                    <?php endif;?>
                     <li class="nav-item">
                         <a class="nav-link active bg-white border rounded py-0 my-2 ms-2" href="#" data-bs-toggle="modal" data-bs-target="#SearchPlayers"><i class="fas fa-search"></i> <?php echo NAVBAR_SEARCH_PLAYER;?></a>
                     </li>
                 </ul>
-
-                <?php if($settings_language_enable): ?>
-                <div class="dropdown ml-2">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="./images/flags/<?php echo LanguageFlag();?>.svg" width="18,5" class="border align-middle"> <?php echo $_SESSION['language'];?>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item <?php echo LanguageActive('Czech'); ?>" href="?language=Czech"><img src="./images/flags/cz.svg" width="20" class="border align-middle"> Czech</a></li>
-                        <li><a class="dropdown-item <?php echo LanguageActive('English'); ?>" href="?language=English"><img src="./images/flags/gb.svg" width="20" class="border align-middle"> English</a></li>
-                        <li><a class="dropdown-item <?php echo LanguageActive('German'); ?>" href="?language=German"><img src="./images/flags/de.svg" width="20" class="border align-middle"> German</a></li>
-                        <li><a class="dropdown-item <?php echo LanguageActive('Slovak'); ?>" href="?language=Slovak"><img src="./images/flags/sk.svg" width="20" class="border align-middle"> Slovak</a></li>
-                    </ul>
-                </div>
-            <?php endif;?>
-
             </div>
         </div>
     </nav>

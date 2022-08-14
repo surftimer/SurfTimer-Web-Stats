@@ -18,12 +18,9 @@
         }
 
         require_once(__ROOT__.'/inc/languages/'.$_SESSION['language'].'.php');
-        $datatables_language = __ROOT__.'/inc/languages/datatables/'.$_SESSION['language'].'.json';
     
     elseif((!$settings_language_default==='')&&(!$settings_language_enable)):
         require_once(__ROOT__.'/inc/languages/'.$settings_language_default.'.php');
-        $datatables_language = __ROOT__.'/inc/languages/datatables/'.$settings_language_default.'.json';
     else:
         require_once require_once(__ROOT__.'/inc/languages/English.php');
-        $datatables_language = __ROOT__.'/inc/languages/datatables/English.json';
     endif;
