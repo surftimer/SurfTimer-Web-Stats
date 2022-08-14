@@ -111,7 +111,7 @@ define('RECENT_100_MAP_RECORDS', 'Recent 100 Map Records');
 
 define('LOADING_MAP', 'Loading Map:');
 define('DETAILS', 'Details');
-define('PLESE_WAIT', 'Please Wait');
+define('PLEASE_WAIT', 'Please Wait');
 define('LOADING', 'Loading');
 define('LOADING_MAP_COLLECTION', 'Loading Map Collection');
 define('LOADING_MOST_ACTIVE_LIST', 'Loading Most Active List');
@@ -120,3 +120,4 @@ define('LOADING_RECENT_MAP_RECORDS_LIST', 'Loading Recent Map Records List');
 define('LOADING_TOP_PLAYERS_LIST', 'Loading Top Players List');
 define('MAP_NOT_ADDED_PROPERLY', 'were not added properly to server please contact server Administrator');
 define('NOT_FOUND_IN_DB', 'were not found in our database');
+define('ALL_TIMES_ARE_IN', 'All times are in');
