@@ -115,11 +115,8 @@ if(mysqli_num_rows($results_ram) > 0){
         $row_ram_diff = date_diff($ram_today_c, $row_ram_added_c);
         $row_ram_diff = $row_ram_diff->format("%a");
 
-        if($settings_map_link_icon)
-            $ram_link_icon = ' <i class="fas fa-link"></i>';
-        else
-            $ram_link_icon = '';
-
+        $ram_map = MapPageLink($row_ram['mapname']);
+    
         if($ram_today == $row_ram_added)
             $row_ram_added_d = TABLE_TODAY;
         elseif($row_ram_diff==1)
@@ -127,7 +124,7 @@ if(mysqli_num_rows($results_ram) > 0){
         else
             $row_ram_added_d = "<b>".$row_ram_diff."</b> ".TABLE_DAYS_AGO;
             
-        $rams[] = array('<a href="dashboard-maps.php?map='.$row_ram['mapname'].'" class="text-muted text-decoration-none">'.$row_ram['mapname'].$ram_link_icon.'</a>', $ram_map_type, $row_ram['tier'], $ram_map_bonus, $row_ram_added_d);
+        $rams[] = array($ram_map, $ram_map_type, $row_ram['tier'], $ram_map_bonus, $row_ram_added_d);
 
     endwhile;
 };

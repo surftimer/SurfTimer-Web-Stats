@@ -56,7 +56,7 @@
                 ?>
                 [
                     '<?php if($config_player_flags) echo CountryFlag($recent_record['country'], $recent_record['countryCode'], $recent_record['continentCode']); ?> <?php echo PlayerUsernameProfile($recent_record['steamid64'], $recent_record['name']); ?>',
-                    '<a href="dashboard-maps.php?map=<?php echo $recent_record['map']; ?>" class="text-muted text-decoration-none"><?php echo $recent_record["map"]; ?><?php if($settings_map_link_icon) echo ' <i class="fas fa-link"></i></a>';?>',
+                    '<?php echo MapPageLink($recent_record['map']); ?>'
                     '<?php echo $runtime_recent_record_timeFormat; ?>',
                     '<small><?php echo $dateFormat_recent_record; ?></small>'
                 ],

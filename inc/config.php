@@ -25,14 +25,18 @@
         Theme options:
         default, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, slate, solar, spacelab, superhero, united, vapor, yeti, zephyr
         This is a beta function some of the themes will look like ... :)
+
+        Link colors:
+        link-primary, link-secondary, link-success, link-danger, link-warning, link-info, link-light, link-dark
     */
     $settings_theme                 = "default";        // Options are upper
+    $settings_link_color            = "link-dark"; // Options are upper
     $settings_favicon               = "logo.svg";
     $settings_navbar_logo           = "logo.svg";
     $settings_background_image      = "";               // EXAMPLE: surf-images/4old.jpg
     $settings_navbar_title          = "Surf Stats";
-    $settings_player_profile_icon   = FALSE;            // TRUE or FALSE # FALSE will disable player profile icons
-    $settings_map_link_icon         = FALSE;            // TRUE or FALSE # FALSE will disable link icon after map name
+    $settings_player_profile_icon   = TRUE;            // TRUE or FALSE # FALSE will disable player profile icons
+    $settings_map_link_icon         = TRUE;            // TRUE or FALSE # FALSE will disable link icon after map name
 
 /* End of Design Settings */
 
@@ -54,10 +58,9 @@
     General Settings 
 */
 
-
-    $settings_language_enable   = TRUE;         // Default: TRUE - To disable language selector change to FALSE.
-    $settings_language_default  = "English";    // Czech, English, German, Slovak
-    $settings_player_flags      = TRUE;         // Default: TRUE - To disable player flags change to FALSE
-    
+    $settings_language_enable       = TRUE;         // Default: TRUE - To disable language selector change to FALSE.
+    $settings_language_default      = "English";    // Czech, English, German, Slovak
+    $settings_player_flags          = TRUE;         // Default: TRUE - To disable player flags change to FALSE
+    $settings_maps_download_url     = '';           // To disable remain empty EXAMPLE: http://example.com/maps/
 
 /* End of General Settings */

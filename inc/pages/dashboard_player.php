@@ -268,7 +268,7 @@
                         
                     ?>
                     [
-                        '<a href="dashboard-maps.php?map=<?php echo  $player_wr['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $player_wr["mapname"]; ?> <?php if($settings_map_link_icon) echo '<i class="fas fa-link"></i>';?></a>',
+                        '<?php echo MapPageLink($player_wr["mapname"]); ?>',
                         '<?php echo $player_wr["tier"]; ?>',
                         '<?php echo $player_wr["maprank"]; ?>',
                         '<?php echo $player_wr_runtime_timeformat; ?>',
@@ -326,7 +326,7 @@
                             $player_wrb_date = '<small class="text-muted">N/A</small>';
                     ?>
                     [
-                        '<a href="dashboard-maps.php?map=<?php echo  $player_wrb['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $player_wrb["mapname"]; ?> <?php if($settings_map_link_icon) echo '<i class="fas fa-link"></i>';?></a>',
+                        '<?php echo MapPageLink($player_wrb["mapname"]); ?>',
                         '<?php echo $player_wrb["tier"]; ?>',
                         '<?php echo $player_wrb["zonegroup"]; ?>',
                         '<?php echo $player_wrb["maprank"]; ?>',
@@ -385,7 +385,7 @@
                             $player_wrcp_date = '<small class="text-muted">N/A</small>';
                     ?>
                     [
-                        '<a href="dashboard-maps.php?map=<?php echo  $player_wrcp['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $player_wrcp["mapname"]; ?> <?php if($settings_map_link_icon) echo '<i class="fas fa-link"></i>';?></a>',
+                        '<?php echo MapPageLink($player_wrcp["mapname"]); ?>',
                         '<?php echo $player_wrcp["tier"]; ?>',
                         '<?php echo $player_wrcp["stage"]; ?>',
                         '<?php echo $player_wrcp["maprank"]; ?>',
@@ -402,7 +402,7 @@
 <?php
     if((!empty($player_id))&&($player_id!=="")&&($player_id!=='Unknown')&&($stmt_status===1)):
 ?>
-    <h5><a href="dashboard-players.php" class="text-muted text-decoration-none">Surf Stat's <?php echo PROFILE_PLAYER_PROFILE;?></a> / <?php echo $usr_steamid64; ?> <a href="https://steamcommunity.com/profiles/<?php echo $usr_steamid64; ?>" target="_blank" title="<?php echo $usr_name; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></h5>
+    <h5><a href="dashboard-players.php" class="text-muted text-decoration-none">Surf Stat's <?php echo PROFILE_PLAYER_PROFILE;?></a> / <?php echo $usr_steamid64; ?> <a href="https://steamcommunity.com/profiles/<?php echo $usr_steamid64; ?>" target="_blank" title="<?php echo $usr_name; ?> - Steam Profile" class="link-secondary text-decoration-none"><i class="fab fa-steam"></i></a></h5>
     <hr class="mt-0 mb-3">
     <div class="pt-3 pb-2">
         <h3 class="text-center"><?php echo $usr_name; ?></h3>
@@ -577,7 +577,7 @@
                         <th class="text-center"><?php echo TABLE_RUNTIME;?></th>
                         <th class="text-center"><?php echo TABLE_DATE;?></th>
                     </thead>
-                    <tbody class="table-sm">
+                    <tbody class="">
                         
                     </tbody>
                 </table>
@@ -598,7 +598,7 @@
                         <th class="text-center"><?php echo TABLE_RUNTIME;?></th>
                         <th class="text-center"><?php echo TABLE_DATE;?></th>
                     </thead>
-                    <tbody class="table-sm">
+                    <tbody class="">
                         
                     </tbody>
                 </table>
@@ -619,7 +619,7 @@
                         <th class="text-center"><?php echo TABLE_RUNTIME;?></th>
                         <th class="text-center"><?php echo TABLE_DATE;?></th>
                     </thead>
-                    <tbody class="table-sm">
+                    <tbody class="">
                         
                     </tbody>
                 </table>
