@@ -463,7 +463,7 @@
                         </tr>
                         <tr>
                             <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_TOTAL_PLAYTIME;?></strong><td>
-                            <td class='align-middle text-center'><?php echo number_format($usr_timetotal_hrs, 1); ?> hrs<td>
+                            <td class='align-middle text-center'><?php echo number_format($usr_timetotal_hrs, 1); ?> <?php echo PROFILE_HRS;?><td>
                         </tr>
                         <tr>
                             <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_SURF_TIME;?></strong><td>
@@ -513,7 +513,7 @@
                         </tr>
                         <tr>
                             <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_SPEC_TIME;?></strong><td>
-                            <td class='align-middle text-center'><?php echo number_format($usr_timespec_hrs, 1); ?> hrs <span class='text-muted'>(<?php echo $usr_timespec_hrs_percentuage; ?>%)</span><td>
+                            <td class='align-middle text-center'><?php echo number_format($usr_timespec_hrs, 1); ?> <?php echo PROFILE_HRS;?> <span class='text-muted'>(<?php echo $usr_timespec_hrs_percentuage; ?>%)</span><td>
                         </tr>
                         <tr>
                             <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_MAP_RECORDS;?></strong><td>
