@@ -294,7 +294,7 @@
                                             <tr class="">
                                                 <th class="text-left pl-3" scope="col"><?php echo TABLE_MAP;?></th>
                                                 <th class="text-center" scope="col"><?php echo TABLE_TIER;?></th>
-                                                <th class="text-center" scope="col"><?php echo TABLE_TIER;?></th>
+                                                <th class="text-center" scope="col"><?php echo TABLE_TYPE;?></th>
                                                 <th class="text-center" scope="col"><?php echo TABLE_BONUS;?></th>
                                                 <th class="text-center" scope="col"><?php echo TABLE_ADDED;?></th>
                                             </tr>
