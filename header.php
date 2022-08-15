@@ -30,7 +30,7 @@
         <link href="./vendor/css/custom.css" rel="stylesheet">
 
         <!-- JavaScript Core -->
-        <script src="./vendor/js/popper.js"></script>
+        <script src="./vendor/js/popperjs-2.11.6.min.js"></script>
         <script src="./vendor/js/jquery-3.6.0.min.js"></script>
         <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
         
