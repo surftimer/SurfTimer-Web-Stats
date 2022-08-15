@@ -56,7 +56,7 @@
                 ?>
                 [
                     '<?php if($config_player_flags) echo CountryFlag($recent_record['country'], $recent_record['countryCode'], $recent_record['continentCode']); ?> <?php echo PlayerUsernameProfile($recent_record['steamid64'], $recent_record['name']); ?>',
-                    '<?php echo MapPageLink($recent_record['map']); ?>'
+                    '<?php echo MapPageLink($recent_record['map']); ?>',
                     '<?php echo $runtime_recent_record_timeFormat; ?>',
                     '<small><?php echo $dateFormat_recent_record; ?></small>'
                 ],
