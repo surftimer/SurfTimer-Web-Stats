@@ -67,10 +67,10 @@
                             <div class="card shadow-sm">
                                 <div class="card-header">
                                     <div class="row">
-                                        <div class="col col-md-6">
+                                        <div class="col col-md-9">
                                             <span class="align-middle"><?php echo HOME_RECENT;?></span>
                                         </div>
-                                        <div class="col col-md-6 text-end">
+                                        <div class="col col-md-3 text-end">
                                             <a href="dashboard-recent.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-stopwatch"></i> <?php echo HOME_BUTTON_SHOW_MORE;?></a>
                                         </div>
                                     </div>
@@ -112,10 +112,10 @@
                             <div class="card shadow-sm">
                                 <div class="card-header">
                                     <div class="row">
-                                        <div class="col col-md-6">
+                                        <div class="col col-md-9">
                                             <span class="align-middle"><?php echo HOME_TOP_PLAYERS;?></span>
                                         </div>
-                                        <div class="col col-md-6 text-end">
+                                        <div class="col col-md-3 text-end">
                                             <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> <?php echo HOME_BUTTON_SHOW_MORE;?></a>
                                         </div>
                                     </div>
@@ -157,10 +157,10 @@
                             <div class="card shadow-sm">
                                 <div class="card-header">
                                     <div class="row">
-                                        <div class="col col-md-6">
+                                        <div class="col col-md-9">
                                             <span class="align-middle"><?php echo HOME_TOP_WR;?></span>
                                         </div>
-                                        <div class="col col-md-6 text-end">
+                                        <div class="col col-md-3 text-end">
                                             <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> <?php echo HOME_BUTTON_SHOW_MORE;?></a>
                                         </div>
                                     </div>
@@ -198,10 +198,10 @@
                             <div class="card shadow-sm">
                                 <div class="card-header">
                                     <div class="row">
-                                        <div class="col col-md-6">
+                                        <div class="col col-md-9">
                                             <span class="align-middle"><?php echo HOME_TOP_BONUS_WR;?></span>
                                         </div>
-                                        <div class="col col-md-6 text-end">
+                                        <div class="col col-md-3 text-end">
                                             <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> <?php echo HOME_BUTTON_SHOW_MORE;?></a>
                                         </div>
                                     </div>
@@ -239,10 +239,10 @@
                             <div class="card shadow-sm">
                                 <div class="card-header">
                                     <div class="row">
-                                        <div class="col col-md-6">
+                                        <div class="col col-md-9">
                                             <span class="align-middle"><?php echo HOME_TOP_STAGE_WR;?></span>
                                         </div>
-                                        <div class="col col-md-6 text-end">
+                                        <div class="col col-md-3 text-end">
                                             <a href="dashboard-players.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-users"></i> <?php echo HOME_BUTTON_SHOW_MORE;?></a>
                                         </div>
                                     </div>
@@ -280,10 +280,10 @@
                             <div class="card shadow-sm">
                                 <div class="card-header">
                                     <div class="row">
-                                        <div class="col col-md-6">
+                                        <div class="col col-md-9">
                                             <span class="align-middle"><?php echo HOME_RECENT_MAPS;?></span>
                                         </div>
-                                        <div class="col col-md-6 text-end">
+                                        <div class="col col-md-3 text-end">
                                             <a href="dashboard-maps.php" role="button" class="btn btn-outline-dark btn-sm py-1 px-2 my-0 shadow-sm border"><i class="fas fa-map"></i> <?php echo HOME_BUTTON_SHOW_MORE;?></a>
                                         </div>
                                     </div>
