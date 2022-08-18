@@ -144,6 +144,8 @@ if($settings_language_enable):
             return 'pt';
         elseif($_SESSION['language'] == 'French')
             return 'fr';
+        elseif($_SESSION['language'] == 'Turkish')
+            return 'tr';
     };
 
     function LanguageURL($language){
