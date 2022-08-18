@@ -41,6 +41,7 @@ Translations
 * Slovak Translation by @KristianP26
 * Portuguese Translation by @shipyy
 * German Translation by @Bara
+* French Translation by @Sarrus1
 
 CSS & JS
 * [Bootstrap](https://getbootstrap.com/) (Front-end toolkit)

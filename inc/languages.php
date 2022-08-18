@@ -17,6 +17,8 @@
                 $_SESSION['language'] = "Portuguese";   
             elseif($_GET['language'] == 'Slovak')
                 $_SESSION['language'] = "Slovak";
+            elseif($_GET['language'] == 'French')
+                $_SESSION['language'] = "French";
         }
 
         require_once(__ROOT__.'/inc/languages/'.$_SESSION['language'].'.php');

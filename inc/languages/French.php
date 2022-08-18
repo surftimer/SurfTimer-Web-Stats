@@ -1,6 +1,6 @@
 <?php
 /*
-    English language for Surftimer-Web-Stats v2.05
+    English language for Surftimer-Web-Stats v2.06
     Translation by: Sarrus
 */
 
@@ -40,6 +40,7 @@ define('TABLE_POINTS', 'Points');
 define('TABLE_BONUS', 'Bonus');
 define('TABLE_BONUSES', 'Bonus');
 define('TABLE_NO_BONUS', 'Pas de bonus');
+define('TABLE_STAGE', 'Stage');
 define('TABLE_STAGES', 'Stages');
 define('TABLE_COMPLETIONS', 'Completions');
 define('TABLE_WRS', 'Records');
@@ -111,7 +112,7 @@ define('RECENT_100_MAP_RECORDS', 'Top 100 des records les plus récents');
 
 define('LOADING_MAP', 'Chargement de la map:');
 define('DETAILS', 'Détails');
-define('PLESE_WAIT', 'Merci de patienter');
+define('PLEASE_WAIT', 'Merci de patienter');
 define('LOADING', 'Chargement');
 define('LOADING_MAP_COLLECTION', 'Chargement de la collection de map');
 define('LOADING_MOST_ACTIVE_LIST', 'Chargement de la liste Most Active');
@@ -120,3 +121,20 @@ define('LOADING_RECENT_MAP_RECORDS_LIST', 'Chargement de la liste des records r�
 define('LOADING_TOP_PLAYERS_LIST', 'Chargement de la liste des meilleurs joueurs');
 define('MAP_NOT_ADDED_PROPERLY', 'n\'ont pas été ajouté correctement au serveur, merci de contacter un admin');
 define('NOT_FOUND_IN_DB', 'n\'ont pas été trouvé dans la base de données');
+define('ALL_TIMES_ARE_IN', 'All times are in');
+
+define('DATATABLES_processing', 'Traitement en cours...');
+define('DATATABLES_search', 'Rechercher:');
+define('DATATABLES_lengthMenu', 'Afficher _MENU_ &eacute;l&eacute;ments');
+define('DATATABLES_info', 'Affichage de _START_ à _END_ entrées sur _TOTAL_');
+define('DATATABLES_infoEmpty', 'Affichage de 0 à 0 sur 0 entrées');
+define('DATATABLES_infoFiltered', '(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)');
+define('DATATABLES_loadingRecords', 'Chargement en cours...');
+define('DATATABLES_zeroRecords', 'Aucun &eacute;l&eacute;ment &agrave; afficher');
+define('DATATABLES_emptyTable', 'Aucune donnée disponible dans le tableau');
+define('DATATABLES_first', 'Premier');
+define('DATATABLES_previous', 'Pr&eacute;c&eacute;dent');
+define('DATATABLES_next', 'Suivant');
+define('DATATABLES_last', 'Dernier');
+define('DATATABLES_sortAscending', ': activer pour trier la colonne par ordre croissant');
+define('DATATABLES_sortDescending', ': activer pour trier la colonne par ordre décroissant');
