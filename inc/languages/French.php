@@ -1,6 +1,6 @@
 <?php
 /*
-    English language for Surftimer-Web-Stats v2.06
+    French language for Surftimer-Web-Stats v2.06
     Translation by: Sarrus
 */
 
@@ -26,7 +26,7 @@ define('HOME_RECENT', 'Records récents');
 define('HOME_TOP_PLAYERS', 'Top 10 joueurs');
 define('HOME_TOP_WR', 'Top 10 records');
 define('HOME_TOP_BONUS_WR', 'Top 10 records bonus');
-define('HOME_TOP_STAGE_WR', 'Top 10 records stage');
+define('HOME_TOP_STAGE_WR', 'Top 10 records niveaux');
 define('HOME_RECENT_MAPS', 'Maps ajoutées récemment');
 define('HOME_BUTTON_SHOW_MORE', 'Plus');
 
@@ -40,39 +40,39 @@ define('TABLE_POINTS', 'Points');
 define('TABLE_BONUS', 'Bonus');
 define('TABLE_BONUSES', 'Bonus');
 define('TABLE_NO_BONUS', 'Pas de bonus');
-define('TABLE_STAGE', 'Étape');
-define('TABLE_STAGES', 'Étapes');
+define('TABLE_STAGE', 'Niveau');
+define('TABLE_STAGES', 'Niveaux');
 define('TABLE_COMPLETIONS', 'Completions');
 define('TABLE_WRS', 'Records');
 define('TABLE_FINISHED_MAPS', 'Maps finies');
 define('TABLE_FINISHED_BONUSES', 'Bonuses finis');
-define('TABLE_FINISHED_STAGES', 'Stages finis');
-define('TABLE_TIER', 'Tier');
+define('TABLE_FINISHED_STAGES', 'Niveaux finis');
+define('TABLE_TIER', 'Difficulté');
 define('TABLE_TYPE', 'Type');
 define('TABLE_ADDED', 'Ajouté');
 define('TABLE_JOINED', 'Rejoins');
 define('TABLE_HOURS', 'Heures');
 define('TABLE_RANK', 'Rang');
 define('TABLE_BONUS_RANK', 'Rang bonus');
-define('TABLE_STAGE_RANK', 'Rang stage');
+define('TABLE_STAGE_RANK', 'Rang niveau');
 define('TABLE_RUNTIME', 'Temps du run');
 define('TABLE_CONNECTIONS', 'Connections');
 define('TABLE_LAST_SEEN', 'Dernière connexion');
 define('TABLE_LINEAR', 'Lineaire');
-define('TABLE_STAGED', 'Staged');
+define('TABLE_STAGED', 'Niveaux');
 define('TABLE_NULL', 'Null');
 define('TABLE_TODAY', 'Aujourd\'hui');
 define('TABLE_YESTERDAY', 'Hier');
 define('TABLE_DAYS_AGO', 'days ago');
 define('TABLE_TOP_PLAYER_NAME', 'Nom du meilleur joueur');
 define('TABLE_TOP_TIME', 'Meilleur temps');
-define('TABLE_TOTAL_STAGE_COMPLETIONS', 'Nombre total de completions de stages');
+define('TABLE_TOTAL_STAGE_COMPLETIONS', 'Nombre total de completions de niveaux');
 
 define('MAPS_MAP_COLLECTION', 'Collection de maps');
 define('MAPS_MAX_VELOCITY', 'Vitesse maximale');
 define('MAPS_TOTAL_COMPLETIONS', 'Nombre total de completions');
 define('MAPS_MAP_COMPLETIONS', 'Nombre total de completions de maps');
-define('MAPS_STAGE_COMPLETIONS', 'Nombre total de completions de stages');
+define('MAPS_STAGE_COMPLETIONS', 'Nombre total de completions de niveaux');
 define('MAPS_BONUSES_COMPLETIONS', 'Nombre total de completions de bonus');
 
 define('PROFILE_PLAYER_PROFILE', 'Profile du joueur');
@@ -95,15 +95,15 @@ define('PROFILE_MAP_RECORDS', 'Records de maps');
 define('PROFILE_BONUS_RECORDS', 'Records de bonus');
 define('PROFILE_STAGE_RECORDS', 'Records de stages');
 define('PROFILE_MAP_WR_POINTS', 'Points de map WR');
-define('PROFILE_STAGE_WR_POINTS', 'Points de stage WR');
+define('PROFILE_STAGE_WR_POINTS', 'Points de niveau WR');
 define('PROFILE_GROUP_POINTS', 'Points de groupes');
 define('PROFILE_BONUS_POINTS', 'Points de bonus');
 define('PROFILE_HRS', 'hrs');
-define('PROFILE_TIER', 'Tier');
-define('PROFILE_PLAYER_COMPLETIONS_BY_MAP_TIER', 'Completions du joueur par Tier de map');
+define('PROFILE_TIER', 'Difficulté');
+define('PROFILE_PLAYER_COMPLETIONS_BY_MAP_TIER', 'Completions du joueur par difficulté de map');
 define('PROFILE_PLAYER_FINISHED_MAPS', 'Maps finies par le joueur');
 define('PROFILE_PLAYER FINISHED_BONUSES', 'Bonus finies par le joueur');
-define('PROFILE_PLAYER_FINISHED_STAGES', 'Stages finies par le joueur');
+define('PROFILE_PLAYER_FINISHED_STAGES', 'Niveaux finis par le joueur');
 
 define('TOP_1000_PLAYERS', 'Top 1,000 Joueurs');
 define('MAP_COLLECTION', 'Collection de Maps');
@@ -128,12 +128,12 @@ define('DATATABLES_search', 'Rechercher:');
 define('DATATABLES_lengthMenu', 'Afficher _MENU_ &eacute;l&eacute;ments');
 define('DATATABLES_info', 'Affichage de _START_ à _END_ entrées sur _TOTAL_');
 define('DATATABLES_infoEmpty', 'Affichage de 0 à 0 sur 0 entrées');
-define('DATATABLES_infoFiltered', '(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)');
+define('DATATABLES_infoFiltered', '(filtrées parmis _MAX_ données au total)');
 define('DATATABLES_loadingRecords', 'Chargement en cours...');
-define('DATATABLES_zeroRecords', 'Aucun &eacute;l&eacute;ment &agrave; afficher');
+define('DATATABLES_zeroRecords', 'Aucune donnée correspondante');
 define('DATATABLES_emptyTable', 'Aucune donnée disponible dans le tableau');
 define('DATATABLES_first', 'Premier');
-define('DATATABLES_previous', 'Pr&eacute;c&eacute;dent');
+define('DATATABLES_previous', 'Précédent');
 define('DATATABLES_next', 'Suivant');
 define('DATATABLES_last', 'Dernier');
 define('DATATABLES_sortAscending', ': activer pour trier la colonne par ordre croissant');
