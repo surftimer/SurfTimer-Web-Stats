@@ -121,7 +121,7 @@ define('LOADING_RECENT_MAP_RECORDS_LIST', 'Chargement de la liste des records r�
 define('LOADING_TOP_PLAYERS_LIST', 'Chargement de la liste des meilleurs joueurs');
 define('MAP_NOT_ADDED_PROPERLY', 'n\'ont pas été ajouté correctement au serveur, merci de contacter un admin');
 define('NOT_FOUND_IN_DB', 'n\'ont pas été trouvé dans la base de données');
-define('ALL_TIMES_ARE_IN', 'All times are in');
+define('ALL_TIMES_ARE_IN', 'Tous les temps sont chargés');
 
 define('DATATABLES_processing', 'Traitement en cours...');
 define('DATATABLES_search', 'Rechercher:');
