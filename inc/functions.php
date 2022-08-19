@@ -146,6 +146,8 @@ if($settings_language_enable):
             return 'fr';
         elseif($_SESSION['language'] == 'Turkish')
             return 'tr';
+        elseif($_SESSION['language'] == 'Danish')
+            return 'dk';
     };
 
     function LanguageURL($language){
