@@ -63,7 +63,7 @@ define('TABLE_STAGED', 'Niveaux');
 define('TABLE_NULL', 'Null');
 define('TABLE_TODAY', 'Aujourd\'hui');
 define('TABLE_YESTERDAY', 'Hier');
-define('TABLE_DAYS_AGO', 'days ago');
+define('TABLE_DAYS_AGO', 'jours');
 define('TABLE_TOP_PLAYER_NAME', 'Nom du meilleur joueur');
 define('TABLE_TOP_TIME', 'Meilleur temps');
 define('TABLE_TOTAL_STAGE_COMPLETIONS', 'Nombre total de completions de niveaux');
