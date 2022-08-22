@@ -106,7 +106,10 @@ if((isset($mapname))&&($mapname!=='')):
 
                 if($sql_map_normal_completions_count!==0):
                     
-                    $sql_map_completions = "SELECT ck_playertimes.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.countryCode, ck_playerrank.continentCode, ck_playerrank.steamid64 FROM `ck_playertimes` LEFT JOIN `ck_playerrank` ON ck_playerrank.steamid=ck_playertimes.steamid AND ck_playerrank.style=ck_playertimes.steamid WHERE mapname='$map_name' AND ck_playertimes.style='0'";
+                    if($exists_UsrTableCountryCodeAndContinentCodeCheck)
+                        $sql_map_completions = "SELECT ck_playertimes.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.countryCode, ck_playerrank.continentCode, ck_playerrank.steamid64 FROM `ck_playertimes` LEFT JOIN `ck_playerrank` ON ck_playerrank.steamid=ck_playertimes.steamid AND ck_playerrank.style=ck_playertimes.steamid WHERE mapname='$map_name' AND ck_playertimes.style='0'";
+                    else
+                        $sql_map_completions = "SELECT ck_playertimes.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.steamid64 FROM `ck_playertimes` LEFT JOIN `ck_playerrank` ON ck_playerrank.steamid=ck_playertimes.steamid AND ck_playerrank.style=ck_playertimes.steamid WHERE mapname='$map_name' AND ck_playertimes.style='0'";
                     $results_map_completions = mysqli_query($db_conn_surftimer, $sql_map_completions);
                     $map_completions = array();
                     
@@ -127,7 +130,10 @@ if((isset($mapname))&&($mapname!=='')):
                         $result_map_total_stage_completions = mysqli_query($db_conn_surftimer, $sql_map_total_stage_completions);
                         $row_map_total_stage_completions = $result_map_total_stage_completions->fetch_assoc();
 
-                        $sql_stage_top_time = "SELECT ck_wrcps.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.countryCode, ck_playerrank.continentCode, ck_playerrank.steamid64 FROM `ck_wrcps` LEFT JOIN ck_playerrank ON ck_playerrank.steamid=ck_wrcps.steamid AND ck_playerrank.style=ck_wrcps.style WHERE mapname='$map_name' AND stage='$map_top_stages_while' AND ck_wrcps.style='0' ORDER BY `ck_wrcps`.`runtimepro`  ASC LIMIT 1";
+                        if($exists_UsrTableCountryCodeAndContinentCodeCheck)
+                            $sql_stage_top_time = "SELECT ck_wrcps.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.countryCode, ck_playerrank.continentCode, ck_playerrank.steamid64 FROM `ck_wrcps` LEFT JOIN ck_playerrank ON ck_playerrank.steamid=ck_wrcps.steamid AND ck_playerrank.style=ck_wrcps.style WHERE mapname='$map_name' AND stage='$map_top_stages_while' AND ck_wrcps.style='0' ORDER BY `ck_wrcps`.`runtimepro`  ASC LIMIT 1";
+                        else
+                            $sql_stage_top_time = "SELECT ck_wrcps.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.steamid64 FROM `ck_wrcps` LEFT JOIN ck_playerrank ON ck_playerrank.steamid=ck_wrcps.steamid AND ck_playerrank.style=ck_wrcps.style WHERE mapname='$map_name' AND stage='$map_top_stages_while' AND ck_wrcps.style='0' ORDER BY `ck_wrcps`.`runtimepro`  ASC LIMIT 1";
                         $result_stage_top_time = mysqli_query($db_conn_surftimer, $sql_stage_top_time);
                         $row_stage_top_time = $result_stage_top_time->fetch_assoc();
 
@@ -175,7 +181,10 @@ if((isset($mapname))&&($mapname!=='')):
 
                     while(++$map_bunuses_completions_while <= $map_bonuses):
 
-                        $sql_map_bonuses_completions = "SELECT ck_bonus.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.countryCode, ck_playerrank.continentCode, ck_playerrank.steamid64 FROM `ck_bonus` LEFT JOIN ck_playerrank ON ck_playerrank.steamid=ck_bonus.steamid AND ck_playerrank.style=ck_bonus.style WHERE mapname='$map_name' AND zonegroup='$map_bunuses_completions_while' AND ck_bonus.style='0' ORDER BY `ck_bonus`.`runtime` ASC";
+                        if($exists_UsrTableCountryCodeAndContinentCodeCheck)
+                            $sql_map_bonuses_completions = "SELECT ck_bonus.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.countryCode, ck_playerrank.continentCode, ck_playerrank.steamid64 FROM `ck_bonus` LEFT JOIN ck_playerrank ON ck_playerrank.steamid=ck_bonus.steamid AND ck_playerrank.style=ck_bonus.style WHERE mapname='$map_name' AND zonegroup='$map_bunuses_completions_while' AND ck_bonus.style='0' ORDER BY `ck_bonus`.`runtime` ASC";
+                        else
+                            $sql_map_bonuses_completions = "SELECT ck_bonus.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.steamid64 FROM `ck_bonus` LEFT JOIN ck_playerrank ON ck_playerrank.steamid=ck_bonus.steamid AND ck_playerrank.style=ck_bonus.style WHERE mapname='$map_name' AND zonegroup='$map_bunuses_completions_while' AND ck_bonus.style='0' ORDER BY `ck_bonus`.`runtime` ASC";    
                         $result_map_bonuses_completions = mysqli_query($db_conn_surftimer, $sql_map_bonuses_completions);
 
                         $map_bonuses_completions_rows = array();
