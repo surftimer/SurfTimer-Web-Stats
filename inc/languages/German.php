@@ -1,7 +1,8 @@
 <?php
 /*
     English language for Surftimer-Web-Stats v2.06
-    Translation by: KristiánP
+    Translation by: Bara
+    Maybe someday bara will translate this :D or if anyone want :P
 */
 
 define('NAVBAR_DASHBOARD', 'Dashboard');

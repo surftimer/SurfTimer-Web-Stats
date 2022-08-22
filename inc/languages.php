@@ -11,8 +11,8 @@
                 $_SESSION['language'] = "Czech";
             elseif($_GET['language'] == 'English')
                 $_SESSION['language'] = "English";
-            elseif($_GET['language'] == 'German')
-                $_SESSION['language'] = "German";
+            //elseif($_GET['language'] == 'German')
+                //$_SESSION['language'] = "German";
             elseif($_GET['language'] == 'Portuguese')
                 $_SESSION['language'] = "Portuguese";   
             elseif($_GET['language'] == 'Slovak')
