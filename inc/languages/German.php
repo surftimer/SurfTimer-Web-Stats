@@ -1,7 +1,8 @@
 <?php
 /*
     English language for Surftimer-Web-Stats v2.06
-    Translation by: KristiánP
+    Translation by: Bara
+    Maybe someday bara will translate this :D or if anyone want :P
 */
 
 define('NAVBAR_DASHBOARD', 'Dashboard');
@@ -138,4 +139,3 @@ define('DATATABLES_next', 'Next');
 define('DATATABLES_last', 'Last');
 define('DATATABLES_sortAscending', ': activate to sort column ascending');
 define('DATATABLES_sortDescending', ': activate to sort column descending');
-

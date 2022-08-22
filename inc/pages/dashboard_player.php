@@ -1,6 +1,7 @@
 <?php
 
     require_once('./../config.php');
+    require_once('./../languages.php');
     require_once('./../database.php');
     require_once('./../functions.php');
 
@@ -32,7 +33,7 @@
                 $usr_steamid64      = $row_sup['steamid64'];
                 $usr_name           = $row_sup['name'];
                 $usr_country        = $row_sup['country'];
-                if($config_player_flags){
+                if($exists_UsrTableCountryCodeAndContinentCodeCheck){
                     $usr_countryCode    = $row_sup['countryCode'];
                     $usr_continentCode  = $row_sup['continentCode'];
                 }
@@ -65,11 +66,11 @@
                 $usr_last_seen_edit_diff = $usr_last_seen_edit_diff->format("%a");
                 
                 if($date_today_day == $usr_last_seen_edit_day)
-                    $usr_last_seen_edit_d = "<b>Today</b>";
+                    $usr_last_seen_edit_d = "<b>".TABLE_TODAY."</b>";
                 elseif($usr_last_seen_edit_diff==1)
-                    $usr_last_seen_edit_d = "<b>Yesterday</b>";
+                    $usr_last_seen_edit_d = "<b>".TABLE_YESTERDAY."</b>";
                 else
-                    $usr_last_seen_edit_d = "<b>".$usr_last_seen_edit_diff."</b> days ago";
+                    $usr_last_seen_edit_d = "<b>".$usr_last_seen_edit_diff."</b> ".TABLE_DAYS_AGO;
 
                 // User stats
                 $usr_points             = $row_sup['points'];
@@ -221,6 +222,27 @@
 <script>
     <?php if(!empty($usr_finishedmaps)):?>
         $('#map-wrs-by-player').DataTable({
+            language: {
+            processing:     '<?php echo DATATABLES_processing; ?>',
+            search:         '<?php echo DATATABLES_search; ?>',
+            lengthMenu:     '<?php echo DATATABLES_lengthMenu; ?>',
+            info:           '<?php echo DATATABLES_info; ?>',
+            infoEmpty:      '<?php echo DATATABLES_infoEmpty; ?>',
+            infoFiltered:   '<?php echo DATATABLES_infoFiltered; ?>',
+            loadingRecords: '<?php echo DATATABLES_loadingRecords; ?>',
+            zeroRecords:    '<?php echo DATATABLES_zeroRecords; ?>',
+            emptyTable:     '<?php echo DATATABLES_emptyTable; ?>',
+            paginate: {
+                first:      '<?php echo DATATABLES_first; ?>',
+                previous:   '<?php echo DATATABLES_previous; ?>',
+                next:       '<?php echo DATATABLES_next; ?>',
+                last:       '<?php echo DATATABLES_last; ?>'
+            },
+            aria: {
+                sortAscending:  '<?php echo DATATABLES_sortAscending; ?>',
+                sortDescending: '<?php echo DATATABLES_sortDescending; ?>'
+            }
+        },
             "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
             responsive: true,
             "processing": true,
@@ -246,7 +268,7 @@
                         
                     ?>
                     [
-                        '<a href="dashboard-maps.php?map=<?php echo  $player_wr['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $player_wr["mapname"]; ?> <?php if($settings_map_link_icon) echo '<i class="fas fa-link"></i>';?></a>',
+                        '<?php echo MapPageLink($player_wr["mapname"]); ?>',
                         '<?php echo $player_wr["tier"]; ?>',
                         '<?php echo $player_wr["maprank"]; ?>',
                         '<?php echo $player_wr_runtime_timeformat; ?>',
@@ -258,6 +280,27 @@
     <?php endif; ?>
     <?php if(!empty($usr_finishedbonuses)):?>
         $('#map-wrbs-by-player').DataTable({
+            language: {
+            processing:     '<?php echo DATATABLES_processing; ?>',
+            search:         '<?php echo DATATABLES_search; ?>',
+            lengthMenu:     '<?php echo DATATABLES_lengthMenu; ?>',
+            info:           '<?php echo DATATABLES_info; ?>',
+            infoEmpty:      '<?php echo DATATABLES_infoEmpty; ?>',
+            infoFiltered:   '<?php echo DATATABLES_infoFiltered; ?>',
+            loadingRecords: '<?php echo DATATABLES_loadingRecords; ?>',
+            zeroRecords:    '<?php echo DATATABLES_zeroRecords; ?>',
+            emptyTable:     '<?php echo DATATABLES_emptyTable; ?>',
+            paginate: {
+                first:      '<?php echo DATATABLES_first; ?>',
+                previous:   '<?php echo DATATABLES_previous; ?>',
+                next:       '<?php echo DATATABLES_next; ?>',
+                last:       '<?php echo DATATABLES_last; ?>'
+            },
+            aria: {
+                sortAscending:  '<?php echo DATATABLES_sortAscending; ?>',
+                sortDescending: '<?php echo DATATABLES_sortDescending; ?>'
+            }
+        },
             "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
             responsive: true,
             "processing": true,
@@ -283,7 +326,7 @@
                             $player_wrb_date = '<small class="text-muted">N/A</small>';
                     ?>
                     [
-                        '<a href="dashboard-maps.php?map=<?php echo  $player_wrb['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $player_wrb["mapname"]; ?> <?php if($settings_map_link_icon) echo '<i class="fas fa-link"></i>';?></a>',
+                        '<?php echo MapPageLink($player_wrb["mapname"]); ?>',
                         '<?php echo $player_wrb["tier"]; ?>',
                         '<?php echo $player_wrb["zonegroup"]; ?>',
                         '<?php echo $player_wrb["maprank"]; ?>',
@@ -296,6 +339,27 @@
     <?php endif; ?>
     <?php if(!empty($usr_finishedstages)):?>
         $('#map-wrcps-by-player').DataTable({
+            language: {
+            processing:     '<?php echo DATATABLES_processing; ?>',
+            search:         '<?php echo DATATABLES_search; ?>',
+            lengthMenu:     '<?php echo DATATABLES_lengthMenu; ?>',
+            info:           '<?php echo DATATABLES_info; ?>',
+            infoEmpty:      '<?php echo DATATABLES_infoEmpty; ?>',
+            infoFiltered:   '<?php echo DATATABLES_infoFiltered; ?>',
+            loadingRecords: '<?php echo DATATABLES_loadingRecords; ?>',
+            zeroRecords:    '<?php echo DATATABLES_zeroRecords; ?>',
+            emptyTable:     '<?php echo DATATABLES_emptyTable; ?>',
+            paginate: {
+                first:      '<?php echo DATATABLES_first; ?>',
+                previous:   '<?php echo DATATABLES_previous; ?>',
+                next:       '<?php echo DATATABLES_next; ?>',
+                last:       '<?php echo DATATABLES_last; ?>'
+            },
+            aria: {
+                sortAscending:  '<?php echo DATATABLES_sortAscending; ?>',
+                sortDescending: '<?php echo DATATABLES_sortDescending; ?>'
+            }
+        },
             "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
             responsive: true,
             "processing": true,
@@ -321,7 +385,7 @@
                             $player_wrcp_date = '<small class="text-muted">N/A</small>';
                     ?>
                     [
-                        '<a href="dashboard-maps.php?map=<?php echo  $player_wrcp['mapname']; ?>" class="text-muted text-decoration-none"><?php echo $player_wrcp["mapname"]; ?> <?php if($settings_map_link_icon) echo '<i class="fas fa-link"></i>';?></a>',
+                        '<?php echo MapPageLink($player_wrcp["mapname"]); ?>',
                         '<?php echo $player_wrcp["tier"]; ?>',
                         '<?php echo $player_wrcp["stage"]; ?>',
                         '<?php echo $player_wrcp["maprank"]; ?>',
@@ -338,18 +402,18 @@
 <?php
     if((!empty($player_id))&&($player_id!=="")&&($player_id!=='Unknown')&&($stmt_status===1)):
 ?>
-    <h5><a href="dashboard-players.php" class="text-muted text-decoration-none">Surf Stat's Player Profile</a> / <?php echo $usr_steamid64; ?> <a href="https://steamcommunity.com/profiles/<?php echo $usr_steamid64; ?>" target="_blank" title="<?php echo $usr_name; ?> - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a></h5>
+    <h5><a href="dashboard-players.php" class="text-muted text-decoration-none">Surf Stat's <?php echo PROFILE_PLAYER_PROFILE;?></a> / <?php echo $usr_steamid64; ?> <a href="https://steamcommunity.com/profiles/<?php echo $usr_steamid64; ?>" target="_blank" title="<?php echo $usr_name; ?> - Steam Profile" class="link-secondary text-decoration-none"><i class="fab fa-steam"></i></a></h5>
     <hr class="mt-0 mb-3">
     <div class="pt-3 pb-2">
         <h3 class="text-center"><?php echo $usr_name; ?></h3>
         <h4 class="text-center text-muted mb-2"><?php if($config_player_flags) {echo CountryFlagProfile($usr_countryCode, $usr_continentCode).' ';}; echo $usr_country; ?></h4>
         <div class="row justify-content-md-center mb-2">
             <div class="col-12 col-md-auto text-center">
-                <span class="mr-1">Last seen:</span> <?php echo $usr_last_seen_edit_d; ?>
+                <span class="mr-1"><?php echo TABLE_LAST_SEEN;?>:</span> <?php echo $usr_last_seen_edit_d; ?>
                 <?php echo '<small class="text-muted">('.$usr_last_seen_nounix.')</small>'; ?>
             </div>
             <div class="col-12 col-md-auto text-center">
-                <span class="mr-1">Joined:</span> <strong><?php echo $usr_joined_time_date; ?></strong> <small class="text-muted"><?php echo $usr_joined_time; ?></small>
+                <span class="mr-1"><?php echo TABLE_JOINED;?>:</span> <strong><?php echo $usr_joined_time_date; ?></strong> <small class="text-muted"><?php echo $usr_joined_time; ?></small>
             </div>
         </div>
 
@@ -357,30 +421,30 @@
             <?php
                 // RANK badges
                 if($usr_position=="1")
-                    echo '<span class="badge shadow-sm bg-success">TOP 1</span>';
+                    echo '<span class="badge shadow-sm bg-success">'.PROFILE_TOP.' 1</span>';
                 elseif($usr_position=="2")
-                    echo '<span class="badge shadow-sm bg-danger">TOP 2</span>';
+                    echo '<span class="badge shadow-sm bg-danger">'.PROFILE_TOP.' 2</span>';
                 elseif($usr_position=="3")
-                    echo '<span class="badge shadow-sm bg-warning">TOP 3</span>';
+                    echo '<span class="badge shadow-sm bg-warning">'.PROFILE_TOP.' 3</span>';
                 elseif($usr_position<="10")
-                    echo '<span class="badge shadow-sm bg-info">TOP 10</span>';
+                    echo '<span class="badge shadow-sm bg-info">'.PROFILE_TOP.' 10</span>';
                 elseif($usr_position<="25")
-                    echo '<span class="badge shadow-sm bg-primary">TOP 25</span>';
+                    echo '<span class="badge shadow-sm bg-primary">'.PROFILE_TOP.' 25</span>';
                 elseif($usr_position<="50")
-                    echo '<span class="badge shadow-sm bg-secondary">TOP 50</span>';
+                    echo '<span class="badge shadow-sm bg-secondary">'.PROFILE_TOP.' 50</span>';
                 elseif($usr_position<="100")
-                    echo '<span class="badge shadow-sm bg-secondary">TOP 100</span>';
+                    echo '<span class="badge shadow-sm bg-secondary">'.PROFILE_TOP.' 100</span>';
                 elseif($usr_position<="250")
-                    echo '<span class="badge shadow-sm bg-secondary">TOP 250</span>';
+                    echo '<span class="badge shadow-sm bg-secondary">'.PROFILE_TOP.' 250</span>';
                 elseif($usr_position<="500")
-                    echo '<span class="badge shadow-sm bg-secondary">TOP 500</span>';
+                    echo '<span class="badge shadow-sm bg-secondary">'.PROFILE_TOP.' 500</span>';
             ?>
         </div>
 
         <hr class="mt-4 mb-2">
         <!-- Progress Bar -->
         <div class="text-center my-2">
-            <h5 class="my-0">User Total Completion Progress</h5>
+            <h5 class="my-0"><?php echo PROFILE_USER_TOTAL_COMPLETION_PROGRESS;?></h5>
             <small class="text-muted my-0">(<?php echo number_format($usr_finished_sum); ?> / <?php echo number_format($total_timer_sum); ?>)</small>
         </div>
         <div class="progress mb-3 shadow-sm">
@@ -394,43 +458,43 @@
                 <table class="table table-borderless table-striped table-sm my-0">
                     <tbody>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Overall Rank</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_OVERALL_RANK;?></strong><td>
                             <td class='align-middle text-center'><strong><?php echo number_format($usr_position); ?></strong> / <?php echo number_format($total_players); ?><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Total Playtime</strong><td>
-                            <td class='align-middle text-center'><?php echo number_format($usr_timetotal_hrs, 1); ?> hrs<td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_TOTAL_PLAYTIME;?></strong><td>
+                            <td class='align-middle text-center'><?php echo number_format($usr_timetotal_hrs, 1); ?> <?php echo PROFILE_HRS;?><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Surfing Time</strong><td>
-                            <td class='align-middle text-center'><?php echo number_format($usr_timealive_hrs, 1); ?> hrs <span class='text-muted'>(<?php echo $usr_timealive_hrs_percentuage; ?>%)</span><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_SURF_TIME;?></strong><td>
+                            <td class='align-middle text-center'><?php echo number_format($usr_timealive_hrs, 1); ?> <?php echo PROFILE_HRS;?> <span class='text-muted'>(<?php echo $usr_timealive_hrs_percentuage; ?>%)</span><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Map Completions</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_MAP_COMPLETIONS;?></strong><td>
                             <td class='align-middle text-center'><strong><?php echo number_format($usr_finishedmaps); ?></strong> / <?php echo number_format($total_maps); ?> <span class='text-muted'>(<?php echo $usr_finishedmaps_percentuage; ?>%)</span><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Bonus Completions</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_BONUS_COMPLETIONS;?></strong><td>
                             <td class='align-middle text-center'><strong><?php echo number_format($usr_finishedbonuses); ?></strong> / <?php echo number_format($total_bonuses); ?> <span class='text-muted'>(<?php echo $usr_finishedbonuses_percentuage; ?>%)</span><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Stage Completions</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_STAGES_COMPLETIONS;?></strong><td>
                             <td class='align-middle text-center'><strong><?php echo number_format($usr_finishedstages); ?></strong> / <?php echo number_format($total_stages); ?> <span class='text-muted'>(<?php echo $usr_finishedstages_percentuage; ?>%)</span><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Map Top 10s</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_MAP_TOP_10S;?></strong><td>
                             <td class='align-middle text-center'><strong><?php echo number_format($usr_top10s); ?></strong> / <?php echo number_format($usr_finishedmaps); ?> <span class='text-muted'>(<?php echo $usr_top10s_percentuage; ?>%)</span><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Bonus WR Points</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_BONUS_WR_POINTS;?></strong><td>
                             <td class='align-middle text-center'><?php echo number_format($usr_wrbpoints); ?><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Map Top 10s Points</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_MAP_TOP_10S_POINTS;?></strong><td>
                             <td class='align-middle text-center'><?php echo number_format($usr_top10points); ?><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Map Points</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_MAP_POINTS;?></strong><td>
                             <td class='align-middle text-center'><?php echo number_format($usr_mappoints); ?><td>
                         </tr>
                     </tbody>    
@@ -440,43 +504,43 @@
                 <table class="table table-borderless table-striped table-sm my-0">
                     <tbody>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Total Points</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_TOTAL_POINTS;?></strong><td>
                             <td class='align-middle text-center'><strong><?php echo number_format($usr_points); ?></strong><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Total Connections</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_TOTAL_CONNECTIONS;?></strong><td>
                             <td class='align-middle text-center'><?php echo number_format($usr_conections); ?><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Spectate Time</strong><td>
-                            <td class='align-middle text-center'><?php echo number_format($usr_timespec_hrs, 1); ?> hrs <span class='text-muted'>(<?php echo $usr_timespec_hrs_percentuage; ?>%)</span><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_SPEC_TIME;?></strong><td>
+                            <td class='align-middle text-center'><?php echo number_format($usr_timespec_hrs, 1); ?> <?php echo PROFILE_HRS;?> <span class='text-muted'>(<?php echo $usr_timespec_hrs_percentuage; ?>%)</span><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Map Records</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_MAP_RECORDS;?></strong><td>
                             <td class='align-middle text-center'><strong class="text-success"><?php echo number_format($usr_wrs); ?></strong><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Bonus Records</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_BONUS_RECORDS;?></strong><td>
                             <td class='align-middle text-center'><strong class="text-info"><?php echo number_format($usr_wrbs); ?></strong><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Stage Records</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_STAGE_RECORDS;?></strong><td>
                             <td class='align-middle text-center'><strong class="text-warning"><?php echo number_format($usr_wrcps); ?></strong><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Map WR Points</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_MAP_WR_POINTS;?></strong><td>
                             <td class='align-middle text-center'><?php echo number_format($usr_wrpoints); ?><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Stage WR Points</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_STAGE_WR_POINTS;?></strong><td>
                             <td class='align-middle text-center'><?php echo number_format($usr_wrcppoints); ?><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Group Points</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_GROUP_POINTS;?></strong><td>
                             <td class='align-middle text-center'><?php echo number_format($usr_groupspoints); ?><td>
                         </tr>
                         <tr>
-                            <td class='align-middle'><strong class="pl-4">Bonus Points</strong><td>
+                            <td class='align-middle'><strong class="pl-4"><?php echo PROFILE_BONUS_POINTS;?></strong><td>
                             <td class='align-middle text-center'><?php echo number_format($usr_bonuspoints); ?><td>
                         </tr>
                     </tbody>    
@@ -485,16 +549,16 @@
         </div>
         <hr>
         <div class="text-center mt-4 mb-0">
-            <h5 class="my-0">Player Completions by Map Tier</h5>
+            <h5 class="my-0"><?php echo PROFILE_PLAYER_COMPLETIONS_BY_MAP_TIER;?></h5>
         </div>
         <div class="row">
             <?php foreach($map_tier_completions as $map_tier_completion): ?>
                 <div class="col-12 col-md">
                     <div class="bg-stripped-color py-2 my-3 text-center rounded shadow-sm">
-                        <h5 class='my-2'>Tier <strong><?php echo $map_tier_completion[0];?></strong></h5>
-                        <h5 class="my-1"><small><i class="fas fa-map"></i> Maps</small><br><strong><?php echo $map_tier_completion[1]; ?></strong> / <?php echo $map_tier_completion[2]; ?> <small class="text-muted">(<?php echo $map_tier_completion[3]; ?>%)</small></h5>
-                        <h6 class="my-1"><small><i class="fas fa-bold"></i> Bonuses</small><br><strong><?php echo $map_tier_completion[4]; ?></strong> / <?php echo $map_tier_completion[5]; ?> <small class="text-muted">(<?php echo $map_tier_completion[6]; ?>%)</small></h6>
-                        <h6 class="my-1"><small><i class="fas fa-route"></i> Stages</small><br><strong><?php echo $map_tier_completion[7]; ?></strong> / <?php echo $map_tier_completion[8]; ?> <small class="text-muted">(<?php echo $map_tier_completion[9]; ?>%)</small></h6>
+                        <h5 class='my-2'><?php echo TABLE_TIER;?> <strong><?php echo $map_tier_completion[0];?></strong></h5>
+                        <h5 class="my-1"><small><i class="fas fa-map"></i> <?php echo TABLE_MAPS;?></small><br><strong><?php echo $map_tier_completion[1]; ?></strong> / <?php echo $map_tier_completion[2]; ?> <small class="text-muted">(<?php echo $map_tier_completion[3]; ?>%)</small></h5>
+                        <h6 class="my-1"><small><i class="fas fa-bold"></i> <?php echo TABLE_BONUSES;?></small><br><strong><?php echo $map_tier_completion[4]; ?></strong> / <?php echo $map_tier_completion[5]; ?> <small class="text-muted">(<?php echo $map_tier_completion[6]; ?>%)</small></h6>
+                        <h6 class="my-1"><small><i class="fas fa-route"></i> <?php echo TABLE_STAGES;?></small><br><strong><?php echo $map_tier_completion[7]; ?></strong> / <?php echo $map_tier_completion[8]; ?> <small class="text-muted">(<?php echo $map_tier_completion[9]; ?>%)</small></h6>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -502,18 +566,18 @@
         <?php if(!empty($usr_finishedmaps)):?>
             <hr>
             <div class="text-center mt-4 mb-0">
-                <h5 class="my-0">Player Finished Maps</h5>
+                <h5 class="my-0"><?php echo PROFILE_PLAYER_FINISHED_MAPS;?></h5>
             </div>
             <div class="table-responsive">
                 <table class="table table-hover table-striped border shadow-sm py-0 my-2 nowrap" style="width:100%" id="map-wrs-by-player">
                     <thead class="border">
-                        <th class="text-left pl-3">Mapname</th>
-                        <th class="text-center">Tier</th>
-                        <th class="text-center">Rank</th>
-                        <th class="text-center">Runtime</th>
-                        <th class="text-center">Date</th>
+                        <th class="text-left pl-3"><?php echo TABLE_MAP_NAME;?></th>
+                        <th class="text-center"><?php echo TABLE_TIER;?></th>
+                        <th class="text-center"><?php echo TABLE_RANK;?></th>
+                        <th class="text-center"><?php echo TABLE_RUNTIME;?></th>
+                        <th class="text-center"><?php echo TABLE_DATE;?></th>
                     </thead>
-                    <tbody class="table-sm">
+                    <tbody class="">
                         
                     </tbody>
                 </table>
@@ -522,19 +586,19 @@
         <?php if(!empty($usr_finishedbonuses)):?>
             <hr>
             <div class="text-center mt-4 mb-0">
-                <h5 class="my-0">Player Finished Bonuses</h5>
+                <h5 class="my-0"><?php echo PROFILE_PLAYER_FINISHED_BONUSES;?></h5>
             </div>
             <div class="table-responsive">
                 <table class="table table-hover table-striped border shadow-sm py-0 my-2 nowrap" style="width:100%" id="map-wrbs-by-player">
                     <thead class="border">
-                        <th class="text-left pl-3">Mapname</th>
-                        <th class="text-center">Tier</th>
-                        <th class="text-center">Bonus</th>
-                        <th class="text-center">Bonus Rank</th>
-                        <th class="text-center">Runtime</th>
-                        <th class="text-center">Date</th>
+                        <th class="text-left pl-3"><?php echo TABLE_MAP_NAME;?></th>
+                        <th class="text-center"><?php echo TABLE_TIER;?></th>
+                        <th class="text-center"><?php echo TABLE_BONUS;?></th>
+                        <th class="text-center"><?php echo TABLE_BONUS_RANK;?></th>
+                        <th class="text-center"><?php echo TABLE_RUNTIME;?></th>
+                        <th class="text-center"><?php echo TABLE_DATE;?></th>
                     </thead>
-                    <tbody class="table-sm">
+                    <tbody class="">
                         
                     </tbody>
                 </table>
@@ -543,19 +607,19 @@
         <?php if(!empty($usr_finishedstages)):?>
             <hr>
             <div class="text-center mt-4 mb-0">
-                <h5 class="my-0">Player Finished Stages</h5>
+                <h5 class="my-0"><?php echo PROFILE_PLAYER_FINISHED_STAGES;?></h5>
             </div>
             <div class="table-responsive">
                 <table class="table table-hover table-striped border shadow-sm py-0 my-2 nowrap" style="width:100%" id="map-wrcps-by-player">
                     <thead class="border">
-                        <th class="text-left pl-3">Mapname</th>
-                        <th class="text-center">Tier</th>
-                        <th class="text-center">Stage</th>
-                        <th class="text-center">Stage Rank</th>
-                        <th class="text-center">Runtime</th>
-                        <th class="text-center">Date</th>
+                        <th class="text-left pl-3"><?php echo TABLE_MAP_NAME;?></th>
+                        <th class="text-center"><?php echo TABLE_TIER;?></th>
+                        <th class="text-center"><?php echo TABLE_STAGE;?></th>
+                        <th class="text-center"><?php echo TABLE_STAGE_RANK;?></th>
+                        <th class="text-center"><?php echo TABLE_RUNTIME;?></th>
+                        <th class="text-center"><?php echo TABLE_DATE;?></th>
                     </thead>
-                    <tbody class="table-sm">
+                    <tbody class="">
                         
                     </tbody>
                 </table>

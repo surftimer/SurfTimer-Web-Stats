@@ -82,9 +82,18 @@ function CountryFlagProfile($countryCode, $continentCode) {
 }
 
 
+function LinkColor(){
+    global $settings_link_color;
+    if($settings_link_color==='')
+        return 'link-secondary';
+    else
+        return $settings_link_color;
+}
+
+$LinkColor = LinkColor();
 
 function PlayerUsernameProfile($player_steamid64, $player_name) {
-    global $settings_player_profile_icon;
+    global $settings_player_profile_icon, $LinkColor;
 
     if($player_name=='          ' || $player_name==''){
         $player_name = '<span class="text-muted">(Unknown)</span>';
@@ -93,9 +102,18 @@ function PlayerUsernameProfile($player_steamid64, $player_name) {
         $player_name_title = $player_name;
         
     if($settings_player_profile_icon)
-        return $player_name.' <a href="dashboard-player.php?id='.$player_steamid64.'" target="" title="'.$player_name_title.' - Surf Profile" class="text-muted"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/'.$player_steamid64.'" target="_blank" title="'.$player_name_title.' - Steam Profile" class="text-muted"><i class="fab fa-steam"></i></a>';
+        return $player_name.' <a href="dashboard-player.php?id='.$player_steamid64.'" target="" title="'.$player_name_title.' - Surf Profile" class="link-secondary text-decoration-none"><i class="fas fa-user-circle"></i></a> <a href="https://steamcommunity.com/profiles/'.$player_steamid64.'" target="_blank" title="'.$player_name_title.' - Steam Profile" class="link-secondary text-decoration-none"><i class="fab fa-steam"></i></a>';
     else
-        return  '<a href="dashboard-player.php?id='.$player_steamid64.'" title="'.$player_name_title.' - Surf Profile" class="text-dark text-decoration-none">'.$player_name.'</a>';
+        return  '<a href="dashboard-player.php?id='.$player_steamid64.'" title="'.$player_name_title.' - Surf Profile" class="'.$LinkColor.' text-decoration-none">'.$player_name.'</a>';
+}
+
+function MapPageLink($map_name){
+    global $settings_map_link_icon, $LinkColor;
+    if($settings_map_link_icon)
+            return  $map_name.' <a href="dashboard-maps.php?map='.$map_name.'" title="'.$map_name.' - Map Page" class="link-secondary text-decoration-none"><i class="fas fa-link"></i></a>';
+            
+        else
+            return '<a href="dashboard-maps.php?map='.$map_name.'" title="'.$map_name.' - Map Page" class="'.$LinkColor.' text-decoration-none">'.$map_name.'</a>';
 }
 
 function BackgroundImage() {
@@ -106,3 +124,68 @@ function BackgroundImage() {
     else 
         return $settings_background_image;
 }
+
+if($settings_language_enable):
+    function LanguageActive($language) {
+        if($_SESSION['language'] == $language)
+            return 'active';
+    };
+
+    function LanguageFlag(){
+        if($_SESSION['language'] == 'Czech')
+            return 'cz';
+        elseif($_SESSION['language'] == 'English')
+            return 'gb';
+        elseif($_SESSION['language'] == 'German')
+            return 'de';
+        elseif($_SESSION['language'] == 'Slovak')
+            return 'sk';
+        elseif($_SESSION['language'] == 'Portuguese')
+            return 'pt';
+        elseif($_SESSION['language'] == 'French')
+            return 'fr';
+        elseif($_SESSION['language'] == 'Turkish')
+            return 'tr';
+        elseif($_SESSION['language'] == 'Danish')
+            return 'dk';
+    };
+
+    function LanguageURL($language){
+        if(isset($_GET['map'])||isset($_GET['id']))
+            return $_SERVER['REQUEST_URI'].'&language='.$language;
+        else
+            return '?language='.$language;
+    };
+endif;
+
+function MapDownload($map_name)
+    {
+        global $settings_maps_download_url;
+        if($settings_maps_download_url!==''):
+            $url = $settings_maps_download_url.$map_name.'.bsp.bz2';
+        
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $data = curl_exec($ch);
+            $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch); 
+
+            if($httpcode>=200 && $httpcode<300){
+                return ' <a href="'.$url.'" class="link-secondary text-decoration-none" title="Download map: '.$map_name.'"><i class="fa-solid fa-download"></i></a>';
+            } else {
+                $url = $settings_maps_download_url.$map_name.'.bsp';
+
+                $ch = curl_init($url);
+                curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                $data = curl_exec($ch);
+                $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                curl_close($ch);
+                if($httpcode>=200 && $httpcode<300)
+                    return ' <a href="'.$url.'" class="link-secondary text-decoration-none" title="Download map: '.$map_name.'"><i class="fa-solid fa-download"></i></a>';
+            }
+        endif;
+    }
