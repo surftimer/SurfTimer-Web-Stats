@@ -148,6 +148,8 @@ if($settings_language_enable):
             return 'tr';
         elseif($_SESSION['language'] == 'Danish')
             return 'dk';
+		elseif($_SESSION['language'] == 'Swedish')
+            return 'se';
     };
 
     function LanguageURL($language){
