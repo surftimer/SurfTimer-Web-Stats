@@ -27,7 +27,7 @@ define('HOME_TOP_PLAYERS', 'Top 10 Spelare');
 define('HOME_TOP_WR', 'Top 10 WR Rekordhållare');
 define('HOME_TOP_BONUS_WR', 'Top 10 bonus WR Rekordhållare');
 define('HOME_TOP_STAGE_WR', 'Top 10 stage WR Rekordhållare');
-define('HOME_RECENT_MAPS', 'Nyligen tillagda Maps');
+define('HOME_RECENT_MAPS', 'Nyligen Tillagda Maps');
 define('HOME_BUTTON_SHOW_MORE', 'Visa Mer');
 
 define('TABLE_USERNAME', 'Användarnamn');
