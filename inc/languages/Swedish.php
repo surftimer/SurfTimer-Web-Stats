@@ -18,9 +18,9 @@ define('SEARCH_INPUT', 'Sök spelare efter Användarmn, SteamID eller SteamID64'
 define('SEARCH_NO_RESULTS', 'Inget resultat');
 
 define('HOME_TOTAL_PLAYERS', 'Totalt antal spelare');
-define('HOME_TOTAL_MAPS', 'Total antal Maps');
-define('HOME_TOTAL_BONUSES', 'Total antal Bonus');
-define('HOME_TOTAL_COMPLETIONS', 'Total antal Slutförda');
+define('HOME_TOTAL_MAPS', 'Totalt antal Maps');
+define('HOME_TOTAL_BONUSES', 'Totalt antal Bonus');
+define('HOME_TOTAL_COMPLETIONS', 'Totalt Kartor antal Slutförda');
 define('HOME_HOURS_PLAYED', 'Timmar Spelade');
 define('HOME_RECENT', 'Senaste 10 Maps Rekord');
 define('HOME_TOP_PLAYERS', 'Top 10 Spelare');
