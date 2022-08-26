@@ -20,7 +20,7 @@ define('SEARCH_NO_RESULTS', 'Inget resultat');
 define('HOME_TOTAL_PLAYERS', 'Totalt antal spelare');
 define('HOME_TOTAL_MAPS', 'Totalt antal Maps');
 define('HOME_TOTAL_BONUSES', 'Totalt antal Bonus');
-define('HOME_TOTAL_COMPLETIONS', 'Totalt Kartor antal Slutförda');
+define('HOME_TOTAL_COMPLETIONS', 'Totalt Kartor Slutförda');
 define('HOME_HOURS_PLAYED', 'Antal Timmar Spelade');
 define('HOME_RECENT', 'Senaste 10 Maps Rekord');
 define('HOME_TOP_PLAYERS', 'Top 10 Spelare');
