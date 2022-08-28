@@ -33,7 +33,7 @@
                 $usr_steamid64      = $row_sup['steamid64'];
                 $usr_name           = $row_sup['name'];
                 $usr_country        = $row_sup['country'];
-                if($config_player_flags){
+                if($exists_UsrTableCountryCodeAndContinentCodeCheck){
                     $usr_countryCode    = $row_sup['countryCode'];
                     $usr_continentCode  = $row_sup['continentCode'];
                 }
