@@ -150,6 +150,8 @@ if($settings_language_enable):
             return 'dk';
         elseif($_SESSION['language'] == 'Korean')
             return 'kr';
+        elseif($_SESSION['language'] == 'Spanish')
+            return 'es';
     };
 
     function LanguageURL($language){
