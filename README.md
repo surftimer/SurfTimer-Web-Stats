@@ -17,7 +17,7 @@ Surftimer-Web-Stats is Official Web with statistics for [Surftimer-Official](htt
 * Maps Section (Complete Statistics)
 * Players Profiles (Complete Statistics)
 * !!Bootwatch Themes (Beta Version)
-* Languages (Czech, Danish, English, French, German, Portuguese, Slovak, Turkish)
+* Languages (Czech, Danish, English, French, German, Korean, Portuguese, Slovak, Turkish)
 * Player Flags (Requires surftimer version: 1.1.2 or above)
 
 **Demos:**
@@ -44,6 +44,7 @@ Translations
 * French Translation by @Sarrus1
 * Turkish Translation by pReLiTinqq^^
 * Danish Translation by Nubbe#0405
+* Korean Translation by @Tsukasa-Nefren
 
 CSS & JS
 * [Bootstrap](https://getbootstrap.com/) (Front-end toolkit)
