@@ -60,7 +60,7 @@
 */
 
     $settings_language_enable       = TRUE;         // Default: TRUE - To disable language selector change to FALSE.
-    $settings_language_default      = "English";    // Czech, Danish, English, French, German, Korean, Portuguese, Slovak, Turkish
+    $settings_language_default      = "English";    // Czech, Danish, English, French, German, Korean, Portuguese, Slovak, Spanish, Turkish
     $settings_player_flags          = TRUE;         // Default: TRUE - To disable player flags change to FALSE
     $settings_maps_download_url     = '';           // To disable remain empty EXAMPLE: http://example.com/maps/
 
