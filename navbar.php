@@ -17,7 +17,7 @@
             <!-- If you have 2 sizes of logo for mobile version and normal use this bellow :) -->
             <!--<a class="navbar-brand d-none d-md-block" href="https://surfcommunity.eu/"><img src="./images/logo_navbar.svg" height="40"></a>-->
             <!--<a class="navbar-brand d-md-none" href="https://surfcommunity.eu/"><img src="./images/logo_navbar_1.svg" height="40"></a>-->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#SurfStatsNavbar" aria-controls="SurfStatsNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#SurfStatsNavbar" aria-controls="SurfStatsNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="SurfStatsNavbar">
