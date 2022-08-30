@@ -152,6 +152,8 @@ if($settings_language_enable):
             return 'kr';
         elseif($_SESSION['language'] == 'Spanish')
             return 'es';
+	    elseif($_SESSION['language'] == 'Swedish')
+		    return 'se';
     };
 
     function LanguageURL($language){
