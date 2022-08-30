@@ -11,8 +11,8 @@
                 $_SESSION['language'] = "Czech";
             elseif($_GET['language'] == 'English')
                 $_SESSION['language'] = "English";
-            //elseif($_GET['language'] == 'German')
-                //$_SESSION['language'] = "German";
+            elseif($_GET['language'] == 'German')
+                $_SESSION['language'] = "German";
             elseif($_GET['language'] == 'Portuguese')
                 $_SESSION['language'] = "Portuguese";   
             elseif($_GET['language'] == 'Slovak')
@@ -23,6 +23,12 @@
                 $_SESSION['language'] = "Turkish";
             elseif($_GET['language'] == 'Danish')
                 $_SESSION['language'] = "Danish";
+            elseif($_GET['language'] == 'Korean')
+                $_SESSION['language'] = "Korean";
+            elseif($_GET['language'] == 'Spanish')
+                $_SESSION['language'] = "Spanish";
+		    elseif($_GET['language'] == 'Swedish')
+                $_SESSION['language'] = "Swedish";
         }
 
         require_once(__ROOT__.'/inc/languages/'.$_SESSION['language'].'.php');

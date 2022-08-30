@@ -17,7 +17,7 @@
             <!-- If you have 2 sizes of logo for mobile version and normal use this bellow :) -->
             <!--<a class="navbar-brand d-none d-md-block" href="https://surfcommunity.eu/"><img src="./images/logo_navbar.svg" height="40"></a>-->
             <!--<a class="navbar-brand d-md-none" href="https://surfcommunity.eu/"><img src="./images/logo_navbar_1.svg" height="40"></a>-->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#SurfStatsNavbar" aria-controls="SurfStatsNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#SurfStatsNavbar" aria-controls="SurfStatsNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="SurfStatsNavbar">
@@ -61,9 +61,12 @@
                                 <li><a class="dropdown-item <?php echo LanguageActive('Danish'); ?>" href="<?php echo LanguageURL('Danish');?>"><img src="./images/flags/dk.svg" width="20" class="border align-middle"> Danish</a></li>
                                 <li><a class="dropdown-item <?php echo LanguageActive('English'); ?>" href="<?php echo LanguageURL('English');?>"><img src="./images/flags/gb.svg" width="20" class="border align-middle"> English</a></li>
                                 <li><a class="dropdown-item <?php echo LanguageActive('French'); ?>" href="<?php echo LanguageURL('French');?>"><img src="./images/flags/fr.svg" width="20" class="border align-middle"> French</a></li>
-                                <!--<li><a class="dropdown-item <?php echo LanguageActive('German'); ?>" href="<?php echo LanguageURL('German');?>"><img src="./images/flags/de.svg" width="20" class="border align-middle"> German</a></li>-->
+                                <li><a class="dropdown-item <?php echo LanguageActive('German'); ?>" href="<?php echo LanguageURL('German');?>"><img src="./images/flags/de.svg" width="20" class="border align-middle"> German</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Korean'); ?>" href="<?php echo LanguageURL('Korean');?>"><img src="./images/flags/kr.svg" width="20" class="border align-middle"> Korean</a></li>
                                 <li><a class="dropdown-item <?php echo LanguageActive('Portuguese'); ?>" href="<?php echo LanguageURL('Portuguese');?>"><img src="./images/flags/pt.svg" width="20" class="border align-middle"> Portuguese</a></li>
                                 <li><a class="dropdown-item <?php echo LanguageActive('Slovak'); ?>" href="<?php echo LanguageURL('Slovak');?>"><img src="./images/flags/sk.svg" width="20" class="border align-middle"> Slovak</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Spanish'); ?>" href="<?php echo LanguageURL('Spanish');?>"><img src="./images/flags/es.svg" width="20" class="border align-middle"> Spanish</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Swedish'); ?>" href="<?php echo LanguageURL('Swedish');?>"><img src="./images/flags/se.svg" width="20" class="border align-middle"> Swedish</a></li>
                                 <li><a class="dropdown-item <?php echo LanguageActive('Turkish'); ?>" href="<?php echo LanguageURL('Turkish');?>"><img src="./images/flags/tr.svg" width="20" class="border align-middle"> Turkish</a></li>
                             </ul>
                         </div>
