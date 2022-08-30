@@ -67,6 +67,7 @@
                                 <li><a class="dropdown-item <?php echo LanguageActive('Slovak'); ?>" href="<?php echo LanguageURL('Slovak');?>"><img src="./images/flags/sk.svg" width="20" class="border align-middle"> Slovak</a></li>
                                 <li><a class="dropdown-item <?php echo LanguageActive('Spanish'); ?>" href="<?php echo LanguageURL('Spanish');?>"><img src="./images/flags/es.svg" width="20" class="border align-middle"> Spanish</a></li>
                                 <li><a class="dropdown-item <?php echo LanguageActive('Turkish'); ?>" href="<?php echo LanguageURL('Turkish');?>"><img src="./images/flags/tr.svg" width="20" class="border align-middle"> Turkish</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Swedish'); ?>" href="<?php echo LanguageURL('Swedish');?>"><img src="./images/flags/se.svg" width="20" class="border align-middle"> Swedish</a></li>
                             </ul>
                         </div>
                     <?php endif;?>
