@@ -73,7 +73,7 @@ define('MAPS_MAX_VELOCITY', 'Max Hastighed');
 define('MAPS_TOTAL_COMPLETIONS', 'Total Completions');
 define('MAPS_MAP_COMPLETIONS', 'Map Completions');
 define('MAPS_STAGE_COMPLETIONS', 'Stage Completions');
-define('MAPS_BONUSES_COMPLETIONS', 'Stage Completions');
+define('MAPS_BONUSES_COMPLETIONS', 'Bonuses Completions');
 
 define('PROFILE_PLAYER_PROFILE', 'Spiller Profil');
 define('PROFILE_TOP', 'TOP');

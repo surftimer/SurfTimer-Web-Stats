@@ -73,8 +73,7 @@ define('MAPS_MAX_VELOCITY', 'Max Geschwindigkeit');
 define('MAPS_TOTAL_COMPLETIONS', 'Anzahl Läufe');
 define('MAPS_MAP_COMPLETIONS', 'Karten Läufe');
 define('MAPS_STAGE_COMPLETIONS', 'Stage Läufe');
-define('MAPS_BONUSES_COMPLETIONS', 'Stage Läufe');
-
+define('MAPS_BONUSES_COMPLETIONS', 'Bonus Läufe');
 define('PROFILE_PLAYER_PROFILE', 'Spielerprofil');
 define('PROFILE_TOP', 'TOP');
 define('PROFILE_USER_TOTAL_COMPLETION_PROGRESS', 'Fortschritt Spieler Läufe');
