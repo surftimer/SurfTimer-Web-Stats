@@ -73,7 +73,7 @@ define('MAPS_MAX_VELOCITY', 'Max Hız');
 define('MAPS_TOTAL_COMPLETIONS', 'Toplam Bitirme');
 define('MAPS_MAP_COMPLETIONS', 'Harita Rekorları');
 define('MAPS_STAGE_COMPLETIONS', 'Stage Rekorları');
-define('MAPS_BONUSES_COMPLETIONS', 'Stage Rekorları');
+define('MAPS_BONUSES_COMPLETIONS', 'Bonus Rekorları');
 
 define('PROFILE_PLAYER_PROFILE', 'Oyuncu Profili');
 define('PROFILE_TOP', 'Sıralama');

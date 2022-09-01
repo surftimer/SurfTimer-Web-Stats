@@ -73,7 +73,7 @@ define('MAPS_MAX_VELOCITY', 'Max Hastighet');
 define('MAPS_TOTAL_COMPLETIONS', 'Total Utförda');
 define('MAPS_MAP_COMPLETIONS', 'Map Utförda');
 define('MAPS_STAGE_COMPLETIONS', 'Stage Utförda');
-define('MAPS_BONUSES_COMPLETIONS', 'Stage Utförda');
+define('MAPS_BONUSES_COMPLETIONS', 'Bonus Utförda');
 
 define('PROFILE_PLAYER_PROFILE', 'Spelare Profil');
 define('PROFILE_TOP', 'TOP');
