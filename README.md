@@ -45,6 +45,7 @@ Translations
 * Turkish Translation by pReLiTinqq^^
 * Danish Translation by Nubbe#0405
 * Korean Translation by @Tsukasa-Nefren
+* Swedish Translation by @Vanheden
 * Spanish Translation by Atomik0#5399
 
 CSS & JS
