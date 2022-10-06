@@ -10,7 +10,7 @@
     if(mysqli_num_rows($results_recent_records) > 0){
         while($row_recent_records = mysqli_fetch_assoc($results_recent_records))
             $recent_records[] = $row_recent_records;
-    };
+    }
 ?>
 
 <script>

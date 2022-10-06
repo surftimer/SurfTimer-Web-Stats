@@ -54,20 +54,20 @@
                     <?php if($settings_language_enable): ?>
                         <div class="dropdown">
                             <a class="nav-link dropdown-toggle active bg-white border rounded py-0 my-2 ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="./images/flags/<?php echo LanguageFlag();?>.svg" width="18,5" class="border align-middle"> <?php echo $_SESSION['language'];?>
+                                <img src="./images/flags/<?php echo LanguageFlag();?>.svg" width="18,5" class="border align-middle" alt="<?php echo LanguageFlag();?> Flag"> <?php echo $_SESSION['language'];?>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item <?php echo LanguageActive('Czech'); ?>" href="<?php echo LanguageURL('Czech');?>"><img src="./images/flags/cz.svg" width="20" class="border align-middle"> Czech</a></li>
-                                <li><a class="dropdown-item <?php echo LanguageActive('Danish'); ?>" href="<?php echo LanguageURL('Danish');?>"><img src="./images/flags/dk.svg" width="20" class="border align-middle"> Danish</a></li>
-                                <li><a class="dropdown-item <?php echo LanguageActive('English'); ?>" href="<?php echo LanguageURL('English');?>"><img src="./images/flags/gb.svg" width="20" class="border align-middle"> English</a></li>
-                                <li><a class="dropdown-item <?php echo LanguageActive('French'); ?>" href="<?php echo LanguageURL('French');?>"><img src="./images/flags/fr.svg" width="20" class="border align-middle"> French</a></li>
-                                <li><a class="dropdown-item <?php echo LanguageActive('German'); ?>" href="<?php echo LanguageURL('German');?>"><img src="./images/flags/de.svg" width="20" class="border align-middle"> German</a></li>
-                                <li><a class="dropdown-item <?php echo LanguageActive('Korean'); ?>" href="<?php echo LanguageURL('Korean');?>"><img src="./images/flags/kr.svg" width="20" class="border align-middle"> Korean</a></li>
-                                <li><a class="dropdown-item <?php echo LanguageActive('Portuguese'); ?>" href="<?php echo LanguageURL('Portuguese');?>"><img src="./images/flags/pt.svg" width="20" class="border align-middle"> Portuguese</a></li>
-                                <li><a class="dropdown-item <?php echo LanguageActive('Slovak'); ?>" href="<?php echo LanguageURL('Slovak');?>"><img src="./images/flags/sk.svg" width="20" class="border align-middle"> Slovak</a></li>
-                                <li><a class="dropdown-item <?php echo LanguageActive('Spanish'); ?>" href="<?php echo LanguageURL('Spanish');?>"><img src="./images/flags/es.svg" width="20" class="border align-middle"> Spanish</a></li>
-                                <li><a class="dropdown-item <?php echo LanguageActive('Swedish'); ?>" href="<?php echo LanguageURL('Swedish');?>"><img src="./images/flags/se.svg" width="20" class="border align-middle"> Swedish</a></li>
-                                <li><a class="dropdown-item <?php echo LanguageActive('Turkish'); ?>" href="<?php echo LanguageURL('Turkish');?>"><img src="./images/flags/tr.svg" width="20" class="border align-middle"> Turkish</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Czech'); ?>" href="<?php echo LanguageURL('Czech');?>"><img src="./images/flags/cz.svg" width="20" class="border align-middle" alt="CZ Flag"> Czech</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Danish'); ?>" href="<?php echo LanguageURL('Danish');?>"><img src="./images/flags/dk.svg" width="20" class="border align-middle" alt="DK Flag"> Danish</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('English'); ?>" href="<?php echo LanguageURL('English');?>"><img src="./images/flags/gb.svg" width="20" class="border align-middle" alt="GB Flag"> English</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('French'); ?>" href="<?php echo LanguageURL('French');?>"><img src="./images/flags/fr.svg" width="20" class="border align-middle" alt="FR Flag"> French</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('German'); ?>" href="<?php echo LanguageURL('German');?>"><img src="./images/flags/de.svg" width="20" class="border align-middle" alt="DE Flag"> German</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Korean'); ?>" href="<?php echo LanguageURL('Korean');?>"><img src="./images/flags/kr.svg" width="20" class="border align-middle" alt="KR Flag"> Korean</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Portuguese'); ?>" href="<?php echo LanguageURL('Portuguese');?>"><img src="./images/flags/pt.svg" width="20" class="border align-middle" alt="PT Flag"> Portuguese</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Slovak'); ?>" href="<?php echo LanguageURL('Slovak');?>"><img src="./images/flags/sk.svg" width="20" class="border align-middle" alt="SK Flag"> Slovak</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Spanish'); ?>" href="<?php echo LanguageURL('Spanish');?>"><img src="./images/flags/es.svg" width="20" class="border align-middle" alt="ES Flag"> Spanish</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Swedish'); ?>" href="<?php echo LanguageURL('Swedish');?>"><img src="./images/flags/se.svg" width="20" class="border align-middle" alt="SE Flag"> Swedish</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Turkish'); ?>" href="<?php echo LanguageURL('Turkish');?>"><img src="./images/flags/tr.svg" width="20" class="border align-middle" alt="TR Flag"> Turkish</a></li>
                             </ul>
                         </div>
                     <?php endif;?>
@@ -94,7 +94,7 @@
                 </div>
                 <div class="modal-body">
                     <form class="">
-                        <input class="form-control form-control-lg shadow-sm" name="players_search" id="players_search" type="search" placeholder="<?php echo SEARCH_INPUT;?>">
+                        <label for="players_search"></label><input class="form-control form-control-lg shadow-sm" name="players_search" id="players_search" type="search" placeholder="<?php echo SEARCH_INPUT;?>">
                     </form>
                     <div class="" id="players_search_result"></div>
                 </div>

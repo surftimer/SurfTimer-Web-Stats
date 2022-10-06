@@ -152,10 +152,7 @@
                     $sql_select_map_tier_stages = "SELECT  SUM(stages) AS map_tier_stages_count FROM `ck_maptier` WHERE stages!='1' AND tier='$map_tier'";
                     $result_select_map_tier_stages = $db_conn_surftimer->query($sql_select_map_tier_stages);
                     $row_smts = $result_select_map_tier_stages->fetch_assoc();
-                    if(isset($row_smts['map_tier_stages_count']))
-                        $map_tier_stages_count = $row_smts['map_tier_stages_count'];
-                    else
-                        $map_tier_stages_count = 0;
+                    $map_tier_stages_count = $row_smts['map_tier_stages_count'] ?? 0;
 
                     $sql_select_map_tier_finished_maps = "SELECT COUNT(ck_playertimes.mapname) AS map_tier_finished_maps FROM `ck_playertimes` LEFT JOIN ck_maptier ON ck_maptier.mapname=ck_playertimes.mapname WHERE ck_playertimes.steamid='$usr_steamid' AND ck_playertimes.style='0' AND ck_maptier.tier='$map_tier'";
                     $result_select_map_tier_finished_maps = $db_conn_surftimer->query($sql_select_map_tier_finished_maps);
@@ -189,7 +186,7 @@
                         if(mysqli_num_rows($result_select_player_wrs) > 0){
                             while($row_select_player_wrs = mysqli_fetch_assoc($result_select_player_wrs))
                                 $player_wrs[] = $row_select_player_wrs;
-                        };
+                        }
                     endif;
                 
                 // MAP WRBs BY Player
@@ -200,7 +197,7 @@
                         if(mysqli_num_rows($result_select_player_wrbs) > 0){
                             while($row_select_player_wrbs = mysqli_fetch_assoc($result_select_player_wrbs))
                                 $player_wrbs[] = $row_select_player_wrbs;
-                        };
+                        }
                     endif;
                 
                 // MAP WRCPs BY Player
@@ -211,7 +208,7 @@
                     if(mysqli_num_rows($result_select_player_wrcps) > 0){
                         while($row_select_player_wrcps = mysqli_fetch_assoc($result_select_player_wrcps))
                             $player_wrcps[] = $row_select_player_wrcps;
-                    };
+                    }
                 endif;
                     
             endif;
@@ -406,7 +403,7 @@
     <hr class="mt-0 mb-3">
     <div class="pt-3 pb-2">
         <h3 class="text-center"><?php echo $usr_name; ?></h3>
-        <h4 class="text-center text-muted mb-2"><?php if($config_player_flags) {echo CountryFlagProfile($usr_countryCode, $usr_continentCode).' ';}; echo $usr_country; ?></h4>
+        <h4 class="text-center text-muted mb-2"><?php if($config_player_flags) {echo CountryFlagProfile($usr_countryCode, $usr_continentCode).' ';} echo $usr_country; ?></h4>
         <div class="row justify-content-md-center mb-2">
             <div class="col-12 col-md-auto text-center">
                 <span class="mr-1"><?php echo TABLE_LAST_SEEN;?>:</span> <?php echo $usr_last_seen_edit_d; ?>

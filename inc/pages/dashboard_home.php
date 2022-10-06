@@ -36,7 +36,7 @@ $r10rs = array();
 if(mysqli_num_rows($results_r10r) > 0){
     while($row_r10r = mysqli_fetch_assoc($results_r10r))
         $r10rs[] = $row_r10r;
-};
+}
 
 // Top 10 players
 $sql_t10p = "SELECT ck_playerrank.* FROM ck_playerrank WHERE style='0' ORDER BY points DESC LIMIT 10";
@@ -45,7 +45,7 @@ $t10ps = array();
 if(mysqli_num_rows($results_t10p) > 0){
     while($row_t10p = mysqli_fetch_assoc($results_t10p))
         $t10ps[] = $row_t10p;
-};
+}
 
 // TOP 10 WR holders
 $sql_t10wrh = "SELECT ck_playerrank.*FROM ck_playerrank WHERE style='0' ORDER BY ck_playerrank.wrs DESC LIMIT 10";
@@ -54,7 +54,7 @@ $t10wrhs = array();
 if(mysqli_num_rows($results_t10wrh) > 0){
     while($row_t10wrh = mysqli_fetch_assoc($results_t10wrh))
         $t10wrhs[] = $row_t10wrh;
-};
+}
 
 // TOP 10 Bonus WR holders
 $sql_t10bwrh = "SELECT ck_playerrank.* FROM ck_playerrank WHERE style='0' ORDER BY ck_playerrank.wrbs DESC LIMIT 10";
@@ -63,7 +63,7 @@ $t10wbrhs = array();
 if(mysqli_num_rows($results_t10bwrh) > 0){
     while($row_t10bwrh = mysqli_fetch_assoc($results_t10bwrh))
         $t10bwrhs[] = $row_t10bwrh;
-};
+}
 
 // TOP 10 Stage WR holders
 $sql_t10swrh = "SELECT ck_playerrank.* FROM ck_playerrank WHERE style='0' ORDER BY ck_playerrank.wrcps DESC LIMIT 10";
@@ -72,7 +72,7 @@ $t10swrhs = array();
 if(mysqli_num_rows($results_t10swrh) > 0){
     while($row_t10swrh = mysqli_fetch_assoc($results_t10swrh))
         $t10swrhs[] = $row_t10swrh;
-};
+}
 
 // Recently Added Maps
 
@@ -128,5 +128,5 @@ if(mysqli_num_rows($results_ram) > 0){
         $rams[] = array($ram_map, $ram_map_type, $row_ram['tier'], $ram_map_bonus, $row_ram_added_d);
 
     endwhile;
-};
+}
 

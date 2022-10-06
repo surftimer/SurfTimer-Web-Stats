@@ -11,7 +11,7 @@
     if(mysqli_num_rows($results_most_active) > 0){
         while($row_most_active = mysqli_fetch_assoc($results_most_active))
             $most_actives[] = $row_most_active;
-    };
+    }
 ?>
 
     <script>

@@ -4,6 +4,8 @@ function nav_active($nav_name) {
     global $page_name;
     if($nav_name == $page_name)
         return 'active';
+    else
+        return '';
 }
 
 function toCommunityID($id) {
@@ -78,7 +80,7 @@ function CountryFlagProfile($countryCode, $continentCode) {
     elseif(!empty($continent_flag))
         return '<img class="rounded border bg-transparent shadow-sm mb-1" height="20" src="./images/flags/continents/'.$continentCode.'.svg"/>';
     else
-        return '<img class="rounded border bg-transparent shadow-sm mb-1" height="20" src="./images/flags/unknown.svg"/>';
+        return '<img class="rounded border bg-transparent shadow-sm mb-1" height="20" src="./images/flags/unknown.svg" alt="Unknown FLag"/>';
 }
 
 
@@ -126,9 +128,12 @@ function BackgroundImage() {
 }
 
 if($settings_language_enable):
-    function LanguageActive($language) {
+    function LanguageActive($language): string
+    {
         if($_SESSION['language'] == $language)
             return 'active';
+        else
+            return '';
     };
 
     function LanguageFlag(){
@@ -154,9 +159,12 @@ if($settings_language_enable):
             return 'es';
 	    elseif($_SESSION['language'] == 'Swedish')
 		    return 'se';
+        else
+            return 'gb';
     };
 
-    function LanguageURL($language){
+    function LanguageURL($language): string
+    {
         if(isset($_GET['map'])||isset($_GET['id']))
             return $_SERVER['REQUEST_URI'].'&language='.$language;
         else
@@ -193,5 +201,7 @@ function MapDownload($map_name)
                 if($httpcode>=200 && $httpcode<300)
                     return ' <a href="'.$url.'" class="link-secondary text-decoration-none" title="Download map: '.$map_name.'"><i class="fa-solid fa-download"></i></a>';
             }
+        else:
+            return '';
         endif;
     }

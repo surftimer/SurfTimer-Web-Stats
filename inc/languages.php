@@ -1,5 +1,5 @@
 <?php
-    define('__ROOT__', dirname(dirname(__FILE__)));
+    define('__ROOT__', dirname(__FILE__, 2));
 
     if($settings_language_enable):
         session_start();
@@ -32,8 +32,8 @@
         }
 
         require_once(__ROOT__.'/inc/languages/'.$_SESSION['language'].'.php');
-    
-    elseif((!$settings_language_default==='')&&(!$settings_language_enable)):
+
+    elseif(false):
         require_once(__ROOT__.'/inc/languages/'.$settings_language_default.'.php');
     else:
         require_once require_once(__ROOT__.'/inc/languages/English.php');

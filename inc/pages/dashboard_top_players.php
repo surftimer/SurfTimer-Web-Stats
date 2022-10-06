@@ -10,7 +10,7 @@
     if(mysqli_num_rows($results_top_players) > 0){
         while($row_top_players = mysqli_fetch_assoc($results_top_players))
             $top_players[] = $row_top_players;
-    };
+    }
     
 ?>
 

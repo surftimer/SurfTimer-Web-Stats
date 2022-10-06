@@ -10,7 +10,7 @@ if(isset($_POST['mapname'])) {
 } elseif(empty($mapname))
 $mapname = '';
 
-if((isset($mapname))&&($mapname!=='')):
+if(($mapname!=='')):
 
     $sql_map = "SELECT * FROM `ck_maptier` LEFT JOIN ck_newmaps ON ck_maptier.mapname=ck_newmaps.mapname WHERE ck_maptier.mapname=?";
     $stmt_map = mysqli_stmt_init($db_conn_surftimer);
@@ -40,10 +40,7 @@ if((isset($mapname))&&($mapname!=='')):
                 $row_map_bonuses = $results_map_bonuses->fetch_assoc();
                 
                 $map_stages = $row_map_stages['stages'] + 1;
-                if(isset($row_map_bonuses['zonegroup']))
-                    $map_bonuses = $row_map_bonuses['zonegroup'];
-                else 
-                    $map_bonuses = Null;
+                $map_bonuses = $row_map_bonuses['zonegroup'] ?? Null;
 
                 if(($row_map['stages']!==$map_stages)||($row_map['bonuses']!==$map_bonuses)):
                     $sql_map_stages_bonuses_update = "UPDATE `ck_maptier` SET `stages` = '$map_stages', `bonuses` = '$map_bonuses' WHERE `ck_maptier`.`mapname` = '$map_name';";
@@ -105,14 +102,14 @@ if((isset($mapname))&&($mapname!=='')):
                 $map_normal_bonuses_completions_count = $row_map_normal_bonuses_completions_count['count'];
 
                 if($sql_map_normal_completions_count!==0):
-                    
+
                     if($exists_UsrTableCountryCodeAndContinentCodeCheck)
                         $sql_map_completions = "SELECT ck_playertimes.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.countryCode, ck_playerrank.continentCode, ck_playerrank.steamid64 FROM `ck_playertimes` LEFT JOIN `ck_playerrank` ON ck_playerrank.steamid=ck_playertimes.steamid AND ck_playerrank.style=ck_playertimes.steamid WHERE mapname='$map_name' AND ck_playertimes.style='0'";
                     else
                         $sql_map_completions = "SELECT ck_playertimes.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.steamid64 FROM `ck_playertimes` LEFT JOIN `ck_playerrank` ON ck_playerrank.steamid=ck_playertimes.steamid AND ck_playerrank.style=ck_playertimes.steamid WHERE mapname='$map_name' AND ck_playertimes.style='0'";
                     $results_map_completions = mysqli_query($db_conn_surftimer, $sql_map_completions);
                     $map_completions = array();
-                    
+
                     while($row_map_completions = mysqli_fetch_assoc($results_map_completions))
                         $map_completions[] = $row_map_completions;
 
@@ -240,7 +237,7 @@ else:
     if(mysqli_num_rows($results_maps) > 0){
         while($row_maps = mysqli_fetch_assoc($results_maps))
             $maps[] = $row_maps;
-    };
+    }
 
 endif;
 ?>
