@@ -101,7 +101,7 @@ if(($mapname!=='')):
                 $map_total_bonuses_completions_count = $row_map_total_bonuses_completions_count['count'];
                 $map_normal_bonuses_completions_count = $row_map_normal_bonuses_completions_count['count'];
 
-                if($sql_map_normal_completions_count!==0):
+                if($sql_map_normal_completions_count != 0):
 
                     if($exists_UsrTableCountryCodeAndContinentCodeCheck)
                         $sql_map_completions = "SELECT ck_playertimes.*, ck_playerrank.name as goodname, ck_playerrank.country, ck_playerrank.countryCode, ck_playerrank.continentCode, ck_playerrank.steamid64 FROM `ck_playertimes` LEFT JOIN `ck_playerrank` ON ck_playerrank.steamid=ck_playertimes.steamid AND ck_playerrank.style=ck_playertimes.steamid WHERE mapname='$map_name' AND ck_playertimes.style='0'";
@@ -147,7 +147,7 @@ if(($mapname!=='')):
 
                         if(isset($row_stage_top_time['runtimepro'])):
                             $stage_top_time_runtime_microtime = substr($row_stage_top_time['runtimepro'], strpos($row_stage_top_time['runtimepro'], ".") + 1);    
-                            $stage_top_time_runtime_timeformat = gmdate("i:s", $row_stage_top_time['runtimepro']).'<span class="text-muted">.'.$stage_top_time_runtime_microtime.'</span>';
+                            $stage_top_time_runtime_timeformat = gmdate(format: "i:s", timestamp: $row_stage_top_time['runtimepro']) . "<span class=\"text-muted\">." . $stage_top_time_runtime_microtime . "</span>";
                         else:
                             $stage_top_time_runtime_timeformat = '<small class="text-muted">N/A</small>';
                         endif;
