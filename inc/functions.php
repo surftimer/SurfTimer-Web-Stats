@@ -178,27 +178,13 @@ function MapDownload($map_name)
         if($settings_maps_download_url!==''):
             $url = $settings_maps_download_url.$map_name.'.bsp.bz2';
         
-            $ch = curl_init($url);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $data = curl_exec($ch);
-            $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            curl_close($ch); 
-
-            if($httpcode>=200 && $httpcode<300){
+            $file_headers = @get_headers($url);
+            if(strpos($file_headers[0],'200')!==false){
                 return ' <a href="'.$url.'" class="link-secondary text-decoration-none" title="Download map: '.$map_name.'"><i class="fa-solid fa-download"></i></a>';
             } else {
                 $url = $settings_maps_download_url.$map_name.'.bsp';
-
-                $ch = curl_init($url);
-                curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                $data = curl_exec($ch);
-                $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-                curl_close($ch);
-                if($httpcode>=200 && $httpcode<300)
+                $file_headers = @get_headers($url);
+                if(strpos($file_headers[0],'200')!==false) 
                     return ' <a href="'.$url.'" class="link-secondary text-decoration-none" title="Download map: '.$map_name.'"><i class="fa-solid fa-download"></i></a>';
             }
         else:
