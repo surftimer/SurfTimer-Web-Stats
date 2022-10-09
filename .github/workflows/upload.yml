@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - develop
+      - v2-develop
 
 jobs:
   workflow:
