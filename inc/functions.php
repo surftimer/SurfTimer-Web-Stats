@@ -1,6 +1,7 @@
 <?php
 
-function nav_active($nav_name) {
+function nav_active($nav_name): string
+{
     global $page_name;
     if($nav_name == $page_name)
         return 'active';
@@ -17,7 +18,8 @@ function toCommunityID($id) {
     } else {
         return $id;
     }
-};
+}
+
 function toSteamID($id) {
     if (is_numeric($id) && strlen($id) >= 16) {
         $z = bcdiv(bcsub($id, '76561197960265728'), '2');
@@ -28,7 +30,7 @@ function toSteamID($id) {
     }
     $y = bcmod($id, '2');
     return 'STEAM_1:' . $y . ':' . floor($z);
-};
+}
 
 function toSteamID_NULL($id) {
     if (is_numeric($id) && strlen($id) >= 16) {
@@ -40,7 +42,7 @@ function toSteamID_NULL($id) {
     }
     $y = bcmod($id, '2');
     return 'STEAM_0:' . $y . ':' . floor($z);
-};
+}
 
 function toUserID($id) {
     if (preg_match('/^STEAM_/', $id)) {
@@ -51,7 +53,7 @@ function toUserID($id) {
     } else {
         return $id; // We have no idea what this is, so just return it.
     }
-};
+}
 
 function toSteamID_NO_STEAM($id) {
     if (is_numeric($id) && strlen($id) >= 16) {
@@ -63,9 +65,10 @@ function toSteamID_NO_STEAM($id) {
     }
     $y = bcmod($id, '2');
     return '' . $y . ':' . floor($z);
-};
+}
 
-function CountryFlag($country, $country_flag, $continent_flag) {
+function CountryFlag($country, $country_flag, $continent_flag): string
+{
     if(!empty($country_flag))
         return '<img class="bg-transparent border" title="'.$country.'" height="16" src="./images/flags/'.strtolower($country_flag).'.svg"/>';
     elseif(!empty($continent_flag))
@@ -74,7 +77,8 @@ function CountryFlag($country, $country_flag, $continent_flag) {
         return '<img class="bg-transparent border" title="'.$country.'" height="16" src="./images/flags/unknown.svg"/>';
 }
 
-function CountryFlagProfile($countryCode, $continentCode) {
+function CountryFlagProfile($countryCode, $continentCode): string
+{
     if(!empty($countryCode))
         return '<img class="rounded border bg-transparent shadow-sm mb-1" height="20" src="./images/flags/'.strtolower($countryCode).'.svg"/>';
     elseif(!empty($continent_flag))
@@ -84,7 +88,8 @@ function CountryFlagProfile($countryCode, $continentCode) {
 }
 
 
-function LinkColor(){
+function LinkColor(): string
+{
     global $settings_link_color;
     if($settings_link_color==='')
         return 'link-secondary';
@@ -94,7 +99,8 @@ function LinkColor(){
 
 $LinkColor = LinkColor();
 
-function PlayerUsernameProfile($player_steamid64, $player_name) {
+function PlayerUsernameProfile($player_steamid64, $player_name): string
+{
     global $settings_player_profile_icon, $LinkColor;
 
     if($player_name=='          ' || $player_name==''){
@@ -109,7 +115,8 @@ function PlayerUsernameProfile($player_steamid64, $player_name) {
         return  '<a href="dashboard-player.php?id='.$player_steamid64.'" title="'.$player_name_title.' - Surf Profile" class="'.$LinkColor.' text-decoration-none">'.$player_name.'</a>';
 }
 
-function MapPageLink($map_name){
+function MapPageLink($map_name): string
+{
     global $settings_map_link_icon, $LinkColor;
     if($settings_map_link_icon)
             return  $map_name.' <a href="dashboard-maps.php?map='.$map_name.'" title="'.$map_name.' - Map Page" class="link-secondary text-decoration-none"><i class="fas fa-link"></i></a>';
@@ -118,7 +125,8 @@ function MapPageLink($map_name){
             return '<a href="dashboard-maps.php?map='.$map_name.'" title="'.$map_name.' - Map Page" class="'.$LinkColor.' text-decoration-none">'.$map_name.'</a>';
 }
 
-function BackgroundImage() {
+function BackgroundImage(): string
+{
     global $settings_background_image;
 
     if($settings_background_image=='')
@@ -134,9 +142,10 @@ if($settings_language_enable):
             return 'active';
         else
             return '';
-    };
+    }
 
-    function LanguageFlag(){
+    function LanguageFlag(): string
+    {
         if($_SESSION['language'] == 'Czech')
             return 'cz';
         elseif($_SESSION['language'] == 'English')
@@ -161,7 +170,7 @@ if($settings_language_enable):
 		    return 'se';
         else
             return 'gb';
-    };
+    }
 
     function LanguageURL($language): string
     {
@@ -169,12 +178,13 @@ if($settings_language_enable):
             return $_SERVER['REQUEST_URI'].'&language='.$language;
         else
             return '?language='.$language;
-    };
+    }
 endif;
 
 function MapDownload($map_name)
     {
         global $settings_maps_download_url;
+
         if($settings_maps_download_url!==''):
             $url = $settings_maps_download_url.$map_name.'.bsp.bz2';
         
@@ -182,10 +192,10 @@ function MapDownload($map_name)
             if(strpos($file_headers[0],'200')!==false){
                 return ' <a href="'.$url.'" class="link-secondary text-decoration-none" title="Download map: '.$map_name.'"><i class="fa-solid fa-download"></i></a>';
             } else {
-                $url = $settings_maps_download_url.$map_name.'.bsp';
+                $url = $settings_maps_download_url . $map_name . '.bsp';
                 $file_headers = @get_headers($url);
-                if(strpos($file_headers[0],'200')!==false) 
-                    return ' <a href="'.$url.'" class="link-secondary text-decoration-none" title="Download map: '.$map_name.'"><i class="fa-solid fa-download"></i></a>';
+                if (strpos($file_headers[0], '200') !== false)
+                    return ' <a href="' . $url . '" class="link-secondary text-decoration-none" title="Download map: ' . $map_name . '"><i class="fa-solid fa-download"></i></a>';
             }
         else:
             return '';

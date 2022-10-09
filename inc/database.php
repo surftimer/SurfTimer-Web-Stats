@@ -4,7 +4,7 @@ $db_conn_surftimer = new mysqli($db_host.':'.$db_port, $db_username, $db_passwor
 
 // Check connection
 if ($db_conn_surftimer->connect_error) {
-    die("<div style=\"text-align: center;\"><h2>Please contact site Administrator.</h2><br><h3>DB: Connection failed:<br>{$db_conn_surftimer->connect_error}</h3></div>");
+    die("<div style=\"text-align: center;\"><h2>Please contact site Administrator.</h2><br><h3>DB: Connection failed:<br>$db_conn_surftimer->connect_error</h3></div>");
 } else $db_conn_surftimer_status = 1;
 
 

@@ -7,7 +7,7 @@
                             Copyright &copy; 2021-<?php echo date("Y");?>  - Surftimer-Web-Stats
                             <br>
                             <small>
-                                Coded & Designed with ❤ by <a class="link-dark text-decoration-none" href="https://github.com/KristianP26/" taget="_blank">Kristián Partl</a>.
+                                Coded & Designed with ❤ by <a class="link-dark text-decoration-none" href="https://github.com/KristianP26/" target="_blank">Kristián Partl</a>.
                                 <br class="py-0">
                                 <small>
                                     <?php echo ALL_TIMES_ARE_IN;?> <a class="link-dark text-decoration-none" href="https://time.is/en/<?php echo $mysql_server_timezone; ?>" target="_blank"><?php echo $mysql_server_timezone; ?></a>.

@@ -147,7 +147,7 @@ if(($mapname!=='')):
 
                         if(isset($row_stage_top_time['runtimepro'])):
                             $stage_top_time_runtime_microtime = substr($row_stage_top_time['runtimepro'], strpos($row_stage_top_time['runtimepro'], ".") + 1);    
-                            $stage_top_time_runtime_timeformat = gmdate(format: "i:s", timestamp: $row_stage_top_time['runtimepro']) . "<span class=\"text-muted\">." . $stage_top_time_runtime_microtime . "</span>";
+                            $stage_top_time_runtime_timeformat = gmdate("i:s", $row_stage_top_time['runtimepro']) . "<span class=\"text-muted\">." . $stage_top_time_runtime_microtime . "</span>";
                         else:
                             $stage_top_time_runtime_timeformat = '<small class="text-muted">N/A</small>';
                         endif;
