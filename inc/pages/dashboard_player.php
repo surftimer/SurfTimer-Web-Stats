@@ -20,6 +20,8 @@
         if(mysqli_stmt_prepare($stmt_profile, $sql_select_user_profile)):
             $stmt_status = 1;
 
+            $player_id = toCommunityID($player_id);
+
             mysqli_stmt_bind_param($stmt_profile,"s", $player_id);
             mysqli_stmt_execute($stmt_profile);
             $result_select_user_profile = mysqli_stmt_get_result($stmt_profile);
