@@ -211,10 +211,10 @@ if($settings_language_enable):
         if($settings_map_image_preview === TRUE):
             $image_url = $images_source_url.$map_name.".jpg";
             $file_headers = @get_headers($image_url);
-            if(str_contains($file_headers[0], '200')){
+            if(str_contains($file_headers[0], '200'))
                 return '<img src="'.$image_url.'" class="img-thumbnail my-3 shadow-sm" alt="'.$map_name.' - Preview Image">';
-            }
-            else return '';
+            else
+                return '';
         else:
             return '';
         endif;
