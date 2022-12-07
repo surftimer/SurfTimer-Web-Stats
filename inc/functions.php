@@ -208,9 +208,13 @@ if($settings_language_enable):
     {
         global $settings_map_image_preview;
         $images_source_url = "https://raw.githubusercontent.com/Sayt123/SurfMapPics/Maps-and-bonuses/csgo/";
-
         if($settings_map_image_preview === TRUE):
-            return '<img src="'.$images_source_url.$map_name.'.jpg" class="img-fluid" alt="'.$map_name.' - Preview Image">';
+            $image_url = $images_source_url.$map_name.".jpg";
+            $file_headers = @get_headers($image_url);
+            if(str_contains($file_headers[0], '200')){
+                return '<img src="'.$image_url.'" class="img-thumbnail my-3 shadow-sm" alt="'.$map_name.' - Preview Image">';
+            }
+            else return '';
         else:
             return '';
         endif;

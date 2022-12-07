@@ -423,7 +423,6 @@ endif;
         <?php if(isset($row_map['date'])): ?>
             <div class="my-4">
                 <h3 class="text-center"><?php echo $mapname; ?></h3>
-                <?php echo MapPreviewImage($mapname) ?>
                 <div class="row justify-content-md-center">
                     <div class="col-12 col-md-auto text-center">
                         <?php echo TABLE_TYPE; ?>: <b><?php echo $map_stages_info;?></b>
@@ -443,6 +442,7 @@ endif;
                         <?php echo MAPS_MAX_VELOCITY; ?>: <b><?php echo number_format($map_maxvelocity); ?></b>
                     </div>
                 </div>
+                <?php echo MapPreviewImage($mapname) ?>
             </div>
             <h5 class="text-center my-1"><?php echo MAPS_TOTAL_COMPLETIONS; ?></h5>
             <div class="row justify-content-md-center">
