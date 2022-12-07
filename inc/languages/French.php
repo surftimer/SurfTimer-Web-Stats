@@ -102,7 +102,7 @@ const PROFILE_HRS = 'hrs';
 const PROFILE_TIER = 'Difficulté';
 const PROFILE_PLAYER_COMPLETIONS_BY_MAP_TIER = 'Completions du joueur par difficulté de map';
 const PROFILE_PLAYER_FINISHED_MAPS = 'Maps finies par le joueur';
-const PROFILE_PLAYER FINISHED_BONUSES = 'Bonus finies par le joueur';
+const PROFILE_PLAYER_FINISHED_BONUSES = 'Bonus finies par le joueur';
 const PROFILE_PLAYER_FINISHED_STAGES = 'Niveaux finis par le joueur';
 
 const TOP_1000_PLAYERS = 'Top 1,000 Joueurs';

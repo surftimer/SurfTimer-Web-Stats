@@ -10,7 +10,7 @@ function nav_active($nav_name): string
 }
 
 function toCommunityID($id) {
-    if (preg_match('/^STEAM_/', $id)) {
+    if (str_starts_with($id, 'STEAM_')) {
         $parts = explode(':', $id);
         return bcadd(bcadd(bcmul($parts[2], '2'), '76561197960265728'), $parts[1]);
     } elseif (is_numeric($id) && strlen($id) < 16) {
@@ -45,10 +45,10 @@ function toSteamID_NULL($id) {
 }
 
 function toUserID($id) {
-    if (preg_match('/^STEAM_/', $id)) {
+    if (str_starts_with($id, 'STEAM_')) {
         $split = explode(':', $id);
         return $split[2] * 2 + $split[1];
-    } elseif (preg_match('/^765/', $id) && strlen($id) > 15) {
+    } elseif (str_starts_with($id, '765') && strlen($id) > 15) {
         return bcsub($id, '76561197960265728');
     } else {
         return $id; // We have no idea what this is, so just return it.
@@ -64,7 +64,7 @@ function toSteamID_NO_STEAM($id) {
         return $id; // We have no idea what this is, so just return it.
     }
     $y = bcmod($id, '2');
-    return '' . $y . ':' . floor($z);
+    return $y . ':' . floor($z);
 }
 
 function CountryFlag($country, $country_flag, $continent_flag): string
@@ -189,12 +189,12 @@ function MapDownload($map_name)
             $url = $settings_maps_download_url.$map_name.'.bsp.bz2';
         
             $file_headers = @get_headers($url);
-            if(strpos($file_headers[0],'200')!==false){
+            if(str_contains($file_headers[0], '200')){
                 return ' <a href="'.$url.'" class="link-secondary text-decoration-none" title="Download map: '.$map_name.'"><i class="fa-solid fa-download"></i></a>';
             } else {
                 $url = $settings_maps_download_url . $map_name . '.bsp';
                 $file_headers = @get_headers($url);
-                if (strpos($file_headers[0], '200') !== false)
+                if (str_contains($file_headers[0], '200'))
                     return ' <a href="' . $url . '" class="link-secondary text-decoration-none" title="Download map: ' . $map_name . '"><i class="fa-solid fa-download"></i></a>';
             }
         else:
