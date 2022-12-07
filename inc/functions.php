@@ -210,7 +210,7 @@ if($settings_language_enable):
         $images_source_url = "https://raw.githubusercontent.com/Sayt123/SurfMapPics/Maps-and-bonuses/csgo/";
 
         if($settings_map_image_preview === TRUE):
-            return '<img src="'.$images_source_url.$map_name.'.img" alt="'.$map_name.' - Preview Image">';
+            return '<img src="'.$images_source_url.$map_name.'.jpg" class="img-fluid" alt="'.$map_name.' - Preview Image">';
         else:
             return '';
         endif;
