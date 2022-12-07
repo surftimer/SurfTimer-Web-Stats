@@ -6,7 +6,7 @@
 /*  Database Config */
 
     $db_host = 'your_database_host';            // DB Hostame
-    $db_port = '3306';                          // DB Port (Default: 3306)
+    $db_port = 3306;                          // DB Port (Default: 3306)
     $db_username = 'your_database_username';    // DB Username
     $db_password = 'your_database_password';    // DB Password
     $db_database = 'your_database_name';        // DB Database
@@ -37,6 +37,7 @@
     $settings_navbar_title          = "Surf Stats";
     $settings_player_profile_icon   = TRUE;            // TRUE or FALSE # FALSE will disable player profile icons
     $settings_map_link_icon         = TRUE;            // TRUE or FALSE # FALSE will disable link icon after map name
+    $settings_map_image_preview     = TRUE;            // TRUE or FALSE # FALSE will disable map images preview
 
 
 /* End of Design Settings */

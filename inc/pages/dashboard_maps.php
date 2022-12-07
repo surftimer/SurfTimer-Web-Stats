@@ -423,6 +423,7 @@ endif;
         <?php if(isset($row_map['date'])): ?>
             <div class="my-4">
                 <h3 class="text-center"><?php echo $mapname; ?></h3>
+                <?php echo MapPreviewImage($mapname) ?>
                 <div class="row justify-content-md-center">
                     <div class="col-12 col-md-auto text-center">
                         <?php echo TABLE_TYPE; ?>: <b><?php echo $map_stages_info;?></b>

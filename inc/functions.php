@@ -179,9 +179,9 @@ if($settings_language_enable):
         else
             return '?language='.$language;
     }
-endif;
+    endif;
 
-function MapDownload($map_name)
+    function MapDownload($map_name): string
     {
         global $settings_maps_download_url;
 
@@ -196,7 +196,21 @@ function MapDownload($map_name)
                 $file_headers = @get_headers($url);
                 if (str_contains($file_headers[0], '200'))
                     return ' <a href="' . $url . '" class="link-secondary text-decoration-none" title="Download map: ' . $map_name . '"><i class="fa-solid fa-download"></i></a>';
+                else return '';
             }
+        else:
+            return '';
+        endif;
+    }
+
+
+    function MapPreviewImage($map_name): string
+    {
+        global $settings_map_image_preview;
+        $images_source_url = "https://raw.githubusercontent.com/Sayt123/SurfMapPics/Maps-and-bonuses/csgo/";
+
+        if($settings_map_image_preview === TRUE):
+            return '<img src="'.$images_source_url.$map_name.'.img" alt="'.$map_name.' - Preview Image">';
         else:
             return '';
         endif;
