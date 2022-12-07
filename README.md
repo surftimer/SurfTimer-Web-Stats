@@ -33,19 +33,19 @@ Surftimer-Web-Stats is Official Web with statistics for [Surftimer-Official](htt
 Show all statistics on one place on the website and create best surf web statistics extension.
 
 ## Credits
-Coded & Designed with love by @KristianP26 and [Contributors](https://github.com/surftimer/SurfTimer-Web-Stats/graphs/contributors).  
-Demo site provided by @Bara.
+Coded & Designed with love by [KristianP26](https://github.com/KristianP26) and [Contributors](https://github.com/surftimer/SurfTimer-Web-Stats/graphs/contributors).  
+Demo site provided by [Bara](https://github.com/Bara).
 
 Translations
-* Czech Translation by @KristianP26
-* Slovak Translation by @KristianP26
-* Portuguese Translation by @shipyy
-* German Translation by @Bara
-* French Translation by @Sarrus1
+* Czech Translation by [KristianP26](https://github.com/KristianP26)
+* Slovak Translation by [KristianP26](https://github.com/KristianP26)
+* Portuguese Translation by [shipyy](https://github.com/shipyy)
+* German Translation by [Bara](https://github.com/Bara)
+* French Translation by [Sarrus1](https://github.com/Sarrus1)
 * Turkish Translation by pReLiTinqq^^
 * Danish Translation by Nubbe#0405
-* Korean Translation by @Tsukasa-Nefren
-* Swedish Translation by @Vanheden
+* Korean Translation by [Tsukasa-Nefren](https://github.com/Tsukasa-Nefren)
+* Swedish Translation by [Vanheden](https://github.com/Vanheden)
 * Spanish Translation by Atomik0#5399
 
 CSS & JS
@@ -57,4 +57,5 @@ CSS & JS
 * [DataTables](https://datatables.net/) (Plug-in for the jQuery)
 
 Other
-* [PHP SteamID convert functions](https://gist.github.com/rannmann/49c1321b3239e00f442c) (by [rannmann](https://github.com/rannmann))
+* [Map Images Collection](https://github.com/Sayt123/SurfMapPics) by [Sayt123](https://github.com/Sayt123)
+* [PHP SteamID convert functions](https://gist.github.com/rannmann/49c1321b3239e00f442c) by [rannmann](https://github.com/rannmann)
