@@ -45,6 +45,14 @@ if($settings_player_flags){
     $config_player_flags = $exists_UsrTableCountryCodeAndContinentCodeCheck;
 } else $config_player_flags = FALSE;
 
+if($settings_map_mapper){
+    $sql_UsrTableCountryCodeAndContinentCodeCheck = "SHOW COLUMNS FROM `ck_maptier` LIKE 'mapper'";
+    $result_UsrTableCountryCodeAndContinentCodeCheck = $db_conn_surftimer->query($sql_UsrTableCountryCodeAndContinentCodeCheck);
+    $exists_UsrTableCountryCodeAndContinentCodeCheck = (bool)mysqli_num_rows($result_UsrTableCountryCodeAndContinentCodeCheck);
+    $config_player_flags = $exists_UsrTableCountryCodeAndContinentCodeCheck;
+} else $settings_map_mapper = FALSE;
+
+
 $sql_select_timezone = "SELECT IF(@@session.time_zone = 'SYSTEM', @@system_time_zone, @@session.time_zone) as timezone;";
 $results_select_timezone = mysqli_query($db_conn_surftimer, $sql_select_timezone);
 $row_select_timezone = mysqli_fetch_assoc($results_select_timezone);
