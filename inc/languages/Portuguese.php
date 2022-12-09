@@ -74,6 +74,7 @@ const MAPS_TOTAL_COMPLETIONS = 'Total Finalizações';
 const MAPS_MAP_COMPLETIONS = 'Finalizações do Mapa';
 const MAPS_STAGE_COMPLETIONS = 'Finalizações da Etapa';
 const MAPS_BONUSES_COMPLETIONS = 'Finalizações do Bónus';
+const MAPS_MAP_CREATED_BY = 'Mapa criado por';
 
 const PROFILE_PLAYER_PROFILE = 'Perfil do Jogador';
 const PROFILE_TOP = 'TOP';

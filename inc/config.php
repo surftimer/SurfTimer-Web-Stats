@@ -5,11 +5,11 @@
 
 /*  Database Config */
 
-    $db_host = 'your_database_host';            // DB Hostame
-    $db_port = 3306;                          // DB Port (Default: 3306)
-    $db_username = 'your_database_username';    // DB Username
-    $db_password = 'your_database_password';    // DB Password
-    $db_database = 'your_database_name';        // DB Database
+    $db_host = 'localhost';            // DB Hostame
+    $db_port = '3306';                          // DB Port (Default: 3306)
+    $db_username = 'surfcen2_timer1';    // DB Username
+    $db_password = 'surfcen2_timer1';    // DB Password
+    $db_database = 'surfcen2_timer1';        // DB Database
 
 /* End of  Database Config */
 
@@ -38,6 +38,7 @@
     $settings_player_profile_icon   = TRUE;            // TRUE or FALSE # FALSE will disable player profile icons
     $settings_map_link_icon         = TRUE;            // TRUE or FALSE # FALSE will disable link icon after map name
     $settings_map_image_preview     = TRUE;            // TRUE or FALSE # FALSE will disable map images preview
+    $settings_map_mapper            = TRUE;            // TRUE or FALSE # FALSE will disable map mapper name
 
 
 /* End of Design Settings */

@@ -74,6 +74,7 @@ const MAPS_TOTAL_COMPLETIONS = 'Toplam Bitirme';
 const MAPS_MAP_COMPLETIONS = 'Harita Rekorları';
 const MAPS_STAGE_COMPLETIONS = 'Stage Rekorları';
 const MAPS_BONUSES_COMPLETIONS = 'Bonus Rekorları';
+const MAPS_MAP_CREATED_BY = 'Oluşturan harita';
 
 const PROFILE_PLAYER_PROFILE = 'Oyuncu Profili';
 const PROFILE_TOP = 'Sıralama';

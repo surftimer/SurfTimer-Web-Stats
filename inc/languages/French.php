@@ -74,6 +74,7 @@ const MAPS_TOTAL_COMPLETIONS = 'Nombre total de completions';
 const MAPS_MAP_COMPLETIONS = 'Nombre total de completions de maps';
 const MAPS_STAGE_COMPLETIONS = 'Nombre total de completions de niveaux';
 const MAPS_BONUSES_COMPLETIONS = 'Nombre total de completions de bonus';
+const MAPS_MAP_CREATED_BY = 'Carte créée par';
 
 const PROFILE_PLAYER_PROFILE = 'Profile du joueur';
 const PROFILE_TOP = 'TOP';

@@ -219,3 +219,12 @@ if($settings_language_enable):
             return '';
         endif;
     }
+
+    function MapMapper($map_mapper): string
+    {
+        global $settings_map_mapper;
+        if($settings_map_mapper === TRUE)
+            return '<div class="text-center">'.MAPS_MAP_CREATED_BY.': <strong>'.$map_mapper.'</strong></div>';
+        else
+            return '';
+    }

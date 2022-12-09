@@ -74,6 +74,7 @@ const MAPS_TOTAL_COMPLETIONS = '총 완주 횟수';
 const MAPS_MAP_COMPLETIONS = '맵 완주 횟수';
 const MAPS_STAGE_COMPLETIONS = '스테이지 완주 횟수';
 const MAPS_BONUSES_COMPLETIONS = '보너스 완주 횟수';
+const MAPS_MAP_CREATED_BY = '만든 지도';
 
 const PROFILE_PLAYER_PROFILE = '플레이어 프로필';
 const PROFILE_TOP = 'Top';

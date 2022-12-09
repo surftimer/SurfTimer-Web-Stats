@@ -74,6 +74,7 @@ const MAPS_TOTAL_COMPLETIONS = 'Celkový počet dokončení';
 const MAPS_MAP_COMPLETIONS = 'Dokončení mapy';
 const MAPS_STAGE_COMPLETIONS = 'Dokončení etap';
 const MAPS_BONUSES_COMPLETIONS = 'Dokončení bonusů';
+const MAPS_MAP_CREATED_BY = 'Mapu vytvořil';
 
 const PROFILE_PLAYER_PROFILE = 'Profil hráče';
 const PROFILE_TOP = 'TOP';

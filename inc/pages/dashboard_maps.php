@@ -29,6 +29,7 @@ if(($mapname!=='')):
 
                 $map_name = $row_map['mapname'];
                 $map_tier = $row_map['tier'];
+                $map_mapper = $row_map['mapper'];
                 $map_dateadded = $row_map['date'];
                 $map_maxvelocity = $row_map['maxvelocity'];
 
@@ -423,6 +424,7 @@ endif;
         <?php if(isset($row_map['date'])): ?>
             <div class="my-4">
                 <h3 class="text-center"><?php echo $mapname; ?></h3>
+                <?php echo MapMapper($map_mapper); ?>
                 <div class="row justify-content-md-center">
                     <div class="col-12 col-md-auto text-center">
                         <?php echo TABLE_TYPE; ?>: <b><?php echo $map_stages_info;?></b>

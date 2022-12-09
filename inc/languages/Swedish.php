@@ -74,6 +74,8 @@ const MAPS_TOTAL_COMPLETIONS = 'Total Utförda';
 const MAPS_MAP_COMPLETIONS = 'Map Utförda';
 const MAPS_STAGE_COMPLETIONS = 'Stage Utförda';
 const MAPS_BONUSES_COMPLETIONS = 'Bonus Utförda';
+const MAPS_MAP_CREATED_BY = 'Karta skapad av';
+
 const PROFILE_PLAYER_PROFILE = 'Spelare Profil';
 const PROFILE_TOP = 'TOP';
 const PROFILE_USER_TOTAL_COMPLETION_PROGRESS = 'Användarens totala slutförande';

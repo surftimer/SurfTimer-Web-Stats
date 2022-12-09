@@ -74,6 +74,7 @@ const MAPS_TOTAL_COMPLETIONS = 'Total Completions';
 const MAPS_MAP_COMPLETIONS = 'Map Completions';
 const MAPS_STAGE_COMPLETIONS = 'Stage Completions';
 const MAPS_BONUSES_COMPLETIONS = 'Bonuses Completions';
+const MAPS_MAP_CREATED_BY = 'Kort lavet af';
 
 const PROFILE_PLAYER_PROFILE = 'Spiller Profil';
 const PROFILE_TOP = 'TOP';

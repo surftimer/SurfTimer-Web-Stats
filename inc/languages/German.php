@@ -74,6 +74,8 @@ const MAPS_TOTAL_COMPLETIONS = 'Anzahl Läufe';
 const MAPS_MAP_COMPLETIONS = 'Karten Läufe';
 const MAPS_STAGE_COMPLETIONS = 'Stage Läufe';
 const MAPS_BONUSES_COMPLETIONS = 'Bonus Läufe';
+const MAPS_MAP_CREATED_BY = 'Karte erstellt von';
+
 const PROFILE_PLAYER_PROFILE = 'Spielerprofil';
 const PROFILE_TOP = 'TOP';
 const PROFILE_USER_TOTAL_COMPLETION_PROGRESS = 'Fortschritt Spieler Läufe';
