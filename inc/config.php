@@ -5,16 +5,16 @@
 
 /*  Database Config */
 
-    $db_host = 'localhost';            // DB Hostame
-    $db_port = '3306';                          // DB Port (Default: 3306)
-    $db_username = 'surfcen2_timer1';    // DB Username
-    $db_password = 'surfcen2_timer1';    // DB Password
-    $db_database = 'surfcen2_timer1';        // DB Database
+    $db_host = 'your_database_host';            // DB Hostame
+    $db_port = 3306;                          // DB Port (Default: 3306)
+    $db_username = 'your_database_username';    // DB Username
+    $db_password = 'your_database_password';    // DB Password
+    $db_database = 'your_database_name';        // DB Database
 
 /* End of  Database Config */
 
-/* 
-    Design Settings 
+/*
+    Design Settings
     If you want use title than logo must remain empty
     If you want to use background image you need to provide image name EXAMPLE: background.jpg
     You can also use background images located in /images/surf-images/
@@ -57,8 +57,8 @@
 
  /* End of Custom Link */
 
- /* 
-    General Settings 
+ /*
+    General Settings
 */
 
     $settings_language_enable       = TRUE;         // Default: TRUE - To disable language selector change to FALSE.
