@@ -1,5 +1,6 @@
 <?php
     require_once('./../config.php');
+    require_once('./../docker_conf.php');
     require_once('./../languages.php');
     require_once('./../database.php');
     require_once('./../functions.php');
