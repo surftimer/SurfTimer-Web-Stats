@@ -38,3 +38,31 @@
     else:
         require_once require_once(__ROOT__.'/inc/languages/English.php');
     endif;
+
+    function LanguageFlag(): string
+    {
+        if($_SESSION['language'] == 'Czech')
+            return 'cz';
+        elseif($_SESSION['language'] == 'English')
+            return 'gb';
+        elseif($_SESSION['language'] == 'German')
+            return 'de';
+        elseif($_SESSION['language'] == 'Slovak')
+            return 'sk';
+        elseif($_SESSION['language'] == 'Portuguese')
+            return 'pt';
+        elseif($_SESSION['language'] == 'French')
+            return 'fr';
+        elseif($_SESSION['language'] == 'Turkish')
+            return 'tr';
+        elseif($_SESSION['language'] == 'Danish')
+            return 'dk';
+        elseif($_SESSION['language'] == 'Korean')
+            return 'kr';
+        elseif($_SESSION['language'] == 'Spanish')
+            return 'es';
+        elseif($_SESSION['language'] == 'Swedish')
+            return 'se';
+        else
+            return 'gb';
+    }
