@@ -14,7 +14,7 @@
                                 </small>
                             </small>
                             <br>
-                            <small><a class="link-dark text-decoration-none" href="https://github.com/KristianP26/Surftimer-Web-Stats" title="Kristián Partl Github" target="_blank">Surftimer-Web-Stats</a> v.2.11</small>
+                            <small><a class="link-dark text-decoration-none" href="https://github.com/KristianP26/Surftimer-Web-Stats" title="Kristián Partl Github" target="_blank">Surftimer-Web-Stats</a> v.2.12</small>
                         </p>
                     </div>
                 </div>
