@@ -7,12 +7,12 @@ $row_total_players = $result_total_players->fetch_assoc();
 $total_players = $row_total_players['count'];
 
 // Select Total timer Maps
-$sql_total_maps = "SELECT COUNT('mapname') as count FROM `ck_maptier`";
+$sql_total_maps = "SELECT COUNT('mapname') as count FROM `ck_maptier` INNER JOIN ck_newmaps on ck_maptier.mapname = ck_newmaps.mapname";
 $result_total_maps = mysqli_query($db_conn_surftimer, $sql_total_maps);
 $row_total_maps = $result_total_maps->fetch_assoc();
 $total_maps = $row_total_maps['count'];
 
-$sql_total_bonuses = "SELECT COUNT(DISTINCT a.mapname,zonegroup) as count FROM ck_zones a RIGHT JOIN ck_maptier b ON a.mapname = b.mapname WHERE a.zonegroup > 0;";
+$sql_total_bonuses = "SELECT COUNT(DISTINCT a.mapname,zonegroup) as count FROM ck_zones a INNER JOIN ck_maptier b ON a.mapname = b.mapname INNER JOIN ck_newmaps c ON a.mapname = c.mapname WHERE a.zonegroup > 0;";
 $result_total_bonuses = mysqli_query($db_conn_surftimer, $sql_total_bonuses);
 $row_total_bonuses = $result_total_bonuses->fetch_assoc();
 $total_bonuses = $row_total_bonuses['count'];
