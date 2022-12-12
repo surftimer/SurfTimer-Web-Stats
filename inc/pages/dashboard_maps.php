@@ -30,8 +30,7 @@ if(($mapname!=='')):
 
                 $map_name = $row_map['mapname'];
                 $map_tier = $row_map['tier'];
-                if(isset($row_map['mapper']))
-                    $map_mapper = $row_map['mapper'];
+                $map_mapper = $row_map['mapper'] ?? null;
                 $map_dateadded = $row_map['date'];
                 $map_maxvelocity = $row_map['maxvelocity'];
 
@@ -425,28 +424,7 @@ endif;
     <?php if(mysqli_num_rows($results_map) > 0): ?>        
         <?php if(isset($row_map['date'])): ?>
             <div class="my-4">
-                <h3 class="text-center"><?php echo $mapname; ?></h3>
-                <?php if(isset($map_mapper)) echo MapMapper($map_mapper); ?>
-                <div class="row justify-content-md-center">
-                    <div class="col-12 col-md-auto text-center">
-                        <?php echo TABLE_TYPE; ?>: <b><?php echo $map_stages_info;?></b>
-                    </div>
-                    <div class="col-12 col-md-auto text-center">
-                        <?php echo TABLE_TIER; ?>: <b><?php echo $map_tier;?></b>
-                    </div>
-                    <div class="col-12 col-md-auto text-center">
-                        <?php echo TABLE_BONUS; ?>: <b><?php echo $map_bonuses_info;?></b>
-                    </div>
-                </div>
-                <div class="row justify-content-md-center">
-                    <div class="col-12 col-md-auto text-center">
-                        <?php echo TABLE_ADDED; ?>: <b><?php echo $map_dateadded_edit;?> <small>(<?php echo $map_dateadded_edit_d;?>)</small></b>
-                    </div>                            
-                    <div class="col-12 col-md-auto text-center">
-                        <?php echo MAPS_MAX_VELOCITY; ?>: <b><?php echo number_format($map_maxvelocity); ?></b>
-                    </div>
-                </div>
-                <?php echo MapPreviewImage($mapname) ?>
+                <?php echo MapInfo($map_name, $map_mapper, $map_stages_info, $map_tier, $map_bonuses_info, $map_dateadded_edit, $map_dateadded_edit_d, $map_maxvelocity) ?>
             </div>
             <h5 class="text-center my-1"><?php echo MAPS_TOTAL_COMPLETIONS; ?></h5>
             <div class="row justify-content-md-center">

@@ -135,7 +135,6 @@ function BackgroundImage(): string
         return $settings_background_image;
 }
 
-if($settings_language_enable):
     function LanguageActive($language): string
     {
         if($_SESSION['language'] == $language)
@@ -151,7 +150,6 @@ if($settings_language_enable):
         else
             return '?language='.$language;
     }
-    endif;
 
     function MapDownload($map_name): string
     {
@@ -176,27 +174,82 @@ if($settings_language_enable):
     }
 
 
-    function MapPreviewImage($map_name): string
+    function MapInfo($m_name, $m_mapper, $m_type, $m_tier, $m_bonus, $m_added, $m_added_d, $m_velocity): string
     {
         global $settings_map_image_preview;
-        $images_source_url = "https://raw.githubusercontent.com/Sayt123/SurfMapPics/Maps-and-bonuses/csgo/";
-        if($settings_map_image_preview === TRUE):
-            $image_url = $images_source_url.$map_name.".jpg";
-            $file_headers = @get_headers($image_url);
-            if(str_contains($file_headers[0], '200'))
-                return '<img src="'.$image_url.'" class="img-thumbnail my-3 shadow-sm" alt="'.$map_name.' - Preview Image">';
-            else
-                return '';
-        else:
-            return '';
-        endif;
-    }
-
-    function MapMapper($map_mapper): string
-    {
         global $settings_map_mapper;
-        if($settings_map_mapper === TRUE)
-            return '<div class="text-center">'.MAPS_MAP_CREATED_BY.': <strong>'.$map_mapper.'</strong></div>';
+
+        $images_source_url = "https://raw.githubusercontent.com/Sayt123/SurfMapPics/Maps-and-bonuses/csgo/";
+
+        if ($settings_map_image_preview):
+            $image_url = $images_source_url.$m_name.".jpg";
+            $file_headers = @get_headers($image_url);
+            if (str_contains($file_headers[0], '200'))
+                $m_image = $image_url;
+        endif;
+
+        if (($settings_map_mapper) && ($m_mapper !== null))
+            $m_mapper_text = '<div class="text-center">'.MAPS_MAP_CREATED_BY.': <strong>'.$m_mapper.'</strong></div>';
         else
-            return '';
+            $m_mapper_text = '';
+
+        if (isset($m_image)):
+            return '
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="'.$m_image.'" class="d-block w-100 img-thumbnail" alt="'.$m_name.' - Preview Image">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 pt-1 mb-5 rounded-5">
+                            <h2 class="text-center">'.$m_name.'</h2>
+                            '.$m_mapper_text.'
+                            <div class="row justify-content-md-center">
+                                <div class="col-12 col-md-auto text-center">
+                                    '.TABLE_TYPE.': <b>'.$m_type.'</b>
+                                </div>
+                                <div class="col-12 col-md-auto text-center">
+                                    '.TABLE_TIER.': <b>'.$m_tier.'</b>
+                                </div>
+                                <div class="col-12 col-md-auto text-center">
+                                    '.TABLE_BONUS.': <b>'.$m_bonus.'</b>
+                                </div>
+                            </div>
+                            <div class="row justify-content-md-center">
+                                <div class="col-12 col-md-auto text-center">
+                                    '.TABLE_ADDED.': <b>'.$m_added.' <small>('.$m_added_d.')</small></b>
+                                </div>
+                                <div class="col-12 col-md-auto text-center">
+                                    '.MAPS_MAX_VELOCITY.': <b>'.number_format($m_velocity).'</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+            ';
+
+        else:
+            return '
+                <h3 class="text-center">'.$m_name.'</h3>
+                '.$m_mapper_text.'
+                <div class="row justify-content-md-center">
+                    <div class="col-12 col-md-auto text-center">
+                        '.TABLE_TYPE.': <b>'.$m_type.'</b>
+                    </div>
+                    <div class="col-12 col-md-auto text-center">
+                        '.TABLE_TIER.': <b>'.$m_tier.'</b>
+                    </div>
+                    <div class="col-12 col-md-auto text-center">
+                        '.TABLE_BONUS.': <b>'.$m_bonus.'</b>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-12 col-md-auto text-center">
+                        '.TABLE_ADDED.': <b>'.$m_added.' <small>('.$m_added_d.')</small></b>
+                    </div>
+                    <div class="col-12 col-md-auto text-center">
+                        '.MAPS_MAX_VELOCITY.': <b>'.number_format($m_velocity).'</b>
+                    </div>
+                </div>
+            ';
+        endif;
     }
