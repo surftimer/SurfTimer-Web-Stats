@@ -25,7 +25,54 @@ Surftimer-Web-Stats is Official Web with statistics for [Surftimer-Official](htt
  * [Master Demo](https://demo.stats.surftimer.dev/)
  * [Develop Demo](https://dev.stats.surftimer.dev/)
 
-## Wiki & Installation Guide
+## Installation and Requirements
+
+Surftimer-Web-Stats works on latest Release of [Surftimer-Official](https://github.com/surftimer/Surftimer-Official). (May be problems on Pre-Release versions).
+
+#### General Requirements
+* Maps must have selected tier and be added to server with sm_addnewmap(!addnewmap) command on server
+* A MySQL Database with [Surftimer-Official](https://github.com/surftimer/Surftimer-Official) data (MySQL 5.7, MySQL 8+, MariaDB supported)
+* DB user with permissions to SELECT, ALTER TABLE, UPDATE AND INSERT.
+
+### Docker (Recommended)
+#### Requirements
+* [Docker](https://docs.docker.com/get-docker/)
+
+#### Installation
+Start by pulling docker image
+##### Docker Hub Packages
+`docker pull kristianp26/surftimer-web-stats:latest`
+##### Github Packages
+`docker pull ghcr.io/surftimer/surftimer-web-stats:latest`
+
+Next step: Run Docker container
+
+```
+docker run -d \
+-e DB_HOST=database_host \
+-e DB_PORT=database_port \
+-e DB_USER=database_user \
+-e DB_PASS=database_pass \
+-e DB_NAME=database_name \
+-e "NAVBAR_TITLE=My Surf Server" \
+-p 8080:80 \
+kristianp26/surftimer-web-stats:latest
+```
+### Standalone
+#### Requirements
+
+* Web Server
+* PHP 8+ (PHP extensions: mysqli, bcmath)
+
+#### Installation
+
+* Download the latest version from the release page [here](https://github.com/KristianP26/Surftimer-Web-Stats/releases)
+* Copy unziped files into your website directory
+* Edit `/inc/config.php`
+
+You can find more info on wiki page: [Installation Guide](https://github.com/surftimer/SurfTimer-Web-Stats/wiki/Installation)
+
+## Wiki
 
 **[Wiki & Installation Guide](https://github.com/surftimer/SurfTimer-Web-Stats/wiki)**
 
