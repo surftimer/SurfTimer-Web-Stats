@@ -1,4 +1,4 @@
-name: Uploading files
+name: Uploading files to Demo site
 
 on:
   push:
