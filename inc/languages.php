@@ -15,6 +15,8 @@
                 $_SESSION['language'] = "German";
             elseif($_GET['language'] == 'Hindi')
                 $_SESSION['language'] = "Hindi";
+            elseif($_GET['language'] == 'Hungarian')
+                $_SESSION['language'] = "Hungarian";
             elseif($_GET['language'] == 'Portuguese')
                 $_SESSION['language'] = "Portuguese";   
             elseif($_GET['language'] == 'Slovak')
@@ -51,6 +53,8 @@
             return 'de';
         elseif($_SESSION['language'] == 'Hindi')
             return 'in';
+        elseif($_SESSION['language'] == 'Hungarian')
+            return 'hu';
         elseif($_SESSION['language'] == 'Slovak')
             return 'sk';
         elseif($_SESSION['language'] == 'Portuguese')

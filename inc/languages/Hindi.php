@@ -1,6 +1,6 @@
 <?php
 /*
-    English language for Surftimer-Web-Stats v2.13
+    Hindi language for Surftimer-Web-Stats v2.13
     Translation by: KristiánP using Google Translate.
     If you speak this language please create pull request with updated words, Thanks.
 */
