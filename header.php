@@ -31,7 +31,7 @@
 
         <!-- JavaScript Core -->
         <script src="./vendor/js/popperjs-2.11.6.min.js"></script>
-        <script src="./vendor/js/jquery-3.6.1.min.js"></script>
+        <script src="./vendor/js/jquery-3.6.3.min.js"></script>
         <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
         
         <!-- Datatables Core -->
