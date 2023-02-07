@@ -33,6 +33,8 @@
                 $_SESSION['language'] = "Spanish";
 		    elseif($_GET['language'] == 'Swedish')
                 $_SESSION['language'] = "Swedish";
+            elseif ($_GET['language'] == 'Ukrainian')
+                $_SESSION['language'] = "Ukrainian";
         }
 
         require_once(__ROOT__.'/inc/languages/'.$_SESSION['language'].'.php');
@@ -71,6 +73,8 @@
             return 'es';
         elseif($_SESSION['language'] == 'Swedish')
             return 'se';
+        elseif ($_SESSION['language'] == 'Ukrainian')
+            return 'ua';
         else
             return 'gb';
     }
