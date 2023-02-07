@@ -57,6 +57,7 @@
                                 <img src="./images/flags/<?php echo LanguageFlag();?>.svg" width="18,5" class="border align-middle" alt="<?php echo LanguageFlag();?> Flag"> <?php echo $_SESSION['language'];?>
                             </a>
                             <ul class="dropdown-menu">
+                                <li><a class="dropdown-item <?php echo LanguageActive('Croatian'); ?>" href="<?php echo LanguageURL('Croatian');?>"><img src="./images/flags/hr.svg" width="20" class="border align-middle" alt="HR Flag"> Croatian</a></li>
                                 <li><a class="dropdown-item <?php echo LanguageActive('Czech'); ?>" href="<?php echo LanguageURL('Czech');?>"><img src="./images/flags/cz.svg" width="20" class="border align-middle" alt="CZ Flag"> Czech</a></li>
                                 <li><a class="dropdown-item <?php echo LanguageActive('Danish'); ?>" href="<?php echo LanguageURL('Danish');?>"><img src="./images/flags/dk.svg" width="20" class="border align-middle" alt="DK Flag"> Danish</a></li>
                                 <li><a class="dropdown-item <?php echo LanguageActive('English'); ?>" href="<?php echo LanguageURL('English');?>"><img src="./images/flags/gb.svg" width="20" class="border align-middle" alt="GB Flag"> English</a></li>
