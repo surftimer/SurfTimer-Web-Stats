@@ -29,6 +29,7 @@ jobs:
       - name: Replace database config values
         run: |
           sed -i "s/your_database_host/${{ secrets.SQL_HOST }}/g" inc/config.php
+          sed -i "s/your_database_port/${{ secrets.SQL_PORT }}/g" inc/config.php
           sed -i "s/your_database_username/${{ secrets.SQL_USER }}/g" inc/config.php
           sed -i "s/your_database_password/${{ secrets.SQL_PASS }}/g" inc/config.php
           sed -i "s/your_database_name/${{ secrets.SQL_DATABASE }}/g" inc/config.php
