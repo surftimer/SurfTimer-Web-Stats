@@ -34,7 +34,7 @@ jobs:
           sed -i "s/your_database_name/${{ secrets.SQL_DATABASE }}/g" inc/config.php
 
       - name: Upload files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.SFTP_HOST }}
           port: ${{ secrets.SFTP_PORT }}
