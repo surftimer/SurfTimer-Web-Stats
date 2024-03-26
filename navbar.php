@@ -70,6 +70,7 @@
                                 <li><a class="dropdown-item <?php echo LanguageActive('Spanish'); ?>" href="<?php echo LanguageURL('Spanish');?>"><img src="./images/flags/es.svg" width="20" class="border align-middle" alt="ES Flag"> Spanish</a></li>
                                 <li><a class="dropdown-item <?php echo LanguageActive('Swedish'); ?>" href="<?php echo LanguageURL('Swedish');?>"><img src="./images/flags/se.svg" width="20" class="border align-middle" alt="SE Flag"> Swedish</a></li>
                                 <li><a class="dropdown-item <?php echo LanguageActive('Turkish'); ?>" href="<?php echo LanguageURL('Turkish');?>"><img src="./images/flags/tr.svg" width="20" class="border align-middle" alt="TR Flag"> Turkish</a></li>
+                                <li><a class="dropdown-item <?php echo LanguageActive('Bulgarian'); ?>" href="<?php echo LanguageURL('Bulgarian');?>"><img src="./images/flags/bg.svg" width="20" class="border align-middle" alt="BG Flag"> Bulgarian</a></li>
                             </ul>
                         </div>
                     <?php endif;?>
